@@ -28,6 +28,7 @@ const GameScreen = () => {
   const [currentWord, setCurrentWord] = useState('');
   const [isImposter, setIsImposter] = useState(false);
   const [hasAcknowledged, setHasAcknowledged] = useState(false);
+  const [acknowledgedCount, setAcknowledgedCount] = useState(0);
   const [clue, setClue] = useState('');
   const [clues, setClues] = useState([]);
   const [chatMessages, setChatMessages] = useState([]);
@@ -207,6 +208,17 @@ const GameScreen = () => {
       setTotalPlayers(data.totalPlayers);
     };
 
+    const onAcknowledgeProgress = (data) => {
+      if (typeof data.acknowledgedCount === 'number') setAcknowledgedCount(data.acknowledgedCount);
+      if (typeof data.totalPlayers === 'number') setTotalPlayers(data.totalPlayers);
+      if (data.players) setPlayers(data.players);
+    };
+
+    const onPlayerReady = (data) => {
+      if (typeof data.totalReady === 'number') setAcknowledgedCount(data.totalReady);
+      if (typeof data.totalPlayers === 'number') setTotalPlayers(data.totalPlayers);
+    };
+
     const onRoundReset = (data) => {
       setPhase('reveal');
       setClue('');
@@ -214,6 +226,7 @@ const GameScreen = () => {
       setChatMessages([]);
       setChatInput('');
       setHasAcknowledged(false);
+      setAcknowledgedCount(0);
       setHasVoted(false);
       setSelectedVote('');
       setRoundResults(null);
@@ -269,6 +282,8 @@ const GameScreen = () => {
     socket.on('clues-updated', onCluesUpdated);
     socket.on('turn-changed', onTurnChanged);
     socket.on('chat-message', onChatMessage);
+    socket.on('acknowledge-progress', onAcknowledgeProgress);
+    socket.on('player-ready', onPlayerReady);
     socket.on('ready-to-vote-updated', onReadyToVoteUpdated);
     socket.on('vote-recorded', onVoteRecorded);
     socket.on('voting-progress', onVotingProgress);
@@ -288,6 +303,8 @@ const GameScreen = () => {
       socket.off('clues-updated', onCluesUpdated);
       socket.off('turn-changed', onTurnChanged);
       socket.off('chat-message', onChatMessage);
+      socket.off('acknowledge-progress', onAcknowledgeProgress);
+      socket.off('player-ready', onPlayerReady);
       socket.off('ready-to-vote-updated', onReadyToVoteUpdated);
       socket.off('vote-recorded', onVoteRecorded);
       socket.off('voting-progress', onVotingProgress);
@@ -502,14 +519,52 @@ const GameScreen = () => {
                 disabled={hasAcknowledged}
                 className={`w-full py-3.5 sm:py-4 mt-4 font-display font-black text-base rounded-xl transition-all duration-150 active:scale-[0.98] shadow-lg ${
                   hasAcknowledged
-                    ? 'bg-slate-800/80 text-slate-500 border border-slate-700/50 cursor-not-allowed shadow-none'
+                    ? 'bg-slate-800/80 text-slate-400 border border-slate-700/50 shadow-none'
                     : isImposter
                       ? 'bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-500 hover:to-pink-500 text-white shadow-glow-pink'
                       : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white shadow-glow-purple'
                 }`}
               >
-                {hasAcknowledged ? '⏳ Waiting for other players...' : '👁️ I Memorized My Word'}
+                {hasAcknowledged ? `⏳ Waiting for other players... (${acknowledgedCount || 1}/${totalPlayers} ready)` : '👁️ I Memorized My Word'}
               </button>
+
+              {/* Live Player Ready Progress */}
+              <div className="mt-3 p-3 bg-slate-950/80 border border-slate-800 rounded-xl">
+                <div className="flex justify-between items-center text-xs mb-1.5 font-display font-bold">
+                  <span className="text-slate-400">Players Memorized:</span>
+                  <span className="text-amber-300">{acknowledgedCount || (hasAcknowledged ? 1 : 0)} / {totalPlayers}</span>
+                </div>
+                <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                  <div 
+                    className="bg-gradient-to-r from-purple-500 to-emerald-400 h-full transition-all duration-300"
+                    style={{ width: `${Math.min(100, Math.max(8, ((acknowledgedCount || (hasAcknowledged ? 1 : 0)) / Math.max(1, totalPlayers)) * 100))}%` }}
+                  />
+                </div>
+                <div className="flex flex-wrap gap-1.5 mt-2 pt-2 border-t border-slate-800/80 justify-center">
+                  {players.filter((p) => p.isConnected !== false && !p.isWaitingForNextRound).map((p) => {
+                    const isSelf = p.playerId === currentPlayerId;
+                    const isReady = p.hasAcknowledgedWord || (isSelf && hasAcknowledged);
+                    return (
+                      <span key={p.playerId} className={`text-[11px] px-2 py-0.5 rounded-full flex items-center gap-1 font-body ${isReady ? 'bg-emerald-950/80 text-emerald-300 border border-emerald-800/50' : 'bg-slate-900 text-slate-500 border border-slate-800'}`}>
+                        <span>{p.avatar || '🕵️'}</span>
+                        <span className="truncate max-w-[70px]">{p.nickname}</span>
+                        <span>{isReady ? '✅' : '⏳'}</span>
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Host Skip / Force Advance to Clues */}
+              {isHost && (
+                <button
+                  type="button"
+                  onClick={() => socket.emit('force-advance-reveal')}
+                  className="w-full mt-2.5 py-2.5 bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-300 font-display font-bold text-xs rounded-xl transition-all active:scale-95"
+                >
+                  ⏩ Start Clue Round Now (Host Override)
+                </button>
+              )}
             </div>
           </div>
         </div>

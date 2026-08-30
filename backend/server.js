@@ -828,15 +828,66 @@ io.on('connection', (socket) => {
         }
         console.log(`🔍 Clue phase started in room ${moved.roomCode}`);
       } else {
-        io.to(latest.roomCode).emit('player-ready', {
-          playerId,
-          nickname: player.nickname,
-          totalReady: active.filter((p) => p.hasAcknowledgedWord).length,
-          totalPlayers: active.length
+        const readyCount = active.filter((p) => p.hasAcknowledgedWord).length;
+        io.to(latest.roomCode).emit('acknowledge-progress', {
+          acknowledgedCount: readyCount,
+          totalPlayers: active.length,
+          players: publicPlayers(latest)
         });
+        broadcastPlayers(latest);
       }
     } catch (error) {
       console.error('Acknowledge word error:', error);
+      socket.emit('error', { message: 'Server error. Please try again.' });
+    }
+  });
+
+  socket.on('force-advance-reveal', async () => {
+    try {
+      const playerId = getPlayerId(socket);
+      let session = await findSessionByPlayer(playerId);
+      if (!session) return socket.emit('error', { message: 'You are not in a room.' });
+      if (session.hostId !== playerId) {
+        return socket.emit('error', { message: 'Only the Host can force advance.' });
+      }
+      if (session.status !== 'reveal') {
+        return socket.emit('error', { message: 'Not in reveal phase.' });
+      }
+
+      const active = roundPlayers(session);
+      const speakerQueue = shuffle(active.map((p) => p.playerId));
+      const moved = await GameSession.findOneAndUpdate(
+        { _id: session._id, status: 'reveal' },
+        {
+          $set: {
+            status: 'clue',
+            speakerQueue,
+            currentSpeakerIndex: 0,
+            lastActivity: new Date()
+          }
+        },
+        { returnDocument: 'after' }
+      );
+      if (!moved) return;
+
+      io.to(moved.roomCode).emit('phase-changed', {
+        status: moved.status,
+        players: publicPlayers(moved),
+        speakerQueue: moved.speakerQueue,
+        currentSpeakerIndex: moved.currentSpeakerIndex,
+        mode: moved.mode,
+        leagueGameNumber: moved.leagueGameNumber
+      });
+
+      if (moved.speakerQueue.length > 0) {
+        const firstSpeakerPrompt = moved.mode === 'offline' ? 'Say your clue out loud.' : 'Enter your clue...';
+        emitToPlayer(moved.speakerQueue[0], 'your-turn', {
+          message: firstSpeakerPrompt
+        });
+      }
+      console.log(`⏩ Host force-advanced to clue phase in room ${moved.roomCode}`);
+    } catch (error) {
+      console.error('Force advance reveal error:', error);
       socket.emit('error', { message: 'Server error. Please try again.' });
     }
   });
