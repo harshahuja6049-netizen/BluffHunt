@@ -1,0 +1,18 @@
+{
+  "name": "bluffhunt",
+  "private": true,
+  "version": "1.0.0",
+  "description": "BluffHunt — say your clue, hide your truth.",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "install:all": "npm install --prefix backend && npm install --prefix frontend",
+    "dev": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "build": "npm ci --prefix frontend && npm run build --prefix frontend",
+    "start": "npm start --prefix backend",
+    "test": "npm test --prefix backend",
+    "test:all": "npm run test:all --prefix backend"
+  }
+}

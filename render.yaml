@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: bluffhunt
+    runtime: node
+    buildCommand: npm ci --prefix frontend && npm run build --prefix frontend && npm ci --omit=dev --prefix backend
+    startCommand: node backend/server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGO_URI
+        sync: false
+      - key: CLIENT_ORIGIN
+        sync: false
