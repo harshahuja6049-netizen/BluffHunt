@@ -4,18 +4,21 @@ import LobbyScreen from './pages/LobbyScreen';
 import GameScreen from './pages/GameScreen';
 import PodiumScreen from './pages/PodiumScreen';
 import InstallPrompt from './components/InstallPrompt';
+import { ToastProvider } from './components/Toast';
 
 function App() {
   return (
-    <BrowserRouter>
-      <InstallPrompt />
-      <Routes>
-        <Route path="/" element={<JoinScreen />} />
-        <Route path="/lobby" element={<LobbyScreen />} />
-        <Route path="/game" element={<GameScreen />} />
-        <Route path="/podium" element={<PodiumScreen />} />
-      </Routes>
-    </BrowserRouter>
+    <ToastProvider>
+      <BrowserRouter>
+        <InstallPrompt />
+        <Routes>
+          <Route path="/" element={<JoinScreen />} />
+          <Route path="/lobby" element={<LobbyScreen />} />
+          <Route path="/game" element={<GameScreen />} />
+          <Route path="/podium" element={<PodiumScreen />} />
+        </Routes>
+      </BrowserRouter>
+    </ToastProvider>
   );
 }
 

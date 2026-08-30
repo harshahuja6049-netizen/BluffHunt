@@ -4,15 +4,20 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import socket from '../socket';
 import ScreenShell from '../components/ScreenShell';
+import { useToast } from '../components/Toast';
+
+const AVATARS = ['🕵️', '🦁', '🍕', '🎭', '🚀', '🦊', '👑', '🎯', '⚡', '🥑'];
 
 const JoinScreen = () => {
   const [nickname, setNickname] = useState(() => localStorage.getItem('nickname') || '');
+  const [avatar, setAvatar] = useState(() => localStorage.getItem('avatar') || '🕵️');
   const [roomCode, setRoomCode] = useState('');
   const [mode, setMode] = useState('online');
   const [isCreating, setIsCreating] = useState(false);
   const [isJoining, setIsJoining] = useState(false);
   const [connected, setConnected] = useState(socket.connected);
   const navigate = useNavigate();
+  const { showToast } = useToast();
 
   useEffect(() => {
     const onConnect = () => setConnected(true);
@@ -33,7 +38,7 @@ const JoinScreen = () => {
   useEffect(() => {
     const onCreated = (data) => {
       setIsCreating(false);
-      persistSession(data, nickname);
+      persistSession(data, nickname, avatar);
       navigate('/lobby', {
         state: {
           roomCode: data.roomCode,
@@ -46,7 +51,7 @@ const JoinScreen = () => {
 
     const onJoined = (data) => {
       setIsJoining(false);
-      persistSession(data, nickname);
+      persistSession(data, nickname, avatar);
       const destination = data.status && data.status !== 'lobby' && data.status !== 'podium'
         ? '/game'
         : data.status === 'podium'
@@ -67,7 +72,7 @@ const JoinScreen = () => {
     const onError = (data) => {
       setIsCreating(false);
       setIsJoining(false);
-      alert(data.message || 'Something went wrong.');
+      showToast(data.message || 'Something went wrong.', 'error');
     };
 
     socket.on('room-created', onCreated);
@@ -79,39 +84,42 @@ const JoinScreen = () => {
       socket.off('room-joined', onJoined);
       socket.off('error', onError);
     };
-  }, [navigate, nickname]);
+  }, [navigate, nickname, avatar, showToast]);
 
-  const persistSession = (data, name) => {
+  const persistSession = (data, name, playerAvatar) => {
     localStorage.setItem('playerId', data.playerId);
     localStorage.setItem('hostId', data.hostId);
     localStorage.setItem('roomCode', data.roomCode);
     localStorage.setItem('nickname', name.trim());
+    localStorage.setItem('avatar', playerAvatar);
   };
 
   const handleCreateRoom = () => {
     if (!nickname.trim()) {
-      alert('Please enter a nickname.');
+      showToast('Please enter a nickname.', 'warning');
       return;
     }
     setIsCreating(true);
     socket.emit('create-room', {
       nickname: nickname.trim(),
+      avatar,
       mode
     });
   };
 
   const handleJoinRoom = () => {
     if (!nickname.trim()) {
-      alert('Please enter a nickname.');
+      showToast('Please enter a nickname.', 'warning');
       return;
     }
     if (!roomCode.trim()) {
-      alert('Please enter a room code.');
+      showToast('Please enter a 4-digit room code.', 'warning');
       return;
     }
     setIsJoining(true);
     socket.emit('join-room', {
       nickname: nickname.trim(),
+      avatar,
       roomCode: roomCode.trim(),
       playerId: localStorage.getItem('playerId') || undefined
     });
@@ -122,18 +130,45 @@ const JoinScreen = () => {
       <div className="flex-1 flex items-center justify-center">
         <div className="w-full max-w-md">
           {/* Logo */}
-          <h1 className="font-display font-extrabold text-5xl text-center mb-2 bg-gradient-to-r from-bluff-gold via-bluff-purple to-bluff-pink bg-clip-text text-transparent">
-            Bluff Hunt
+          <h1 className="font-display font-extrabold text-5xl text-center mb-1 bg-gradient-to-r from-bluff-gold via-bluff-purple to-bluff-pink bg-clip-text text-transparent">
+            BluffHunt
           </h1>
-          <p className="font-body text-bluff-muted text-center mb-2">
-            Say Your Clue. Hide Your Truth.
+          
+          <p className="font-body text-bluff-muted text-center text-sm mb-2">
+            Everyone Knows. One Pretends.
           </p>
-          <p className={`font-body text-center text-sm mb-6 ${connected ? 'text-bluff-green' : 'text-bluff-pink'}`}>
-            {connected ? '✅ Connected to server' : '⏳ Connecting to server...'}
+          <p className={`font-body text-center text-xs mb-6 ${connected ? 'text-bluff-green' : 'text-bluff-pink animate-pulse'}`}>
+            {connected ? '✅ Connected to server' : '⏳ Connecting to server (may take ~45s if waking from sleep)...'}
           </p>
 
           {/* Form Card */}
           <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/10 p-6">
+            {/* Avatar Selector */}
+            <div className="mb-4">
+              <label className="block text-xs font-display font-semibold text-bluff-muted mb-2 uppercase tracking-wider">
+                Choose Your Avatar
+              </label>
+              <div className="flex justify-between items-center gap-1.5 overflow-x-auto pb-1">
+                {AVATARS.map((emoji) => (
+                  <button
+                    key={emoji}
+                    type="button"
+                    onClick={() => {
+                      setAvatar(emoji);
+                      localStorage.setItem('avatar', emoji);
+                    }}
+                    className={`w-9 h-9 rounded-xl flex items-center justify-center text-xl transition-all ${
+                      avatar === emoji
+                        ? 'bg-bluff-purple border-2 border-white/60 scale-110 shadow-lg shadow-purple-500/30'
+                        : 'bg-black/30 border border-white/5 hover:bg-white/10 opacity-70'
+                    }`}
+                  >
+                    {emoji}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             {/* Nickname Input */}
             <input
               type="text"

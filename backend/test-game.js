@@ -90,27 +90,47 @@ async function runLeagueTest(url = process.env.TEST_URL || 'http://localhost:500
     player.socket.on('your-turn', () => {
       if (player.clueSubmitted) return;
       player.clueSubmitted = true;
-      const clue = `hint${player.nickname.slice(0, 3)}${roundsDone}`;
+      const clue = `clue${player.nickname.slice(0, 3)}${Math.floor(roundsDone * 100)}_${Math.random().toString(36).substring(2, 6)}`;
       player.socket.emit('submit-clue', { clue });
     });
 
     player.socket.on('game-started', () => {
+      resetRoundFlags();
       player.socket.emit('acknowledge-word');
+    });
+
+    player.socket.on('revote-started', (data) => {
+      player.hasVoted = false;
+      const candidatePool = (data.tiedPlayerIds && data.tiedPlayerIds.length)
+        ? players.filter((p) => data.tiedPlayerIds.includes(p.playerId))
+        : players.filter((p) => p.playerId !== player.playerId);
+      const target = candidatePool.find((p) => p.playerId !== player.playerId) || candidatePool[0];
+      if (target) {
+        player.hasVoted = true;
+        player.socket.emit('cast-vote', { accusedId: target.playerId });
+      }
     });
 
     player.socket.on('phase-changed', (data) => {
       if (data.status === 'reveal') {
-        player.hasVoted = false;
-        player.clueSubmitted = false;
+        resetRoundFlags();
         player.socket.emit('acknowledge-word');
+      }
+      if (data.status === 'clue') {
+        player.clueSubmitted = false;
       }
       if (data.status === 'discussion') {
         player.socket.emit('ready-to-vote');
       }
-      if (data.status === 'voting' && !player.hasVoted) {
+      if (data.status === 'voting' && !player.hasVoted && !data.isRevote) {
         player.hasVoted = true;
-        const target = players.find((p) => p.playerId !== player.playerId);
-        player.socket.emit('cast-vote', { accusedId: target.playerId });
+        const candidatePool = (data.tiedPlayerIds && data.tiedPlayerIds.length)
+          ? players.filter((p) => data.tiedPlayerIds.includes(p.playerId))
+          : players.filter((p) => p.playerId !== player.playerId);
+        const target = candidatePool.find((p) => p.playerId !== player.playerId) || candidatePool[0];
+        if (target) {
+          player.socket.emit('cast-vote', { accusedId: target.playerId });
+        }
       }
     });
 

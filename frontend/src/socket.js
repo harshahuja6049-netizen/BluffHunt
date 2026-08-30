@@ -1,6 +1,6 @@
 import { io } from 'socket.io-client';
 
-const configured = (import.meta.env.VITE_SOCKET_URL || '').trim();
+const configured = (import.meta.env.VITE_SOCKET_URL || import.meta.env.VITE_BACKEND_URL || '').trim();
 const socketUrl = configured || undefined;
 
 const socket = io(socketUrl, {

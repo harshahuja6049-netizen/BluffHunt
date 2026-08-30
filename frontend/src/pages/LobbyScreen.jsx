@@ -7,10 +7,12 @@ import socket, { emitRejoin } from '../socket';
 import ScreenShell from '../components/ScreenShell';
 import LeaveButton from '../components/LeaveButton';
 import JoinRequestModal from '../components/JoinRequestModal';
+import { useToast } from '../components/Toast';
 
 const LobbyScreen = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const { showToast } = useToast();
   const {
     roomCode: stateRoomCode,
     players: initialPlayers,
@@ -82,10 +84,10 @@ const LobbyScreen = () => {
       if (data.mode) setMode(data.mode);
     };
 
-    const onError = (data) => alert(data.message);
+    const onError = (data) => showToast(data.message || 'Error', 'error');
     
     const onKicked = (data) => {
-      alert(data.message);
+      showToast(data.message || 'You were removed by the Host.', 'error');
       localStorage.removeItem('playerId');
       localStorage.removeItem('roomCode');
       navigate('/');
@@ -116,15 +118,16 @@ const LobbyScreen = () => {
       socket.off('kicked', onKicked);
       socket.off('left-room', onLeftRoom);
     };
-  }, [navigate, roomCode, currentPlayerId, initialPlayers]);
+  }, [navigate, roomCode, currentPlayerId, initialPlayers, showToast]);
 
   const handleCopyRoomCode = async () => {
     try {
       await navigator.clipboard.writeText(roomCode);
       setCopied(true);
+      showToast(`Copied room code: ${roomCode}`, 'success', 2000);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      alert(`Room code: ${roomCode}`);
+      showToast(`Room code: ${roomCode}`, 'info', 4000);
     }
   };
 
@@ -167,7 +170,7 @@ const LobbyScreen = () => {
         {/* Player List */}
         <div className="flex-1 min-h-0">
           <h3 className="font-body font-semibold text-bluff-muted text-sm mb-2">
-            Players ({connectedPlayers.length})
+            Players ({connectedPlayers.length}/10)
           </h3>
           <div className="space-y-2 max-h-64 overflow-y-auto pr-1">
             {players.map((player) => {
@@ -186,6 +189,7 @@ const LobbyScreen = () => {
                   }`}
                 >
                   <div className="flex items-center gap-2">
+                    <span className="text-xl shrink-0">{player.avatar || '🕵️'}</span>
                     <span className="font-body font-semibold text-white">
                       {player.nickname}
                       {isThisPlayer && ' (You)'}

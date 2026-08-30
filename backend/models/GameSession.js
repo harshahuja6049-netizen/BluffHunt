@@ -24,6 +24,7 @@ const gameSessionSchema = new mongoose.Schema({
     players: [{
         playerId: { type: String, required: true },
         nickname: { type: String, required: true },
+        avatar: { type: String, default: '🕵️' },
         isImposter: { type: Boolean, default: false },
         word: { type: String, default:''},
         clueSubmitted: { type: String, default: '' }, 
@@ -41,6 +42,7 @@ const gameSessionSchema = new mongoose.Schema({
         requestId: { type: String, required: true },
         playerId: { type: String, required: true },
         nickname: { type: String, required: true },
+        avatar: { type: String, default: '🕵️' },
         createdAt: { type: Date, default: Date.now }
     }],
     usedPairs: [{
@@ -60,6 +62,12 @@ const gameSessionSchema = new mongoose.Schema({
         accusedId: String
     }],
     readyToVote:[String],
+    isRevote: {
+        type: Boolean,
+        default: false
+    },
+    tiedPlayerIds: [String],
+    kickedPlayerIds: [String],
     speakerQueue:[String],
     currentSpeakerIndex: {
     type: Number,
@@ -79,11 +87,10 @@ const gameSessionSchema = new mongoose.Schema({
     default: null
   }
 }, { timestamps: true });
-gameSessionSchema.index(
-  { lastActivity: 1 },
-  {
-    expireAfterSeconds: 3600,
-    partialFilterExpression: { 'players.0': { $exists: false } }
-  }
-);
+
+// Auto-delete abandoned/deactivated rooms after 2 hours (7200 seconds) of inactivity
+gameSessionSchema.index({ lastActivity: 1 }, { expireAfterSeconds: 7200 });
+// Fast lookup for finding active sessions by playerId
+gameSessionSchema.index({ 'players.playerId': 1 });
+
 module.exports = mongoose.model('GameSession', gameSessionSchema);

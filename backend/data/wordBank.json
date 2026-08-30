@@ -1,6 +1,4 @@
-// backend/data/wordBank.js
-
-const wordBank = [
+[
   {
     "agent": "Samosa",
     "imposter": "Sandwich",
@@ -2501,6 +2499,4 @@ const wordBank = [
     "imposter": "Phoenix Palladium Mall",
     "difficulty": "easy"
   }
-];
-
-module.exports = wordBank;
+]

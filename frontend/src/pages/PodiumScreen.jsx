@@ -6,10 +6,12 @@ import Confetti from 'react-confetti';
 import socket, { emitRejoin } from '../socket';
 import ScreenShell from '../components/ScreenShell';
 import LeaveButton from '../components/LeaveButton';
+import { useToast } from '../components/Toast';
 
 const PodiumScreen = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const { showToast } = useToast();
   const {
     players,
     roomCode,
@@ -42,7 +44,7 @@ const PodiumScreen = () => {
         }
       });
     };
-    const onError = (data) => alert(data.message);
+    const onError = (data) => showToast(data.message || 'Error', 'error');
 
     socket.on('connect', onConnect);
     socket.on('league-reset', onLeagueReset);
@@ -52,7 +54,7 @@ const PodiumScreen = () => {
       socket.off('league-reset', onLeagueReset);
       socket.off('error', onError);
     };
-  }, [players, navigate, roomCode]);
+  }, [players, navigate, roomCode, showToast]);
 
   const handleNewLeague = () => {
     if (isHost) {
@@ -83,7 +85,10 @@ const PodiumScreen = () => {
               <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-b from-gray-400 to-gray-600 flex items-center justify-center text-3xl shadow-lg">
                 🥈
               </div>
-              <p className="font-display font-bold text-white mt-2 text-sm md:text-base">{second.nickname}</p>
+              <p className="font-display font-bold text-white mt-2 text-sm md:text-base flex items-center gap-1">
+                <span>{second.avatar || '🕵️'}</span>
+                <span>{second.nickname}</span>
+              </p>
               <p className="font-body text-xs text-bluff-muted">{second.leaguePoints} pts</p>
             </div>
           )}
@@ -94,8 +99,9 @@ const PodiumScreen = () => {
               <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-b from-bluff-gold to-yellow-600 flex items-center justify-center text-4xl shadow-xl">
                 🥇
               </div>
-              <p className="font-display font-extrabold text-lg md:text-xl text-bluff-gold mt-2">
-                {champion.nickname}
+              <p className="font-display font-extrabold text-lg md:text-xl text-bluff-gold mt-2 flex items-center gap-1">
+                <span>{champion.avatar || '🕵️'}</span>
+                <span>{champion.nickname}</span>
               </p>
               <p className="font-body text-xs md:text-sm text-bluff-muted">
                 {champion.leaguePoints} pts
@@ -110,7 +116,10 @@ const PodiumScreen = () => {
               <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-b from-orange-400 to-orange-700 flex items-center justify-center text-3xl shadow-lg">
                 🥉
               </div>
-              <p className="font-display font-bold text-white mt-2 text-sm md:text-base">{third.nickname}</p>
+              <p className="font-display font-bold text-white mt-2 text-sm md:text-base flex items-center gap-1">
+                <span>{third.avatar || '🕵️'}</span>
+                <span>{third.nickname}</span>
+              </p>
               <p className="font-body text-xs text-bluff-muted">{third.leaguePoints} pts</p>
             </div>
           )}

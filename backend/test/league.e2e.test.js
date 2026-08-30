@@ -1,11 +1,10 @@
 const { describe, it, before, after } = require('node:test');
 const assert = require('node:assert/strict');
 const path = require('path');
-
+require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 process.env.PORT = '0';
 process.env.ROUND_ADVANCE_MS = '80';
 process.env.NODE_ENV = 'test';
-require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
 const { boot, stop } = require('../server');
 const { runLeagueTest } = require('../test-game');
