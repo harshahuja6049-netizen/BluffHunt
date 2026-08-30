@@ -71,27 +71,27 @@
   },
   {
     "agent": "Rajma Chawal",
-    "imposter": "Veg Noodles",
+    "imposter": "Noodles",
     "difficulty": "easy"
   },
   {
     "agent": "Paneer Tikka",
-    "imposter": "Spring Rolls",
+    "imposter": "Spring Roll",
     "difficulty": "easy"
   },
   {
     "agent": "Rasgulla",
-    "imposter": "Chocolate Brownie",
+    "imposter": "Brownie",
     "difficulty": "easy"
   },
   {
     "agent": "Kaju Katli",
-    "imposter": "Choco Lava Cake",
+    "imposter": "Lava Cake",
     "difficulty": "easy"
   },
   {
     "agent": "Dal Makhani",
-    "imposter": "Veg Lasagna",
+    "imposter": "Lasagna",
     "difficulty": "easy"
   },
   {
@@ -141,12 +141,12 @@
   },
   {
     "agent": "Khichdi",
-    "imposter": "Veg Fried Rice",
+    "imposter": "Fried Rice",
     "difficulty": "easy"
   },
   {
     "agent": "Pakoda",
-    "imposter": "Potato Chips",
+    "imposter": "Chips",
     "difficulty": "easy"
   },
   {
@@ -160,7 +160,7 @@
     "difficulty": "easy"
   },
   {
-    "agent": "Tandoori Naan",
+    "agent": "Naan",
     "imposter": "Pita Bread",
     "difficulty": "easy"
   },
@@ -196,7 +196,7 @@
   },
   {
     "agent": "Chaas",
-    "imposter": "Fruit Smoothie",
+    "imposter": "Smoothie",
     "difficulty": "easy"
   },
   {
@@ -206,7 +206,7 @@
   },
   {
     "agent": "Bhel Puri",
-    "imposter": "Cheesy Garlic Bread",
+    "imposter": "Cheese Bread",
     "difficulty": "easy"
   },
   {
@@ -230,8 +230,8 @@
     "difficulty": "easy"
   },
   {
-    "agent": "Sabudana Khichdi",
-    "imposter": "Veg Hakka Noodles",
+    "agent": "Hakka Noodles",
+    "imposter": "Macaroni",
     "difficulty": "easy"
   },
   {
@@ -246,7 +246,7 @@
   },
   {
     "agent": "Khandvi",
-    "imposter": "Sushi Veg Roll",
+    "imposter": "Veg Sushi",
     "difficulty": "medium"
   },
   {
@@ -255,18 +255,18 @@
     "difficulty": "medium"
   },
   {
-    "agent": "Paneer Butter Masala",
-    "imposter": "Macaroni",
+    "agent": "Paneer Butter",
+    "imposter": "Veg Risotto",
     "difficulty": "easy"
   },
   {
     "agent": "Aloo Gobi",
-    "imposter": "Veg Manchow Soup",
+    "imposter": "Veg Soup",
     "difficulty": "easy"
   },
   {
     "agent": "Baingan Bharta",
-    "imposter": "Mashed Potatoes",
+    "imposter": "Mashed Potato",
     "difficulty": "easy"
   },
   {
@@ -276,7 +276,7 @@
   },
   {
     "agent": "Matar Paneer",
-    "imposter": "Veg Manchurian",
+    "imposter": "Manchurian",
     "difficulty": "easy"
   },
   {
@@ -291,7 +291,7 @@
   },
   {
     "agent": "Paneer Bhurji",
-    "imposter": "Veg Scramble",
+    "imposter": "Scrambled Tofu",
     "difficulty": "easy"
   },
   {
@@ -325,11 +325,6 @@
     "difficulty": "easy"
   },
   {
-    "agent": "Chutney Sandwich",
-    "imposter": "Panini",
-    "difficulty": "easy"
-  },
-  {
     "agent": "Bun Maska",
     "imposter": "Cinnamon Roll",
     "difficulty": "easy"
@@ -341,7 +336,7 @@
   },
   {
     "agent": "Masala Dosa",
-    "imposter": "Veg Calzone",
+    "imposter": "Calzone",
     "difficulty": "easy"
   },
   {
@@ -351,7 +346,7 @@
   },
   {
     "agent": "Uttapam",
-    "imposter": "Veg Quesadilla",
+    "imposter": "Quesadilla",
     "difficulty": "easy"
   },
   {
@@ -381,12 +376,12 @@
   },
   {
     "agent": "Katori Chaat",
-    "imposter": "Taco Salad Bowl",
+    "imposter": "Salad Bowl",
     "difficulty": "easy"
   },
   {
     "agent": "Ragda Pattice",
-    "imposter": "Falafel Wrap",
+    "imposter": "Falafel",
     "difficulty": "easy"
   },
   {
@@ -396,22 +391,22 @@
   },
   {
     "agent": "Thalipeeth",
-    "imposter": "Multigrain Toast",
+    "imposter": "Toast",
     "difficulty": "medium"
   },
   {
     "agent": "Batata Vada",
-    "imposter": "Veg Croquette",
+    "imposter": "Croquette",
     "difficulty": "easy"
   },
   {
     "agent": "Kanda Bhaji",
-    "imposter": "Tempura Veg",
+    "imposter": "Veg Tempura",
     "difficulty": "easy"
   },
   {
     "agent": "Sev Usal",
-    "imposter": "Ramen Veg Bowl",
+    "imposter": "Veg Ramen",
     "difficulty": "easy"
   },
   {
@@ -426,11 +421,11 @@
   },
   {
     "agent": "Patra",
-    "imposter": "Veg Dim Sum",
+    "imposter": "Dim Sum",
     "difficulty": "medium"
   },
   {
-    "agent": "Moong Dal Halwa",
+    "agent": "Dal Halwa",
     "imposter": "Carrot Cake",
     "difficulty": "easy"
   },
@@ -440,23 +435,23 @@
     "difficulty": "easy"
   },
   {
-    "agent": "Kashmiri Dum Aloo",
+    "agent": "Dum Aloo",
     "imposter": "Gnocchi",
     "difficulty": "medium"
   },
   {
-    "agent": "Sarson Ka Saag",
-    "imposter": "Cream of Spinach",
+    "agent": "Sarson Saag",
+    "imposter": "Cream Spinach",
     "difficulty": "medium"
   },
   {
-    "agent": "Makki Di Roti",
+    "agent": "Makki Roti",
     "imposter": "Cornbread",
     "difficulty": "easy"
   },
   {
-    "agent": "Navratan Korma",
-    "imposter": "Veg Stroganoff",
+    "agent": "Veg Korma",
+    "imposter": "Stroganoff",
     "difficulty": "medium"
   },
   {
@@ -496,57 +491,1297 @@
   },
   {
     "agent": "Tea",
-    "imposter": "Hot Milk",
+    "imposter": "Milk",
     "difficulty": "easy"
   },
   {
-    "agent": "Cricket",
-    "imposter": "Badminton",
+    "agent": "Coffee",
+    "imposter": "Milkshake",
     "difficulty": "easy"
   },
   {
-    "agent": "Tennis",
-    "imposter": "Swimming",
+    "agent": "Cooking",
+    "imposter": "Baking",
     "difficulty": "easy"
   },
   {
-    "agent": "Basketball",
-    "imposter": "Boxing",
+    "agent": "Sleeping",
+    "imposter": "Napping",
     "difficulty": "easy"
   },
   {
-    "agent": "Volleyball",
+    "agent": "Jogging",
+    "imposter": "Walking",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Running",
     "imposter": "Cycling",
     "difficulty": "easy"
   },
   {
-    "agent": "Hockey",
-    "imposter": "Skateboarding",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Kabaddi",
-    "imposter": "Golf",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Football",
-    "imposter": "Table Tennis",
+    "agent": "Swimming",
+    "imposter": "Bathing",
     "difficulty": "easy"
   },
   {
-    "agent": "IPL",
-    "imposter": "Olympics",
+    "agent": "Reading",
+    "imposter": "Writing",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Studying",
+    "imposter": "Teaching",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Sweeping",
+    "imposter": "Mopping",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Dusting",
+    "imposter": "Vacuuming",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Washing Clothes",
+    "imposter": "Ironing",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Washing Dishes",
+    "imposter": "Drying Dishes",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Gardening",
+    "imposter": "Watering Plants",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Driving",
+    "imposter": "Riding",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Shopping",
+    "imposter": "Bargaining",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Online Shopping",
+    "imposter": "Window Shopping",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Scrolling Reels",
+    "imposter": "Watching TV",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Video Call",
+    "imposter": "Voice Call",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Texting",
+    "imposter": "Emailing",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Morning Walk",
+    "imposter": "Evening Jog",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Gym Workout",
+    "imposter": "Yoga Practice",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Meditation",
+    "imposter": "Daydreaming",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Dancing",
+    "imposter": "Singing",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Painting",
+    "imposter": "Drawing",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Sketching",
+    "imposter": "Coloring",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Photography",
+    "imposter": "Videography",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Gaming",
+    "imposter": "Streaming",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Podcast",
+    "imposter": "Audiobook",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Listening Music",
+    "imposter": "Playing Guitar",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Playing Piano",
+    "imposter": "Playing Flute",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Trekking",
+    "imposter": "Camping",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Hiking",
+    "imposter": "Rock Climbing",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Road Trip",
+    "imposter": "Train Journey",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Flight Travel",
+    "imposter": "Boat Ride",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Packing Bags",
+    "imposter": "Unpacking",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Haircut",
+    "imposter": "Shaving",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Facial",
+    "imposter": "Manicure",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Brushing Teeth",
+    "imposter": "Flossing",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Combing Hair",
+    "imposter": "Styling Hair",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Morning Tea",
+    "imposter": "Evening Snack",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Breakfast",
+    "imposter": "Dinner",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Lunch Box",
+    "imposter": "Canteen Food",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Midnight Snack",
+    "imposter": "Late Dinner",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Car Wash",
+    "imposter": "Bike Service",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Filling Petrol",
+    "imposter": "Checking Tyre",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Grocery Store",
+    "imposter": "Supermarket",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Vegetable Market",
+    "imposter": "Fruit Stall",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Street Food",
+    "imposter": "Buffet Dinner",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Board Games",
+    "imposter": "Card Games",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Solving Puzzle",
+    "imposter": "Rubik Cube",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Origami",
+    "imposter": "Pottery",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Knitting",
+    "imposter": "Stitching",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Watching Movie",
+    "imposter": "Watching Match",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Binge Watching",
+    "imposter": "Power Nap",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Charging Phone",
+    "imposter": "Setting Alarm",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Taking Notes",
+    "imposter": "Making List",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Giving Exam",
+    "imposter": "Checking Papers",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Writing Diary",
+    "imposter": "Reading Novel",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Attending Lecture",
+    "imposter": "Giving Seminar",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Group Study",
+    "imposter": "Self Study",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "College Project",
+    "imposter": "Internship Work",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Office Meeting",
+    "imposter": "Presentation",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Job Interview",
+    "imposter": "Salary Review",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Client Call",
+    "imposter": "Team Lunch",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Remote Work",
+    "imposter": "Office Commute",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Overtime Work",
+    "imposter": "Weekend Off",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Taking Leave",
+    "imposter": "Sick Leave",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Checking Emails",
+    "imposter": "Sending Reports",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Brainstorming",
+    "imposter": "Problem Solving",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Coding",
+    "imposter": "Debugging",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Graphic Design",
+    "imposter": "Video Editing",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Data Entry",
+    "imposter": "Web Surfing",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Online Meeting",
+    "imposter": "Webinar",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Coffee Break",
+    "imposter": "Lunch Hour",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Clocking In",
+    "imposter": "Clocking Out",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "House Cleaning",
+    "imposter": "Decluttering",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Folding Clothes",
+    "imposter": "Making Bed",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Taking Garbage",
+    "imposter": "Recycling",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Locking Door",
+    "imposter": "Checking Windows",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Pet Feeding",
+    "imposter": "Dog Walking",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Stretching",
+    "imposter": "Warm Up",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Pushups",
+    "imposter": "Pullups",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Skipping Rope",
+    "imposter": "Jumping Jacks",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Weight Lifting",
+    "imposter": "Cardio",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Taking Selfie",
+    "imposter": "Group Photo",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Applying Filter",
+    "imposter": "Editing Photo",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Posting Story",
+    "imposter": "Liking Post",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Sharing Meme",
+    "imposter": "Tagging Friends",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Typing Message",
+    "imposter": "Voice Note",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Deleting Spam",
+    "imposter": "Muting Group",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Ordering Food",
+    "imposter": "Tracking Order",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Booking Cab",
+    "imposter": "Sharing Location",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Splitting Bill",
+    "imposter": "Digital Payment",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Window Seat",
+    "imposter": "Aisle Seat",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Ticket Booking",
+    "imposter": "Boarding Pass",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Hotel Check-in",
+    "imposter": "Hotel Check-out",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Unlocking Phone",
+    "imposter": "Entering PIN",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Connecting WiFi",
+    "imposter": "Turning Hotspot",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Updating App",
+    "imposter": "Clearing Cache",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Watching Sunset",
+    "imposter": "Stargazing",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Listening Rain",
+    "imposter": "Drinking Chai",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Doctor",
+    "imposter": "Nurse",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Surgeon",
+    "imposter": "Dentist",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Pharmacist",
+    "imposter": "Therapist",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Software Engineer",
+    "imposter": "Data Scientist",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Web Developer",
+    "imposter": "App Developer",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Police Officer",
+    "imposter": "Security Guard",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Detective",
+    "imposter": "Spy",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Firefighter",
+    "imposter": "Lifeguard",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Pilot",
+    "imposter": "Flight Attendant",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Captain",
+    "imposter": "Sailor",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Chef",
+    "imposter": "Baker",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Waiter",
+    "imposter": "Bartender",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Teacher",
+    "imposter": "Professor",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Principal",
+    "imposter": "Dean",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Librarian",
+    "imposter": "Author",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Lawyer",
+    "imposter": "Judge",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Architect",
+    "imposter": "Civil Engineer",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Electrician",
+    "imposter": "Plumber",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Carpenter",
+    "imposter": "Painter",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Mechanic",
+    "imposter": "Driver",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Bank Manager",
+    "imposter": "Cashier",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Accountant",
+    "imposter": "Financial Advisor",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Journalist",
+    "imposter": "News Anchor",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Photographer",
+    "imposter": "Cameraman",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Graphic Designer",
+    "imposter": "Animator",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Fashion Designer",
+    "imposter": "Tailor",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Makeup Artist",
+    "imposter": "Hair Stylist",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Fitness Trainer",
+    "imposter": "Dietitian",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Magician",
+    "imposter": "Comedian",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Astronaut",
+    "imposter": "Astronomer",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Desk",
+    "imposter": "Chair",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Whiteboard",
+    "imposter": "Blackboard",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Marker",
+    "imposter": "Chalk",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Pen",
+    "imposter": "Pencil",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Notebook",
+    "imposter": "Textbook",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Calculator",
+    "imposter": "Ruler",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Eraser",
+    "imposter": "Sharpener",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Stapler",
+    "imposter": "Paper Clip",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Highlighter",
+    "imposter": "Sticky Notes",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Backpack",
+    "imposter": "School Bag",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "ID Card",
+    "imposter": "Lanyard",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Uniform",
+    "imposter": "Lab Coat",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Exam Paper",
+    "imposter": "Answer Sheet",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Report Card",
+    "imposter": "Certificate",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Diploma",
+    "imposter": "Degree",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Scholarship",
+    "imposter": "Fee Receipt",
+    "difficulty": "medium"
+  },
+  {
+    "agent": "Library Card",
+    "imposter": "Hall Ticket",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Notice Board",
+    "imposter": "Bulletin Board",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "School Bell",
+    "imposter": "Siren",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Auditorium",
+    "imposter": "Classroom",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Science Lab",
+    "imposter": "Computer Lab",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Bed",
+    "imposter": "Sofa",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Mattress",
+    "imposter": "Blanket",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Pillow",
+    "imposter": "Cushion",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Bed Sheet",
+    "imposter": "Quilt",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Wardrobe",
+    "imposter": "Cupboard",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Dressing Table",
+    "imposter": "Mirror",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Ceiling Fan",
+    "imposter": "Air Conditioner",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Table Lamp",
+    "imposter": "Floor Lamp",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Wall Clock",
+    "imposter": "Alarm Clock",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Curtains",
+    "imposter": "Blinds",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Doormat",
+    "imposter": "Carpet",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Shoe Rack",
+    "imposter": "Coat Hanger",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Refrigerator",
+    "imposter": "Freezer",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Microwave",
+    "imposter": "Toaster",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Mixer Grinder",
+    "imposter": "Food Processor",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Water Purifier",
+    "imposter": "Water Dispenser",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Pressure Cooker",
+    "imposter": "Frying Pan",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Gas Stove",
+    "imposter": "Induction Cooktop",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Cutting Board",
+    "imposter": "Kitchen Knife",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Rolling Pin",
+    "imposter": "Tawa",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Steel Thali",
+    "imposter": "Glass Bowl",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Spoon",
+    "imposter": "Fork",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Tea Cup",
+    "imposter": "Coffee Mug",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Water Bottle",
+    "imposter": "Thermos Flask",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Washing Machine",
+    "imposter": "Clothes Dryer",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Iron Box",
+    "imposter": "Ironing Board",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Laundry Basket",
+    "imposter": "Cloth Clips",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Broom",
+    "imposter": "Mop",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Dustbin",
+    "imposter": "Dustpan",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Bucket",
+    "imposter": "Mug",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Geyser",
+    "imposter": "Shower",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Toothbrush",
+    "imposter": "Toothpaste",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Soap Bar",
+    "imposter": "Body Wash",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Shampoo",
+    "imposter": "Hair Conditioner",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Hair Dryer",
+    "imposter": "Comb",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Towel",
+    "imposter": "Bathrobe",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Nail Cutter",
+    "imposter": "Scissors",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Face Wash",
+    "imposter": "Moisturizer",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Sunscreen",
+    "imposter": "Body Lotion",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Perfume",
+    "imposter": "Deodorant",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Hand Sanitizer",
+    "imposter": "Liquid Soap",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Torch",
+    "imposter": "Emergency Light",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Umbrella",
+    "imposter": "Raincoat",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Wallet",
+    "imposter": "Coin Purse",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Handbag",
+    "imposter": "Tote Bag",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Sunglasses",
+    "imposter": "Spectacles",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Wrist Watch",
+    "imposter": "Smartwatch",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Shoes",
+    "imposter": "Slippers",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Sneakers",
+    "imposter": "Sandals",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Smartphone",
+    "imposter": "Tablet",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Laptop",
+    "imposter": "Desktop PC",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Smart TV",
+    "imposter": "Projector",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Headphones",
+    "imposter": "Earphones",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Wireless Earbuds",
+    "imposter": "Neckband",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Bluetooth Speaker",
+    "imposter": "Soundbar",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Wi-Fi Router",
+    "imposter": "Modem",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Power Bank",
+    "imposter": "Charger Cable",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Keyboard",
+    "imposter": "Mouse",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Webcam",
+    "imposter": "Microphone",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Camera",
+    "imposter": "Tripod",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Drone",
+    "imposter": "GoPro",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "VR Headset",
+    "imposter": "Gaming Console",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "PlayStation",
+    "imposter": "Xbox",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Nintendo Switch",
+    "imposter": "Game Boy",
+    "difficulty": "medium"
+  },
+  {
+    "agent": "Pen Drive",
+    "imposter": "Hard Disk",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Memory Card",
+    "imposter": "Card Reader",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Stylus Pen",
+    "imposter": "Touchscreen",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Smart Bulb",
+    "imposter": "LED Strip",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Fitness Band",
+    "imposter": "Pedometer",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Car",
+    "imposter": "Motorcycle",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Scooter",
+    "imposter": "Bicycle",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Electric Bike",
+    "imposter": "Moped",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Auto Rickshaw",
+    "imposter": "Taxi",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "City Bus",
+    "imposter": "Volvo Bus",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Local Train",
+    "imposter": "Metro Train",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Bullet Train",
+    "imposter": "Express Train",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Truck",
+    "imposter": "Mini Van",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Tractor",
+    "imposter": "Bulldozer",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Ambulance",
+    "imposter": "Fire Engine",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Police Car",
+    "imposter": "Patrol Bike",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Aeroplane",
+    "imposter": "Helicopter",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Private Jet",
+    "imposter": "Glider",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Hot Balloon",
+    "imposter": "Paraglider",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Speed Boat",
+    "imposter": "Jet Ski",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Ferry Boat",
+    "imposter": "Cruise Ship",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Yacht",
+    "imposter": "Sailboat",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Submarine",
+    "imposter": "Cargo Ship",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Hoverboard",
+    "imposter": "Skateboard",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Roller Skates",
+    "imposter": "Ice Skates",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Cricket",
+    "imposter": "Baseball",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Football",
+    "imposter": "Rugby",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Tennis",
+    "imposter": "Badminton",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Table Tennis",
+    "imposter": "Squash",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Basketball",
+    "imposter": "Volleyball",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Hockey",
+    "imposter": "Ice Hockey",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Kabaddi",
+    "imposter": "Kho Kho",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Boxing",
+    "imposter": "Wrestling",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Karate",
+    "imposter": "Taekwondo",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Golf",
+    "imposter": "Polo",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Billiards",
+    "imposter": "Snooker",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Carrom",
+    "imposter": "Chess",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Ludo",
+    "imposter": "Snakes Ladders",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Archery",
+    "imposter": "Shooting",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Gymnastics",
+    "imposter": "Athletics",
     "difficulty": "easy"
   },
   {
     "agent": "Cricket Bat",
-    "imposter": "Badminton Racket",
+    "imposter": "Tennis Racket",
     "difficulty": "easy"
   },
   {
     "agent": "Leather Ball",
-    "imposter": "Shuttlecock",
+    "imposter": "Tennis Ball",
     "difficulty": "easy"
   },
   {
@@ -556,32 +1791,12 @@
   },
   {
     "agent": "Batting Helmet",
-    "imposter": "Boxing Gloves",
+    "imposter": "Cycling Helmet",
     "difficulty": "easy"
   },
   {
-    "agent": "Gold Medal",
-    "imposter": "Trophy Cup",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Carrom Board",
-    "imposter": "Chess Board",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ludo Dice",
-    "imposter": "Playing Cards",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gym Dumbbells",
-    "imposter": "Yoga Mat",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Treadmill",
-    "imposter": "Exercise Bike",
+    "agent": "Boxing Gloves",
+    "imposter": "Gym Gloves",
     "difficulty": "easy"
   },
   {
@@ -590,559 +1805,99 @@
     "difficulty": "easy"
   },
   {
-    "agent": "Swimming Goggles",
-    "imposter": "Snorkel Mask",
+    "agent": "Dumbbells",
+    "imposter": "Barbell",
     "difficulty": "easy"
   },
   {
-    "agent": "Skateboard",
-    "imposter": "Roller Skates",
+    "agent": "Treadmill",
+    "imposter": "Elliptical",
     "difficulty": "easy"
   },
   {
-    "agent": "Virat Kohli",
-    "imposter": "Rohit Sharma",
+    "agent": "Yoga Mat",
+    "imposter": "Gym Bench",
     "difficulty": "easy"
   },
   {
-    "agent": "MS Dhoni",
-    "imposter": "Hardik Pandya",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sachin Tendulkar",
-    "imposter": "Kapil Dev",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Neeraj Chopra",
-    "imposter": "Milkha Singh",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "PV Sindhu",
-    "imposter": "Saina Nehwal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mumbai",
-    "imposter": "Delhi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Goa",
-    "imposter": "Bengaluru",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Jaipur",
-    "imposter": "Kolkata",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chennai",
-    "imposter": "Hyderabad",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kashmir",
-    "imposter": "Kerala Backwaters",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shimla",
-    "imposter": "Ooty",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Manali",
-    "imposter": "Darjeeling",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ladakh",
-    "imposter": "Andaman Islands",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Varanasi",
-    "imposter": "Rishikesh",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Agra",
-    "imposter": "Amritsar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Udaipur",
-    "imposter": "Jodhpur",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Marine Drive",
-    "imposter": "Gateway of India",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Taj Mahal",
-    "imposter": "Qutub Minar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Red Fort",
-    "imposter": "India Gate",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Golden Temple",
-    "imposter": "Hawa Mahal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Charminar",
-    "imposter": "Mysore Palace",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Juhu Beach",
-    "imposter": "Lonavala",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Bandra Sea Link",
-    "imposter": "Victoria Memorial",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Kedarnath",
-    "imposter": "Tirupati",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Statue of Unity",
-    "imposter": "Konark Sun Temple",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Airport",
-    "imposter": "Railway Station",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hotel",
-    "imposter": "Hospital",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bank",
-    "imposter": "Restaurant",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Temple",
-    "imposter": "Cinema Hall",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shopping Mall",
-    "imposter": "School Building",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Car",
-    "imposter": "Bicycle",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Motorcycle",
-    "imposter": "Train",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bus",
-    "imposter": "Boat",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Truck",
-    "imposter": "Airplane",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Auto Rickshaw",
-    "imposter": "Metro Train",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Taxi",
-    "imposter": "Scooter",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Local Train",
-    "imposter": "Bullet Train",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Double Decker Bus",
-    "imposter": "Cable Car",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Helicopter",
-    "imposter": "Hot Air Balloon",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Speed Boat",
-    "imposter": "Cruise Ship",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Royal Enfield Bike",
-    "imposter": "Electric Car",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ambulance",
-    "imposter": "Fire Truck",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Tractor",
-    "imposter": "Bullock Cart",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Cycle Rickshaw",
-    "imposter": "Hoverboard",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Submarine",
-    "imposter": "Ferry Boat",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Cargo Ship",
-    "imposter": "Yacht",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "School Bus",
-    "imposter": "Delivery Van",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Airport Terminal",
-    "imposter": "Railway Platform",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Toll Plaza",
-    "imposter": "Traffic Signal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bus Depot",
-    "imposter": "Petrol Pump",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Helipad",
-    "imposter": "Harbour Dock",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Expressway",
-    "imposter": "Railway Crossing",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Zebra Crossing",
-    "imposter": "Foot Overbridge",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Segway",
-    "imposter": "Golf Cart",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Private Jet",
-    "imposter": "Glider",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Bed",
-    "imposter": "Ceiling Fan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chair",
-    "imposter": "Refrigerator",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dining Table",
-    "imposter": "Microwave",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sofa",
-    "imposter": "Washing Machine",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Toothbrush",
-    "imposter": "Comb",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mirror",
-    "imposter": "Wall Clock",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Door",
-    "imposter": "Window",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pillow",
-    "imposter": "Blanket",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Curtains",
-    "imposter": "Doormat",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Water Purifier",
-    "imposter": "Mixer Grinder",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Toaster",
-    "imposter": "Air Fryer",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pressure Cooker",
-    "imposter": "Tawa",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rolling Pin",
-    "imposter": "Non-stick Pan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Water Bottle",
-    "imposter": "Thermos Flask",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Tea Cup",
-    "imposter": "Steel Plate",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Wardrobe",
-    "imposter": "Shoe Rack",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Iron Box",
-    "imposter": "Vacuum Cleaner",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Broom",
-    "imposter": "Mop",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bucket",
-    "imposter": "Dustbin",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Umbrella",
-    "imposter": "Raincoat",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Luggage Suitcase",
-    "imposter": "Backpack",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Wallet",
-    "imposter": "Handbag",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Spectacles",
-    "imposter": "Sunglasses",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Wrist Watch",
-    "imposter": "Alarm Clock",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Scissors",
-    "imposter": "Stapler",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Smartphone",
-    "imposter": "Television",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Laptop",
-    "imposter": "Camera",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Keyboard",
-    "imposter": "Webcam",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mouse",
-    "imposter": "Microphone",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Charger Cable",
-    "imposter": "Headphones",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Earphones",
-    "imposter": "Bluetooth Speaker",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Wi-Fi Router",
-    "imposter": "Power Bank",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Google",
-    "imposter": "ChatGPT",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "YouTube",
-    "imposter": "Instagram",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "WhatsApp",
-    "imposter": "Snapchat",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Netflix",
-    "imposter": "Spotify",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Facebook",
-    "imposter": "Reddit",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Meme",
-    "imposter": "Cartoon",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Selfie",
-    "imposter": "Password",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Screenshot",
-    "imposter": "Username",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Tablet",
-    "imposter": "Smart TV",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Drone",
-    "imposter": "VR Headset",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pen Drive",
-    "imposter": "Hard Drive",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Smartwatch",
-    "imposter": "Fitness Band",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "PlayStation",
-    "imposter": "Xbox",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Google Maps",
-    "imposter": "Swiggy",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Zomato",
-    "imposter": "Uber",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ola",
-    "imposter": "Paytm",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Google Pay",
-    "imposter": "Amazon",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Flipkart",
-    "imposter": "PhonePe",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mountain",
-    "imposter": "Beach",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Waterfall",
-    "imposter": "Forest",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "River",
-    "imposter": "Desert",
+    "agent": "Skipping Rope",
+    "imposter": "Resistance Band",
     "difficulty": "easy"
   },
   {
     "agent": "Swimming Pool",
-    "imposter": "Snow Peak",
+    "imposter": "Jacuzzi",
     "difficulty": "easy"
+  },
+  {
+    "agent": "Swim Goggles",
+    "imposter": "Swim Cap",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Life Jacket",
+    "imposter": "Lifebuoy",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Gold Medal",
+    "imposter": "Silver Trophy",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Whistle",
+    "imposter": "Stopwatch",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Mountain",
+    "imposter": "Hill",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Valley",
+    "imposter": "Canyon",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Waterfall",
+    "imposter": "Spring",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "River",
+    "imposter": "Lake",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Ocean",
+    "imposter": "Sea",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Beach",
+    "imposter": "Island",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Desert",
+    "imposter": "Sand Dune",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Forest",
+    "imposter": "Jungle",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Cave",
+    "imposter": "Tunnel",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Volcano",
+    "imposter": "Geyser",
+    "difficulty": "medium"
   },
   {
     "agent": "Sunrise",
@@ -1150,13 +1905,28 @@
     "difficulty": "easy"
   },
   {
-    "agent": "Moon",
-    "imposter": "Star",
+    "agent": "Moonlight",
+    "imposter": "Sunshine",
     "difficulty": "easy"
   },
   {
     "agent": "Rain",
-    "imposter": "Snowman",
+    "imposter": "Snowfall",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Thunderstorm",
+    "imposter": "Lightning",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Rainbow",
+    "imposter": "Cloud",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Fog",
+    "imposter": "Mist",
     "difficulty": "easy"
   },
   {
@@ -1165,43 +1935,38 @@
     "difficulty": "easy"
   },
   {
-    "agent": "Daytime",
-    "imposter": "Midnight",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Thunderstorm",
-    "imposter": "Rainbow",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Earthquake",
-    "imposter": "Volcano",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Cloud",
-    "imposter": "Fog",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Island",
-    "imposter": "Cave",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Jungle",
-    "imposter": "Garden",
+    "agent": "Spring",
+    "imposter": "Autumn",
     "difficulty": "easy"
   },
   {
     "agent": "Rose",
-    "imposter": "Sunflower",
+    "imposter": "Lotus",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Sunflower",
+    "imposter": "Marigold",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Jasmine",
+    "imposter": "Lily",
     "difficulty": "easy"
   },
   {
     "agent": "Banyan Tree",
-    "imposter": "Bamboo Shoot",
+    "imposter": "Neem Tree",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Coconut Tree",
+    "imposter": "Palm Tree",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Bamboo",
+    "imposter": "Cactus",
     "difficulty": "easy"
   },
   {
@@ -1210,418 +1975,28 @@
     "difficulty": "easy"
   },
   {
-    "agent": "Tiger",
-    "imposter": "Elephant",
+    "agent": "Sparrow",
+    "imposter": "Pigeon",
     "difficulty": "easy"
   },
   {
-    "agent": "Lion",
-    "imposter": "Giraffe",
+    "agent": "Eagle",
+    "imposter": "Falcon",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Tiger",
+    "imposter": "Lion",
+    "difficulty": "easy"
+  },
+  {
+    "agent": "Elephant",
+    "imposter": "Rhino",
     "difficulty": "easy"
   },
   {
     "agent": "Horse",
-    "imposter": "Camel",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dolphin",
-    "imposter": "Shark",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Butterfly",
-    "imposter": "Honeybee",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Morning Walk",
-    "imposter": "Evening Jog",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Spring Season",
-    "imposter": "Autumn Fall",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Full Moon",
-    "imposter": "Solar Eclipse",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Diwali",
-    "imposter": "Holi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ganesh Chaturthi",
-    "imposter": "Navratri",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Raksha Bandhan",
-    "imposter": "Bhai Dooj",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Christmas",
-    "imposter": "New Year Party",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Eid",
-    "imposter": "Durga Puja",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Karwa Chauth",
-    "imposter": "Makar Sankranti",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Janmashtami",
-    "imposter": "Maha Shivratri",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pongal",
-    "imposter": "Onam",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Baisakhi",
-    "imposter": "Lohri",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dussehra",
-    "imposter": "Guru Nanak Jayanti",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chhath Puja",
-    "imposter": "Gudi Padwa",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Rangoli",
-    "imposter": "Mehendi Design",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Diyas",
-    "imposter": "Firecrackers",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Garba Dance",
-    "imposter": "Bhangra Dance",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dhol",
-    "imposter": "Shehnai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pooja Thali",
-    "imposter": "Incense Sticks",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sangeet Ceremony",
-    "imposter": "Haldi Ceremony",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Baraat Procession",
-    "imposter": "Wedding Mandap",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kite Flying",
-    "imposter": "Water Balloons",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gulaal Colors",
-    "imposter": "Bonfire",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Birthday Candle",
-    "imposter": "Anniversary Gift",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Housewarming Party",
-    "imposter": "Baby Shower",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pheras",
-    "imposter": "Mangalsutra",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Coconut Offering",
-    "imposter": "Marigold Flowers",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Namaste",
-    "imposter": "Handshake",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Doctor",
-    "imposter": "Software Engineer",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Police Officer",
-    "imposter": "Pilot",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chef",
-    "imposter": "Lawyer",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Architect",
-    "imposter": "Scientist",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Astronaut",
-    "imposter": "Cricket Coach",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Teacher",
-    "imposter": "Principal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Nurse",
-    "imposter": "Firefighter",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Soldier",
-    "imposter": "Surgeon",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dentist",
-    "imposter": "Pharmacist",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Detective",
-    "imposter": "Magician",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Standup Comedian",
-    "imposter": "Radio Jockey",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Journalist",
-    "imposter": "Photographer",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Fashion Designer",
-    "imposter": "Makeup Artist",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Flight Attendant",
-    "imposter": "Captain of Ship",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chartered Accountant",
-    "imposter": "Bank Manager",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Homework",
-    "imposter": "Final Exam",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Notebook",
-    "imposter": "Calculator",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Blackboard",
-    "imposter": "Library",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "School Uniform",
-    "imposter": "ID Card",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "College Professor",
-    "imposter": "Tuition Teacher",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Report Card",
-    "imposter": "Hall Ticket",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Geometry Box",
-    "imposter": "School Bag",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Classroom Desk",
-    "imposter": "Science Lab",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "College Canteen",
-    "imposter": "Hostel Room",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Scholarship",
-    "imposter": "Annual Fest",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Shah Rukh Khan",
-    "imposter": "Aamir Khan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Amitabh Bachchan",
-    "imposter": "Ranbir Kapoor",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Salman Khan",
-    "imposter": "Hrithik Roshan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Akshay Kumar",
-    "imposter": "Rajkummar Rao",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Ajay Devgn",
-    "imposter": "Vicky Kaushal",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Deepika Padukone",
-    "imposter": "Alia Bhatt",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Katrina Kaif",
-    "imposter": "Kareena Kapoor",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Priyanka Chopra",
-    "imposter": "Anushka Sharma",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ranveer Singh",
-    "imposter": "Kartik Aaryan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shahid Kapoor",
-    "imposter": "Varun Dhawan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rajinikanth",
-    "imposter": "Kamal Haasan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Arijit Singh",
-    "imposter": "Sonu Nigam",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "AR Rahman",
-    "imposter": "Pritam",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Karan Johar",
-    "imposter": "Sanjay Leela Bhansali",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Kapil Sharma",
-    "imposter": "Sunil Grover",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Diljit Dosanjh",
-    "imposter": "Badshah",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pankaj Tripathi",
-    "imposter": "Nawazuddin Siddiqui",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Manoj Bajpayee",
-    "imposter": "Kay Kay Menon",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Paresh Rawal",
-    "imposter": "Boman Irani",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Johnny Lever",
-    "imposter": "Rajpal Yadav",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Madhuri Dixit",
-    "imposter": "Juhi Chawla",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kajol",
-    "imposter": "Rani Mukerji",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Aishwarya Rai",
-    "imposter": "Sushmita Sen",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Preity Zinta",
-    "imposter": "Raveena Tandon",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shraddha Kapoor",
-    "imposter": "Kiara Advani",
+    "imposter": "Zebra",
     "difficulty": "easy"
   },
   {
@@ -1656,7 +2031,7 @@
   },
   {
     "agent": "Lagaan",
-    "imposter": "Chak De India",
+    "imposter": "Chak De",
     "difficulty": "medium"
   },
   {
@@ -1666,12 +2041,12 @@
   },
   {
     "agent": "DDLJ",
-    "imposter": "Kuch Kuch Hota Hai",
+    "imposter": "Kuch Kuch",
     "difficulty": "easy"
   },
   {
-    "agent": "Kabhi Khushi Kabhie Gham",
-    "imposter": "Kal Ho Naa Ho",
+    "agent": "Kabhi Khushi",
+    "imposter": "Kal Ho",
     "difficulty": "easy"
   },
   {
@@ -1680,13 +2055,13 @@
     "difficulty": "easy"
   },
   {
-    "agent": "Gangs of Wasseypur",
+    "agent": "Gangs Wasseypur",
     "imposter": "Mirzapur",
     "difficulty": "medium"
   },
   {
-    "agent": "Zindagi Na Milegi Dobara",
-    "imposter": "Yeh Jawaani Hai Deewani",
+    "agent": "ZNMD",
+    "imposter": "YJHD",
     "difficulty": "easy"
   },
   {
@@ -1710,13 +2085,13 @@
     "difficulty": "easy"
   },
   {
-    "agent": "Om Shanti Om",
-    "imposter": "Main Hoon Na",
+    "agent": "Om Shanti",
+    "imposter": "Main Hoon",
     "difficulty": "easy"
   },
   {
-    "agent": "Munna Bhai MBBS",
-    "imposter": "Lage Raho Munna Bhai",
+    "agent": "Munna Bhai",
+    "imposter": "Lage Raho",
     "difficulty": "easy"
   },
   {
@@ -1735,18 +2110,18 @@
     "difficulty": "easy"
   },
   {
-    "agent": "Jab We Met",
+    "agent": "Jab We",
     "imposter": "Tamasha",
     "difficulty": "easy"
   },
   {
     "agent": "Barfi",
-    "imposter": "Taare Zameen Par",
+    "imposter": "Taare Zameen",
     "difficulty": "medium"
   },
   {
     "agent": "Swades",
-    "imposter": "Chak De India",
+    "imposter": "Lagaan",
     "difficulty": "medium"
   },
   {
@@ -1761,7 +2136,7 @@
   },
   {
     "agent": "Gadar",
-    "imposter": "Uri The Surgical Strike",
+    "imposter": "Uri",
     "difficulty": "easy"
   },
   {
@@ -1780,8 +2155,8 @@
     "difficulty": "easy"
   },
   {
-    "agent": "Bareilly Ki Barfi",
-    "imposter": "Shubh Mangal Saavdhan",
+    "agent": "Bareilly Barfi",
+    "imposter": "Shubh Mangal",
     "difficulty": "medium"
   },
   {
@@ -1806,21 +2181,21 @@
   },
   {
     "agent": "Delhi Belly",
-    "imposter": "Go Goa Gone",
+    "imposter": "Go Goa",
     "difficulty": "medium"
   },
   {
     "agent": "Rock On",
-    "imposter": "Wake Up Sid",
+    "imposter": "Wake Up",
     "difficulty": "medium"
   },
   {
     "agent": "Hungama",
-    "imposter": "Chup Chup Ke",
+    "imposter": "Chup Chup",
     "difficulty": "easy"
   },
   {
-    "agent": "De Dana Dan",
+    "agent": "De Dana",
     "imposter": "Garam Masala",
     "difficulty": "easy"
   },
@@ -1840,8 +2215,8 @@
     "difficulty": "easy"
   },
   {
-    "agent": "Tiger Zinda Hai",
-    "imposter": "Ek Tha Tiger",
+    "agent": "Tiger Zinda",
+    "imposter": "War Two",
     "difficulty": "easy"
   },
   {
@@ -1850,153 +2225,28 @@
     "difficulty": "easy"
   },
   {
-    "agent": "Vicky Kaushal",
-    "imposter": "Sidharth Malhotra",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ayushmann Khurrana",
-    "imposter": "Varun Sharma",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Saif Ali Khan",
-    "imposter": "Bobby Deol",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "John Abraham",
-    "imposter": "Tiger Shroff",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Anil Kapoor",
-    "imposter": "Jackie Shroff",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sanjay Dutt",
-    "imposter": "Suniel Shetty",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Govinda",
-    "imposter": "Chunky Panday",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mithun Chakraborty",
-    "imposter": "Dharmendra",
+    "agent": "Taare Zameen",
+    "imposter": "Stanley Dabba",
     "difficulty": "medium"
   },
   {
-    "agent": "Rishi Kapoor",
-    "imposter": "Jeetendra",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Shashi Kapoor",
-    "imposter": "Vinod Khanna",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Naseeruddin Shah",
-    "imposter": "Om Puri",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Tabu",
-    "imposter": "Vidya Balan",
+    "agent": "Chak De",
+    "imposter": "Bhaag Milkha",
     "difficulty": "easy"
   },
   {
-    "agent": "Kriti Sanon",
-    "imposter": "Disha Patani",
+    "agent": "Kaho Naa",
+    "imposter": "Koi Mil",
     "difficulty": "easy"
   },
   {
-    "agent": "Sara Ali Khan",
-    "imposter": "Janhvi Kapoor",
+    "agent": "Mohabbatein",
+    "imposter": "Dil To",
     "difficulty": "easy"
   },
   {
-    "agent": "Ananya Panday",
-    "imposter": "Tara Sutaria",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhumi Pednekar",
-    "imposter": "Yami Gautam",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Taapsee Pannu",
-    "imposter": "Radhika Apte",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Sonam Kapoor",
-    "imposter": "Jacqueline Fernandez",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bipasha Basu",
-    "imposter": "Mallika Sherawat",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shreya Ghoshal",
-    "imposter": "Sunidhi Chauhan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Neha Kakkar",
-    "imposter": "Dhvani Bhanushali",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kishore Kumar",
-    "imposter": "Mohammed Rafi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Lata Mangeshkar",
-    "imposter": "Asha Bhosle",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "RD Burman",
-    "imposter": "Bappi Lahiri",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Mika Singh",
-    "imposter": "Daler Mehndi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Udit Narayan",
-    "imposter": "Kumar Sanu",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Alka Yagnik",
-    "imposter": "Kavita Krishnamurthy",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Shaan",
-    "imposter": "KK",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Lucky Ali",
-    "imposter": "Mohit Chauhan",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Anu Malik",
-    "imposter": "Himesh Reshammiya",
+    "agent": "Hum Aapke",
+    "imposter": "Hum Saath",
     "difficulty": "easy"
   },
   {
@@ -2030,13 +2280,13 @@
     "difficulty": "easy"
   },
   {
-    "agent": "The Jungle Book",
-    "imposter": "The Lion King",
+    "agent": "Jungle Book",
+    "imposter": "Lion King",
     "difficulty": "easy"
   },
   {
     "agent": "Harry Potter",
-    "imposter": "Lord of the Rings",
+    "imposter": "Lord Rings",
     "difficulty": "easy"
   },
   {
@@ -2051,7 +2301,7 @@
   },
   {
     "agent": "Fight Club",
-    "imposter": "The Matrix",
+    "imposter": "Matrix",
     "difficulty": "medium"
   },
   {
@@ -2065,7 +2315,7 @@
     "difficulty": "easy"
   },
   {
-    "agent": "Tom and Jerry",
+    "agent": "Tom Jerry",
     "imposter": "Mr Bean",
     "difficulty": "easy"
   },
@@ -2075,12 +2325,12 @@
     "difficulty": "medium"
   },
   {
-    "agent": "Fast and Furious",
+    "agent": "Fast Furious",
     "imposter": "Mission Impossible",
     "difficulty": "easy"
   },
   {
-    "agent": "Pirates of the Caribbean",
+    "agent": "Pirates Caribbean",
     "imposter": "Transformers",
     "difficulty": "easy"
   },
@@ -2096,7 +2346,7 @@
   },
   {
     "agent": "Finding Nemo",
-    "imposter": "Kung Fu Panda",
+    "imposter": "Kung Fu",
     "difficulty": "easy"
   },
   {
@@ -2156,7 +2406,7 @@
   },
   {
     "agent": "Pokemon",
-    "imposter": "Dragon Ball Z",
+    "imposter": "Dragon Ball",
     "difficulty": "easy"
   },
   {
@@ -2170,7 +2420,7 @@
     "difficulty": "easy"
   },
   {
-    "agent": "Game of Thrones",
+    "agent": "Game Thrones",
     "imposter": "Breaking Bad",
     "difficulty": "medium"
   },
@@ -2180,8 +2430,8 @@
     "difficulty": "easy"
   },
   {
-    "agent": "Big Bang Theory",
-    "imposter": "Brooklyn Nine Nine",
+    "agent": "Big Bang",
+    "imposter": "Brooklyn Nine",
     "difficulty": "medium"
   },
   {
@@ -2190,17 +2440,17 @@
     "difficulty": "easy"
   },
   {
-    "agent": "Men in Black",
+    "agent": "Men Black",
     "imposter": "Ghostbusters",
     "difficulty": "medium"
   },
   {
     "agent": "Home Alone",
-    "imposter": "Baby’s Day Out",
+    "imposter": "Babys Day",
     "difficulty": "easy"
   },
   {
-    "agent": "The Godfather",
+    "agent": "Godfather",
     "imposter": "Scarface",
     "difficulty": "medium"
   },
@@ -2216,7 +2466,7 @@
   },
   {
     "agent": "Aladdin",
-    "imposter": "Beauty and the Beast",
+    "imposter": "Beauty Beast",
     "difficulty": "easy"
   },
   {
@@ -2231,7 +2481,7 @@
   },
   {
     "agent": "Willy Wonka",
-    "imposter": "Alice in Wonderland",
+    "imposter": "Alice Wonderland",
     "difficulty": "medium"
   },
   {
@@ -2240,263 +2490,13 @@
     "difficulty": "easy"
   },
   {
-    "agent": "Sonic the Hedgehog",
+    "agent": "Sonic Hedgehog",
     "imposter": "Pikachu",
     "difficulty": "easy"
   },
   {
     "agent": "Barbie Doll",
     "imposter": "Hot Wheels",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Marine Drive Sunset",
-    "imposter": "Bandra Bandstand",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Carter Road Promenade",
-    "imposter": "Juhu Chowpatty",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Local Train First Class",
-    "imposter": "Mumbai Metro Line",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rickshaw Meter",
-    "imposter": "Taxi Fare",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Cutting Chai Tapri",
-    "imposter": "Overpriced Boba Tea",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Colaba Causeway Shopping",
-    "imposter": "Linking Road Bandra",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Nariman Point Breeze",
-    "imposter": "Worli Sea Face",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "CSMT Station Lights",
-    "imposter": "Churchgate Terminal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Prithvi Theatre Cafe",
-    "imposter": "Starbucks Coffee",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Wankhede IPL Match",
-    "imposter": "Brabourne Stadium",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Falguni Pathak Garba",
-    "imposter": "Sunburn Music Festival",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bandra Worli Sea Link",
-    "imposter": "Eastern Freeway",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Instagram Reels",
-    "imposter": "YouTube Shorts",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Spotify Wrapped",
-    "imposter": "Apple Music Replay",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "BGMI Squad Match",
-    "imposter": "Free Fire Battle",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Valorant Clutch",
-    "imposter": "CS GO Ace",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Snapchat Streak",
-    "imposter": "WhatsApp Status",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Zomato Late Night Order",
-    "imposter": "Swiggy Midnight Craving",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Zepto 10 Min Delivery",
-    "imposter": "Blinkit Instant Grocery",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Board Exam Pressure",
-    "imposter": "College Semester Viva",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "College Fest Entry Pass",
-    "imposter": "Concert VIP Ticket",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Night Canteen Maggi",
-    "imposter": "Hostel Midnight Chai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sneaker Drop Queue",
-    "imposter": "Thrift Store Sale",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Air Jordan 1",
-    "imposter": "Nike Dunk Low",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Crocs with Jibbitz",
-    "imposter": "Sliders with Socks",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Naruto Anime Marathon",
-    "imposter": "K-Drama Binge Watch",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mumbai Monsoon Rain",
-    "imposter": "Local Train Waterlogging",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Local Train Dadar Crowd",
-    "imposter": "Kurla Station Rush",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Escape Room Challenge",
-    "imposter": "Laser Tag Arena",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gaming Parlour FIFA",
-    "imposter": "Bowling Alley Match",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bandra Street Graffiti",
-    "imposter": "Kala Ghoda Art Fest",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Ghatkopar Khau Galli",
-    "imposter": "Mohammad Ali Road Feast",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "T2 Airport Terminal",
-    "imposter": "Domestic Terminal 1",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Borivali National Park",
-    "imposter": "Sanjay Gandhi Safari",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shivaji Park Cricket",
-    "imposter": "Azad Maidan Match",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dadar Flower Market",
-    "imposter": "Crawford Pet Market",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Lonavala Chikki Shop",
-    "imposter": "Mahabaleshwar Strawberry Farm",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Alibaug Ro-Ro Ferry",
-    "imposter": "Elephanta Speed Boat",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Fashion Street Bargaining",
-    "imposter": "Hill Road Boutique",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Candle Light Dinner",
-    "imposter": "Rooftop Cafe Date",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Midnight Drive at Marine Drive",
-    "imposter": "Late Night Ice Cream at Bachelors",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Street Dog Petting",
-    "imposter": "Cat Cafe Hangout",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gym Protein Shake",
-    "imposter": "Pre-Workout Energy Drink",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Overnight Road Trip",
-    "imposter": "Weekend Camping Tent",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Goa Trip Cancelled",
-    "imposter": "Goa Plan in WhatsApp Group",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sunday Cricket Match",
-    "imposter": "Turf Box Cricket",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bandra Bandstand Sunset",
-    "imposter": "Marine Drive Queen Necklace",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Vada Pav at Mithibai",
-    "imposter": "Dosa at Anand Stall",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Frankie Roll at Churchgate",
-    "imposter": "Pav Bhaji at Sardar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bandra Shopping Spree",
-    "imposter": "Phoenix Palladium Mall",
     "difficulty": "easy"
   }
 ]

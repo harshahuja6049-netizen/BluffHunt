@@ -147,32 +147,39 @@ const LobbyScreen = () => {
 
   return (
     <ScreenShell>
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col min-h-0">
         {/* Room Code Header */}
-        <div className="flex items-center justify-between mb-4 shrink-0">
-          <h2 className="font-display font-bold text-xl text-white">
-            Room #{roomCode}
-          </h2>
+        <div className="flex items-center justify-between p-3.5 mb-3 bg-slate-900/85 border border-slate-700/60 rounded-2xl shadow-xl shrink-0 backdrop-blur-xl">
+          <div>
+            <span className="text-[10px] font-display font-bold uppercase tracking-wider text-slate-400 block">Game Room</span>
+            <span className="font-display font-black text-2xl tracking-widest text-amber-300">#{roomCode}</span>
+          </div>
           <button
             type="button"
             onClick={handleCopyRoomCode}
-            className="flex items-center gap-1 text-sm text-bluff-gold font-display font-semibold hover:text-white transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-600/50 rounded-xl text-xs text-amber-300 font-display font-bold transition-all active:scale-95 shadow-sm"
           >
             {copied ? (
-              <CheckIcon className="w-5 h-5 text-bluff-green" />
+              <CheckIcon className="w-4 h-4 text-emerald-400" />
             ) : (
-              <ClipboardIcon className="w-5 h-5" />
+              <ClipboardIcon className="w-4 h-4 text-amber-300" />
             )}
-            {copied ? 'Copied!' : 'Copy'}
+            {copied ? 'Copied!' : 'Copy Code'}
           </button>
         </div>
 
-        {/* Player List */}
-        <div className="flex-1 min-h-0">
-          <h3 className="font-body font-semibold text-bluff-muted text-sm mb-2">
-            Players ({connectedPlayers.length}/10)
-          </h3>
-          <div className="space-y-2 max-h-64 overflow-y-auto pr-1">
+        {/* Player List Card */}
+        <div className="flex-1 min-h-0 card p-4 bg-slate-900/85 border border-slate-700/60 shadow-xl backdrop-blur-2xl flex flex-col">
+          <div className="flex justify-between items-center mb-3 pb-2 border-b border-slate-800">
+            <h3 className="font-display font-bold text-slate-300 text-xs uppercase tracking-wider">
+              Lobby Players
+            </h3>
+            <span className="px-2 py-0.5 rounded-full text-xs font-display font-bold bg-purple-950/80 text-purple-300 border border-purple-800/50">
+              {connectedPlayers.length}/10 Active
+            </span>
+          </div>
+
+          <div className="flex-1 space-y-2 overflow-y-auto pr-1">
             {players.map((player) => {
               const isConnected = player.isConnected !== false;
               const isThisPlayer = player.playerId === currentPlayerId;
@@ -182,38 +189,46 @@ const LobbyScreen = () => {
               return (
                 <div
                   key={player.playerId}
-                  className={`flex items-center justify-between p-3 rounded-xl border ${
+                  className={`flex items-center justify-between p-3 rounded-xl border transition-all ${
                     isConnected
-                      ? 'border-white/10 bg-white/5'
-                      : 'border-bluff-pink/30 bg-bluff-pink/10'
+                      ? isThisPlayer
+                        ? 'border-purple-500/40 bg-purple-950/30'
+                        : 'border-slate-800/80 bg-slate-950/60'
+                      : 'border-rose-900/40 bg-rose-950/20'
                   }`}
                 >
-                  <div className="flex items-center gap-2">
-                    <span className="text-xl shrink-0">{player.avatar || '🕵️'}</span>
-                    <span className="font-body font-semibold text-white">
-                      {player.nickname}
-                      {isThisPlayer && ' (You)'}
-                      {isWaiting && ' ⏳'}
-                    </span>
-                    {isPlayerHost && <span className="text-bluff-gold text-lg">👑</span>}
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <span className="text-xl shrink-0 p-1 bg-slate-800/60 rounded-lg border border-slate-700/50">{player.avatar || '🕵️'}</span>
+                    <div className="truncate">
+                      <span className="font-body font-bold text-white text-sm block truncate">
+                        {player.nickname}
+                        {isThisPlayer && <span className="text-purple-400 font-normal text-xs ml-1">(You)</span>}
+                        {isWaiting && <span className="text-amber-400 text-xs ml-1">⏳ Spectating</span>}
+                      </span>
+                    </div>
+                    {isPlayerHost && (
+                      <span className="px-1.5 py-0.2 rounded bg-amber-400/20 text-amber-300 border border-amber-400/30 text-[10px] font-display font-black tracking-wider shrink-0">
+                        👑 HOST
+                      </span>
+                    )}
                     {!isConnected && (
-                      <span className="text-xs text-bluff-pink font-body">(Disconnected)</span>
+                      <span className="text-[10px] text-rose-400 font-body font-semibold shrink-0">(Away)</span>
                     )}
                   </div>
                   {isHost && !isThisPlayer && (
                     <button
                       type="button"
                       onClick={() => handleKickPlayer(player.playerId)}
-                      className="text-bluff-pink hover:text-pink-400 font-body text-sm font-semibold transition-colors"
+                      className="px-2 py-1 bg-rose-950/60 hover:bg-rose-900 border border-rose-800/50 text-rose-300 rounded-lg text-xs font-display font-bold transition-all active:scale-95"
                     >
-                      ✕ Kick
+                      Kick
                     </button>
                   )}
                 </div>
               );
             })}
             {players.length === 0 && (
-              <p className="font-body text-bluff-muted text-sm text-center py-4">
+              <p className="font-body text-slate-500 text-sm text-center py-6">
                 Waiting for players to join...
               </p>
             )}
@@ -222,28 +237,28 @@ const LobbyScreen = () => {
 
         {/* Mode Toggle (Host only) */}
         {isHost && (
-          <div className="flex gap-2 mt-4 shrink-0">
+          <div className="flex gap-2 mt-3 shrink-0">
             <button
               type="button"
               onClick={() => handleChangeMode('online')}
-              className={`flex-1 py-2 rounded-xl font-display font-semibold text-sm transition-all ${
+              className={`flex-1 py-2.5 rounded-xl font-display font-bold text-xs transition-all active:scale-95 ${
                 mode === 'online'
-                  ? 'bg-bluff-blue text-white'
-                  : 'bg-white/5 text-bluff-muted hover:bg-white/10'
+                  ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-glow-cyan'
+                  : 'bg-slate-900/80 text-slate-400 border border-slate-800 hover:bg-slate-800'
               }`}
             >
-              🌐 Online
+              🌐 Online Mode
             </button>
             <button
               type="button"
               onClick={() => handleChangeMode('offline')}
-              className={`flex-1 py-2 rounded-xl font-display font-semibold text-sm transition-all ${
+              className={`flex-1 py-2.5 rounded-xl font-display font-bold text-xs transition-all active:scale-95 ${
                 mode === 'offline'
-                  ? 'bg-bluff-blue text-white'
-                  : 'bg-white/5 text-bluff-muted hover:bg-white/10'
+                  ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-glow-cyan'
+                  : 'bg-slate-900/80 text-slate-400 border border-slate-800 hover:bg-slate-800'
               }`}
             >
-              🗣️ Offline
+              🗣️ Offline Pass & Play
             </button>
           </div>
         )}
@@ -254,26 +269,28 @@ const LobbyScreen = () => {
             type="button"
             onClick={handleStartGame}
             disabled={!canStart}
-            className={`w-full mt-4 py-3 rounded-xl font-display font-bold text-white transition-all ${
+            className={`w-full mt-3 py-3.5 rounded-xl font-display font-black text-base transition-all duration-150 active:scale-[0.98] ${
               canStart
-                ? 'bg-bluff-purple hover:bg-bluff-purple-dark'
-                : 'bg-white/10 text-bluff-muted cursor-not-allowed'
+                ? 'bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 shadow-glow-green cursor-pointer'
+                : 'bg-slate-800/80 text-slate-500 border border-slate-700/50 cursor-not-allowed'
             }`}
           >
             {connectedPlayers.length < 3
-              ? `Need ${3 - connectedPlayers.length} more player(s)`
-              : '🚀 Start Game'}
+              ? `Waiting for ${3 - connectedPlayers.length} More Player(s)...`
+              : '🚀 Start Match (Game 1 of 10)'}
           </button>
         )}
 
         {!isHost && (
-          <p className="text-center font-body text-bluff-muted text-sm mt-4">
-            Waiting for the Host to start the game...
-          </p>
+          <div className="p-3 bg-slate-900/60 border border-slate-800 rounded-xl text-center mt-3 shrink-0">
+            <p className="font-body text-slate-400 text-xs animate-pulse">
+              ⏳ Waiting for the Host to start the match...
+            </p>
+          </div>
         )}
 
         {/* Leave Button */}
-        <div className="mt-4 shrink-0">
+        <div className="mt-3 shrink-0">
           <LeaveButton />
         </div>
       </div>

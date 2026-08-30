@@ -127,28 +127,32 @@ const JoinScreen = () => {
 
   return (
     <ScreenShell compact>
-      <div className="flex-1 flex items-center justify-center">
+      <div className="flex-1 flex items-center justify-center py-2">
         <div className="w-full max-w-md">
-          {/* Logo */}
-          <h1 className="font-display font-extrabold text-5xl text-center mb-1 bg-gradient-to-r from-bluff-gold via-bluff-purple to-bluff-pink bg-clip-text text-transparent">
-            BluffHunt
-          </h1>
-          
-          <p className="font-body text-bluff-muted text-center text-sm mb-2">
-            Everyone Knows. One Pretends.
-          </p>
-          <p className={`font-body text-center text-xs mb-6 ${connected ? 'text-bluff-green' : 'text-bluff-pink animate-pulse'}`}>
-            {connected ? '✅ Connected to server' : '⏳ Connecting to server (may take ~45s if waking from sleep)...'}
-          </p>
+          {/* Glowing Game Title Header */}
+          <div className="text-center mb-4">
+            <h1 className="font-display font-black text-5xl tracking-tight bg-gradient-to-r from-amber-300 via-purple-400 to-rose-400 bg-clip-text text-transparent drop-shadow-[0_2px_16px_rgba(139,92,246,0.35)]">
+              BluffHunt
+            </h1>
+            <p className="font-body text-slate-400 text-xs sm:text-sm font-medium mt-1">
+              Everyone Knows. One Pretends.
+            </p>
+            <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-slate-900/80 border border-slate-700/60 mt-2">
+              <span className={`w-2 h-2 rounded-full ${connected ? 'bg-emerald-400 animate-pulse' : 'bg-rose-400 animate-ping'}`} />
+              <span className={`font-body text-[11px] font-semibold ${connected ? 'text-emerald-300' : 'text-rose-300'}`}>
+                {connected ? 'Server Online' : 'Connecting to Server...'}
+              </span>
+            </div>
+          </div>
 
-          {/* Form Card */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/10 p-6">
+          {/* Form Game Card */}
+          <div className="card p-5 sm:p-6 bg-slate-900/85 border border-slate-700/60 shadow-2xl backdrop-blur-2xl">
             {/* Avatar Selector */}
             <div className="mb-4">
-              <label className="block text-xs font-display font-semibold text-bluff-muted mb-2 uppercase tracking-wider">
+              <label className="block text-[11px] font-display font-bold text-slate-400 mb-2 uppercase tracking-wider">
                 Choose Your Avatar
               </label>
-              <div className="flex justify-between items-center gap-1.5 overflow-x-auto pb-1">
+              <div className="flex justify-between items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
                 {AVATARS.map((emoji) => (
                   <button
                     key={emoji}
@@ -157,10 +161,10 @@ const JoinScreen = () => {
                       setAvatar(emoji);
                       localStorage.setItem('avatar', emoji);
                     }}
-                    className={`w-9 h-9 rounded-xl flex items-center justify-center text-xl transition-all ${
+                    className={`w-9 h-9 rounded-xl flex items-center justify-center text-lg transition-all active:scale-95 ${
                       avatar === emoji
-                        ? 'bg-bluff-purple border-2 border-white/60 scale-110 shadow-lg shadow-purple-500/30'
-                        : 'bg-black/30 border border-white/5 hover:bg-white/10 opacity-70'
+                        ? 'bg-purple-600 ring-2 ring-purple-300 shadow-glow-purple scale-110 z-10'
+                        : 'bg-slate-950/70 border border-slate-700/50 hover:bg-slate-800/80 text-slate-300 opacity-75'
                     }`}
                   >
                     {emoji}
@@ -170,78 +174,82 @@ const JoinScreen = () => {
             </div>
 
             {/* Nickname Input */}
-            <input
-              type="text"
-              placeholder="Enter your nickname..."
-              className="w-full p-3 bg-black/30 border border-white/10 rounded-xl mb-4
-                       focus:outline-none focus:ring-2 focus:ring-bluff-purple
-                       font-body text-white placeholder:text-bluff-muted text-base"
-              value={nickname}
-              onChange={(e) => setNickname(e.target.value)}
-              maxLength={15}
-            />
+            <div className="mb-3">
+              <input
+                type="text"
+                placeholder="Enter your nickname..."
+                className="w-full p-3.5 bg-slate-950/80 border border-slate-700/80 rounded-xl
+                         focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/30
+                         font-body text-white placeholder:text-slate-500 text-base transition-all"
+                value={nickname}
+                onChange={(e) => setNickname(e.target.value)}
+                maxLength={15}
+              />
+            </div>
 
             {/* Room Code Input */}
-            <input
-              type="text"
-              placeholder="Enter room code..."
-              className="w-full p-3 bg-black/30 border border-white/10 rounded-xl mb-4
-                       focus:outline-none focus:ring-2 focus:ring-bluff-purple
-                       font-body text-white placeholder:text-bluff-muted text-base tracking-widest"
-              value={roomCode}
-              onChange={(e) => setRoomCode(e.target.value.replace(/\D/g, '').slice(0, 4))}
-              maxLength={4}
-              inputMode="numeric"
-            />
+            <div className="mb-3">
+              <input
+                type="text"
+                placeholder="Enter 4-digit code..."
+                className="w-full p-3.5 bg-slate-950/80 border border-slate-700/80 rounded-xl
+                         focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/30
+                         font-body text-white placeholder:text-slate-500 text-base tracking-widest text-center uppercase transition-all"
+                value={roomCode}
+                onChange={(e) => setRoomCode(e.target.value.replace(/\D/g, '').slice(0, 4))}
+                maxLength={4}
+                inputMode="numeric"
+              />
+            </div>
 
             {/* Mode Toggle */}
             <div className="flex gap-2 mb-4">
               <button
                 type="button"
-                className={`flex-1 py-2 rounded-xl font-display font-semibold text-sm transition-all ${
+                className={`flex-1 py-2.5 rounded-xl font-display font-bold text-xs sm:text-sm transition-all active:scale-95 ${
                   mode === 'online'
-                    ? 'bg-bluff-blue text-white'
-                    : 'bg-white/5 text-bluff-muted hover:bg-white/10'
+                    ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-glow-cyan'
+                    : 'bg-slate-950/70 text-slate-400 border border-slate-800 hover:bg-slate-800/60'
                 }`}
                 onClick={() => setMode('online')}
               >
-                🌐 Online
+                🌐 Online Mode
               </button>
               <button
                 type="button"
-                className={`flex-1 py-2 rounded-xl font-display font-semibold text-sm transition-all ${
+                className={`flex-1 py-2.5 rounded-xl font-display font-bold text-xs sm:text-sm transition-all active:scale-95 ${
                   mode === 'offline'
-                    ? 'bg-bluff-blue text-white'
-                    : 'bg-white/5 text-bluff-muted hover:bg-white/10'
+                    ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-glow-cyan'
+                    : 'bg-slate-950/70 text-slate-400 border border-slate-800 hover:bg-slate-800/60'
                 }`}
                 onClick={() => setMode('offline')}
               >
-                🗣️ Offline
+                🗣️ Offline Pass & Play
               </button>
             </div>
 
             {/* Join Button */}
             <button
               type="button"
-              className="w-full py-3 bg-bluff-purple text-white font-display font-bold rounded-xl
-                       hover:bg-bluff-purple-dark transition-all duration-200
-                       disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-display font-extrabold text-base rounded-xl
+                       shadow-glow-purple active:scale-[0.98] transition-all duration-150
+                       disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none"
               onClick={handleJoinRoom}
               disabled={isJoining || isCreating || !connected}
             >
-              {isJoining ? 'Joining...' : '🚀 Join Room'}
+              {isJoining ? 'Connecting to Room...' : '🚀 Join Game Room'}
             </button>
 
-            {/* Create Room Link */}
+            {/* Create Room Button */}
             <button
               type="button"
-              className="w-full mt-3 py-2 text-bluff-gold font-display font-semibold text-sm
-                       hover:text-white transition-all duration-200
+              className="w-full mt-3 py-2.5 bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-300 font-display font-bold text-sm rounded-xl
+                       transition-all active:scale-[0.98]
                        disabled:opacity-50 disabled:cursor-not-allowed"
               onClick={handleCreateRoom}
               disabled={isCreating || isJoining || !connected}
             >
-              {isCreating ? 'Creating...' : '✨ Or Create a New Room'}
+              {isCreating ? 'Creating Room...' : '✨ Host a New Game Room'}
             </button>
           </div>
         </div>

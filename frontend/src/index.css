@@ -1,6 +1,6 @@
 /* frontend/src/index.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Outfit:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -17,23 +17,38 @@ html, body, #root {
 
 body {
   font-family: 'Outfit', sans-serif;
-  background-color: #12081c;
-  color: #fff;
+  background-color: #0A0E1A;
+  color: #F8FAFC;
   min-height: 100vh;
   min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ─── TOUCH OPTIMIZATION ─── */
-button, input {
+/* ─── TOUCH & GAMING OPTIMIZATION ─── */
+button, input, textarea, select {
   touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* ─── CUSTOM COMPONENT CLASSES ─── */
+button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+/* ─── GLASS & GAME COMPONENT CLASSES ─── */
 .card {
-  @apply bg-white/10 backdrop-blur-lg border border-white/10 text-white rounded-2xl shadow-xl;
+  @apply bg-bluff-card/85 backdrop-blur-xl border border-white/10 text-white rounded-2xl shadow-2xl;
 }
 
-/* ─── SCROLLBAR STYLING (Optional) ─── */
+.game-panel {
+  @apply bg-slate-900/80 backdrop-blur-xl border border-slate-700/60 rounded-2xl shadow-2xl;
+}
+
+.game-input {
+  @apply bg-slate-950/70 border border-slate-700/70 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-bluff-purple focus:ring-2 focus:ring-bluff-purple/30 transition-all;
+}
+
+/* ─── CUSTOM SCROLLBAR ─── */
 ::-webkit-scrollbar {
   width: 4px;
   height: 4px;
@@ -42,9 +57,9 @@ button, input {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(148, 163, 184, 0.25);
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(148, 163, 184, 0.45);
 }

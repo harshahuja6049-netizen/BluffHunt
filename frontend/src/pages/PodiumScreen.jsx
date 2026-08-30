@@ -5,7 +5,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Confetti from 'react-confetti';
 import socket, { emitRejoin } from '../socket';
 import ScreenShell from '../components/ScreenShell';
-import LeaveButton from '../components/LeaveButton';
 import { useToast } from '../components/Toast';
 
 const PodiumScreen = () => {
@@ -70,79 +69,86 @@ const PodiumScreen = () => {
 
   return (
     <ScreenShell compact>
-      <Confetti recycle={false} numberOfPieces={400} />
-      <div className="flex-1 flex flex-col items-center justify-center text-center">
-        <h1 className="font-display font-extrabold text-4xl text-bluff-gold mb-2">
-          🏆 LEAGUE CHAMPIONS!
-        </h1>
-        <p className="font-body text-bluff-muted mb-8">Room #{roomCode}</p>
+      <Confetti recycle={false} numberOfPieces={500} />
+      <div className="flex-1 flex flex-col items-center justify-center text-center px-2 py-4">
+        {/* Header */}
+        <div className="mb-6">
+          <span className="px-3 py-1 rounded-full text-[11px] font-display font-black tracking-widest bg-amber-400/20 text-amber-300 border border-amber-400/40 uppercase mb-2 inline-block shadow-glow-gold">
+            Season Grand Finale
+          </span>
+          <h1 className="font-display font-black text-4xl sm:text-5xl tracking-tight bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent drop-shadow-[0_2px_16px_rgba(251,191,36,0.4)]">
+            LEAGUE CHAMPIONS!
+          </h1>
+          <p className="font-body text-slate-400 text-xs mt-1">Room #{roomCode} • 10 Rounds Complete</p>
+        </div>
 
-        {/* Podium */}
-        <div className="flex items-end justify-center gap-4">
+        {/* Podium Pillars */}
+        <div className="w-full max-w-sm flex items-end justify-center gap-2 sm:gap-4 my-2">
           {/* 2nd Place */}
           {second && (
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-b from-gray-400 to-gray-600 flex items-center justify-center text-3xl shadow-lg">
-                🥈
+            <div className="flex-1 flex flex-col items-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-b from-slate-300 via-slate-400 to-slate-600 ring-2 ring-slate-200/50 flex flex-col items-center justify-center text-2xl shadow-xl">
+                <span>{second.avatar || '🥈'}</span>
+                <span className="text-xs font-black text-slate-900">2ND</span>
               </div>
-              <p className="font-display font-bold text-white mt-2 text-sm md:text-base flex items-center gap-1">
-                <span>{second.avatar || '🕵️'}</span>
-                <span>{second.nickname}</span>
+              <p className="font-display font-bold text-white mt-2 text-xs sm:text-sm truncate max-w-[90px]">
+                {second.nickname}
               </p>
-              <p className="font-body text-xs text-bluff-muted">{second.leaguePoints} pts</p>
+              <span className="px-2 py-0.5 mt-0.5 rounded-full bg-slate-800 text-[11px] font-display font-black text-slate-300 border border-slate-700">
+                {second.leaguePoints} pts
+              </span>
             </div>
           )}
 
-          {/* 1st Place */}
+          {/* 1st Place - Champion */}
           {champion && (
-            <div className="flex flex-col items-center -mt-4">
-              <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-b from-bluff-gold to-yellow-600 flex items-center justify-center text-4xl shadow-xl">
-                🥇
+            <div className="flex-1 flex flex-col items-center -mt-6">
+              <div className="text-3xl mb-1 animate-bounce">👑</div>
+              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-b from-amber-300 via-yellow-400 to-amber-600 ring-4 ring-amber-300/80 shadow-glow-gold flex flex-col items-center justify-center text-3xl">
+                <span>{champion.avatar || '🥇'}</span>
+                <span className="text-xs font-black text-slate-950">1ST</span>
               </div>
-              <p className="font-display font-extrabold text-lg md:text-xl text-bluff-gold mt-2 flex items-center gap-1">
-                <span>{champion.avatar || '🕵️'}</span>
-                <span>{champion.nickname}</span>
+              <p className="font-display font-black text-amber-300 mt-2 text-sm sm:text-base truncate max-w-[110px]">
+                {champion.nickname}
               </p>
-              <p className="font-body text-xs md:text-sm text-bluff-muted">
+              <span className="px-2.5 py-0.5 mt-0.5 rounded-full bg-amber-400/20 text-xs font-display font-black text-amber-300 border border-amber-400/40">
                 {champion.leaguePoints} pts
-              </p>
-              <span className="text-xs font-display text-bluff-gold mt-1">👑 Champion</span>
+              </span>
             </div>
           )}
 
           {/* 3rd Place */}
           {third && (
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-b from-orange-400 to-orange-700 flex items-center justify-center text-3xl shadow-lg">
-                🥉
+            <div className="flex-1 flex flex-col items-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-b from-amber-600 via-amber-700 to-amber-900 ring-2 ring-amber-500/40 flex flex-col items-center justify-center text-2xl shadow-xl">
+                <span>{third.avatar || '🥉'}</span>
+                <span className="text-xs font-black text-amber-200">3RD</span>
               </div>
-              <p className="font-display font-bold text-white mt-2 text-sm md:text-base flex items-center gap-1">
-                <span>{third.avatar || '🕵️'}</span>
-                <span>{third.nickname}</span>
+              <p className="font-display font-bold text-white mt-2 text-xs sm:text-sm truncate max-w-[90px]">
+                {third.nickname}
               </p>
-              <p className="font-body text-xs text-bluff-muted">{third.leaguePoints} pts</p>
+              <span className="px-2 py-0.5 mt-0.5 rounded-full bg-slate-800 text-[11px] font-display font-black text-slate-300 border border-slate-700">
+                {third.leaguePoints} pts
+              </span>
             </div>
           )}
         </div>
 
-        {/* Button */}
-        <button
-          type="button"
-          onClick={handleNewLeague}
-          className="mt-8 py-3 px-8 bg-bluff-purple text-white font-display font-bold rounded-xl hover:bg-bluff-purple-dark transition-all shadow-lg hover:shadow-purple-500/30"
-        >
-          {isHost ? '🔄 Start New League' : '🏠 Back Home'}
-        </button>
+        {/* Action Button */}
+        <div className="w-full max-w-sm mt-8">
+          <button
+            type="button"
+            onClick={handleNewLeague}
+            className="w-full py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-display font-black text-base rounded-2xl transition-all duration-150 shadow-glow-purple active:scale-[0.98]"
+          >
+            {isHost ? '🔄 Start New 10-Game League' : '🏠 Return to Home Screen'}
+          </button>
 
-        {!isHost && (
-          <p className="font-body text-xs text-bluff-muted mt-2">
-            Waiting for the Host to start a new league...
-          </p>
-        )}
-
-        {/* Leave Button */}
-        <div className="mt-4">
-          <LeaveButton compact />
+          {!isHost && (
+            <p className="font-body text-xs text-slate-400 mt-2">
+              Waiting for the Host to start a new league...
+            </p>
+          )}
         </div>
       </div>
     </ScreenShell>
