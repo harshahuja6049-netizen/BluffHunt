@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import socket, { clearRoomSession } from '../socket';
+import socket, { clearRoomSession, setHasJoinedRoom } from '../socket';
 
 const LeaveButton = ({ compact = false }) => {
   const navigate = useNavigate();
@@ -8,6 +8,7 @@ const LeaveButton = ({ compact = false }) => {
     if (!window.confirm('Leave this room?')) return;
     socket.emit('leave-room');
     clearRoomSession();
+    setHasJoinedRoom(false);
     navigate('/');
   };
 

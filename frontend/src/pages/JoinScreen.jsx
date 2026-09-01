@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import socket from '../socket';
+import socket, { setHasJoinedRoom } from '../socket';
 import ScreenShell from '../components/ScreenShell';
 import { useToast } from '../components/Toast';
 
@@ -55,6 +55,7 @@ const JoinScreen = () => {
       setIsCreating(false);
       setErrorMessage('');
       persistSession(data, nickname, avatar);
+      setHasJoinedRoom(true);
       navigate('/lobby', {
         state: {
           roomCode: data.roomCode,
@@ -71,6 +72,7 @@ const JoinScreen = () => {
       setIsPendingApproval(false);
       setErrorMessage('');
       persistSession(data, nickname, avatar);
+      setHasJoinedRoom(true);
       
       const destination = data.status && data.status !== 'lobby' && data.status !== 'podium'
         ? '/game'
@@ -117,6 +119,7 @@ const JoinScreen = () => {
       setIsPendingApproval(false);
       setErrorMessage('');
       persistSession(data, nickname, avatar);
+      setHasJoinedRoom(true);
       navigate('/game', {
         state: {
           roomCode: data.roomCode,

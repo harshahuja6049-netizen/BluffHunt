@@ -44,7 +44,7 @@ const corsOrigin = clientOrigins.length ? clientOrigins : true;
 const frontendDist = path.join(__dirname, '../frontend/dist');
 const playerSockets = new Map();
 const roundAdvanceTimers = new Map();
-const socketRateLimits = new Map(); // socket.id -> Map<action, timestamp>
+const socketRateLimits = new Map();
 
 function checkRateLimit(socketId, action, minIntervalMs = 500) {
   if (process.env.NODE_ENV === 'test') return true;
@@ -155,8 +155,10 @@ function emitHostChanged(session, previousHostId) {
 }
 
 function emitYourWords(session) {
+  console.log(`📤 Emitting words to players in room ${session.roomCode}`);
   session.players.forEach((p) => {
     if (p.isConnected === false || p.isWaitingForNextRound) return;
+    console.log(`  ➜ Sending to ${p.nickname}: ${p.word} (Imposter: ${p.isImposter})`);
     emitToPlayer(p.playerId, 'your-word', {
       word: p.word,
       isImposter: p.isImposter,
@@ -277,7 +279,6 @@ io.on('connection', (socket) => {
         (p) => p.nickname.toLowerCase() === trimmedNickname.toLowerCase()
       );
 
-      // Check if nickname is taken by another actively connected player
       if (existingByName && existingByName.isConnected !== false && (!existingById || existingById.playerId !== existingByName.playerId)) {
         socket.emit('error', { message: 'Nickname already taken in this room.' });
         return;
@@ -721,61 +722,64 @@ io.on('connection', (socket) => {
     }
   });
 
-  socket.on('start-game', async () => {
-    try {
-      const playerId = getPlayerId(socket);
-      let session = await findSessionByPlayer(playerId);
-      if (!session) return socket.emit('error', { message: 'You are not in a room.' });
-      if (session.hostId !== playerId) {
-        return socket.emit('error', { message: 'Only the Host can start the game.' });
-      }
-      if (session.status !== 'lobby' && session.status !== 'podium') {
-        return socket.emit('error', { message: 'Game already in progress.' });
-      }
-      if (connectedPlayers(session).length < MIN_PLAYERS) {
-        return socket.emit('error', { message: 'Need at least 3 players to start.' });
-      }
-
-      dealRound(session);
-      session.status = 'reveal';
-      session.leagueGameNumber = session.leagueGameNumber || 1;
-
-      const updated = await GameSession.findOneAndUpdate(
-        { _id: session._id },
-        {
-          $set: {
-            status: session.status,
-            leagueGameNumber: session.leagueGameNumber,
-            players: session.players,
-            usedPairs: session.usedPairs,
-            speakerQueue: session.speakerQueue,
-            currentSpeakerIndex: session.currentSpeakerIndex,
-            votes: session.votes,
-            readyToVote: session.readyToVote,
-            isRevote: session.isRevote,
-            tiedPlayerIds: session.tiedPlayerIds,
-            lastActivity: new Date()
-          }
-        },
-        { returnDocument: 'after' }
-      );
-      if (!updated) return;
-      session = updated;
-
-      io.to(session.roomCode).emit('game-started', {
-        status: session.status,
-        players: publicPlayers(session),
-        hostId: session.hostId,
-        mode: session.mode,
-        leagueGameNumber: session.leagueGameNumber
-      });
-      emitYourWords(session);
-      console.log(`🎮 Game started in room ${session.roomCode}`);
-    } catch (error) {
-      console.error('Start game error:', error);
-      socket.emit('error', { message: 'Server error. Please try again.' });
+ socket.on('start-game', async () => {
+  try {
+    const playerId = getPlayerId(socket);
+    let session = await findSessionByPlayer(playerId);
+    if (!session) return socket.emit('error', { message: 'You are not in a room.' });
+    if (session.hostId !== playerId) {
+      return socket.emit('error', { message: 'Only the Host can start the game.' });
     }
-  });
+    if (session.status !== 'lobby' && session.status !== 'podium') {
+      return socket.emit('error', { message: 'Game already in progress.' });
+    }
+    if (connectedPlayers(session).length < MIN_PLAYERS) {
+      return socket.emit('error', { message: 'Need at least 3 players to start.' });
+    }
+
+    dealRound(session);
+    session.status = 'reveal';
+    session.leagueGameNumber = session.leagueGameNumber || 1;
+
+    const updated = await GameSession.findOneAndUpdate(
+      { _id: session._id },
+      {
+        $set: {
+          status: session.status,
+          leagueGameNumber: session.leagueGameNumber,
+          players: session.players,
+          usedPairs: session.usedPairs,
+          speakerQueue: session.speakerQueue,
+          currentSpeakerIndex: session.currentSpeakerIndex,
+          votes: session.votes,
+          readyToVote: session.readyToVote,
+          isRevote: session.isRevote,
+          tiedPlayerIds: session.tiedPlayerIds,
+          lastActivity: new Date()
+        }
+      },
+      { returnDocument: 'after' }
+    );
+    if (!updated) return;
+    session = updated;
+
+    io.to(session.roomCode).emit('game-started', {
+      status: session.status,
+      players: publicPlayers(session),
+      hostId: session.hostId,
+      mode: session.mode,
+      leagueGameNumber: session.leagueGameNumber
+    });
+    
+    // 🔥 CRITICAL: Send secret words to each player
+    emitYourWords(session);
+    
+    console.log(`🎮 Game started in room ${session.roomCode}`);
+  } catch (error) {
+    console.error('Start game error:', error);
+    socket.emit('error', { message: 'Server error. Please try again.' });
+  }
+});
 
   socket.on('acknowledge-word', async () => {
     try {
@@ -788,14 +792,29 @@ io.on('connection', (socket) => {
 
       const player = session.players.find((p) => p.playerId === playerId);
       if (!player) return socket.emit('error', { message: 'Player not found.' });
-      if (player.isWaitingForNextRound) return;
-      if (player.hasAcknowledgedWord) return;
+      
+      // Send immediate acknowledgement that event was received
+      socket.emit('acknowledge-received', { status: 'received' });
 
+      // If already acknowledged or waiting, nothing more to do
+      if (player.isWaitingForNextRound || player.hasAcknowledgedWord) {
+        return;
+      }
+
+      // Update player's acknowledgement status
       const latest = await patchPlayer(playerId, { hasAcknowledgedWord: true });
+
+      // 🔥 CRITICAL FIX: Broadcast updated player list to all players in the room
+      broadcastPlayers(latest);
+
+      // Get active players (connected and not waiting)
       const active = roundPlayers(latest);
       const allAcknowledged = active.every((p) => p.hasAcknowledgedWord === true);
 
+      console.log(`✅ Player ${player.nickname} acknowledged word in ${latest.roomCode}. Ready: ${active.filter(p => p.hasAcknowledgedWord).length}/${active.length}`);
+
       if (allAcknowledged) {
+        // All players have acknowledged, move to clue phase
         const speakerQueue = shuffle(active.map((p) => p.playerId));
         const moved = await GameSession.findOneAndUpdate(
           { _id: latest._id, status: 'reveal' },
@@ -828,13 +847,13 @@ io.on('connection', (socket) => {
         }
         console.log(`🔍 Clue phase started in room ${moved.roomCode}`);
       } else {
+        // Some players haven't acknowledged yet, send progress update
         const readyCount = active.filter((p) => p.hasAcknowledgedWord).length;
         io.to(latest.roomCode).emit('acknowledge-progress', {
           acknowledgedCount: readyCount,
           totalPlayers: active.length,
           players: publicPlayers(latest)
         });
-        broadcastPlayers(latest);
       }
     } catch (error) {
       console.error('Acknowledge word error:', error);
@@ -885,7 +904,7 @@ io.on('connection', (socket) => {
           message: firstSpeakerPrompt
         });
       }
-      console.log(`⏩ Host force-advanced to clue phase in room ${moved.roomCode}`);
+      console.log(`⏩ Host forced advance to clue phase in room ${moved.roomCode}`);
     } catch (error) {
       console.error('Force advance reveal error:', error);
       socket.emit('error', { message: 'Server error. Please try again.' });
@@ -936,11 +955,25 @@ io.on('connection', (socket) => {
       if (!updated) return;
       session = updated;
 
+      // Emit individual clue submission for real-time UI update
       io.to(session.roomCode).emit('clue-submitted', {
         playerId,
         nickname: player.nickname,
         avatar: player.avatar || '🕵️',
         clue: trimmedClue
+      });
+
+      // Also broadcast the complete updated clues list so all clients stay in sync
+      const allClues = session.players
+        .filter((p) => p.clueSubmitted)
+        .map((p) => ({
+          playerId: p.playerId,
+          nickname: p.nickname,
+          avatar: p.avatar || '🕵️',
+          clue: p.clueSubmitted
+        }));
+      io.to(session.roomCode).emit('clues-updated', {
+        clues: allClues
       });
 
       if (session.currentSpeakerIndex < session.speakerQueue.length) {
@@ -1061,7 +1094,6 @@ io.on('connection', (socket) => {
       });
 
       if (active.every((p) => latest.readyToVote.includes(p.playerId))) {
-        // Clear previous votes and reset hasVoted flags for active players
         const updated = await GameSession.findOneAndUpdate(
           { _id: latest._id },
           {
@@ -1092,125 +1124,140 @@ io.on('connection', (socket) => {
     }
   });
 
-  socket.on('cast-vote', async ({ accusedId } = {}) => {
-    try {
-      if (!checkRateLimit(socket.id, 'vote', 400)) return;
-      const playerId = getPlayerId(socket);
-      let session = await findSessionByPlayer(playerId);
-      if (!session) return socket.emit('error', { message: 'You are not in a room.' });
-      if (session.status !== 'voting') {
-        return socket.emit('error', { message: 'Not in voting phase.' });
-      }
+  // Inside server.js – modify the `cast-vote` handler:
 
-      const voter = session.players.find((p) => p.playerId === playerId);
-      if (!voter) return socket.emit('error', { message: 'Player not found.' });
-      if (voter.isWaitingForNextRound) {
-        return socket.emit('error', { message: 'You join the next game.' });
-      }
-      if (voter.hasVoted) return socket.emit('error', { message: 'You have already voted.' });
+socket.on('cast-vote', async ({ accusedId } = {}) => {
+  try {
+    if (!checkRateLimit(socket.id, 'vote', 400)) return;
 
-      const accused = session.players.find((p) => p.playerId === accusedId);
-      if (!accused || accused.isConnected === false) return socket.emit('error', { message: 'Invalid player selected.' });
-      if (voter.playerId === accusedId) {
-        return socket.emit('error', { message: 'You cannot vote for yourself.' });
-      }
+    // 🔥 CRITICAL: Get playerId from socket
+    const playerId = getPlayerId(socket);
+    if (!playerId) {
+      return socket.emit('error', { message: 'Player not authenticated.' });
+    }
 
-      if (session.isRevote && session.tiedPlayerIds && session.tiedPlayerIds.length) {
-        if (!session.tiedPlayerIds.includes(accusedId)) {
-          return socket.emit('error', { message: 'You must vote for one of the tied players.' });
+    let session = await findSessionByPlayer(playerId);
+    if (!session) return socket.emit('error', { message: 'You are not in a room.' });
+    if (session.status !== 'voting') {
+      return socket.emit('error', { message: 'Not in voting phase.' });
+    }
+
+    const voter = session.players.find((p) => p.playerId === playerId);
+    if (!voter) return socket.emit('error', { message: 'Player not found.' });
+    if (voter.isWaitingForNextRound) {
+      return socket.emit('error', { message: 'You join the next game.' });
+    }
+    if (voter.hasVoted) return socket.emit('error', { message: 'You have already voted.' });
+
+    const accused = session.players.find((p) => p.playerId === accusedId);
+    if (!accused || accused.isConnected === false) return socket.emit('error', { message: 'Invalid player selected.' });
+    if (voter.playerId === accusedId) {
+      return socket.emit('error', { message: 'You cannot vote for yourself.' });
+    }
+
+    if (session.isRevote && session.tiedPlayerIds && session.tiedPlayerIds.length) {
+      if (!session.tiedPlayerIds.includes(accusedId)) {
+        return socket.emit('error', { message: 'You must vote for one of the tied players.' });
+      }
+    }
+
+    const latest = await patchPlayer(playerId, { hasVoted: true }, {
+      $push: { votes: { voterId: playerId, accusedId } }
+    });
+
+    // Broadcast updated player list to all clients
+    broadcastPlayers(latest);
+
+    socket.emit('vote-submitted', { message: 'Your vote has been recorded.' });
+
+    const active = roundPlayers(latest);
+    const votedCount = active.filter((p) => p.hasVoted).length;
+    io.to(latest.roomCode).emit('vote-progress', {
+      votedCount,
+      totalPlayers: active.length
+    });
+
+    if (active.every((p) => p.hasVoted === true)) {
+      await processVotingComplete(latest);
+    }
+  } catch (error) {
+    console.error('Cast vote error:', error);
+    socket.emit('error', { message: 'Server error. Please try again.' });
+  }
+});
+// =============================================
+// START NEW LEAGUE
+// =============================================
+socket.on('start-new-league', async () => {
+  try {
+    const playerId = getPlayerId(socket);
+    let session = await findSessionByPlayer(playerId);
+    if (!session) return socket.emit('error', { message: 'You are not in a room.' });
+    if (session.hostId !== playerId) {
+      return socket.emit('error', { message: 'Only the Host can start a new league.' });
+    }
+
+    // Reset all player stats
+    session.players.forEach((p) => {
+      p.leaguePoints = 0;
+      p.isImposter = false;
+      p.word = '';
+      p.clueSubmitted = '';
+      p.hasVerballyPrepared = false;
+      p.hasAcknowledgedWord = false;
+      p.hasVoted = false;
+      p.votesReceived = 0;
+      p.isWaitingForNextRound = false;
+    });
+    session.pendingJoins = [];
+    session.usedPairs = [];
+    session.votes = [];
+    session.readyToVote = [];
+    session.speakerQueue = [];
+    session.currentSpeakerIndex = 0;
+    session.isRevote = false;
+    session.tiedPlayerIds = [];
+    session.leagueGameNumber = 1;
+    session.isLeagueComplete = false;
+    session.status = 'lobby';
+
+    const updated = await GameSession.findOneAndUpdate(
+      { _id: session._id },
+      {
+        $set: {
+          players: session.players,
+          pendingJoins: session.pendingJoins,
+          usedPairs: session.usedPairs,
+          votes: session.votes,
+          readyToVote: session.readyToVote,
+          speakerQueue: session.speakerQueue,
+          currentSpeakerIndex: session.currentSpeakerIndex,
+          isRevote: session.isRevote,
+          tiedPlayerIds: session.tiedPlayerIds,
+          leagueGameNumber: session.leagueGameNumber,
+          isLeagueComplete: session.isLeagueComplete,
+          status: session.status,
+          lastActivity: new Date()
         }
-      }
+      },
+      { returnDocument: 'after' }
+    );
+    if (!updated) return;
+    session = updated;
 
-      const latest = await patchPlayer(playerId, { hasVoted: true }, {
-        $push: { votes: { voterId: playerId, accusedId } }
-      });
+    io.to(session.roomCode).emit('league-reset', {
+      players: publicPlayers(session),
+      hostId: session.hostId,
+      roomCode: session.roomCode,
+      mode: session.mode
+    });
 
-      socket.emit('vote-submitted', { message: 'Your vote has been recorded.' });
-
-      const active = roundPlayers(latest);
-      const votedCount = active.filter((p) => p.hasVoted).length;
-      io.to(latest.roomCode).emit('vote-progress', {
-        votedCount,
-        totalPlayers: active.length
-      });
-
-      if (active.every((p) => p.hasVoted === true)) {
-        await processVotingComplete(latest);
-      }
-    } catch (error) {
-      console.error('Cast vote error:', error);
-      socket.emit('error', { message: 'Server error. Please try again.' });
-    }
-  });
-
-  socket.on('start-new-league', async () => {
-    try {
-      const playerId = getPlayerId(socket);
-      let session = await findSessionByPlayer(playerId);
-      if (!session) return socket.emit('error', { message: 'You are not in a room.' });
-      if (session.hostId !== playerId) {
-        return socket.emit('error', { message: 'Only the Host can start a new league.' });
-      }
-
-      session.players.forEach((p) => {
-        p.leaguePoints = 0;
-        p.isImposter = false;
-        p.word = '';
-        p.clueSubmitted = '';
-        p.hasVerballyPrepared = false;
-        p.hasAcknowledgedWord = false;
-        p.hasVoted = false;
-        p.votesReceived = 0;
-        p.isWaitingForNextRound = false;
-      });
-      session.pendingJoins = [];
-      session.usedPairs = [];
-      session.votes = [];
-      session.readyToVote = [];
-      session.speakerQueue = [];
-      session.currentSpeakerIndex = 0;
-      session.isRevote = false;
-      session.tiedPlayerIds = [];
-      session.leagueGameNumber = 1;
-      session.isLeagueComplete = false;
-      session.status = 'lobby';
-
-      const updated = await GameSession.findOneAndUpdate(
-        { _id: session._id },
-        {
-          $set: {
-            players: session.players,
-            pendingJoins: session.pendingJoins,
-            usedPairs: session.usedPairs,
-            votes: session.votes,
-            readyToVote: session.readyToVote,
-            speakerQueue: session.speakerQueue,
-            currentSpeakerIndex: session.currentSpeakerIndex,
-            isRevote: session.isRevote,
-            tiedPlayerIds: session.tiedPlayerIds,
-            leagueGameNumber: session.leagueGameNumber,
-            isLeagueComplete: session.isLeagueComplete,
-            status: session.status,
-            lastActivity: new Date()
-          }
-        },
-        { returnDocument: 'after' }
-      );
-      if (!updated) return;
-      session = updated;
-
-      io.to(session.roomCode).emit('league-reset', {
-        players: publicPlayers(session),
-        hostId: session.hostId,
-        roomCode: session.roomCode,
-        mode: session.mode
-      });
-    } catch (error) {
-      console.error('Start new league error:', error);
-      socket.emit('error', { message: 'Server error. Please try again.' });
-    }
-  });
-
+    console.log(`🔄 New league started in room ${session.roomCode}`);
+  } catch (error) {
+    console.error('Start new league error:', error);
+    socket.emit('error', { message: 'Server error. Please try again.' });
+  }
+});
   socket.on('disconnect', async () => {
     console.log('🔴 Client disconnected:', socket.id);
     try {
@@ -1286,6 +1333,25 @@ io.on('connection', (socket) => {
       console.log(`👋 ${player.nickname} disconnected from ${session.roomCode}`);
     } catch (error) {
       console.error('Disconnect error:', error);
+    }
+  });
+    socket.on('request-word', async () => {
+    try {
+      const playerId = getPlayerId(socket);
+      if (!playerId) return;
+      const session = await findSessionByPlayer(playerId);
+      if (!session) return;
+      if (session.status !== 'reveal') return;
+      const player = session.players.find(p => p.playerId === playerId);
+      if (!player || !player.word) return;
+      console.log(`📤 Resending word to ${player.nickname}: ${player.word}`);
+      emitToPlayer(playerId, 'your-word', {
+        word: player.word,
+        isImposter: player.isImposter,
+        leagueGameNumber: session.leagueGameNumber
+      });
+    } catch (error) {
+      console.error('Request word error:', error);
     }
   });
 });
@@ -1478,6 +1544,8 @@ function dealRound(session) {
 
 async function processVotingComplete(session) {
   const tieCheck = checkVotingTies(session);
+  
+  // If there's a tie and this is NOT already a revote → trigger revote
   if (tieCheck.isTie && !session.isRevote) {
     // First tie! Trigger revote!
     session.isRevote = true;
@@ -1520,7 +1588,7 @@ async function processVotingComplete(session) {
     return;
   }
 
-  // Single winner or second tie (where imposter escapes)
+  // Single winner OR second tie (Imposter escapes)
   const caughtAccusedId = tieCheck.isTie ? null : tieCheck.accusedWinnerId;
   await calculateRoundResults(session, caughtAccusedId);
 }
@@ -1582,43 +1650,52 @@ async function calculateRoundResults(session, explicitCaughtAccusedId = null) {
       leagueGameNumber: session.leagueGameNumber
     };
 
+    // Broadcast results
     io.to(session.roomCode).emit('round-results', results);
     io.to(session.roomCode).emit('phase-changed', {
       status: 'results',
-      leagueGameNumber: session.leagueGameNumber
+      leagueGameNumber: session.leagueGameNumber,
+      results
     });
 
     clearRoundTimer(session.roomCode);
     const roomCode = session.roomCode;
+
+    // 🔥 CRITICAL FIX: Check if league is complete BEFORE setting timer
+    const next = nextLeagueStatus(session.leagueGameNumber);
+    if (next.isLeagueComplete) {
+      // League complete – emit podium and do NOT start a timer
+      console.log(`🏆 League complete in room ${roomCode}. Podium time!`);
+      session.isLeagueComplete = true;
+      session.status = 'podium';
+      await GameSession.findOneAndUpdate(
+        { _id: session._id },
+        {
+          $set: {
+            leagueGameNumber: next.leagueGameNumber,
+            isLeagueComplete: true,
+            status: 'podium',
+            lastActivity: new Date()
+          }
+        }
+      );
+      io.to(roomCode).emit('league-complete', {
+        players: publicPlayers(session),
+        hostId: session.hostId,
+        roomCode
+      });
+      return; // 🔥 No timer, stays on podium forever
+    }
+
+    // Not complete – proceed with normal timer
     const timer = setTimeout(async () => {
       roundAdvanceTimers.delete(roomCode);
       try {
         const latest = await GameSession.findOne({ roomCode });
         if (!latest || latest.status !== 'results') return;
 
-        const next = nextLeagueStatus(latest.leagueGameNumber);
-        latest.leagueGameNumber = next.leagueGameNumber;
-        if (next.isLeagueComplete) {
-          latest.isLeagueComplete = true;
-          latest.status = 'podium';
-          await GameSession.findOneAndUpdate(
-            { _id: latest._id },
-            {
-              $set: {
-                leagueGameNumber: latest.leagueGameNumber,
-                isLeagueComplete: latest.isLeagueComplete,
-                status: latest.status,
-                lastActivity: new Date()
-              }
-            }
-          );
-          io.to(roomCode).emit('league-complete', {
-            players: publicPlayers(latest),
-            hostId: latest.hostId,
-            roomCode
-          });
-          return;
-        }
+        const nextStatus = nextLeagueStatus(latest.leagueGameNumber);
+        latest.leagueGameNumber = nextStatus.leagueGameNumber;
 
         dealRound(latest);
         latest.status = 'reveal';

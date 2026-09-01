@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ClipboardIcon, CheckIcon } from '@heroicons/react/24/outline';
-import socket, { emitRejoin } from '../socket';
+import socket, { emitRejoin, setHasJoinedRoom } from '../socket';
 import ScreenShell from '../components/ScreenShell';
 import LeaveButton from '../components/LeaveButton';
 import JoinRequestModal from '../components/JoinRequestModal';
@@ -35,12 +35,14 @@ const LobbyScreen = () => {
 
   useEffect(() => {
     if (!roomCode) {
+      setHasJoinedRoom(false);
       navigate('/');
       return;
     }
 
     const nickname = localStorage.getItem('nickname');
     if (nickname && currentPlayerId) {
+      setHasJoinedRoom(true);
       emitRejoin();
     }
 
@@ -62,6 +64,7 @@ const LobbyScreen = () => {
     const onModeChanged = (data) => setMode(data.mode);
     
     const onGameStarted = (data) => {
+      setHasJoinedRoom(true);
       navigate('/game', {
         state: {
           roomCode,
@@ -93,7 +96,10 @@ const LobbyScreen = () => {
       navigate('/');
     };
     
-    const onLeftRoom = () => navigate('/');
+    const onLeftRoom = () => {
+      setHasJoinedRoom(false);
+      navigate('/');
+    };
 
     socket.on('connect', onConnect);
     socket.on('players-updated', onPlayersUpdated);

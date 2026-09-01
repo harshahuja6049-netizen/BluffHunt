@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Confetti from 'react-confetti';
-import socket, { emitRejoin } from '../socket';
+import socket, { emitRejoin, setHasJoinedRoom } from '../socket';
 import ScreenShell from '../components/ScreenShell';
 import { useToast } from '../components/Toast';
 
@@ -24,6 +24,7 @@ const PodiumScreen = () => {
 
   useEffect(() => {
     if (!players) {
+      setHasJoinedRoom(false);
       navigate('/');
       return undefined;
     }
@@ -34,6 +35,7 @@ const PodiumScreen = () => {
     const onConnect = () => emitRejoin();
     const onLeagueReset = (data) => {
       localStorage.setItem('hostId', data.hostId);
+      setHasJoinedRoom(true);
       navigate('/lobby', {
         state: {
           roomCode: data.roomCode || roomCode,
@@ -59,6 +61,7 @@ const PodiumScreen = () => {
     if (isHost) {
       socket.emit('start-new-league');
     } else {
+      setHasJoinedRoom(false);
       navigate('/');
     }
   };

@@ -249,15 +249,17 @@ function checkVotingTies(session) {
   });
 
   const voteValues = Object.values(voteCount);
-  const maxVotes = voteValues.length ? Math.max(...voteValues) : 0;
-  if (maxVotes === 0) {
-    return { isTie: true, tiedPlayerIds: active.map((p) => p.playerId), maxVotes: 0 };
+  if (voteValues.length === 0) {
+    return { isTie: false, accusedWinnerId: null, maxVotes: 0 };
   }
 
+  const maxVotes = Math.max(...voteValues);
   const accusedWithMaxVotes = Object.keys(voteCount).filter((id) => voteCount[id] === maxVotes);
+  
   if (accusedWithMaxVotes.length > 1) {
     return { isTie: true, tiedPlayerIds: accusedWithMaxVotes, maxVotes };
   }
+  
   return { isTie: false, accusedWinnerId: accusedWithMaxVotes[0], maxVotes };
 }
 

@@ -76,15 +76,6 @@ const gameSessionSchema = new mongoose.Schema({
     lastActivity: {
     type: Date,
     default: Date.now
-  },
-  isPaused: {
-    type: Boolean,
-    default: false
-  },
-  PausedAt:
-  {
-    type: Date,
-    default: null
   }
 }, { timestamps: true });
 

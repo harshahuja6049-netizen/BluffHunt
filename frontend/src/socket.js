@@ -3,6 +3,8 @@ import { io } from 'socket.io-client';
 const configured = (import.meta.env.VITE_SOCKET_URL || import.meta.env.VITE_BACKEND_URL || '').trim();
 const socketUrl = configured || undefined;
 
+let hasJoinedRoom = false;
+
 const socket = io(socketUrl, {
   autoConnect: true,
   reconnection: true,
@@ -16,15 +18,21 @@ export function emitRejoin() {
   const playerId = localStorage.getItem('playerId');
   const roomCode = localStorage.getItem('roomCode');
   const nickname = localStorage.getItem('nickname');
-  if (playerId && roomCode && nickname) {
+  if (playerId && roomCode && nickname && socket.connected && !hasJoinedRoom) {
+    hasJoinedRoom = true;
     socket.emit('join-room', { playerId, roomCode, nickname });
   }
+}
+
+export function setHasJoinedRoom(value) {
+  hasJoinedRoom = value;
 }
 
 export function clearRoomSession() {
   localStorage.removeItem('playerId');
   localStorage.removeItem('roomCode');
   localStorage.removeItem('hostId');
+  hasJoinedRoom = false;
 }
 
 socket.on('connect', () => {
@@ -33,6 +41,7 @@ socket.on('connect', () => {
 
 socket.on('disconnect', () => {
   console.log('Socket disconnected');
+  hasJoinedRoom = false;
 });
 
 socket.on('connect_error', (err) => {
