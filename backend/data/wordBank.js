@@ -43,8 +43,6 @@ const wordBank = [
   { agent: 'Thepla', imposter: 'Cupcake', difficulty: 'easy' },
   { agent: 'Dabeli', imposter: 'Pasta', difficulty: 'easy' },
   { agent: 'Fafda', imposter: 'Brownie', difficulty: 'easy' },
-  { agent: 'Handvo', imposter: 'Pizza', difficulty: 'easy' },
-  { agent: 'Undhiyu', imposter: 'Hot Dog', difficulty: 'medium' },
 
   // ============================================================
   // 🍎 FRUITS & SNACKS
@@ -89,7 +87,6 @@ const wordBank = [
   { agent: 'Football', imposter: 'Cycling', difficulty: 'easy' },
   { agent: 'Kabaddi', imposter: 'Tennis', difficulty: 'easy' },
   { agent: 'Basketball', imposter: 'Running', difficulty: 'easy' },
-  { agent: 'Hockey', imposter: 'Golf', difficulty: 'easy' },
   { agent: 'IPL', imposter: 'Olympics', difficulty: 'easy' },
   { agent: 'Badminton', imposter: 'Boxing', difficulty: 'easy' },
   { agent: 'Wrestling', imposter: 'Table Tennis', difficulty: 'easy' },
