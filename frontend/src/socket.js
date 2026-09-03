@@ -1,7 +1,7 @@
 import { io } from 'socket.io-client';
 
-const configured = (import.meta.env.VITE_SOCKET_URL || import.meta.env.VITE_BACKEND_URL || '').trim();
-const socketUrl = configured || undefined;
+// ✅ Directly use VITE_API_URL (already set in Vercel)
+const socketUrl = import.meta.env.VITE_API_URL || undefined;
 
 let hasJoinedRoom = false;
 
