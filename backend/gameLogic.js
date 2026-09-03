@@ -263,6 +263,7 @@ function checkVotingTies(session) {
   return { isTie: false, accusedWinnerId: accusedWithMaxVotes[0], maxVotes };
 }
 
+// ✅ UPDATED applyRoundScoring – agents get points even if impostor survives
 function applyRoundScoring(session, explicitCaughtAccusedId = null) {
   const imposter = session.players.find((p) => p.isImposter);
   if (!imposter) return { error: 'no-imposter' };
@@ -286,18 +287,20 @@ function applyRoundScoring(session, explicitCaughtAccusedId = null) {
     isImposterCaught = !isTie && accusedWinnerId === imposter.playerId;
   }
 
-  if (isImposterCaught) {
-    session.players.forEach((p) => {
-      if (!p.isImposter && p.isConnected !== false && p.isWaitingForNextRound !== true) {
-        const votedForImposter = (session.votes || []).some(
-          (v) => v.voterId === p.playerId && v.accusedId === imposter.playerId
-        );
-        if (votedForImposter) {
-          p.leaguePoints += AGENT_BONUS;
-        }
+  // ✅ Agents ALWAYS get +3 if they voted for the imposter
+  session.players.forEach((p) => {
+    if (!p.isImposter && p.isConnected !== false && p.isWaitingForNextRound !== true) {
+      const votedForImposter = (session.votes || []).some(
+        (v) => v.voterId === p.playerId && v.accusedId === imposter.playerId
+      );
+      if (votedForImposter) {
+        p.leaguePoints += AGENT_BONUS;
       }
-    });
-  } else {
+    }
+  });
+
+  // ✅ Imposter gets survival bonus only if NOT caught
+  if (!isImposterCaught) {
     imposter.leaguePoints += IMPOSTER_SURVIVAL_BONUS;
     if (imposter.votesReceived === 0) {
       imposter.leaguePoints += ZERO_VOTES_BONUS;
