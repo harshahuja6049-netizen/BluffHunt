@@ -213,7 +213,16 @@ function assignWordsAndImposter(session, wordBank) {
   promoteWaitingPlayers(session);
   const active = roundPlayers(session);
   if (active.length === 0) return selectedPair;
-  const imposter = active[Math.floor(Math.random() * active.length)];
+
+  // Filter out the imposter from the previous round so they are not chosen consecutively
+  const previousImposterId = session.lastImposterId || (session.players || []).find((p) => p.isImposter)?.playerId;
+  let eligibleImposters = active.filter((p) => p.playerId !== previousImposterId);
+  if (eligibleImposters.length === 0) {
+    eligibleImposters = active;
+  }
+
+  const imposter = eligibleImposters[Math.floor(Math.random() * eligibleImposters.length)];
+  session.lastImposterId = imposter.playerId;
 
   session.players.forEach((p) => {
     if (p.playerId === imposter.playerId) {

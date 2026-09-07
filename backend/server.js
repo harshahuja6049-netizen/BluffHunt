@@ -747,6 +747,7 @@ io.on('connection', (socket) => {
         $set: {
           status: session.status,
           leagueGameNumber: session.leagueGameNumber,
+          lastImposterId: session.lastImposterId,
           players: session.players,
           usedPairs: session.usedPairs,
           speakerQueue: session.speakerQueue,
@@ -1146,12 +1147,17 @@ io.on('connection', (socket) => {
 
       const nextStatus = nextLeagueStatus(session.leagueGameNumber);
       if (nextStatus.isLeagueComplete) {
+        clearRoundTimer(session.roomCode);
         session.isLeagueComplete = true;
         session.status = 'podium';
         await GameSession.findOneAndUpdate(
           { _id: session._id },
           { $set: { status: 'podium', isLeagueComplete: true, lastActivity: new Date() } }
         );
+        io.to(session.roomCode).emit('phase-changed', {
+          status: 'podium',
+          leagueGameNumber: session.leagueGameNumber
+        });
         io.to(session.roomCode).emit('league-complete', {
           players: publicPlayers(session),
           hostId: session.hostId,
@@ -1181,6 +1187,7 @@ io.on('connection', (socket) => {
           $set: {
             status: session.status,
             leagueGameNumber: session.leagueGameNumber,
+            lastImposterId: session.lastImposterId,
             players: session.players,
             usedPairs: session.usedPairs,
             speakerQueue: session.speakerQueue,
@@ -1311,6 +1318,7 @@ socket.on('start-new-league', async () => {
     session.tiedPlayerIds = [];
     session.leagueGameNumber = 1;
     session.isLeagueComplete = false;
+    session.lastImposterId = null;
     session.status = 'lobby';
 
     const updated = await GameSession.findOneAndUpdate(
@@ -1326,6 +1334,7 @@ socket.on('start-new-league', async () => {
           currentSpeakerIndex: session.currentSpeakerIndex,
           isRevote: session.isRevote,
           tiedPlayerIds: session.tiedPlayerIds,
+          lastImposterId: null,
           leagueGameNumber: session.leagueGameNumber,
           isLeagueComplete: session.isLeagueComplete,
           status: session.status,
@@ -1748,33 +1757,44 @@ async function calculateRoundResults(session, explicitCaughtAccusedId = null) {
     clearRoundTimer(session.roomCode);
     const roomCode = session.roomCode;
 
-    // 🔥 CRITICAL FIX: Check if league is complete BEFORE setting timer
+    // Check if league is complete
     const next = nextLeagueStatus(session.leagueGameNumber);
     if (next.isLeagueComplete) {
-      // League complete – emit podium and do NOT start a timer
-      console.log(`🏆 League complete in room ${roomCode}. Podium time!`);
-      session.isLeagueComplete = true;
-      session.status = 'podium';
-      await GameSession.findOneAndUpdate(
-        { _id: session._id },
-        {
-          $set: {
-            leagueGameNumber: next.leagueGameNumber,
-            isLeagueComplete: true,
+      // 10th game complete – show 10th game results for 8 seconds, then automatically advance to podium!
+      const delayMs = getRoundAdvanceMs();
+      console.log(`🏆 10th game complete in room ${roomCode}. Showing 10th game results for ${delayMs}ms before podium.`);
+
+      const timer = setTimeout(async () => {
+        try {
+          roundAdvanceTimers.delete(roomCode);
+          let curr = await GameSession.findOne({ roomCode });
+          if (!curr || curr.status === 'podium') return;
+
+          curr.isLeagueComplete = true;
+          curr.status = 'podium';
+          curr.lastActivity = new Date();
+          await curr.save();
+
+          io.to(roomCode).emit('phase-changed', {
             status: 'podium',
-            lastActivity: new Date()
-          }
+            leagueGameNumber: curr.leagueGameNumber
+          });
+          io.to(roomCode).emit('league-complete', {
+            players: publicPlayers(curr),
+            hostId: curr.hostId,
+            roomCode
+          });
+          console.log(`🏆 Transitioned room ${roomCode} to podium after results delay.`);
+        } catch (err) {
+          console.error('Error advancing to podium:', err);
         }
-      );
-      io.to(roomCode).emit('league-complete', {
-        players: publicPlayers(session),
-        hostId: session.hostId,
-        roomCode
-      });
-      return; // 🔥 No timer, stays on podium forever
+      }, delayMs);
+
+      roundAdvanceTimers.set(roomCode, timer);
+      return;
     }
 
-    // No automatic timer – host starts the next game whenever they want via 'start-next-game'
+    // Games 1 to 9: No automatic timer – host starts the next game whenever they want via 'start-next-game'
     console.log(`⏸️ Room ${roomCode} waiting in results for host to start next game.`);
   } catch (error) {
     console.error('Calculate results error:', error);

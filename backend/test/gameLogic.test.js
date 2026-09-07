@@ -152,6 +152,33 @@ describe('unordered word pair assignment', () => {
     });
     assert.equal(session.usedPairs.length, 2);
   });
+
+  it('never chooses the same imposter in consecutive rounds when multiple players are active', () => {
+    const bank = [
+      { agent: 'WordA', imposter: 'WordB' },
+      { agent: 'WordC', imposter: 'WordD' },
+      { agent: 'WordE', imposter: 'WordF' },
+      { agent: 'WordG', imposter: 'WordH' }
+    ];
+    const session = {
+      usedPairs: [],
+      players: [player('a'), player('b'), player('c'), player('d')]
+    };
+
+    let previousImposterId = null;
+    for (let round = 1; round <= 20; round++) {
+      const { imposter } = assignWordsAndImposter(session, bank);
+      if (previousImposterId !== null) {
+        assert.notEqual(
+          imposter.playerId,
+          previousImposterId,
+          `Round ${round} selected same imposter as previous round: ${imposter.playerId}`
+        );
+      }
+      previousImposterId = imposter.playerId;
+      assert.equal(session.lastImposterId, imposter.playerId);
+    }
+  });
 });
 
 describe('voting tie detection and round scoring', () => {

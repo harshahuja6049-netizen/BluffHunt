@@ -68,6 +68,10 @@ const gameSessionSchema = new mongoose.Schema({
     },
     tiedPlayerIds: [String],
     kickedPlayerIds: [String],
+    lastImposterId: {
+        type: String,
+        default: null
+    },
     speakerQueue:[String],
     currentSpeakerIndex: {
     type: Number,

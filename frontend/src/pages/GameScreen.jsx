@@ -55,6 +55,7 @@ const GameScreen = () => {
   const [pendingAcknowledge, setPendingAcknowledge] = useState(false);
   const [voiceStatus, setVoiceStatus] = useState({ isEnabled: false, isMuted: true, error: null });
   const [speakingPlayers, setSpeakingPlayers] = useState({});
+  const [podiumCountdown, setPodiumCountdown] = useState(8);
   const voiceManagerRef = useRef(null);
   const pendingTimeoutRef = useRef(null);
   const playedResultsSoundRef = useRef(false);
@@ -381,6 +382,27 @@ const GameScreen = () => {
       return () => clearTimeout(timer);
     }
   }, [phase, currentWord, pendingAcknowledge, currentPlayerId]);
+
+  // 10th Game Results: 8-second countdown before podium
+  useEffect(() => {
+    if (phase !== 'results' || currentGame < 10) {
+      setPodiumCountdown(8);
+      return undefined;
+    }
+
+    setPodiumCountdown(8);
+    const interval = setInterval(() => {
+      setPodiumCountdown((prev) => {
+        if (prev <= 1) {
+          clearInterval(interval);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [phase, currentGame]);
 
   // ---------- HANDLERS ----------
   const handleToggleMic = async () => {
@@ -953,12 +975,36 @@ const GameScreen = () => {
                     ))}
                   </div>
 
-                  {/* Next Game Host Trigger - No 8s Countdown */}
+                  {/* Next Game Host Trigger (Games 1-9) or 8s Countdown to Podium (Game 10) */}
                   <div className="mt-4 pt-2 border-t border-slate-800">
                     {currentGame >= 10 ? (
-                      <div className="flex items-center justify-center gap-2 text-amber-300 py-2">
-                        <span className="animate-spin">🏆</span>
-                        <p className="font-display font-black text-sm">League Complete! Loading Grand Finale Podium...</p>
+                      <div className="space-y-2">
+                        <div className="p-3.5 bg-gradient-to-r from-amber-500/10 via-yellow-500/10 to-amber-500/10 border border-amber-400/30 rounded-2xl flex flex-col items-center justify-center gap-1 text-center shadow-lg">
+                          <div className="flex items-center gap-2 font-display font-black text-sm sm:text-base text-amber-300">
+                            <span className="text-xl animate-bounce">🏆</span>
+                            <span>Season Complete! Podium in {podiumCountdown}s...</span>
+                          </div>
+                          <p className="font-body text-xs text-slate-300">
+                            Game 10 final scores are updated above! Revealing champions shortly.
+                          </p>
+                          <div className="w-full bg-slate-950/80 rounded-full h-2 mt-1 border border-slate-800 overflow-hidden">
+                            <div
+                              className="bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-300 h-full transition-all duration-1000 ease-linear rounded-full shadow-glow-gold"
+                              style={{ width: `${Math.max(0, (podiumCountdown / 8) * 100)}%` }}
+                            />
+                          </div>
+                        </div>
+
+                        {isHost && (
+                          <button
+                            type="button"
+                            onClick={handleStartNextGame}
+                            className="w-full py-2.5 bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-300 font-display font-bold text-xs rounded-xl transition-all active:scale-95 flex items-center justify-center gap-1.5"
+                          >
+                            <span>⏩</span>
+                            <span>Open Grand Finale Podium Now (Skip Countdown)</span>
+                          </button>
+                        )}
                       </div>
                     ) : isHost ? (
                       <button
