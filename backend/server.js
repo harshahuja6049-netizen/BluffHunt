@@ -814,38 +814,15 @@ io.on('connection', (socket) => {
       console.log(`✅ Player ${player.nickname} acknowledged word in ${latest.roomCode}. Ready: ${active.filter(p => p.hasAcknowledgedWord).length}/${active.length}`);
 
       if (allAcknowledged) {
-        // All players have acknowledged, move to clue phase
-        const speakerQueue = shuffle(active.map((p) => p.playerId));
-        const moved = await GameSession.findOneAndUpdate(
+        const locked = await GameSession.findOneAndUpdate(
           { _id: latest._id, status: 'reveal' },
-          {
-            $set: {
-              status: 'clue',
-              speakerQueue,
-              currentSpeakerIndex: 0,
-              lastActivity: new Date()
-            }
-          },
+          { $set: { status: 'discussion' } },
           { returnDocument: 'after' }
         );
-        if (!moved) return;
-
-        io.to(moved.roomCode).emit('phase-changed', {
-          status: moved.status,
-          players: publicPlayers(moved),
-          speakerQueue: moved.speakerQueue,
-          currentSpeakerIndex: moved.currentSpeakerIndex,
-          mode: moved.mode,
-          leagueGameNumber: moved.leagueGameNumber
-        });
-
-        if (moved.speakerQueue.length > 0) {
-          const firstSpeakerPrompt = moved.mode === 'offline' ? 'Say your clue out loud.' : 'Enter your clue...';
-          emitToPlayer(moved.speakerQueue[0], 'your-turn', {
-            message: firstSpeakerPrompt
-          });
+        if (locked) {
+          await startDiscussion(locked);
+          console.log(`💬 Discussion phase started directly in room ${locked.roomCode}`);
         }
-        console.log(`🔍 Clue phase started in room ${moved.roomCode}`);
       } else {
         // Some players haven't acknowledged yet, send progress update
         const readyCount = active.filter((p) => p.hasAcknowledgedWord).length;
@@ -873,38 +850,8 @@ io.on('connection', (socket) => {
         return socket.emit('error', { message: 'Not in reveal phase.' });
       }
 
-      const active = roundPlayers(session);
-      const speakerQueue = shuffle(active.map((p) => p.playerId));
-      const moved = await GameSession.findOneAndUpdate(
-        { _id: session._id, status: 'reveal' },
-        {
-          $set: {
-            status: 'clue',
-            speakerQueue,
-            currentSpeakerIndex: 0,
-            lastActivity: new Date()
-          }
-        },
-        { returnDocument: 'after' }
-      );
-      if (!moved) return;
-
-      io.to(moved.roomCode).emit('phase-changed', {
-        status: moved.status,
-        players: publicPlayers(moved),
-        speakerQueue: moved.speakerQueue,
-        currentSpeakerIndex: moved.currentSpeakerIndex,
-        mode: moved.mode,
-        leagueGameNumber: moved.leagueGameNumber
-      });
-
-      if (moved.speakerQueue.length > 0) {
-        const firstSpeakerPrompt = moved.mode === 'offline' ? 'Say your clue out loud.' : 'Enter your clue...';
-        emitToPlayer(moved.speakerQueue[0], 'your-turn', {
-          message: firstSpeakerPrompt
-        });
-      }
-      console.log(`⏩ Host forced advance to clue phase in room ${moved.roomCode}`);
+      await startDiscussion(session);
+      console.log(`⏩ Host forced advance to discussion phase in room ${session.roomCode}`);
     } catch (error) {
       console.error('Force advance reveal error:', error);
       socket.emit('error', { message: 'Server error. Please try again.' });
@@ -1088,10 +1035,13 @@ io.on('connection', (socket) => {
       });
 
       const active = roundPlayers(latest);
-      io.to(latest.roomCode).emit('ready-progress', {
+      const readyPayload = {
         readyCount: latest.readyToVote.length,
-        totalPlayers: active.length
-      });
+        totalPlayers: active.length,
+        readyPlayerIds: latest.readyToVote
+      };
+      io.to(latest.roomCode).emit('ready-progress', readyPayload);
+      io.to(latest.roomCode).emit('ready-to-vote-updated', readyPayload);
 
       if (active.every((p) => latest.readyToVote.includes(p.playerId))) {
         const updated = await GameSession.findOneAndUpdate(
@@ -1120,6 +1070,148 @@ io.on('connection', (socket) => {
       }
     } catch (error) {
       console.error('Ready to vote error:', error);
+      socket.emit('error', { message: 'Server error. Please try again.' });
+    }
+  });
+
+  socket.on('force-advance-discussion', async () => {
+    try {
+      const playerId = getPlayerId(socket);
+      let session = await findSessionByPlayer(playerId);
+      if (!session) return socket.emit('error', { message: 'You are not in a room.' });
+      if (session.hostId !== playerId) {
+        return socket.emit('error', { message: 'Only the Host can force start voting.' });
+      }
+      if (session.status !== 'discussion') {
+        return socket.emit('error', { message: 'Not in discussion phase.' });
+      }
+
+      const updated = await GameSession.findOneAndUpdate(
+        { _id: session._id, status: 'discussion' },
+        {
+          $set: {
+            status: 'voting',
+            votes: [],
+            isRevote: false,
+            tiedPlayerIds: [],
+            'players.$[].hasVoted': false,
+            lastActivity: new Date()
+          }
+        },
+        { returnDocument: 'after' }
+      );
+      if (!updated) return;
+      io.to(updated.roomCode).emit('phase-changed', {
+        status: 'voting',
+        players: publicPlayers(updated),
+        message: 'Host started the vote! Time to vote.',
+        leagueGameNumber: updated.leagueGameNumber,
+        isRevote: false,
+        tiedPlayerIds: []
+      });
+      console.log(`⏩ Host forced advance to voting in room ${updated.roomCode}`);
+    } catch (error) {
+      console.error('Force advance discussion error:', error);
+      socket.emit('error', { message: 'Server error. Please try again.' });
+    }
+  });
+
+  socket.on('webrtc-signal', async ({ targetPlayerId, signal } = {}) => {
+    try {
+      const senderPlayerId = getPlayerId(socket);
+      if (!senderPlayerId || !targetPlayerId || !signal) return;
+      emitToPlayer(targetPlayerId, 'webrtc-signal', {
+        senderPlayerId,
+        signal
+      });
+    } catch (err) {
+      console.error('WebRTC signal error:', err);
+    }
+  });
+
+  socket.on('start-next-game', async () => {
+    try {
+      const playerId = getPlayerId(socket);
+      let session = await findSessionByPlayer(playerId);
+      if (!session) return socket.emit('error', { message: 'You are not in a room.' });
+      if (session.hostId !== playerId) {
+        return socket.emit('error', { message: 'Only the Host can start the next game.' });
+      }
+      if (session.status !== 'results') {
+        return socket.emit('error', { message: 'Not in results phase.' });
+      }
+      if (session.isLeagueComplete) {
+        return socket.emit('error', { message: 'League is already complete.' });
+      }
+
+      const nextStatus = nextLeagueStatus(session.leagueGameNumber);
+      if (nextStatus.isLeagueComplete) {
+        session.isLeagueComplete = true;
+        session.status = 'podium';
+        await GameSession.findOneAndUpdate(
+          { _id: session._id },
+          { $set: { status: 'podium', isLeagueComplete: true, lastActivity: new Date() } }
+        );
+        io.to(session.roomCode).emit('league-complete', {
+          players: publicPlayers(session),
+          hostId: session.hostId,
+          roomCode: session.roomCode
+        });
+        return;
+      }
+
+      session.leagueGameNumber = nextStatus.leagueGameNumber;
+      dealRound(session);
+      session.status = 'reveal';
+      session.votes = [];
+      session.readyToVote = [];
+      session.isRevote = false;
+      session.tiedPlayerIds = [];
+      session.currentSpeakerIndex = 0;
+      session.players.forEach((p) => {
+        p.hasAcknowledgedWord = false;
+        p.hasVoted = false;
+        p.clueSubmitted = '';
+        p.hasVerballyPrepared = false;
+      });
+
+      const updated = await GameSession.findOneAndUpdate(
+        { _id: session._id },
+        {
+          $set: {
+            status: session.status,
+            leagueGameNumber: session.leagueGameNumber,
+            players: session.players,
+            usedPairs: session.usedPairs,
+            speakerQueue: session.speakerQueue,
+            currentSpeakerIndex: session.currentSpeakerIndex,
+            votes: session.votes,
+            readyToVote: session.readyToVote,
+            isRevote: session.isRevote,
+            tiedPlayerIds: session.tiedPlayerIds,
+            lastActivity: new Date()
+          }
+        },
+        { returnDocument: 'after' }
+      );
+      if (!updated) return;
+      session = updated;
+
+      io.to(session.roomCode).emit('next-round', {
+        leagueGameNumber: session.leagueGameNumber,
+        players: publicPlayers(session),
+        hostId: session.hostId
+      });
+      io.to(session.roomCode).emit('phase-changed', {
+        status: 'reveal',
+        players: publicPlayers(session),
+        message: `Game ${session.leagueGameNumber} of ${LEAGUE_GAMES}`,
+        leagueGameNumber: session.leagueGameNumber
+      });
+      emitYourWords(session);
+      console.log(`🎮 Host started Game ${session.leagueGameNumber} of ${LEAGUE_GAMES} in room ${session.roomCode}`);
+    } catch (error) {
+      console.error('Start next game error:', error);
       socket.emit('error', { message: 'Server error. Please try again.' });
     }
   });
@@ -1332,7 +1424,9 @@ socket.on('start-new-league', async () => {
       }
       console.log(`👋 ${player.nickname} disconnected from ${session.roomCode}`);
     } catch (error) {
-      console.error('Disconnect error:', error);
+      if (mongoose.connection.readyState === 1) {
+        console.error('Disconnect error:', error);
+      }
     }
   });
     socket.on('request-word', async () => {
@@ -1408,36 +1502,7 @@ async function resumeAfterDeparture(session) {
   }
 
   if (session.status === 'reveal' && active.length && active.every((p) => p.hasAcknowledgedWord === true)) {
-    const speakerQueue = shuffle(active.map((p) => p.playerId));
-    session.status = 'clue';
-    session.speakerQueue = speakerQueue;
-    session.currentSpeakerIndex = 0;
-    const updated = await GameSession.findOneAndUpdate(
-      { _id: session._id },
-      {
-        $set: {
-          status: session.status,
-          speakerQueue: session.speakerQueue,
-          currentSpeakerIndex: session.currentSpeakerIndex,
-          lastActivity: new Date()
-        }
-      },
-      { returnDocument: 'after' }
-    );
-    if (!updated) return;
-    session = updated;
-    io.to(session.roomCode).emit('phase-changed', {
-      status: session.status,
-      players: publicPlayers(session),
-      speakerQueue: session.speakerQueue,
-      currentSpeakerIndex: session.currentSpeakerIndex,
-      mode: session.mode,
-      leagueGameNumber: session.leagueGameNumber
-    });
-    if (speakerQueue.length > 0) {
-      const prompt = session.mode === 'offline' ? 'Say your clue out loud.' : 'Enter your clue...';
-      emitToPlayer(speakerQueue[0], 'your-turn', { message: prompt });
-    }
+    await startDiscussion(session);
     return;
   }
 
@@ -1478,7 +1543,7 @@ async function resumeAfterDeparture(session) {
     return;
   }
 
-  if (session.status === 'discussion' && active.every((p) => session.readyToVote.includes(p.playerId))) {
+  if (session.status === 'discussion' && active.every((p) => (session.readyToVote || []).includes(p.playerId))) {
     const updated = await GameSession.findOneAndUpdate(
       { _id: session._id },
       {
@@ -1513,11 +1578,13 @@ async function resumeAfterDeparture(session) {
 
 async function startDiscussion(session) {
   session.status = 'discussion';
+  session.readyToVote = [];
   const updated = await GameSession.findOneAndUpdate(
     { _id: session._id },
     {
       $set: {
-        status: session.status,
+        status: 'discussion',
+        readyToVote: [],
         lastActivity: new Date()
       }
     },
@@ -1525,17 +1592,37 @@ async function startDiscussion(session) {
   );
   if (!updated) return;
   session = updated;
+  const active = roundPlayers(session);
+  const readyPayload = {
+    readyCount: 0,
+    totalPlayers: active.length,
+    readyPlayerIds: []
+  };
   io.to(session.roomCode).emit('phase-changed', {
     status: 'discussion',
     players: publicPlayers(session),
-    message: 'All clues submitted! Discuss now.',
-    leagueGameNumber: session.leagueGameNumber
+    message: session.mode === 'offline' ? 'Circle Discussion! Share clues verbally and press Ready to Vote.' : 'Voice Discussion! Unmute your mic, discuss clues, and press Ready to Vote.',
+    leagueGameNumber: session.leagueGameNumber,
+    ...readyPayload
   });
+  io.to(session.roomCode).emit('ready-progress', readyPayload);
+  io.to(session.roomCode).emit('ready-to-vote-updated', readyPayload);
 }
 
 function dealRound(session) {
   const dealt = assignWordsAndImposter(session, wordBank);
   session.lastActivity = new Date();
+  if (session.players && Array.isArray(session.players)) {
+    session.players = session.players.map((p) => {
+      const obj = p.toObject ? p.toObject() : { ...p };
+      obj.hasAcknowledgedWord = false;
+      obj.hasVoted = false;
+      obj.clueSubmitted = '';
+      obj.hasVerballyPrepared = false;
+      obj.votesReceived = 0;
+      return obj;
+    });
+  }
   if (dealt && dealt.imposter) {
     console.log(`📝 Words assigned. Imposter: ${dealt.imposter.nickname} (${dealt.imposter.word})`);
   }
@@ -1687,54 +1774,8 @@ async function calculateRoundResults(session, explicitCaughtAccusedId = null) {
       return; // 🔥 No timer, stays on podium forever
     }
 
-    // Not complete – proceed with normal timer
-    const timer = setTimeout(async () => {
-      roundAdvanceTimers.delete(roomCode);
-      try {
-        const latest = await GameSession.findOne({ roomCode });
-        if (!latest || latest.status !== 'results') return;
-
-        const nextStatus = nextLeagueStatus(latest.leagueGameNumber);
-        latest.leagueGameNumber = nextStatus.leagueGameNumber;
-
-        dealRound(latest);
-        latest.status = 'reveal';
-        await GameSession.findOneAndUpdate(
-          { _id: latest._id },
-          {
-            $set: {
-              status: latest.status,
-              leagueGameNumber: latest.leagueGameNumber,
-              players: latest.players,
-              usedPairs: latest.usedPairs,
-              speakerQueue: latest.speakerQueue,
-              currentSpeakerIndex: latest.currentSpeakerIndex,
-              votes: latest.votes,
-              readyToVote: latest.readyToVote,
-              isRevote: latest.isRevote,
-              tiedPlayerIds: latest.tiedPlayerIds,
-              lastActivity: new Date()
-            }
-          }
-        );
-
-        io.to(roomCode).emit('next-round', {
-          leagueGameNumber: latest.leagueGameNumber,
-          players: publicPlayers(latest),
-          hostId: latest.hostId
-        });
-        io.to(roomCode).emit('phase-changed', {
-          status: 'reveal',
-          players: publicPlayers(latest),
-          message: `Game ${latest.leagueGameNumber} of ${LEAGUE_GAMES}`,
-          leagueGameNumber: latest.leagueGameNumber
-        });
-        emitYourWords(latest);
-      } catch (error) {
-        console.error('Advance round error:', error);
-      }
-    }, getRoundAdvanceMs());
-    roundAdvanceTimers.set(roomCode, timer);
+    // No automatic timer – host starts the next game whenever they want via 'start-next-game'
+    console.log(`⏸️ Room ${roomCode} waiting in results for host to start next game.`);
   } catch (error) {
     console.error('Calculate results error:', error);
   }
@@ -1742,7 +1783,7 @@ async function calculateRoundResults(session, explicitCaughtAccusedId = null) {
 
 function emitGameState(socket, session, player) {
   if (!player) return;
-  if (session.status === 'reveal' || session.status === 'clue') {
+  if (session.status === 'reveal' || session.status === 'clue' || session.status === 'discussion') {
     emitToPlayer(player.playerId, 'your-word', {
       word: player.word,
       isImposter: player.isImposter,

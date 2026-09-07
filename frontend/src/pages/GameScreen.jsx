@@ -1,4 +1,4 @@
-// frontend/src/pages/GameScreen.jsx (Fully Fixed + Word Request)
+// frontend/src/pages/GameScreen.jsx
 
 import { useEffect, useState, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -6,6 +6,7 @@ import socket, { emitRejoin, setHasJoinedRoom } from '../socket';
 import ScreenShell from '../components/ScreenShell';
 import LeaveButton from '../components/LeaveButton';
 import { soundEffects } from '../utils/soundEffects';
+import { VoiceChatManager } from '../utils/voiceChat';
 import { useToast } from '../components/Toast';
 
 const GameScreen = () => {
@@ -41,6 +42,7 @@ const GameScreen = () => {
   const [speakerQueue, setSpeakerQueue] = useState([]);
   const [currentSpeakerIndex, setCurrentSpeakerIndex] = useState(0);
   const [readyCount, setReadyCount] = useState(0);
+  const [readyPlayerIds, setReadyPlayerIds] = useState([]);
   const [isReadyToVote, setIsReadyToVote] = useState(false);
   const [votedCount, setVotedCount] = useState(0);
   const [totalPlayers, setTotalPlayers] = useState((initialPlayers || []).length);
@@ -51,7 +53,11 @@ const GameScreen = () => {
   const [isWaitingSpectator, setIsWaitingSpectator] = useState(false);
   const [isMuted, setIsMuted] = useState(() => soundEffects.getMuted());
   const [pendingAcknowledge, setPendingAcknowledge] = useState(false);
+  const [voiceStatus, setVoiceStatus] = useState({ isEnabled: false, isMuted: true, error: null });
+  const [speakingPlayers, setSpeakingPlayers] = useState({});
+  const voiceManagerRef = useRef(null);
   const pendingTimeoutRef = useRef(null);
+  const playedResultsSoundRef = useRef(false);
 
   const currentPlayerId = localStorage.getItem('playerId');
   const isHost = currentPlayerId === hostId;
@@ -62,16 +68,14 @@ const GameScreen = () => {
   const displayWord = currentWord || (currentPlayer ? currentPlayer.word : '');
   const displayIsImposter = isImposter || (currentPlayer ? currentPlayer.isImposter : false);
 
-  const updateSpeakerTurn = (queue, index, playerList) => {
-    if (!queue || !queue.length) {
-      setIsMyTurn(false);
-      setCurrentSpeakerNickname('');
-      return;
+  const playResultsAudio = (isCaught) => {
+    if (playedResultsSoundRef.current) return;
+    playedResultsSoundRef.current = true;
+    if (isCaught) {
+      soundEffects.playImposterCaught();
+    } else {
+      soundEffects.playImposterEscaped();
     }
-    const activeSpeakerId = queue[index];
-    setIsMyTurn(activeSpeakerId === currentPlayerId);
-    const speaker = (playerList || players).find((p) => p.playerId === activeSpeakerId);
-    setCurrentSpeakerNickname(speaker ? speaker.nickname : 'Someone');
   };
 
   useEffect(() => {
@@ -105,17 +109,11 @@ const GameScreen = () => {
       if (data.word) setCurrentWord(data.word);
       if (typeof data.isImposter === 'boolean') setIsImposter(data.isImposter);
       if (typeof data.waiting === 'boolean') setIsWaitingSpectator(data.waiting);
-      if (Array.isArray(data.clues) && data.clues.length) setClues(data.clues);
       if (typeof data.hasVoted === 'boolean') setHasVoted(data.hasVoted);
       if (typeof data.readyCount === 'number') setReadyCount(data.readyCount);
+      if (Array.isArray(data.readyPlayerIds)) setReadyPlayerIds(data.readyPlayerIds);
       if (typeof data.isRevote === 'boolean') setIsRevote(data.isRevote);
       if (Array.isArray(data.tiedPlayerIds)) setTiedPlayerIds(data.tiedPlayerIds);
-
-      if (data.speakerQueue) {
-        setSpeakerQueue(data.speakerQueue);
-        setCurrentSpeakerIndex(data.currentSpeakerIndex || 0);
-        updateSpeakerTurn(data.speakerQueue, data.currentSpeakerIndex || 0, data.players);
-      }
     };
 
     const onYourWord = (data) => {
@@ -143,18 +141,23 @@ const GameScreen = () => {
       if (pendingTimeoutRef.current) clearTimeout(pendingTimeoutRef.current);
       setPendingAcknowledge(false);
 
-      if (data.status === 'clue') {
-        const queue = data.speakerQueue || [];
-        const index = data.currentSpeakerIndex || 0;
-        setSpeakerQueue(queue);
-        setCurrentSpeakerIndex(index);
-        updateSpeakerTurn(queue, index, data.players);
+      if (data.status === 'reveal') {
+        playedResultsSoundRef.current = false;
+        setHasVoted(false);
+        setSelectedVote('');
+        setRoundResults(null);
+        setIsReadyToVote(false);
+        setReadyCount(0);
+        setReadyPlayerIds([]);
+        setVotedCount(0);
+        setIsRevote(false);
+        setTiedPlayerIds([]);
       }
 
       if (data.status === 'discussion') {
-        setIsMyTurn(false);
-        setReadyCount(0);
+        setReadyCount(data.readyCount || 0);
         setIsReadyToVote(false);
+        setReadyPlayerIds(data.readyPlayerIds || []);
       }
 
       if (data.status === 'voting') {
@@ -165,6 +168,7 @@ const GameScreen = () => {
           setIsRevote(true);
           setTiedPlayerIds(data.tiedPlayerIds || []);
           setRevoteMessage(data.message || 'Tie detected! Revoting among tied players.');
+          soundEffects.playTieSound();
         } else {
           setIsRevote(false);
           setTiedPlayerIds([]);
@@ -175,11 +179,7 @@ const GameScreen = () => {
       if (data.status === 'results' && data.results) {
         console.log('📊 results data in phase-changed:', data.results);
         setRoundResults(data.results);
-        if (data.results.isImposterCaught) {
-          soundEffects.playImposterCaught();
-        } else {
-          soundEffects.playImposterEscaped();
-        }
+        playResultsAudio(data.results.isImposterCaught);
       }
     };
 
@@ -187,39 +187,19 @@ const GameScreen = () => {
       console.log('📊 round-results received:', data);
       setRoundResults(data);
       setPhase('results');
-      if (data.isImposterCaught) {
-        soundEffects.playImposterCaught();
-      } else {
-        soundEffects.playImposterEscaped();
-      }
+      playResultsAudio(data.isImposterCaught);
     };
 
-    const onTurnChanged = (data) => {
-      console.log('🔊 turn-changed received:', data);
-      if (data.speakerQueue !== undefined) {
-        setSpeakerQueue(data.speakerQueue);
-        setCurrentSpeakerIndex(data.currentSpeakerIndex);
-        updateSpeakerTurn(data.speakerQueue, data.currentSpeakerIndex, players);
-      }
-    };
-
-    const onYourTurn = (data) => {
-      console.log('🔊 your-turn received:', data);
-      setIsMyTurn(true);
-    };
-
-    const onCluesUpdated = (data) => {
-      console.log('📡 clues-updated received:', data);
-      setClues(data.clues || []);
-    };
-
-    const onChatMessage = (data) => {
-      setChatMessages((prev) => [...prev, data]);
+    const onReadyProgress = (data) => {
+      if (typeof data.readyCount === 'number') setReadyCount(data.readyCount);
+      if (typeof data.totalPlayers === 'number') setTotalPlayers(data.totalPlayers);
+      if (Array.isArray(data.readyPlayerIds)) setReadyPlayerIds(data.readyPlayerIds);
     };
 
     const onReadyToVoteUpdated = (data) => {
-      setReadyCount(data.readyCount);
-      setTotalPlayers(data.totalPlayers);
+      if (typeof data.readyCount === 'number') setReadyCount(data.readyCount);
+      if (typeof data.totalPlayers === 'number') setTotalPlayers(data.totalPlayers);
+      if (Array.isArray(data.readyPlayerIds)) setReadyPlayerIds(data.readyPlayerIds);
     };
 
     const onVoteRecorded = (data) => {
@@ -250,18 +230,16 @@ const GameScreen = () => {
       if (typeof data.totalPlayers === 'number') setTotalPlayers(data.totalPlayers);
     };
 
-    const onRoundReset = (data) => {
+    const onNextRound = (data) => {
+      playedResultsSoundRef.current = false;
       setPhase('reveal');
-      setClue('');
-      setClues([]);
-      setChatMessages([]);
-      setChatInput('');
       setAcknowledgedCount(0);
       setHasVoted(false);
       setSelectedVote('');
       setRoundResults(null);
       setIsReadyToVote(false);
       setReadyCount(0);
+      setReadyPlayerIds([]);
       setVotedCount(0);
       setIsRevote(false);
       setTiedPlayerIds([]);
@@ -270,6 +248,10 @@ const GameScreen = () => {
       setPendingAcknowledge(false);
       if (data.leagueGameNumber) setCurrentGame(data.leagueGameNumber);
       if (data.players) setPlayers(data.players);
+    };
+
+    const onRoundReset = (data) => {
+      onNextRound(data);
     };
 
     const onHostChanged = (data) => {
@@ -299,7 +281,6 @@ const GameScreen = () => {
       });
     };
 
-    // ---------- LEAGUE COMPLETE ----------
     const onLeagueComplete = (data) => {
       console.log('🏆 league-complete received:', data);
       navigate('/podium', {
@@ -331,15 +312,13 @@ const GameScreen = () => {
     socket.on('your-word', onYourWord);
     socket.on('phase-changed', onPhaseChanged);
     socket.on('round-results', onRoundResults);
-    socket.on('turn-changed', onTurnChanged);
-    socket.on('your-turn', onYourTurn);
-    socket.on('clues-updated', onCluesUpdated);
-    socket.on('chat-message', onChatMessage);
+    socket.on('ready-progress', onReadyProgress);
     socket.on('ready-to-vote-updated', onReadyToVoteUpdated);
     socket.on('vote-recorded', onVoteRecorded);
     socket.on('voting-progress', onVotingProgress);
     socket.on('acknowledge-progress', onAcknowledgeProgress);
     socket.on('player-ready', onPlayerReady);
+    socket.on('next-round', onNextRound);
     socket.on('round-reset', onRoundReset);
     socket.on('host-changed', onHostChanged);
     socket.on('players-updated', onPlayersUpdated);
@@ -355,15 +334,13 @@ const GameScreen = () => {
       socket.off('your-word', onYourWord);
       socket.off('phase-changed', onPhaseChanged);
       socket.off('round-results', onRoundResults);
-      socket.off('turn-changed', onTurnChanged);
-      socket.off('your-turn', onYourTurn);
-      socket.off('clues-updated', onCluesUpdated);
-      socket.off('chat-message', onChatMessage);
+      socket.off('ready-progress', onReadyProgress);
       socket.off('ready-to-vote-updated', onReadyToVoteUpdated);
       socket.off('vote-recorded', onVoteRecorded);
       socket.off('voting-progress', onVotingProgress);
       socket.off('acknowledge-progress', onAcknowledgeProgress);
       socket.off('player-ready', onPlayerReady);
+      socket.off('next-round', onNextRound);
       socket.off('round-reset', onRoundReset);
       socket.off('host-changed', onHostChanged);
       socket.off('players-updated', onPlayersUpdated);
@@ -375,7 +352,24 @@ const GameScreen = () => {
     };
   }, [navigate, roomCode, currentPlayerId, players, showToast]);
 
-  // 🔥 NEW: If word is missing after 2 seconds, request it from server
+  // Sync peers for voice chat
+  useEffect(() => {
+    if (voiceManagerRef.current && voiceManagerRef.current.isEnabled) {
+      voiceManagerRef.current.syncPeers(players);
+    }
+  }, [players]);
+
+  // Clean up voice manager on unmount
+  useEffect(() => {
+    return () => {
+      if (voiceManagerRef.current) {
+        voiceManagerRef.current.destroy();
+        voiceManagerRef.current = null;
+      }
+    };
+  }, []);
+
+  // Request word from server if missing in reveal phase
   useEffect(() => {
     if (phase === 'reveal' && !currentWord && !pendingAcknowledge && currentPlayerId) {
       const timer = setTimeout(() => {
@@ -389,48 +383,60 @@ const GameScreen = () => {
   }, [phase, currentWord, pendingAcknowledge, currentPlayerId]);
 
   // ---------- HANDLERS ----------
-  const handleSubmitClue = () => {
-    if (!clue.trim()) return;
-    socket.emit('submit-clue', { clue: clue.trim() });
-    setClue('');
-    setIsMyTurn(false); // Optimistically disable
-  };
+  const handleToggleMic = async () => {
+    if (!voiceManagerRef.current) {
+      const vm = new VoiceChatManager(socket, currentPlayerId, {
+        onSpeakingChange: (speakingId, isSpeaking) => {
+          setSpeakingPlayers((prev) => ({ ...prev, [speakingId]: isSpeaking }));
+        },
+        onStatusChange: (status) => {
+          setVoiceStatus(status);
+        }
+      });
+      voiceManagerRef.current = vm;
+      const success = await vm.init();
+      if (success) {
+        soundEffects.playMicToggleSound(true);
+        vm.syncPeers(players);
+      } else {
+        showToast('Microphone access denied: ' + (vm.error || 'Please check browser permissions'), 'error');
+      }
+      return;
+    }
 
-  const handleVerbalClueDone = () => {
-    socket.emit('verbal-ready');
-    setIsMyTurn(false);
-  };
+    const vm = voiceManagerRef.current;
+    if (!vm.isEnabled) {
+      const success = await vm.init();
+      if (success) {
+        soundEffects.playMicToggleSound(true);
+        vm.syncPeers(players);
+      }
+      return;
+    }
 
-  const handleSendChat = () => {
-  console.log('🔍 handleSendChat called:', { chatInput, hasVoted, phase });
-  if (!chatInput.trim()) {
-    console.log('⚠️ Chat input is empty');
-    return;
-  }
-  if (hasVoted) {
-    console.log('⚠️ Already voted, chat locked');
-    return;
-  }
-  if (phase === 'voting') {
-    console.log('⚠️ Voting phase, chat locked');
-    return;
-  }
-  console.log('📤 Sending chat:', chatInput.trim());
-  socket.emit('send-chat', { message: chatInput.trim() });
-  setChatInput('');
-};
+    const nowMuted = vm.toggleMute();
+    soundEffects.playMicToggleSound(!nowMuted);
+  };
 
   const handleReadyToVote = () => {
     if (isReadyToVote) return;
     setIsReadyToVote(true);
+    soundEffects.playReadySound();
     socket.emit('ready-to-vote');
   };
 
   const handleCastVote = () => {
-    if (!selectedVote) return;
+    if (!selectedVote || hasVoted) return;
+    soundEffects.playVoteCast();
     socket.emit('cast-vote', { accusedId: selectedVote });
-    setHasVoted(true); // Optimistically update
+    setHasVoted(true);
     setVotedCount((prev) => prev + 1);
+  };
+
+  const handleStartNextGame = () => {
+    if (!isHost) return;
+    soundEffects.playStartGameSound();
+    socket.emit('start-next-game');
   };
 
   const handleKickPlayer = (targetPlayerId) => {
@@ -596,7 +602,7 @@ const GameScreen = () => {
 
               {isHost && (
                 <button type="button" onClick={() => socket.emit('force-advance-reveal')} className="w-full mt-2.5 py-2.5 bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-300 font-display font-bold text-xs rounded-xl transition-all active:scale-95">
-                  ⏩ Start Clue Round Now (Host Override)
+                  ⏩ Start Discussion Now (Host Override)
                 </button>
               )}
             </div>
@@ -608,174 +614,216 @@ const GameScreen = () => {
   }
 
   // =============================================
-  // CLUE PHASE
+  // DISCUSSION PHASE (Direct Clue Sharing via Mic or Circle)
   // =============================================
-  if (phase === 'clue') {
+  if (phase === 'discussion' || phase === 'clue') {
     return (
       <ScreenShell compact>
         {gameHeader}
-        <div className="flex-1 flex flex-col min-h-0">
-          <div className="card p-4 bg-slate-900/85 border border-slate-700/60 shadow-2xl backdrop-blur-2xl flex flex-col flex-1 min-h-0">
-            <div className="flex justify-between items-center mb-2.5 pb-2 border-b border-slate-800">
-              <div>
-                <h2 className="font-display font-black text-lg text-white">Clue Giving Round</h2>
-                <p className="font-body text-slate-400 text-xs">Game {currentGame} of 10 ({mode === 'offline' ? '🗣️ Verbal Pass' : '🌐 Realtime Clues'})</p>
-              </div>
-              <span className="px-2.5 py-1 rounded-full text-[11px] font-display font-bold bg-cyan-950/80 text-cyan-300 border border-cyan-800/50">1-2 Word Clues</span>
+        <div className="flex-1 flex flex-col gap-3 min-h-0">
+          {/* Secret / Decoy Word Reminder Card */}
+          <div className="card p-3.5 bg-slate-900/90 border border-slate-800 rounded-2xl shadow-lg shrink-0 flex items-center justify-between backdrop-blur-xl">
+            <div>
+              <span className="text-[10px] font-display font-bold uppercase tracking-wider text-slate-400 block">
+                {displayIsImposter ? '🕵️ Your Decoy Word' : '🛡️ Your Secret Word'}
+              </span>
+              <span className="font-display font-black text-xl sm:text-2xl text-amber-300">
+                {displayWord || 'Secret Word'}
+              </span>
             </div>
+            <span className={`text-xs px-2.5 py-1 rounded-full font-display font-black uppercase tracking-wider ${displayIsImposter ? 'bg-rose-950/80 text-rose-300 border border-rose-800/60' : 'bg-indigo-950/80 text-indigo-300 border border-indigo-800/60'}`}>
+              {displayIsImposter ? 'Imposter' : 'Agent'}
+            </span>
+          </div>
 
-            <div className="flex-1 overflow-y-auto space-y-2 bg-slate-950/70 border border-slate-800/80 rounded-xl p-3 mb-3">
-              {clues.length === 0 ? (
-                <p className="font-body text-slate-500 text-xs text-center py-8">Waiting for players to submit their clues...</p>
-              ) : (
-                clues.map((c, i) => (
-                  <div key={`${c.nickname}-${i}`} className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start gap-2.5">
-                    <span className="text-lg shrink-0 p-1 bg-slate-800 rounded-lg">{c.avatar || '🕵️'}</span>
-                    <div className="min-w-0 flex-1">
-                      <span className="font-display font-bold text-xs text-amber-300 block">{c.nickname}</span>
-                      <span className="font-body text-sm text-slate-100 font-medium break-words">{c.clue}</span>
-                    </div>
-                  </div>
-                ))
-              )}
-            </div>
-
-            {mode === 'offline' ? (
-              <div className="pt-1">
-                {isMyTurn ? (
-                  <div className="bg-purple-950/50 border border-purple-500/50 rounded-2xl p-4 text-center shadow-glow-purple">
-                    <p className="font-display font-black text-white text-lg mb-0.5">🗣️ YOUR TURN!</p>
-                    <p className="font-body text-amber-300 text-xs font-semibold mb-3">Say your clue out loud to the room now.</p>
-                    <button type="button" onClick={handleVerbalClueDone} className="w-full py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-display font-black rounded-xl shadow-glow-purple transition-all active:scale-[0.98]">✅ I SAID MY CLUE</button>
-                  </div>
-                ) : (
-                  <div className="bg-slate-950/80 border border-slate-800 rounded-2xl p-3.5 text-center">
-                    <p className="font-body text-slate-400 text-xs">Waiting for <span className="font-display font-bold text-amber-300">{currentSpeakerNickname || 'next player'}</span> to give their verbal clue...</p>
-                  </div>
-                )}
+          {/* ONLINE MODE: Real-Time Voice Chat & Speaking Indicators */}
+          {mode === 'online' && (
+            <div className="flex-1 card p-4 bg-slate-900/85 border border-slate-700/60 shadow-xl backdrop-blur-xl flex flex-col justify-between min-h-0">
+              <div className="text-center mb-1">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-950/80 border border-slate-800 text-[11px] font-display font-bold text-cyan-300 mb-1">
+                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+                  Live Voice Clue Discussion
+                </div>
+                <p className="font-body text-xs text-slate-300">
+                  Share clues by talking out loud! No typing — mic discussion only.
+                </p>
               </div>
-            ) : (
-              <div className="pt-1">
-                {isMyTurn ? (
-                  <div className="space-y-1.5">
-                    <p className="font-display font-black text-xs text-amber-300">👉 YOUR TURN! ENTER YOUR CLUE:</p>
-                    <div className="flex gap-2">
-                      <input
-                        type="text"
-                        placeholder="Give a subtle clue..."
-                        className="flex-1 p-3 bg-slate-950/90 border border-purple-500/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500/40 font-body text-white placeholder:text-slate-500 text-sm"
-                        value={clue}
-                        onChange={(e) => setClue(e.target.value)}
-                        maxLength={80}
-                        onKeyDown={(e) => e.key === 'Enter' && handleSubmitClue()}
-                      />
-                      <button
-                        type="button"
-                        onClick={handleSubmitClue}
-                        disabled={!clue.trim()}
-                        className="px-5 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-display font-black rounded-xl transition-all active:scale-95 shadow-glow-purple disabled:opacity-50 disabled:shadow-none"
+
+              {/* Voice Chat Speaking Avatars Grid */}
+              <div className="grid grid-cols-3 sm:grid-cols-4 gap-2.5 my-2 max-h-48 overflow-y-auto p-1">
+                {players
+                  .filter((p) => p.isConnected !== false && !p.isWaitingForNextRound)
+                  .map((p) => {
+                    const isSpeaking = Boolean(speakingPlayers[p.playerId]);
+                    const isSelf = p.playerId === currentPlayerId;
+                    const isPlayerReady = (readyPlayerIds || []).includes(p.playerId);
+
+                    return (
+                      <div
+                        key={p.playerId}
+                        className={`flex flex-col items-center p-2.5 rounded-2xl border transition-all duration-200 ${
+                          isSpeaking
+                            ? 'bg-emerald-950/70 border-emerald-400 shadow-glow-green scale-105 ring-2 ring-emerald-400/50'
+                            : 'bg-slate-950/70 border-slate-800/80'
+                        }`}
                       >
-                        Send
-                      </button>
-                    </div>
-                    <p className="font-body text-right text-[10px] text-slate-500">{clue.length}/80 chars</p>
-                  </div>
-                ) : (
-                  <div className="bg-slate-950/80 border border-slate-800 rounded-xl p-3 text-center">
-                    <p className="font-body text-slate-400 text-xs">Waiting for <span className="font-display font-bold text-amber-300">{currentSpeakerNickname || 'player'}</span> to submit clue...</p>
-                  </div>
+                        <div className="relative">
+                          <span className="text-3xl">{p.avatar || '🕵️'}</span>
+                          {isSpeaking && (
+                            <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                              <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500" />
+                            </span>
+                          )}
+                        </div>
+                        <span className="font-display font-bold text-xs text-white mt-1 truncate max-w-[80px]">
+                          {p.nickname} {isSelf && '(You)'}
+                        </span>
+                        <div className="flex items-center gap-1 mt-1">
+                          {isSpeaking ? (
+                            <span className="text-[10px] font-display font-bold text-emerald-300 flex items-center gap-0.5">
+                              <span className="animate-bounce">🎙️</span> Talking
+                            </span>
+                          ) : isPlayerReady ? (
+                            <span className="text-[10px] font-display font-bold text-amber-300">✅ Ready</span>
+                          ) : (
+                            <span className="text-[10px] font-display text-slate-500">⏳ Clue</span>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
+
+              {/* Mic Button & Control */}
+              <div className="space-y-3 pt-2">
+                <button
+                  type="button"
+                  onClick={handleToggleMic}
+                  className={`w-full py-3.5 sm:py-4 rounded-2xl font-display font-black text-base flex items-center justify-center gap-2 transition-all active:scale-[0.98] shadow-xl ${
+                    !voiceStatus.isEnabled
+                      ? 'bg-gradient-to-r from-cyan-600 via-indigo-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 text-white shadow-glow-purple ring-2 ring-cyan-400/40 animate-pulse'
+                      : voiceStatus.isMuted
+                      ? 'bg-slate-800 hover:bg-slate-700 text-rose-300 border border-rose-500/50'
+                      : 'bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white shadow-glow-green ring-2 ring-emerald-400/60'
+                  }`}
+                >
+                  {!voiceStatus.isEnabled ? (
+                    <>
+                      <span className="text-xl animate-bounce">🎙️</span>
+                      <span>Turn On Microphone to Talk</span>
+                    </>
+                  ) : voiceStatus.isMuted ? (
+                    <>
+                      <span className="text-xl">🔇</span>
+                      <span>Mic Muted (Tap to Unmute & Speak)</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="text-xl animate-pulse">🎙️</span>
+                      <span>Mic LIVE (Tap to Mute)</span>
+                    </>
+                  )}
+                </button>
+
+                {/* Ready to Vote Button PLACED DIRECTLY BELOW MIC */}
+                <button
+                  type="button"
+                  onClick={handleReadyToVote}
+                  disabled={isReadyToVote}
+                  className={`w-full py-3.5 rounded-2xl font-display font-black text-base transition-all duration-150 active:scale-[0.98] shadow-lg ${
+                    isReadyToVote
+                      ? 'bg-slate-800/80 text-slate-400 border border-slate-700/50 cursor-not-allowed shadow-none'
+                      : 'bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-slate-950 shadow-glow-gold'
+                  }`}
+                >
+                  {isReadyToVote
+                    ? `⏳ Waiting for Players (${readyCount}/${totalPlayers} Ready)`
+                    : `🗳️ I'm Ready to Vote (${readyCount}/${totalPlayers} Ready)`}
+                </button>
+
+                {isHost && (
+                  <button
+                    type="button"
+                    onClick={() => socket.emit('force-advance-discussion')}
+                    className="w-full py-2 bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-300 font-display font-bold text-xs rounded-xl transition-all active:scale-95"
+                  >
+                    ⏩ Force Start Voting (Host Override)
+                  </button>
                 )}
               </div>
-            )}
-          </div>
-        </div>
-        {hostKickModal}
-      </ScreenShell>
-    );
-  }
-
-  // =============================================
-  // DISCUSSION PHASE
-  // =============================================
-  if (phase === 'discussion') {
-    return (
-      <ScreenShell compact>
-        {gameHeader}
-        <div className="flex-1 flex flex-col gap-2.5 min-h-0">
-          <div className="card p-3 bg-slate-900/85 border border-slate-700/60 shadow-xl shrink-0 backdrop-blur-xl">
-            <div className="flex justify-between items-center mb-1.5 pb-1 border-b border-slate-800">
-              <h2 className="font-display font-black text-sm text-white">💬 Submitted Clues</h2>
-              <span className="font-body text-[11px] text-slate-400">Game {currentGame}/10</span>
             </div>
-            <div className="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto">
-              {clues.map((c, i) => (
-                <span key={`${c.nickname}-${i}`} className="font-body text-xs bg-slate-950/80 border border-slate-800 rounded-lg px-2.5 py-1 text-slate-200">
-                  <span className="font-bold text-amber-300">{c.nickname}</span>: {c.clue}
-                </span>
-              ))}
+          )}
+
+          {/* OFFLINE MODE: In-Person Circle Discussion */}
+          {mode === 'offline' && (
+            <div className="flex-1 card p-5 bg-slate-900/85 border border-slate-700/60 shadow-xl backdrop-blur-xl flex flex-col justify-between min-h-0 text-center">
+              <div>
+                <div className="text-5xl mb-2">🗣️</div>
+                <h3 className="font-display font-black text-2xl text-white mb-2">Circle Discussion</h3>
+                <p className="font-body text-slate-300 text-sm mb-4 leading-relaxed">
+                  Sit together in a circle! Say your clues out loud to each other in any order you choose. Debate and catch the Imposter!
+                </p>
+
+                <div className="p-3.5 bg-slate-950/80 border border-slate-800 rounded-xl mb-4">
+                  <p className="font-body text-xs text-amber-300 font-bold mb-1">
+                    When everyone in your circle has spoken and you&apos;re ready to vote, press the button below:
+                  </p>
+                  <p className="font-display font-black text-sm text-white">
+                    {readyCount} of {totalPlayers} players ready to vote
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mt-2.5 justify-center">
+                    {players
+                      .filter((p) => p.isConnected !== false && !p.isWaitingForNextRound)
+                      .map((p) => {
+                        const isReady = (readyPlayerIds || []).includes(p.playerId) || (p.playerId === currentPlayerId && isReadyToVote);
+                        return (
+                          <span
+                            key={p.playerId}
+                            className={`text-[11px] px-2.5 py-1 rounded-full font-display font-bold flex items-center gap-1 ${
+                              isReady
+                                ? 'bg-emerald-950/80 text-emerald-300 border border-emerald-800/60'
+                                : 'bg-slate-950 text-slate-500 border border-slate-800'
+                            }`}
+                          >
+                            <span>{p.avatar || '🕵️'}</span>
+                            <span>{p.nickname}</span>
+                            <span>{isReady ? '✅' : '⏳'}</span>
+                          </span>
+                        );
+                      })}
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-2.5 pt-2">
+                <button
+                  type="button"
+                  onClick={handleReadyToVote}
+                  disabled={isReadyToVote}
+                  className={`w-full py-4 rounded-2xl font-display font-black text-base transition-all duration-150 active:scale-[0.98] shadow-lg ${
+                    isReadyToVote
+                      ? 'bg-slate-800/80 text-slate-400 border border-slate-700/50 cursor-not-allowed shadow-none'
+                      : 'bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-slate-950 shadow-glow-gold'
+                  }`}
+                >
+                  {isReadyToVote
+                    ? `⏳ Waiting for Circle (${readyCount}/${totalPlayers} Ready)`
+                    : `🗳️ I'm Ready to Vote (${readyCount}/${totalPlayers} Ready)`}
+                </button>
+
+                {isHost && (
+                  <button
+                    type="button"
+                    onClick={() => socket.emit('force-advance-discussion')}
+                    className="w-full py-2 bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-300 font-display font-bold text-xs rounded-xl transition-all active:scale-95"
+                  >
+                    ⏩ Force Start Voting (Host Override)
+                  </button>
+                )}
+              </div>
             </div>
-          </div>
-
-          {/* Discussion Chat (Online only) */}
-{mode === 'online' && (
-  <div className="flex-1 card p-3 bg-slate-900/85 border border-slate-700/60 shadow-xl backdrop-blur-xl flex flex-col min-h-0">
-    <div className="flex-1 overflow-y-auto space-y-1.5 pr-1">
-      {chatMessages.length === 0 ? (
-        <p className="font-body text-slate-500 text-xs text-center py-6">Debate who gave the most suspicious clue!</p>
-      ) : (
-        chatMessages.map((msg, i) => (
-          <div key={`${msg.nickname}-${i}`} className="text-sm font-body bg-slate-950/70 p-2 rounded-xl border border-slate-800">
-            <span className="font-display font-bold text-amber-300 text-xs block">{msg.avatar || '🕵️'} {msg.nickname}</span>
-            <span className="text-slate-100 text-xs sm:text-sm">{msg.message}</span>
-          </div>
-        ))
-      )}
-    </div>
-    <div className="flex gap-2 mt-2 pt-2 border-t border-slate-800">
-      <input
-        type="text"
-        placeholder="Discuss suspicious clues..."
-        className="flex-1 p-2.5 bg-slate-950/90 border border-slate-700/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500/40 font-body text-white placeholder:text-slate-500 text-xs sm:text-sm"
-        value={chatInput}
-        onChange={(e) => setChatInput(e.target.value)}
-        maxLength={200}
-        onKeyDown={(e) => e.key === 'Enter' && handleSendChat()}
-      />
-      <button
-        type="button"
-        onClick={handleSendChat}
-        disabled={!chatInput.trim()}
-        className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-display font-black rounded-xl disabled:opacity-50 text-xs sm:text-sm shadow-glow-cyan transition-all active:scale-95"
-      >
-        Send
-      </button>
-    </div>
-  </div>
-)}
-
-{/* Offline mode: Show a message instead */}
-{mode === 'offline' && (
-  <div className="flex-1 card p-3 bg-slate-900/85 border border-slate-700/60 shadow-xl backdrop-blur-xl flex flex-col items-center justify-center">
-    <p className="font-body text-slate-400 text-sm text-center">
-      🗣️ Discuss verbally in the room!
-    </p>
-    <p className="font-body text-slate-500 text-xs text-center mt-1">
-      Use the "I'm Ready to Vote" button when you're done.
-    </p>
-  </div>
-)}
-
-
-          <div className="shrink-0">
-            <button
-              type="button"
-              onClick={handleReadyToVote}
-              disabled={isReadyToVote}
-              className={`w-full py-3.5 rounded-xl font-display font-black text-sm sm:text-base transition-all duration-150 active:scale-[0.98] ${isReadyToVote ? 'bg-slate-800/80 text-slate-500 border border-slate-700/50 cursor-not-allowed' : 'bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 shadow-glow-gold'}`}
-            >
-              {isReadyToVote ? `⏳ Waiting for Players (${readyCount}/${totalPlayers} ready)` : `🗳️ I'm Ready to Vote (${readyCount}/${totalPlayers} ready)`}
-            </button>
-          </div>
+          )}
         </div>
         {hostKickModal}
       </ScreenShell>
@@ -821,7 +869,11 @@ const GameScreen = () => {
                       type="button"
                       key={p.playerId}
                       disabled={hasVoted}
-                      onClick={() => setSelectedVote(p.playerId)}
+                      onClick={() => {
+                        if (hasVoted) return;
+                        setSelectedVote(p.playerId);
+                        soundEffects.playSelectSound();
+                      }}
                       className={`w-full p-3.5 rounded-xl font-display font-bold text-left flex items-center justify-between border transition-all active:scale-98 ${isSelected ? 'bg-gradient-to-r from-purple-600 to-indigo-600 border-purple-300 text-white shadow-glow-purple scale-[1.01]' : 'bg-slate-950/70 border-slate-800 text-slate-200 hover:bg-slate-800/80'} ${hasVoted ? 'cursor-not-allowed opacity-60' : ''}`}
                     >
                       <div className="flex items-center gap-3">
@@ -860,7 +912,7 @@ const GameScreen = () => {
   }
 
   // =============================================
-  // RESULTS PHASE
+  // RESULTS PHASE (Host Controls Next Game - No Auto 8s Timer)
   // =============================================
   if (phase === 'results') {
     return (
@@ -901,9 +953,29 @@ const GameScreen = () => {
                     ))}
                   </div>
 
-                  <div className="mt-3.5 flex items-center justify-center gap-2">
-                    <span className="animate-spin text-amber-300">⏳</span>
-                    <p className="font-body text-slate-400 text-xs">{currentGame >= 10 ? 'Final Podium results loading...' : 'Next round starting in 8s...'}</p>
+                  {/* Next Game Host Trigger - No 8s Countdown */}
+                  <div className="mt-4 pt-2 border-t border-slate-800">
+                    {currentGame >= 10 ? (
+                      <div className="flex items-center justify-center gap-2 text-amber-300 py-2">
+                        <span className="animate-spin">🏆</span>
+                        <p className="font-display font-black text-sm">League Complete! Loading Grand Finale Podium...</p>
+                      </div>
+                    ) : isHost ? (
+                      <button
+                        type="button"
+                        onClick={handleStartNextGame}
+                        className="w-full py-3.5 bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 text-white font-display font-black text-base rounded-2xl shadow-glow-purple transition-all duration-150 active:scale-[0.98]"
+                      >
+                        🎮 Start Game {currentGame + 1} of 10
+                      </button>
+                    ) : (
+                      <div className="flex items-center justify-center gap-2 text-slate-400 py-2">
+                        <span className="animate-spin text-amber-300">⏳</span>
+                        <p className="font-display font-bold text-xs sm:text-sm">
+                          Waiting for Host to start Game {currentGame + 1}...
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </>
               ) : (

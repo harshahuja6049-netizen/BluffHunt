@@ -8,6 +8,7 @@ import ScreenShell from '../components/ScreenShell';
 import LeaveButton from '../components/LeaveButton';
 import JoinRequestModal from '../components/JoinRequestModal';
 import { useToast } from '../components/Toast';
+import { soundEffects } from '../utils/soundEffects';
 
 const LobbyScreen = () => {
   const location = useLocation();
@@ -143,7 +144,10 @@ const LobbyScreen = () => {
     socket.emit('change-mode', { mode: nextMode });
   };
 
-  const handleStartGame = () => socket.emit('start-game');
+  const handleStartGame = () => {
+    soundEffects.playStartGameSound();
+    socket.emit('start-game');
+  };
   
   const handleKickPlayer = (playerId) => {
     if (window.confirm('Are you sure you want to kick this player?')) {

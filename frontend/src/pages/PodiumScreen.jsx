@@ -6,6 +6,7 @@ import Confetti from 'react-confetti';
 import socket, { emitRejoin, setHasJoinedRoom } from '../socket';
 import ScreenShell from '../components/ScreenShell';
 import { useToast } from '../components/Toast';
+import { soundEffects } from '../utils/soundEffects';
 
 const PodiumScreen = () => {
   const location = useLocation();
@@ -30,6 +31,8 @@ const PodiumScreen = () => {
     }
     const sorted = [...players].sort((a, b) => b.leaguePoints - a.leaguePoints);
     setSortedPlayers(sorted);
+
+    soundEffects.playPodiumFanfare();
 
     emitRejoin();
     const onConnect = () => emitRejoin();
@@ -59,6 +62,7 @@ const PodiumScreen = () => {
 
   const handleNewLeague = () => {
     if (isHost) {
+      soundEffects.playStartGameSound();
       socket.emit('start-new-league');
     } else {
       setHasJoinedRoom(false);

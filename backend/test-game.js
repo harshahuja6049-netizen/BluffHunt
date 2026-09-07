@@ -136,6 +136,11 @@ async function runLeagueTest(url = process.env.TEST_URL || 'http://localhost:500
 
     player.socket.on('round-results', () => {
       roundsDone += 1 / players.length;
+      if (player === host) {
+        setTimeout(() => {
+          player.socket.emit('start-next-game');
+        }, 50);
+      }
     });
 
     player.socket.on('next-round', () => {
