@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import socket, { setHasJoinedRoom } from '../socket';
 import ScreenShell from '../components/ScreenShell';
 import { useToast } from '../components/Toast';
+import { isStandalone } from '../components/InstallPrompt';
 
 const AVATARS = ['🕵️', '🦁', '🍕', '🎭', '🚀', '🦊', '👑', '🎯', '⚡', '🥑'];
 
@@ -237,11 +238,24 @@ const JoinScreen = () => {
             <p className="font-body text-slate-400 text-xs sm:text-sm font-medium mt-1">
               Everyone Knows. One Pretends.
             </p>
-            <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-slate-900/80 border border-slate-700/60 mt-2">
-              <span className={`w-2 h-2 rounded-full ${connected ? 'bg-emerald-400 animate-pulse' : 'bg-rose-400 animate-ping'}`} />
-              <span className={`font-body text-[11px] font-semibold ${connected ? 'text-emerald-300' : 'text-rose-300'}`}>
-                {connected ? 'Server Online' : 'Connecting to Server...'}
-              </span>
+            <div className="flex items-center justify-center gap-2 mt-2 flex-wrap">
+              <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-slate-900/80 border border-slate-700/60">
+                <span className={`w-2 h-2 rounded-full ${connected ? 'bg-emerald-400 animate-pulse' : 'bg-rose-400 animate-ping'}`} />
+                <span className={`font-body text-[11px] font-semibold ${connected ? 'text-emerald-300' : 'text-rose-300'}`}>
+                  {connected ? 'Server Online' : 'Connecting to Server...'}
+                </span>
+              </div>
+              {!isStandalone() && (
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new Event('open-install-prompt'))}
+                  className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-purple-950/80 hover:bg-purple-900 text-purple-300 border border-purple-700/60 text-[11px] font-display font-bold transition-all active:scale-95 shadow-glow-purple"
+                  title="Install BluffHunt App Shortcut"
+                >
+                  <span>📲</span>
+                  <span>Install Shortcut</span>
+                </button>
+              )}
             </div>
           </div>
 
