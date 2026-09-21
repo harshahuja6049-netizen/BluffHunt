@@ -5,7 +5,10 @@ const RTC_CONFIG = {
   iceServers: [
     { urls: 'stun:stun.l.google.com:19302' },
     { urls: 'stun:stun1.l.google.com:19302' },
-    { urls: 'stun:stun2.l.google.com:19302' }
+    { urls: 'stun:stun2.l.google.com:19302' },
+    { urls: 'stun:stun3.l.google.com:19302' },
+    { urls: 'stun:stun4.l.google.com:19302' },
+    { urls: 'stun:global.stun.twilio.com:3478' }
   ]
 };
 
@@ -19,16 +22,18 @@ export class VoiceChatManager {
     this.isEnabled = false;
     this.onSpeakingChange = options.onSpeakingChange || (() => {});
     this.onStatusChange = options.onStatusChange || (() => {});
+    this.onPeerStatusChange = options.onPeerStatusChange || (() => {});
     this.analyserInterval = null;
     this.audioContext = null;
     this.localAnalyser = null;
     this.error = null;
 
     this.handleSignal = this.handleSignal.bind(this);
+    this.handlePeerVoiceStatus = this.handlePeerVoiceStatus.bind(this);
   }
 
   async init() {
-    if (this.isEnabled) return true;
+    if (this.isEnabled && this.localStream) return true;
     try {
       if (!navigator?.mediaDevices?.getUserMedia) {
         throw new Error('Microphone not supported on this browser/device.');
@@ -51,10 +56,18 @@ export class VoiceChatManager {
       // Setup local speaking analyzer
       this.setupSpeakingDetection();
 
-      // Register socket signaling listener
+      // Register socket signaling listeners
+      this.socket.off('webrtc-signal', this.handleSignal);
       this.socket.on('webrtc-signal', this.handleSignal);
 
+      this.socket.off('peer-voice-status', this.handlePeerVoiceStatus);
+      this.socket.on('peer-voice-status', this.handlePeerVoiceStatus);
+
+      // Broadcast to other peers in room that local mic is on
+      this.socket.emit('voice-status-change', { isEnabled: true, isMuted: false });
+
       this.onStatusChange({ isEnabled: true, isMuted: this.isMuted, error: null });
+      this.resumeAllAudio();
       return true;
     } catch (err) {
       console.warn('VoiceChat init error:', err);
@@ -109,13 +122,26 @@ export class VoiceChatManager {
     }
   }
 
+  resumeAllAudio() {
+    if (this.audioContext && this.audioContext.state === 'suspended') {
+      this.audioContext.resume().catch(() => {});
+    }
+    this.peers.forEach((peer) => {
+      if (peer.audioEl) {
+        peer.audioEl.play().catch(() => {});
+      }
+    });
+  }
+
   toggleMute() {
     if (!this.localStream) return true;
     this.isMuted = !this.isMuted;
     this.localStream.getAudioTracks().forEach((track) => {
       track.enabled = !this.isMuted;
     });
+    this.socket.emit('voice-status-change', { isEnabled: this.isEnabled, isMuted: this.isMuted });
     this.onStatusChange({ isEnabled: this.isEnabled, isMuted: this.isMuted, error: this.error });
+    this.resumeAllAudio();
     return this.isMuted;
   }
 
@@ -125,7 +151,25 @@ export class VoiceChatManager {
     this.localStream.getAudioTracks().forEach((track) => {
       track.enabled = !this.isMuted;
     });
+    this.socket.emit('voice-status-change', { isEnabled: this.isEnabled, isMuted: this.isMuted });
     this.onStatusChange({ isEnabled: this.isEnabled, isMuted: this.isMuted, error: this.error });
+    this.resumeAllAudio();
+  }
+
+  handlePeerVoiceStatus(data) {
+    const { playerId, isEnabled, isMuted } = data || {};
+    if (!playerId || playerId === this.localPlayerId) return;
+    if (this.onPeerStatusChange) {
+      this.onPeerStatusChange(playerId, { isEnabled, isMuted });
+    }
+    if (isEnabled && this.isEnabled && this.localStream) {
+      if (!this.peers.has(playerId)) {
+        const isInitiator = this.localPlayerId < playerId;
+        this.connectPeer(playerId, isInitiator);
+      }
+    } else if (!isEnabled) {
+      this.removePeer(playerId);
+    }
   }
 
   // Connect with a specific remote player
@@ -287,6 +331,13 @@ export class VoiceChatManager {
     }
 
     this.socket.off('webrtc-signal', this.handleSignal);
+    this.socket.off('peer-voice-status', this.handlePeerVoiceStatus);
+
+    try {
+      this.socket.emit('voice-status-change', { isEnabled: false, isMuted: true });
+    } catch {
+      // ignore
+    }
 
     this.peers.forEach((_, peerId) => this.removePeer(peerId));
     this.peers.clear();

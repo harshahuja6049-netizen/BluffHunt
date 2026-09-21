@@ -29,10 +29,7 @@ const GameScreen = () => {
   const [currentWord, setCurrentWord] = useState('');
   const [isImposter, setIsImposter] = useState(false);
   const [acknowledgedCount, setAcknowledgedCount] = useState(0);
-  const [clue, setClue] = useState('');
-  const [clues, setClues] = useState([]);
-  const [chatMessages, setChatMessages] = useState([]);
-  const [chatInput, setChatInput] = useState('');
+  const [peerVoiceStatus, setPeerVoiceStatus] = useState({});
   const [hasVoted, setHasVoted] = useState(false);
   const [selectedVote, setSelectedVote] = useState('');
   const [roundResults, setRoundResults] = useState(null);
@@ -417,6 +414,9 @@ const GameScreen = () => {
         },
         onStatusChange: (status) => {
           setVoiceStatus(status);
+        },
+        onPeerStatusChange: (peerId, status) => {
+          setPeerVoiceStatus((prev) => ({ ...prev, [peerId]: status }));
         }
       });
       voiceManagerRef.current = vm;
@@ -508,6 +508,43 @@ const GameScreen = () => {
         <span className="text-[11px] font-display font-bold px-2 py-0.5 rounded-full bg-slate-800 text-amber-300 border border-slate-700">#{roomCode}</span>
       </div>
       <div className="flex items-center gap-1.5">
+        {mode === 'online' && (
+          <button
+            type="button"
+            onClick={handleToggleMic}
+            className={`p-1 px-2.5 rounded-lg text-xs font-display font-black transition-all flex items-center gap-1.5 active:scale-95 shadow-md ${
+              !voiceStatus.isEnabled
+                ? 'bg-gradient-to-r from-cyan-600 via-indigo-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 text-white animate-pulse ring-1 ring-cyan-400/50'
+                : voiceStatus.isMuted
+                ? 'bg-slate-800 text-rose-300 border border-rose-500/50 hover:bg-slate-700'
+                : 'bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white ring-2 ring-emerald-400 shadow-glow-green'
+            }`}
+            title={
+              !voiceStatus.isEnabled
+                ? 'Turn On Mic to Talk'
+                : voiceStatus.isMuted
+                ? 'Mic Muted (Tap to Unmute)'
+                : 'Mic LIVE (Tap to Mute)'
+            }
+          >
+            {!voiceStatus.isEnabled ? (
+              <>
+                <span className="animate-bounce">🎙️</span>
+                <span>Join Voice</span>
+              </>
+            ) : voiceStatus.isMuted ? (
+              <>
+                <span>🔇</span>
+                <span>Muted</span>
+              </>
+            ) : (
+              <>
+                <span className="animate-pulse">🎙️</span>
+                <span>LIVE</span>
+              </>
+            )}
+          </button>
+        )}
         <button type="button" onClick={() => setIsMuted(soundEffects.toggleMute())} className="p-1 px-2.5 rounded-lg text-xs font-display font-bold bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 transition-all flex items-center gap-1 active:scale-95" title={isMuted ? 'Unmute Sound Effects' : 'Mute Sound Effects'}>
           {isMuted ? '🔇 Muted' : '🔊 SFX'}
         </button>
@@ -727,10 +764,26 @@ const GameScreen = () => {
                             <span className="text-[10px] font-display font-bold text-emerald-300 flex items-center gap-0.5">
                               <span className="animate-bounce">🎙️</span> Talking
                             </span>
+                          ) : isSelf ? (
+                            voiceStatus.isEnabled ? (
+                              voiceStatus.isMuted ? (
+                                <span className="text-[10px] font-display font-bold text-rose-400">🔇 Muted</span>
+                              ) : (
+                                <span className="text-[10px] font-display font-bold text-emerald-400">🎙️ Live</span>
+                              )
+                            ) : (
+                              <span className="text-[10px] font-display text-slate-500">⏳ Mic Off</span>
+                            )
+                          ) : peerVoiceStatus[p.playerId]?.isEnabled ? (
+                            peerVoiceStatus[p.playerId]?.isMuted ? (
+                              <span className="text-[10px] font-display font-bold text-rose-400">🔇 Muted</span>
+                            ) : (
+                              <span className="text-[10px] font-display font-bold text-emerald-400">🎙️ Live</span>
+                            )
                           ) : isPlayerReady ? (
                             <span className="text-[10px] font-display font-bold text-amber-300">✅ Ready</span>
                           ) : (
-                            <span className="text-[10px] font-display text-slate-500">⏳ Clue</span>
+                            <span className="text-[10px] font-display text-slate-500">⏳ Listening</span>
                           )}
                         </div>
                       </div>

@@ -1130,6 +1130,22 @@ io.on('connection', (socket) => {
     }
   });
 
+  socket.on('voice-status-change', async ({ isEnabled, isMuted } = {}) => {
+    try {
+      const playerId = getPlayerId(socket);
+      if (!playerId) return;
+      const session = await findSessionByPlayer(playerId);
+      if (!session) return;
+      socket.to(session.roomCode).emit('peer-voice-status', {
+        playerId,
+        isEnabled: Boolean(isEnabled),
+        isMuted: Boolean(isMuted)
+      });
+    } catch (err) {
+      console.error('Voice status change error:', err);
+    }
+  });
+
   socket.on('start-next-game', async () => {
     try {
       const playerId = getPlayerId(socket);
