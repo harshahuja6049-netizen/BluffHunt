@@ -1610,7 +1610,7 @@ async function startDiscussion(session) {
   io.to(session.roomCode).emit('phase-changed', {
     status: 'discussion',
     players: publicPlayers(session),
-    message: session.mode === 'offline' ? 'Circle Discussion! Share clues verbally and press Ready to Vote.' : 'Voice Discussion! Unmute your mic, discuss clues, and press Ready to Vote.',
+    message: session.mode === 'offline' ? 'In-Person Discussion! Press Ready to Vote when done.' : 'Voice Discussion! Unmute your mic, discuss clues, and press Ready to Vote.',
     leagueGameNumber: session.leagueGameNumber,
     ...readyPayload
   });

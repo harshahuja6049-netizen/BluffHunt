@@ -170,9 +170,9 @@ gameSessionSchema.index({ 'players.playerId': 1 });
 ### Feature 4: Secret Word Privacy Protection
 * **Problem**: In party environments, having *"Your word: [WORD]"* persistently visible on the header allows physical onlookers to peek.
 * **How it is made**:
-  - The secret word is displayed **only** during `phase === 'reveal'` on the player's card.
-  - The player clicks *"👁️ I Know My Secret Word"* to memorize it.
-  - On transition to `clue`, `discussion`, and `voting` phases, the secret word is completely removed from the header and DOM.
+  - The secret word is displayed **only** during `phase === 'reveal'` before the player memorizes it.
+  - The player clicks *"👁️ I Memorized My Word"* to memorize it, which immediately hides and locks the word from the screen.
+  - On transition to `discussion` and `voting` phases, the secret word remains completely removed from the header and DOM in both Online and Offline modes.
 
 ### Feature 5: Dynamic 3–10 Player Lobby & Mid-Game Admissions
 * **Problem**: Party sizes vary between 3 and 10 players. Late-joining players shouldn't break an ongoing round.

@@ -144,6 +144,8 @@ const GameScreen = () => {
 
       if (data.status === 'reveal') {
         playedResultsSoundRef.current = false;
+        setCurrentWord('');
+        setIsImposter(false);
         setHasVoted(false);
         setSelectedVote('');
         setRoundResults(null);
@@ -234,6 +236,8 @@ const GameScreen = () => {
     const onNextRound = (data) => {
       playedResultsSoundRef.current = false;
       setPhase('reveal');
+      setCurrentWord('');
+      setIsImposter(false);
       setAcknowledgedCount(0);
       setHasVoted(false);
       setSelectedVote('');
@@ -541,8 +545,9 @@ const GameScreen = () => {
   // REVEAL PHASE
   // =============================================
   if (phase === 'reveal') {
-    const isButtonDisabled = !displayWord || hasAcknowledged || pendingAcknowledge;
-    const buttonText = hasAcknowledged || pendingAcknowledge
+    const isMemorized = Boolean(hasAcknowledged || pendingAcknowledge);
+    const isButtonDisabled = !displayWord || isMemorized;
+    const buttonText = isMemorized
       ? `⏳ Waiting for other players... (${acknowledgedCount || 1}/${totalPlayers} ready)`
       : '👁️ I Memorized My Word';
 
@@ -558,6 +563,19 @@ const GameScreen = () => {
 
               {!displayWord ? (
                 <p className="font-body text-slate-400 animate-pulse">Decrypting secret assignment...</p>
+              ) : isMemorized ? (
+                <>
+                  <div className="text-6xl mb-2">🔒</div>
+                  <h2 className="font-display font-black text-2xl sm:text-3xl text-emerald-400 mb-1 tracking-tight">WORD MEMORIZED!</h2>
+                  <p className="font-body text-slate-300 text-xs sm:text-sm mb-3">Your word is safely locked in memory and hidden for privacy.</p>
+                  <p className="font-body text-slate-400 text-xs uppercase tracking-wider">Your Role:</p>
+                  <div className="my-3 py-3 px-4 bg-slate-950/90 border border-emerald-500/30 rounded-2xl">
+                    <p className={`font-display font-black text-2xl sm:text-3xl tracking-wide flex items-center justify-center gap-2 ${displayIsImposter ? 'text-rose-400' : 'text-cyan-300'}`}>
+                      <span>{displayIsImposter ? '🕵️ IMPOSTER' : '🛡️ AGENT'}</span>
+                    </p>
+                    <p className="font-body text-slate-400 text-xs mt-1">Word hidden from onlookers</p>
+                  </div>
+                </>
               ) : displayIsImposter ? (
                 <>
                   <div className="text-6xl mb-2 animate-bounce">🕵️</div>
@@ -643,18 +661,21 @@ const GameScreen = () => {
       <ScreenShell compact>
         {gameHeader}
         <div className="flex-1 flex flex-col gap-3 min-h-0">
-          {/* Secret / Decoy Word Reminder Card */}
-          <div className="card p-3.5 bg-slate-900/90 border border-slate-800 rounded-2xl shadow-lg shrink-0 flex items-center justify-between backdrop-blur-xl">
-            <div>
-              <span className="text-[10px] font-display font-bold uppercase tracking-wider text-slate-400 block">
-                {displayIsImposter ? '🕵️ Your Decoy Word' : '🛡️ Your Secret Word'}
-              </span>
-              <span className="font-display font-black text-xl sm:text-2xl text-amber-300">
-                {displayWord || 'Secret Word'}
-              </span>
+          {/* Role Status Card (Word removed after memorization) */}
+          <div className="card p-3 bg-slate-900/90 border border-slate-800 rounded-2xl shadow-lg shrink-0 flex items-center justify-between backdrop-blur-xl">
+            <div className="flex items-center gap-2.5">
+              <span className="text-2xl">{displayIsImposter ? '🕵️' : '🛡️'}</span>
+              <div>
+                <span className="text-[10px] font-display font-bold uppercase tracking-wider text-slate-400 block">
+                  Your Role
+                </span>
+                <span className={`font-display font-black text-base sm:text-lg ${displayIsImposter ? 'text-rose-400' : 'text-cyan-300'}`}>
+                  {displayIsImposter ? 'Imposter' : 'Agent'}
+                </span>
+              </div>
             </div>
             <span className={`text-xs px-2.5 py-1 rounded-full font-display font-black uppercase tracking-wider ${displayIsImposter ? 'bg-rose-950/80 text-rose-300 border border-rose-800/60' : 'bg-indigo-950/80 text-indigo-300 border border-indigo-800/60'}`}>
-              {displayIsImposter ? 'Imposter' : 'Agent'}
+              🔒 Word Memorized
             </span>
           </div>
 
@@ -777,24 +798,20 @@ const GameScreen = () => {
             </div>
           )}
 
-          {/* OFFLINE MODE: In-Person Circle Discussion */}
+          {/* OFFLINE MODE: In-Person Discussion */}
           {mode === 'offline' && (
-            <div className="flex-1 card p-5 bg-slate-900/85 border border-slate-700/60 shadow-xl backdrop-blur-xl flex flex-col justify-between min-h-0 text-center">
+            <div className="flex-1 card p-4 sm:p-5 bg-slate-900/85 border border-slate-700/60 shadow-xl backdrop-blur-xl flex flex-col justify-between min-h-0 text-center">
               <div>
-                <div className="text-5xl mb-2">🗣️</div>
-                <h3 className="font-display font-black text-2xl text-white mb-2">Circle Discussion</h3>
-                <p className="font-body text-slate-300 text-sm mb-4 leading-relaxed">
-                  Sit together in a circle! Say your clues out loud to each other in any order you choose. Debate and catch the Imposter!
-                </p>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-950/80 border border-slate-800 text-[11px] font-display font-bold text-amber-300 mb-2">
+                  <span>🗣️</span>
+                  <span>In-Person Discussion</span>
+                </div>
 
-                <div className="p-3.5 bg-slate-950/80 border border-slate-800 rounded-xl mb-4">
-                  <p className="font-body text-xs text-amber-300 font-bold mb-1">
-                    When everyone in your circle has spoken and you&apos;re ready to vote, press the button below:
-                  </p>
-                  <p className="font-display font-black text-sm text-white">
+                <div className="p-3.5 bg-slate-950/80 border border-slate-800 rounded-xl my-2">
+                  <p className="font-display font-black text-sm text-white mb-2">
                     {readyCount} of {totalPlayers} players ready to vote
                   </p>
-                  <div className="flex flex-wrap gap-1.5 mt-2.5 justify-center">
+                  <div className="flex flex-wrap gap-1.5 justify-center">
                     {players
                       .filter((p) => p.isConnected !== false && !p.isWaitingForNextRound)
                       .map((p) => {
@@ -830,7 +847,7 @@ const GameScreen = () => {
                   }`}
                 >
                   {isReadyToVote
-                    ? `⏳ Waiting for Circle (${readyCount}/${totalPlayers} Ready)`
+                    ? `⏳ Waiting for Players (${readyCount}/${totalPlayers} Ready)`
                     : `🗳️ I'm Ready to Vote (${readyCount}/${totalPlayers} Ready)`}
                 </button>
 
