@@ -593,7 +593,7 @@ const GameScreen = () => {
         {gameHeader}
         <div className="flex-1 flex items-center justify-center">
           <div className="w-full max-w-md text-center">
-            <div className={`card p-6 sm:p-8 shadow-2xl backdrop-blur-2xl transition-all ${displayIsImposter ? 'bg-gradient-to-b from-rose-950/40 via-slate-900/90 to-slate-900/90 border-rose-500/40 shadow-glow-pink' : 'bg-gradient-to-b from-indigo-950/40 via-slate-900/90 to-slate-900/90 border-indigo-500/40 shadow-glow-purple'}`}>
+            <div className={`card p-6 sm:p-8 shadow-2xl backdrop-blur-2xl transition-all ${isMemorized ? 'bg-slate-900/90 border-slate-700/60 shadow-xl' : displayIsImposter ? 'bg-gradient-to-b from-rose-950/40 via-slate-900/90 to-slate-900/90 border-rose-500/40 shadow-glow-pink' : 'bg-gradient-to-b from-indigo-950/40 via-slate-900/90 to-slate-900/90 border-indigo-500/40 shadow-glow-purple'}`}>
               <div className="inline-block px-3 py-1 rounded-full bg-slate-950/80 border border-slate-700/80 text-[11px] font-display font-black tracking-widest text-amber-300 uppercase mb-3">
                 Round {currentGame} of 10
               </div>
@@ -604,13 +604,12 @@ const GameScreen = () => {
                 <>
                   <div className="text-6xl mb-2">🔒</div>
                   <h2 className="font-display font-black text-2xl sm:text-3xl text-emerald-400 mb-1 tracking-tight">WORD MEMORIZED!</h2>
-                  <p className="font-body text-slate-300 text-xs sm:text-sm mb-3">Your word is safely locked in memory and hidden for privacy.</p>
-                  <p className="font-body text-slate-400 text-xs uppercase tracking-wider">Your Role:</p>
+                  <p className="font-body text-slate-300 text-xs sm:text-sm mb-3">Your secret role and word are safely locked in memory.</p>
                   <div className="my-3 py-3 px-4 bg-slate-950/90 border border-emerald-500/30 rounded-2xl">
-                    <p className={`font-display font-black text-2xl sm:text-3xl tracking-wide flex items-center justify-center gap-2 ${displayIsImposter ? 'text-rose-400' : 'text-cyan-300'}`}>
-                      <span>{displayIsImposter ? '🕵️ IMPOSTER' : '🛡️ AGENT'}</span>
+                    <p className="font-display font-bold text-sm text-emerald-400 flex items-center justify-center gap-2">
+                      <span>🔒 Assignment Hidden</span>
                     </p>
-                    <p className="font-body text-slate-400 text-xs mt-1">Word hidden from onlookers</p>
+                    <p className="font-body text-slate-400 text-xs mt-1">Role and word hidden from onlookers</p>
                   </div>
                 </>
               ) : displayIsImposter ? (
@@ -698,24 +697,6 @@ const GameScreen = () => {
       <ScreenShell compact>
         {gameHeader}
         <div className="flex-1 flex flex-col gap-3 min-h-0">
-          {/* Role Status Card (Word removed after memorization) */}
-          <div className="card p-3 bg-slate-900/90 border border-slate-800 rounded-2xl shadow-lg shrink-0 flex items-center justify-between backdrop-blur-xl">
-            <div className="flex items-center gap-2.5">
-              <span className="text-2xl">{displayIsImposter ? '🕵️' : '🛡️'}</span>
-              <div>
-                <span className="text-[10px] font-display font-bold uppercase tracking-wider text-slate-400 block">
-                  Your Role
-                </span>
-                <span className={`font-display font-black text-base sm:text-lg ${displayIsImposter ? 'text-rose-400' : 'text-cyan-300'}`}>
-                  {displayIsImposter ? 'Imposter' : 'Agent'}
-                </span>
-              </div>
-            </div>
-            <span className={`text-xs px-2.5 py-1 rounded-full font-display font-black uppercase tracking-wider ${displayIsImposter ? 'bg-rose-950/80 text-rose-300 border border-rose-800/60' : 'bg-indigo-950/80 text-indigo-300 border border-indigo-800/60'}`}>
-              🔒 Word Memorized
-            </span>
-          </div>
-
           {/* ONLINE MODE: Real-Time Voice Chat & Speaking Indicators */}
           {mode === 'online' && (
             <div className="flex-1 card p-4 bg-slate-900/85 border border-slate-700/60 shadow-xl backdrop-blur-xl flex flex-col justify-between min-h-0">
