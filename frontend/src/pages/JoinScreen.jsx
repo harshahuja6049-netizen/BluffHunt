@@ -264,7 +264,6 @@ const JoinScreen = () => {
             {/* Inline Error Alert if any */}
             {errorMessage && (
               <div className="p-3 mb-3 bg-rose-950/80 border border-rose-500/50 rounded-xl text-rose-200 text-xs font-body flex items-center gap-2 animate-bounce-short">
-                <span className="text-base shrink-0">⚠️</span>
                 <span className="flex-1">{errorMessage}</span>
                 <button
                   type="button"
@@ -279,7 +278,6 @@ const JoinScreen = () => {
             {/* Pending Host Approval Alert */}
             {isPendingApproval && (
               <div className="p-3 mb-3 bg-amber-950/80 border border-amber-500/50 rounded-xl text-amber-200 text-xs font-body flex items-center gap-2">
-                <span className="text-base shrink-0 animate-spin">⏳</span>
                 <span className="flex-1">Join request sent! Waiting for the Host to admit you...</span>
               </div>
             )}
@@ -356,7 +354,7 @@ const JoinScreen = () => {
                 }`}
                 onClick={() => setMode('online')}
               >
-                🌐 Online Mode
+                Online Mode
               </button>
               <button
                 type="button"
@@ -367,7 +365,7 @@ const JoinScreen = () => {
                 }`}
                 onClick={() => setMode('offline')}
               >
-                🗣️ Offline Pass & Play
+                Offline Mode
               </button>
             </div>
 
@@ -380,7 +378,7 @@ const JoinScreen = () => {
               onClick={handleJoinRoom}
               disabled={isJoining || isCreating || !connected}
             >
-              {isJoining ? 'Connecting to Room...' : '🚀 Join Game Room'}
+              {isJoining ? 'Connecting to Room...' : 'Join Game Room'}
             </button>
 
             {/* Create Room Button */}
@@ -392,7 +390,7 @@ const JoinScreen = () => {
               onClick={handleCreateRoom}
               disabled={isCreating || isJoining || !connected}
             >
-              {isCreating ? 'Creating Room...' : '✨ Host a New Game Room'}
+              {isCreating ? 'Creating Room...' : 'Host a New Game Room'}
             </button>
           </div>
         </div>

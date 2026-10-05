@@ -7,7 +7,7 @@ const JoinRequestModal = ({ requests, isHost }) => {
   return (
     <div className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-4">
       <div className="bg-slate-900/95 border border-slate-700/60 rounded-2xl shadow-2xl p-5 w-full max-w-sm backdrop-blur-xl">
-        <p className="font-display font-bold text-lg text-white mb-1">🤔 Join Request</p>
+        <p className="font-display font-bold text-lg text-white mb-1">Join Request</p>
         <p className="font-body text-sm text-slate-300 mb-4">
           <span className="font-semibold text-amber-300">{request.nickname}</span> wants to join this league. If you admit them, they sit out this game and join the next one.
         </p>

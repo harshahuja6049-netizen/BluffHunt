@@ -39,15 +39,12 @@ export const ToastProvider = ({ children }) => {
                 ? 'bg-amber-950/90 border-amber-500/50 text-amber-200 shadow-amber-950/50'
                 : 'bg-slate-900/90 border-white/20 text-white shadow-black/50';
 
-          const icon = isError ? '⚠️' : isSuccess ? '✅' : isWarning ? '🔔' : 'ℹ️';
-
           return (
             <div
               key={toast.id}
               onClick={() => removeToast(toast.id)}
               className={`pointer-events-auto flex items-start gap-2.5 p-3.5 rounded-xl border backdrop-blur-md shadow-xl text-sm font-body cursor-pointer transition-all animate-bounce-short ${bgColor}`}
             >
-              <span className="text-base shrink-0">{icon}</span>
               <span className="flex-1 break-words font-medium">{toast.message}</span>
               <button
                 type="button"

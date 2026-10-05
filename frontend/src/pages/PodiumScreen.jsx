@@ -130,7 +130,6 @@ const PodiumScreen = () => {
           {/* 1st Place - Champion */}
           {champion && (
             <div className="flex-1 flex flex-col items-center -mt-6">
-              <div className="text-3xl mb-1 animate-bounce">👑</div>
               <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-b from-amber-300 via-yellow-400 to-amber-600 ring-4 ring-amber-300/80 shadow-glow-gold flex flex-col items-center justify-center text-3xl">
                 <span>{champion.avatar || '🥇'}</span>
                 <span className="text-xs font-black text-slate-950">1ST</span>
@@ -168,7 +167,7 @@ const PodiumScreen = () => {
             onClick={handleReturnToLobby}
             className="w-full py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-display font-black text-base rounded-2xl transition-all duration-150 shadow-glow-purple active:scale-[0.98]"
           >
-            🏛️ Return to Lobby
+            Return to Lobby
           </button>
 
           {!isHost && (

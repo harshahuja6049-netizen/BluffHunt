@@ -477,7 +477,7 @@ const GameScreen = () => {
       <div className="fixed inset-0 bg-black/75 backdrop-blur-md flex items-center justify-center p-4 z-50">
         <div className="bg-slate-900 border border-slate-700/80 rounded-2xl shadow-2xl p-6 w-full max-w-sm">
           <div className="flex justify-between items-center mb-4">
-            <h3 className="font-display font-bold text-lg text-white">👑 Manage Match Players</h3>
+            <h3 className="font-display font-bold text-lg text-white">Manage Match Players</h3>
             <button type="button" onClick={() => setShowKickDrawer(false)} className="text-slate-400 hover:text-white text-xl">✕</button>
           </div>
           <div className="space-y-2 max-h-60 overflow-y-auto">
@@ -528,29 +528,20 @@ const GameScreen = () => {
             }
           >
             {!voiceStatus.isEnabled ? (
-              <>
-                <span className="animate-bounce">🎙️</span>
-                <span>Join Voice</span>
-              </>
+              <span>Join Voice</span>
             ) : voiceStatus.isMuted ? (
-              <>
-                <span>🔇</span>
-                <span>Muted</span>
-              </>
+              <span>Muted</span>
             ) : (
-              <>
-                <span className="animate-pulse">🎙️</span>
-                <span>LIVE</span>
-              </>
+              <span>LIVE</span>
             )}
           </button>
         )}
         <button type="button" onClick={() => setIsMuted(soundEffects.toggleMute())} className="p-1 px-2.5 rounded-lg text-xs font-display font-bold bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 transition-all flex items-center gap-1 active:scale-95" title={isMuted ? 'Unmute Sound Effects' : 'Mute Sound Effects'}>
-          {isMuted ? '🔇 Muted' : '🔊 SFX'}
+          {isMuted ? 'Muted' : 'SFX'}
         </button>
         {isHost && (
           <button type="button" onClick={() => setShowKickDrawer(true)} className="px-2.5 py-1 rounded-lg text-xs font-display font-bold bg-purple-950/70 hover:bg-purple-900 text-purple-300 border border-purple-800/50 transition-all flex items-center gap-1 active:scale-95">
-            👑 Players
+            Players
           </button>
         )}
         <LeaveButton compact />
@@ -565,7 +556,6 @@ const GameScreen = () => {
         {gameHeader}
         <div className="flex-1 flex items-center justify-center">
           <div className="w-full max-w-md card p-6 text-center bg-slate-900/90 border border-slate-700/60 shadow-2xl backdrop-blur-2xl">
-            <div className="text-5xl mb-3 animate-bounce">🍿</div>
             <h2 className="font-display font-black text-2xl text-white mb-2">Spectating Match</h2>
             <p className="font-body text-slate-400 text-sm mb-4">You connected while Game {currentGame} was running. You will join the active roster automatically next game!</p>
             <div className="p-3 bg-slate-950/80 border border-slate-800 rounded-xl inline-block px-6">
@@ -585,8 +575,8 @@ const GameScreen = () => {
     const isMemorized = Boolean(hasAcknowledged || pendingAcknowledge);
     const isButtonDisabled = !displayWord || isMemorized;
     const buttonText = isMemorized
-      ? `⏳ Waiting for other players... (${acknowledgedCount || 1}/${totalPlayers} ready)`
-      : '👁️ I Memorized My Word';
+      ? `Waiting for other players... (${acknowledgedCount || 1}/${totalPlayers} ready)`
+      : 'I Memorized My Word';
 
     return (
       <ScreenShell compact>
@@ -602,19 +592,17 @@ const GameScreen = () => {
                 <p className="font-body text-slate-400 animate-pulse">Decrypting secret assignment...</p>
               ) : isMemorized ? (
                 <>
-                  <div className="text-6xl mb-2">🔒</div>
                   <h2 className="font-display font-black text-2xl sm:text-3xl text-emerald-400 mb-1 tracking-tight">WORD MEMORIZED!</h2>
                   <p className="font-body text-slate-300 text-xs sm:text-sm mb-3">Your secret role and word are safely locked in memory.</p>
                   <div className="my-3 py-3 px-4 bg-slate-950/90 border border-emerald-500/30 rounded-2xl">
                     <p className="font-display font-bold text-sm text-emerald-400 flex items-center justify-center gap-2">
-                      <span>🔒 Assignment Hidden</span>
+                      <span>Assignment Hidden</span>
                     </p>
                     <p className="font-body text-slate-400 text-xs mt-1">Role and word hidden from onlookers</p>
                   </div>
                 </>
               ) : displayIsImposter ? (
                 <>
-                  <div className="text-6xl mb-2 animate-bounce">🕵️</div>
                   <h2 className="font-display font-black text-3xl text-rose-400 mb-1 tracking-tight">YOU ARE THE IMPOSTER!</h2>
                   <p className="font-body text-slate-300 text-xs sm:text-sm mb-3">Blend in! Pretend you know the Agents&apos; word.</p>
                   <p className="font-body text-slate-400 text-xs uppercase tracking-wider">Your Decoy Word Is:</p>
@@ -624,7 +612,6 @@ const GameScreen = () => {
                 </>
               ) : (
                 <>
-                  <div className="text-6xl mb-2">🛡️</div>
                   <h2 className="font-display font-black text-3xl text-cyan-300 mb-1 tracking-tight">YOU ARE AN AGENT</h2>
                   <p className="font-body text-slate-300 text-xs sm:text-sm mb-3">Find out who does not know the secret word!</p>
                   <p className="font-body text-slate-400 text-xs uppercase tracking-wider">Your Secret Word Is:</p>
@@ -669,7 +656,7 @@ const GameScreen = () => {
                       <span key={p.playerId} className={`text-[11px] px-2 py-0.5 rounded-full flex items-center gap-1 font-body ${isReady ? 'bg-emerald-950/80 text-emerald-300 border border-emerald-800/50' : 'bg-slate-900 text-slate-500 border border-slate-800'}`}>
                         <span>{p.avatar || '🕵️'}</span>
                         <span className="truncate max-w-[70px]">{p.nickname}</span>
-                        <span>{isReady ? '✅' : '⏳'}</span>
+                        <span className={isReady ? 'text-emerald-400 font-bold' : 'text-slate-500'}>{isReady ? 'Ready' : 'Waiting'}</span>
                       </span>
                     );
                   })}
@@ -678,7 +665,7 @@ const GameScreen = () => {
 
               {isHost && (
                 <button type="button" onClick={() => socket.emit('force-advance-reveal')} className="w-full mt-2.5 py-2.5 bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-300 font-display font-bold text-xs rounded-xl transition-all active:scale-95">
-                  ⏩ Start Discussion Now (Host Override)
+                  Start Discussion Now (Host Override)
                 </button>
               )}
             </div>
@@ -742,29 +729,29 @@ const GameScreen = () => {
                         </span>
                         <div className="flex items-center gap-1 mt-1">
                           {isSpeaking ? (
-                            <span className="text-[10px] font-display font-bold text-emerald-300 flex items-center gap-0.5">
-                              <span className="animate-bounce">🎙️</span> Talking
+                            <span className="text-[10px] font-display font-bold text-emerald-300">
+                              Talking
                             </span>
                           ) : isSelf ? (
                             voiceStatus.isEnabled ? (
                               voiceStatus.isMuted ? (
-                                <span className="text-[10px] font-display font-bold text-rose-400">🔇 Muted</span>
+                                <span className="text-[10px] font-display font-bold text-rose-400">Muted</span>
                               ) : (
-                                <span className="text-[10px] font-display font-bold text-emerald-400">🎙️ Live</span>
+                                <span className="text-[10px] font-display font-bold text-emerald-400">Live</span>
                               )
                             ) : (
-                              <span className="text-[10px] font-display text-slate-500">⏳ Mic Off</span>
+                              <span className="text-[10px] font-display text-slate-500">Mic Off</span>
                             )
                           ) : peerVoiceStatus[p.playerId]?.isEnabled ? (
                             peerVoiceStatus[p.playerId]?.isMuted ? (
-                              <span className="text-[10px] font-display font-bold text-rose-400">🔇 Muted</span>
+                              <span className="text-[10px] font-display font-bold text-rose-400">Muted</span>
                             ) : (
-                              <span className="text-[10px] font-display font-bold text-emerald-400">🎙️ Live</span>
+                              <span className="text-[10px] font-display font-bold text-emerald-400">Live</span>
                             )
                           ) : isPlayerReady ? (
-                            <span className="text-[10px] font-display font-bold text-amber-300">✅ Ready</span>
+                            <span className="text-[10px] font-display font-bold text-amber-300">Ready</span>
                           ) : (
-                            <span className="text-[10px] font-display text-slate-500">⏳ Listening</span>
+                            <span className="text-[10px] font-display text-slate-500">Listening</span>
                           )}
                         </div>
                       </div>
@@ -786,20 +773,11 @@ const GameScreen = () => {
                   }`}
                 >
                   {!voiceStatus.isEnabled ? (
-                    <>
-                      <span className="text-xl animate-bounce">🎙️</span>
-                      <span>Turn On Microphone to Talk</span>
-                    </>
+                    <span>Turn On Microphone to Talk</span>
                   ) : voiceStatus.isMuted ? (
-                    <>
-                      <span className="text-xl">🔇</span>
-                      <span>Mic Muted (Tap to Unmute & Speak)</span>
-                    </>
+                    <span>Mic Muted (Tap to Unmute & Speak)</span>
                   ) : (
-                    <>
-                      <span className="text-xl animate-pulse">🎙️</span>
-                      <span>Mic LIVE (Tap to Mute)</span>
-                    </>
+                    <span>Mic LIVE (Tap to Mute)</span>
                   )}
                 </button>
 
@@ -815,8 +793,8 @@ const GameScreen = () => {
                   }`}
                 >
                   {isReadyToVote
-                    ? `⏳ Waiting for Players (${readyCount}/${totalPlayers} Ready)`
-                    : `🗳️ I'm Ready to Vote (${readyCount}/${totalPlayers} Ready)`}
+                    ? `Waiting for Players (${readyCount}/${totalPlayers} Ready)`
+                    : `I'm Ready to Vote (${readyCount}/${totalPlayers} Ready)`}
                 </button>
 
                 {isHost && (
@@ -825,7 +803,7 @@ const GameScreen = () => {
                     onClick={() => socket.emit('force-advance-discussion')}
                     className="w-full py-2 bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-300 font-display font-bold text-xs rounded-xl transition-all active:scale-95"
                   >
-                    ⏩ Force Start Voting (Host Override)
+                    Force Start Voting (Host Override)
                   </button>
                 )}
               </div>
@@ -837,7 +815,6 @@ const GameScreen = () => {
             <div className="flex-1 card p-4 sm:p-5 bg-slate-900/85 border border-slate-700/60 shadow-xl backdrop-blur-xl flex flex-col justify-between min-h-0 text-center">
               <div>
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-950/80 border border-slate-800 text-[11px] font-display font-bold text-amber-300 mb-2">
-                  <span>🗣️</span>
                   <span>In-Person Discussion</span>
                 </div>
 
@@ -861,7 +838,7 @@ const GameScreen = () => {
                           >
                             <span>{p.avatar || '🕵️'}</span>
                             <span>{p.nickname}</span>
-                            <span>{isReady ? '✅' : '⏳'}</span>
+                            <span className={isReady ? 'text-emerald-400 font-bold' : 'text-slate-500'}>{isReady ? 'Ready' : 'Waiting'}</span>
                           </span>
                         );
                       })}
@@ -881,8 +858,8 @@ const GameScreen = () => {
                   }`}
                 >
                   {isReadyToVote
-                    ? `⏳ Waiting for Players (${readyCount}/${totalPlayers} Ready)`
-                    : `🗳️ I'm Ready to Vote (${readyCount}/${totalPlayers} Ready)`}
+                    ? `Waiting for Players (${readyCount}/${totalPlayers} Ready)`
+                    : `I'm Ready to Vote (${readyCount}/${totalPlayers} Ready)`}
                 </button>
 
                 {isHost && (
@@ -891,7 +868,7 @@ const GameScreen = () => {
                     onClick={() => socket.emit('force-advance-discussion')}
                     className="w-full py-2 bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-300 font-display font-bold text-xs rounded-xl transition-all active:scale-95"
                   >
-                    ⏩ Force Start Voting (Host Override)
+                    Force Start Voting (Host Override)
                   </button>
                 )}
               </div>
@@ -921,13 +898,13 @@ const GameScreen = () => {
         <div className="flex-1 flex flex-col justify-between min-h-0">
           <div className="card p-4 sm:p-5 bg-slate-900/85 border border-slate-700/60 shadow-2xl backdrop-blur-2xl flex flex-col flex-1 min-h-0">
             <div className="text-center mb-2.5">
-              <h2 className="font-display font-black text-2xl text-white flex items-center justify-center gap-2">🗳️ Cast Your Vote</h2>
+              <h2 className="font-display font-black text-2xl text-white flex items-center justify-center gap-2">Cast Your Vote</h2>
               <p className="font-body text-slate-400 text-xs">Game {currentGame}/10 • Tap on the player you think is the Imposter!</p>
             </div>
 
             {isRevote && (
               <div className="bg-rose-950/60 border border-rose-500/60 rounded-xl p-3 mb-2 text-center animate-pulse">
-                <p className="font-display font-black text-rose-300 text-xs sm:text-sm">⚠️ {revoteMessage || "TIE VOTES! Revote between the tied suspects."}</p>
+                <p className="font-display font-black text-rose-300 text-xs sm:text-sm">{revoteMessage || "TIE VOTES! Revote between the tied suspects."}</p>
               </div>
             )}
 
@@ -963,7 +940,7 @@ const GameScreen = () => {
             <div className="pt-2">
               {hasVoted ? (
                 <div className="bg-emerald-950/70 border border-emerald-500/50 rounded-xl p-3 text-center shadow-glow-green">
-                  <p className="font-display font-black text-emerald-300 text-sm">✅ Vote recorded! Waiting for others...</p>
+                  <p className="font-display font-black text-emerald-300 text-sm">Vote recorded! Waiting for others...</p>
                   <p className="font-body text-emerald-400/80 text-xs mt-0.5">{votedCount}/{totalPlayers} votes submitted</p>
                 </div>
               ) : (
@@ -973,7 +950,7 @@ const GameScreen = () => {
                   disabled={!selectedVote}
                   className="w-full py-3.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-display font-black text-base rounded-xl transition-all shadow-glow-green active:scale-[0.98] disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed"
                 >
-                  ✅ Lock In Vote
+                  Lock In Vote
                 </button>
               )}
             </div>
@@ -1012,7 +989,7 @@ const GameScreen = () => {
                     </p>
                   </div>
 
-                  <h3 className="font-display font-black text-xs text-slate-300 mb-2 text-left uppercase tracking-wider">📊 Match Standings</h3>
+                  <h3 className="font-display font-black text-xs text-slate-300 mb-2 text-left uppercase tracking-wider">Match Standings</h3>
                   <div className="space-y-1 bg-slate-950/70 border border-slate-800 rounded-xl p-2.5 max-h-44 overflow-y-auto">
                     {[...roundResults.players].sort((a, b) => b.leaguePoints - a.leaguePoints).map((p) => (
                       <div key={p.playerId} className="flex justify-between items-center font-body text-xs sm:text-sm py-1 border-b border-slate-800/80 last:border-0">
@@ -1032,7 +1009,6 @@ const GameScreen = () => {
                       <div className="space-y-2">
                         <div className="p-3.5 bg-gradient-to-r from-amber-500/10 via-yellow-500/10 to-amber-500/10 border border-amber-400/30 rounded-2xl flex flex-col items-center justify-center gap-1 text-center shadow-lg">
                           <div className="flex items-center gap-2 font-display font-black text-sm sm:text-base text-amber-300">
-                            <span className="text-xl animate-bounce">🏆</span>
                             <span>Season Complete! Podium in {podiumCountdown}s...</span>
                           </div>
                           <p className="font-body text-xs text-slate-300">
@@ -1052,7 +1028,6 @@ const GameScreen = () => {
                             onClick={handleStartNextGame}
                             className="w-full py-2.5 bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-300 font-display font-bold text-xs rounded-xl transition-all active:scale-95 flex items-center justify-center gap-1.5"
                           >
-                            <span>⏩</span>
                             <span>Open Grand Finale Podium Now (Skip Countdown)</span>
                           </button>
                         )}
@@ -1063,11 +1038,10 @@ const GameScreen = () => {
                         onClick={handleStartNextGame}
                         className="w-full py-3.5 bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 text-white font-display font-black text-base rounded-2xl shadow-glow-purple transition-all duration-150 active:scale-[0.98]"
                       >
-                        🎮 Start Game {currentGame + 1} of 10
+                        Start Game {currentGame + 1} of 10
                       </button>
                     ) : (
                       <div className="flex items-center justify-center gap-2 text-slate-400 py-2">
-                        <span className="animate-spin text-amber-300">⏳</span>
                         <p className="font-display font-bold text-xs sm:text-sm">
                           Waiting for Host to start Game {currentGame + 1}...
                         </p>
@@ -1077,7 +1051,7 @@ const GameScreen = () => {
                 </>
               ) : (
                 <div className="py-8">
-                  <div className="animate-spin text-3xl mb-2 text-purple-400">⚙️</div>
+                  <div className="w-8 h-8 mx-auto mb-2 border-2 border-purple-400 border-t-transparent rounded-full animate-spin" />
                   <p className="font-body text-slate-400 text-sm">Calculating round results...</p>
                 </div>
               )}

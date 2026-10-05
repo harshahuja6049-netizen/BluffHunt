@@ -213,12 +213,12 @@ const LobbyScreen = () => {
                       <span className="font-body font-bold text-white text-sm block truncate">
                         {player.nickname}
                         {isThisPlayer && <span className="text-purple-400 font-normal text-xs ml-1">(You)</span>}
-                        {isWaiting && <span className="text-amber-400 text-xs ml-1">⏳ Spectating</span>}
+                        {isWaiting && <span className="text-amber-400 text-xs ml-1">(Spectating)</span>}
                       </span>
                     </div>
                     {isPlayerHost && (
                       <span className="px-1.5 py-0.2 rounded bg-amber-400/20 text-amber-300 border border-amber-400/30 text-[10px] font-display font-black tracking-wider shrink-0">
-                        👑 HOST
+                        HOST
                       </span>
                     )}
                     {!isConnected && (
@@ -257,7 +257,7 @@ const LobbyScreen = () => {
                   : 'bg-slate-900/80 text-slate-400 border border-slate-800 hover:bg-slate-800'
               }`}
             >
-              🌐 Online Mode
+              Online Mode
             </button>
             <button
               type="button"
@@ -268,7 +268,7 @@ const LobbyScreen = () => {
                   : 'bg-slate-900/80 text-slate-400 border border-slate-800 hover:bg-slate-800'
               }`}
             >
-              🗣️ Offline Pass & Play
+              Offline Mode
             </button>
           </div>
         )}
@@ -287,14 +287,14 @@ const LobbyScreen = () => {
           >
             {connectedPlayers.length < 3
               ? `Waiting for ${3 - connectedPlayers.length} More Player(s)...`
-              : '🚀 Start Match (Game 1 of 10)'}
+              : 'Start Match (Game 1 of 10)'}
           </button>
         )}
 
         {!isHost && (
           <div className="p-3 bg-slate-900/60 border border-slate-800 rounded-xl text-center mt-3 shrink-0">
             <p className="font-body text-slate-400 text-xs animate-pulse">
-              ⏳ Waiting for the Host to start the match...
+              Waiting for the Host to start the match...
             </p>
           </div>
         )}
