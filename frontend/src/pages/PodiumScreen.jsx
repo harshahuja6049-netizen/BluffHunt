@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Confetti from 'react-confetti';
 import socket, { emitRejoin, setHasJoinedRoom } from '../socket';
 import ScreenShell from '../components/ScreenShell';
+import LeaveButton from '../components/LeaveButton';
 import { useToast } from '../components/Toast';
 import { soundEffects } from '../utils/soundEffects';
 
@@ -60,13 +61,19 @@ const PodiumScreen = () => {
     };
   }, [players, navigate, roomCode, showToast]);
 
-  const handleNewLeague = () => {
+  const handleReturnToLobby = () => {
     if (isHost) {
       soundEffects.playStartGameSound();
       socket.emit('start-new-league');
     } else {
-      setHasJoinedRoom(false);
-      navigate('/');
+      setHasJoinedRoom(true);
+      navigate('/lobby', {
+        state: {
+          roomCode,
+          players,
+          hostId
+        }
+      });
     }
   };
 
@@ -77,6 +84,19 @@ const PodiumScreen = () => {
   return (
     <ScreenShell compact>
       <Confetti recycle={false} numberOfPieces={500} />
+      {/* Top Header */}
+      <div className="flex items-center justify-between p-2.5 px-3 bg-slate-900/80 border border-slate-800/80 rounded-xl mb-3 shrink-0 backdrop-blur-xl">
+        <div className="flex items-center gap-2">
+          <span className="font-display font-black text-sm bg-gradient-to-r from-amber-300 to-purple-400 bg-clip-text text-transparent">
+            BluffHunt
+          </span>
+          <span className="text-[11px] font-display font-bold px-2 py-0.5 rounded-full bg-slate-800 text-amber-300 border border-slate-700">
+            #{roomCode}
+          </span>
+        </div>
+        <LeaveButton compact />
+      </div>
+
       <div className="flex-1 flex flex-col items-center justify-center text-center px-2 py-4">
         {/* Header */}
         <div className="mb-6">
@@ -145,17 +165,22 @@ const PodiumScreen = () => {
         <div className="w-full max-w-sm mt-8">
           <button
             type="button"
-            onClick={handleNewLeague}
+            onClick={handleReturnToLobby}
             className="w-full py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-display font-black text-base rounded-2xl transition-all duration-150 shadow-glow-purple active:scale-[0.98]"
           >
-            {isHost ? '🔄 Start New 10-Game League' : '🏠 Return to Home Screen'}
+            🏛️ Return to Lobby
           </button>
 
           {!isHost && (
             <p className="font-body text-xs text-slate-400 mt-2">
-              Waiting for the Host to start a new league...
+              Waiting for the Host to start a new match in the Lobby...
             </p>
           )}
+
+          {/* Leave Room Button */}
+          <div className="mt-3 shrink-0">
+            <LeaveButton />
+          </div>
         </div>
       </div>
     </ScreenShell>

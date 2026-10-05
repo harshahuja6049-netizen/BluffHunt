@@ -1301,15 +1301,15 @@ socket.on('cast-vote', async ({ accusedId } = {}) => {
   }
 });
 // =============================================
-// START NEW LEAGUE
+// START NEW LEAGUE / RETURN TO LOBBY
 // =============================================
-socket.on('start-new-league', async () => {
+const handleResetLeagueToLobby = async (socket) => {
   try {
     const playerId = getPlayerId(socket);
     let session = await findSessionByPlayer(playerId);
     if (!session) return socket.emit('error', { message: 'You are not in a room.' });
     if (session.hostId !== playerId) {
-      return socket.emit('error', { message: 'Only the Host can start a new league.' });
+      return socket.emit('error', { message: 'Only the Host can return the room to the lobby.' });
     }
 
     // Reset all player stats
@@ -1369,12 +1369,15 @@ socket.on('start-new-league', async () => {
       mode: session.mode
     });
 
-    console.log(`🔄 New league started in room ${session.roomCode}`);
+    console.log(`🔄 Room ${session.roomCode} returned to lobby (league reset)`);
   } catch (error) {
     console.error('Start new league error:', error);
     socket.emit('error', { message: 'Server error. Please try again.' });
   }
-});
+};
+
+socket.on('start-new-league', () => handleResetLeagueToLobby(socket));
+socket.on('return-to-lobby', () => handleResetLeagueToLobby(socket));
   socket.on('disconnect', async () => {
     console.log('🔴 Client disconnected:', socket.id);
     try {
