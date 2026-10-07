@@ -153,7 +153,7 @@ describe('unordered word pair assignment', () => {
     assert.equal(session.usedPairs.length, 2);
   });
 
-  it('never chooses the same imposter in consecutive rounds when multiple players are active', () => {
+  it('excludes the previous imposter in consecutive rounds for 5 or more players', () => {
     const bank = [
       { agent: 'WordA', imposter: 'WordB' },
       { agent: 'WordC', imposter: 'WordD' },
@@ -162,11 +162,11 @@ describe('unordered word pair assignment', () => {
     ];
     const session = {
       usedPairs: [],
-      players: [player('a'), player('b'), player('c'), player('d')]
+      players: [player('a'), player('b'), player('c'), player('d'), player('e')]
     };
 
     let previousImposterId = null;
-    for (let round = 1; round <= 20; round++) {
+    for (let round = 1; round <= 30; round++) {
       const { imposter } = assignWordsAndImposter(session, bank);
       if (previousImposterId !== null) {
         assert.notEqual(
@@ -178,6 +178,35 @@ describe('unordered word pair assignment', () => {
       previousImposterId = imposter.playerId;
       assert.equal(session.lastImposterId, imposter.playerId);
     }
+  });
+
+  it('allows the previous imposter to be chosen again for 3 to 4 players', () => {
+    const bank = [
+      { agent: 'WordA', imposter: 'WordB' },
+      { agent: 'WordC', imposter: 'WordD' }
+    ];
+    const session = {
+      usedPairs: [],
+      players: [player('a'), player('b'), player('c')]
+    };
+
+    let consecutiveOccurred = false;
+    let previousImposterId = null;
+
+    // In 50 rounds with 3 players, probability of never repeating consecutively is (2/3)^49 ~ 2e-9
+    for (let round = 1; round <= 50; round++) {
+      const { imposter } = assignWordsAndImposter(session, bank);
+      if (previousImposterId !== null && imposter.playerId === previousImposterId) {
+        consecutiveOccurred = true;
+      }
+      previousImposterId = imposter.playerId;
+    }
+
+    assert.equal(
+      consecutiveOccurred,
+      true,
+      'Expected the previous imposter to be eligible and selected consecutively at least once with 3 players'
+    );
   });
 });
 

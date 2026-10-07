@@ -214,11 +214,18 @@ function assignWordsAndImposter(session, wordBank) {
   const active = roundPlayers(session);
   if (active.length === 0) return selectedPair;
 
-  // Filter out the imposter from the previous round so they are not chosen consecutively
-  const previousImposterId = session.lastImposterId || (session.players || []).find((p) => p.isImposter)?.playerId;
-  let eligibleImposters = active.filter((p) => p.playerId !== previousImposterId);
-  if (eligibleImposters.length === 0) {
-    eligibleImposters = active;
+  // Imposter selection rule:
+  // - For 3–4 players: allow the previous round's Imposter to be selected again.
+  // - For 5 and more players: exclude the previous round's Imposter from the next round.
+  let eligibleImposters = active;
+  if (active.length >= 5) {
+    const previousImposterId = session.lastImposterId || (session.players || []).find((p) => p.isImposter)?.playerId;
+    if (previousImposterId) {
+      const filtered = active.filter((p) => p.playerId !== previousImposterId);
+      if (filtered.length > 0) {
+        eligibleImposters = filtered;
+      }
+    }
   }
 
   const imposter = eligibleImposters[Math.floor(Math.random() * eligibleImposters.length)];

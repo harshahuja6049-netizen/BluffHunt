@@ -147,7 +147,7 @@ gameSessionSchema.index({ 'players.playerId': 1 });
 * **Problem**: In a 10-game league, players should never receive duplicate word pairs, even if the words appear in reverse order (e.g. Samosa vs Sandwich vs Sandwich vs Samosa).
 * **How it is made**:
   - `isSamePair(p1, p2)` in `backend/gameLogic.js` compares both forward `(a1===a2 && i1===i2)` and reverse `(a1===i2 && i1===a2)` pairs.
-  - `assignWordsAndImposter(session, wordBank)` filters out all previously `usedPairs` from the session history, randomly selects an unused pair from `words.json`, picks a random player as the Imposter, and distributes words.
+  - `assignWordsAndImposter(session, wordBank)` filters out all previously `usedPairs` from the session history, randomly selects an unused pair from `words.json`, selects the Imposter based on player count (for 3–4 players, the previous round's Imposter is allowed to be chosen again; for 5+ players, the previous Imposter is excluded from the next round), and distributes words.
 
 ### Feature 2: Secret Word Leak Detection with Word Boundaries
 * **Problem**: Naive substring matching (e.g., `text.includes(secretWord)`) rejects innocent clues (e.g., rejecting *"camera"* because the secret word is *"Ram"*).
