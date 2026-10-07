@@ -1887,13 +1887,7 @@ const wordBank = [
     "category": "sports",
     "difficulty": "medium"
   },
-  {
-    "id": "karim benzema::luka modric",
-    "agent": "Luka Modric",
-    "imposter": "Karim Benzema",
-    "category": "sports",
-    "difficulty": "medium"
-  },
+  
   {
     "id": "erling haaland::robert lewandowski",
     "agent": "Robert Lewandowski",
@@ -2280,7 +2274,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "chhota bheem::krishna (cartoon)",
+    "id": "chhota bheem::krishna(cartoon)",
     "agent": "Chhota Bheem",
     "imposter": "Krishna (Cartoon)",
     "category": "cartoons",
@@ -2314,17 +2308,11 @@ const wordBank = [
     "category": "cartoons",
     "difficulty": "medium"
   },
+  
   {
-    "id": "kiteretsu::ninja hattori",
-    "agent": "Ninja Hattori",
-    "imposter": "Kiteretsu",
-    "category": "cartoons",
-    "difficulty": "medium"
-  },
-  {
-    "id": "mr. bean::oswald",
+    "id": "mr. bean::horrid henry",
     "agent": "Mr. Bean",
-    "imposter": "Oswald",
+    "imposter": "horrid henry",
     "category": "cartoons",
     "difficulty": "medium"
   },
@@ -2378,33 +2366,14 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "noddy::oswald",
+    "id": "noddy::peppa-pig",
     "agent": "Noddy",
-    "imposter": "Oswald",
+    "imposter": "peppa-pig",
     "category": "cartoons",
     "difficulty": "medium"
   },
-  {
-    "id": "shikari shambhu::suppandi",
-    "agent": "Suppandi",
-    "imposter": "Shikari Shambhu",
-    "category": "cartoons",
-    "difficulty": "medium"
-  },
-  {
-    "id": "billoo::pinki",
-    "agent": "Billoo",
-    "imposter": "Pinki",
-    "category": "cartoons",
-    "difficulty": "medium"
-  },
-  {
-    "id": "chhota bheem::gopal bhar",
-    "agent": "Chhota Bheem",
-    "imposter": "Gopal Bhar",
-    "category": "cartoons",
-    "difficulty": "hard"
-  },
+  
+  
   {
     "id": "dennis the menace::shinchan",
     "agent": "Shinchan",
@@ -2423,34 +2392,6 @@ const wordBank = [
     "id": "garfield::oggy",
     "agent": "Oggy",
     "imposter": "Garfield",
-    "category": "cartoons",
-    "difficulty": "hard"
-  },
-  {
-    "id": "jerry (mouse)::tweety bird",
-    "agent": "Jerry (Mouse)",
-    "imposter": "Tweety Bird",
-    "category": "cartoons",
-    "difficulty": "hard"
-  },
-  {
-    "id": "giant (doraemon)::sabu",
-    "agent": "Sabu",
-    "imposter": "Giant (Doraemon)",
-    "category": "cartoons",
-    "difficulty": "hard"
-  },
-  {
-    "id": "chacha chaudhary::feluda",
-    "agent": "Chacha Chaudhary",
-    "imposter": "Feluda",
-    "category": "cartoons",
-    "difficulty": "hard"
-  },
-  {
-    "id": "gopal bhar::tenali rama",
-    "agent": "Tenali Rama",
-    "imposter": "Gopal Bhar",
     "category": "cartoons",
     "difficulty": "hard"
   },
@@ -2854,16 +2795,16 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "boat::ship",
+    "id": "boat::truck",
     "agent": "Boat",
-    "imposter": "Ship",
+    "imposter": "trcuk",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "ship::submarine",
+    "id": "yatch::submarine",
     "agent": "Submarine",
-    "imposter": "Ship",
+    "imposter": "yatch",
     "category": "mainstream",
     "difficulty": "easy"
   },
@@ -2966,16 +2907,16 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "bookstore::library",
-    "agent": "Library",
-    "imposter": "Bookstore",
+    "id": "court room::library",
+    "agent": "court room",
+    "imposter": "library",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "gurdwara::temple",
+    "id": "church::temple",
     "agent": "Temple",
-    "imposter": "Gurdwara",
+    "imposter": "church",
     "category": "mainstream",
     "difficulty": "easy"
   },
@@ -2994,30 +2935,30 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "art gallery::museum",
+    "id": "Food court::museum",
     "agent": "Museum",
-    "imposter": "Art Gallery",
+    "imposter": "Food court",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "garden::park",
-    "agent": "Park",
+    "id": "garden::farm",
+    "agent": "farm",
     "imposter": "Garden",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "playground::stadium",
-    "agent": "Playground",
+    "id": "Water-park::stadium",
+    "agent": "Water-park",
     "imposter": "Stadium",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "swimming pool::water park",
+    "id": "swimming pool::garden",
     "agent": "Swimming Pool",
-    "imposter": "Water Park",
+    "imposter": "garden",
     "category": "mainstream",
     "difficulty": "easy"
   },
@@ -3029,22 +2970,22 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "petrol pump::service station",
+    "id": "petrol pump::Garage",
     "agent": "Petrol Pump",
-    "imposter": "Service Station",
+    "imposter": "garage",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "market::supermarket",
+    "id": "market::Hospital",
     "agent": "Market",
-    "imposter": "Supermarket",
+    "imposter": "Hospital",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "hospital::pharmacy",
-    "agent": "Pharmacy",
+    "id": "hospital::supermarket",
+    "agent": "Supermarket",
     "imposter": "Hospital",
     "category": "mainstream",
     "difficulty": "easy"
@@ -3092,9 +3033,9 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "charminar::hawa mahal",
+    "id": "charminar::laal killa",
     "agent": "Charminar",
-    "imposter": "Hawa Mahal",
+    "imposter": "laal killa",
     "category": "mainstream",
     "difficulty": "easy"
   },
@@ -3127,9 +3068,9 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "dal lake::pangong lake",
+    "id": "dal lake::himalyas",
     "agent": "Dal Lake",
-    "imposter": "Pangong Lake",
+    "imposter": "himalyas",
     "category": "mainstream",
     "difficulty": "easy"
   },
@@ -3140,34 +3081,7 @@ const wordBank = [
     "category": "mainstream",
     "difficulty": "easy"
   },
-  {
-    "id": "ganga river::yamuna river",
-    "agent": "Ganga River",
-    "imposter": "Yamuna River",
-    "category": "mainstream",
-    "difficulty": "easy"
-  },
-  {
-    "id": "rann of kutch::thar desert",
-    "agent": "Thar Desert",
-    "imposter": "Rann of Kutch",
-    "category": "mainstream",
-    "difficulty": "easy"
-  },
-  {
-    "id": "rohtang pass::shimla",
-    "agent": "Rohtang Pass",
-    "imposter": "Shimla",
-    "category": "mainstream",
-    "difficulty": "easy"
-  },
-  {
-    "id": "parliament house::rashtrapati bhavan",
-    "agent": "Rashtrapati Bhavan",
-    "imposter": "Parliament House",
-    "category": "mainstream",
-    "difficulty": "easy"
-  },
+  
   {
     "id": "laptop::mobile phone",
     "agent": "Mobile Phone",
@@ -3197,15 +3111,15 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "dishwasher::washing machine",
-    "agent": "Washing Machine",
+    "id": "dishwasher::oven",
+    "agent": "oven",
     "imposter": "Dishwasher",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "air conditioner::ceiling fan",
-    "agent": "Ceiling Fan",
+    "id": "air conditioner::tubelight",
+    "agent": "tubelight",
     "imposter": "Air Conditioner",
     "category": "mainstream",
     "difficulty": "easy"
@@ -3253,9 +3167,9 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "mixer grinder::toaster",
+    "id": "mixer grinder::printer",
     "agent": "Mixer Grinder",
-    "imposter": "Toaster",
+    "imposter": "printer",
     "category": "mainstream",
     "difficulty": "easy"
   },
@@ -3266,29 +3180,10 @@ const wordBank = [
     "category": "mainstream",
     "difficulty": "easy"
   },
+ 
+  
   {
-    "id": "electric kettle::microwave oven",
-    "agent": "Electric Kettle",
-    "imposter": "Microwave Oven",
-    "category": "mainstream",
-    "difficulty": "easy"
-  },
-  {
-    "id": "raincoat::umbrella",
-    "agent": "Umbrella",
-    "imposter": "Raincoat",
-    "category": "mainstream",
-    "difficulty": "easy"
-  },
-  {
-    "id": "backpack::suitcase",
-    "agent": "Backpack",
-    "imposter": "Suitcase",
-    "category": "mainstream",
-    "difficulty": "easy"
-  },
-  {
-    "id": "eyeglasses::sunglasses",
+    "id": "earphones::sunglasses",
     "agent": "Sunglasses",
     "imposter": "Eyeglasses",
     "category": "mainstream",
@@ -3301,34 +3196,8 @@ const wordBank = [
     "category": "mainstream",
     "difficulty": "easy"
   },
-  {
-    "id": "shoes::slippers (chappal)",
-    "agent": "Shoes",
-    "imposter": "Slippers (Chappal)",
-    "category": "mainstream",
-    "difficulty": "easy"
-  },
-  {
-    "id": "bracelet::watch",
-    "agent": "Watch",
-    "imposter": "Bracelet",
-    "category": "mainstream",
-    "difficulty": "easy"
-  },
-  {
-    "id": "purse::wallet",
-    "agent": "Wallet",
-    "imposter": "Purse",
-    "category": "mainstream",
-    "difficulty": "easy"
-  },
-  {
-    "id": "mirror::window",
-    "agent": "Mirror",
-    "imposter": "Window",
-    "category": "mainstream",
-    "difficulty": "easy"
-  },
+  
+  
   {
     "id": "chair::sofa",
     "agent": "Chair",
@@ -3344,9 +3213,9 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "bed::mattress",
+    "id": "bed::mat",
     "agent": "Bed",
-    "imposter": "Mattress",
+    "imposter": "Mat",
     "category": "mainstream",
     "difficulty": "easy"
   },
@@ -3365,9 +3234,9 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "bucket::mug",
+    "id": "bucket::glass",
     "agent": "Bucket",
-    "imposter": "Mug",
+    "imposter": "glass",
     "category": "mainstream",
     "difficulty": "easy"
   },
@@ -3379,9 +3248,9 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "hair oil::shampoo",
+    "id": " oil::shampoo",
     "agent": "Shampoo",
-    "imposter": "Hair Oil",
+    "imposter": " Oil",
     "category": "mainstream",
     "difficulty": "easy"
   },
@@ -3393,9 +3262,9 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "knife::scissors",
+    "id": "spoon::scissors",
     "agent": "Scissors",
-    "imposter": "Knife",
+    "imposter": "spoon",
     "category": "mainstream",
     "difficulty": "easy"
   },
@@ -3449,8 +3318,8 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "lion::tiger",
-    "agent": "Tiger",
+    "id": "lion::squirrel",
+    "agent": "squirrel",
     "imposter": "Lion",
     "category": "mainstream",
     "difficulty": "easy"
@@ -3463,8 +3332,8 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "cat::dog",
-    "agent": "Dog",
+    "id": "cat::mouse",
+    "agent": "mouse",
     "imposter": "Cat",
     "category": "mainstream",
     "difficulty": "easy"
@@ -3477,22 +3346,22 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "buffalo::cow",
+    "id": "sheep::cow",
     "agent": "Cow",
-    "imposter": "Buffalo",
+    "imposter": "sheep",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "goat::sheep",
-    "agent": "Goat",
+    "id": "fox::sheep",
+    "agent": "fox",
     "imposter": "Sheep",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "chimpanzee::monkey",
-    "agent": "Monkey",
+    "id": "chimpanzee::Lion",
+    "agent": "Lion",
     "imposter": "Chimpanzee",
     "category": "mainstream",
     "difficulty": "easy"
@@ -3519,9 +3388,9 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "duck::swan",
+    "id": "duck::piegon",
     "agent": "Duck",
-    "imposter": "Swan",
+    "imposter": "piegon",
     "category": "mainstream",
     "difficulty": "easy"
   },
@@ -3533,29 +3402,23 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "alligator::crocodile",
+    "id": "Turtle::crocodile",
     "agent": "Crocodile",
-    "imposter": "Alligator",
+    "imposter": "Turtle",
     "category": "mainstream",
     "difficulty": "easy"
   },
+  
   {
-    "id": "frog::toad",
-    "agent": "Frog",
-    "imposter": "Toad",
-    "category": "mainstream",
-    "difficulty": "easy"
-  },
-  {
-    "id": "rabbit::squirrel",
+    "id": "rabbit::Turtle",
     "agent": "Rabbit",
-    "imposter": "Squirrel",
+    "imposter": "Turtle",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "deer::zebra",
-    "agent": "Deer",
+    "id": "Cat::zebra",
+    "agent": "Cat",
     "imposter": "Zebra",
     "category": "mainstream",
     "difficulty": "easy"
@@ -3575,16 +3438,16 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "fox::wolf",
+    "id": "dog::wolf",
     "agent": "Wolf",
-    "imposter": "Fox",
+    "imposter": "dog",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "dolphin::whale",
+    "id": "dolphin::Shark",
     "agent": "Dolphin",
-    "imposter": "Whale",
+    "imposter": "Shark",
     "category": "mainstream",
     "difficulty": "easy"
   },
@@ -3645,9 +3508,9 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "courier delivery boy::postman",
+    "id": "writer::postman",
     "agent": "Postman",
-    "imposter": "Courier Delivery Boy",
+    "imposter": "Writer",
     "category": "mainstream",
     "difficulty": "easy"
   },
@@ -3659,15 +3522,15 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "carpenter::mason",
+    "id": "carpenter::electrician",
     "agent": "Carpenter",
-    "imposter": "Mason",
+    "imposter": "electrician",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "fashion designer::tailor",
-    "agent": "Tailor",
+    "id": "fashion designer:: barber",
+    "agent": "Barber",
     "imposter": "Fashion Designer",
     "category": "mainstream",
     "difficulty": "easy"
@@ -3687,8 +3550,8 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "cameraman::photographer",
-    "agent": "Photographer",
+    "id": "cameraman::director",
+    "agent": "director",
     "imposter": "Cameraman",
     "category": "mainstream",
     "difficulty": "easy"
@@ -3701,23 +3564,23 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "planets::stars",
-    "agent": "Stars",
+    "id": "planets::cloud",
+    "agent": "cloud",
     "imposter": "Planets",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "cloud::rain",
+    "id": "cloud::star",
     "agent": "Cloud",
-    "imposter": "Rain",
+    "imposter": "star",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "lightning::thunder",
+    "id": "snow::thunder",
     "agent": "Thunder",
-    "imposter": "Lightning",
+    "imposter": "snow",
     "category": "mainstream",
     "difficulty": "easy"
   },
@@ -3736,30 +3599,30 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "hill::mountain",
-    "agent": "Mountain",
+    "id": "hill::building",
+    "agent": "building",
     "imposter": "Hill",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "ocean::river",
-    "agent": "River",
+    "id": "ocean::iceberg",
+    "agent": "iceberg",
     "imposter": "Ocean",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "lake::sea",
-    "agent": "Sea",
+    "id": "lake::hill",
+    "agent": "hill",
     "imposter": "Lake",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "forest::jungle",
+    "id": "forest::river bank",
     "agent": "Forest",
-    "imposter": "Jungle",
+    "imposter": "river bank",
     "category": "mainstream",
     "difficulty": "easy"
   },
@@ -3771,8 +3634,8 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "hailstorm::snow",
-    "agent": "Snow",
+    "id": "hailstorm::heatwave",
+    "agent": "Heatwave",
     "imposter": "Hailstorm",
     "category": "mainstream",
     "difficulty": "easy"
@@ -3806,9 +3669,9 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "coffee shop::tea stall (tapri)",
+    "id": "coffee shop::tapri",
     "agent": "Coffee Shop",
-    "imposter": "Tea Stall (Tapri)",
+    "imposter": "Tapri",
     "category": "mainstream",
     "difficulty": "easy"
   },
@@ -3819,24 +3682,18 @@ const wordBank = [
     "category": "mainstream",
     "difficulty": "easy"
   },
+  
   {
-    "id": "ramp::stairs",
-    "agent": "Stairs",
-    "imposter": "Ramp",
-    "category": "mainstream",
-    "difficulty": "easy"
-  },
-  {
-    "id": "ceiling::roof",
-    "agent": "Roof",
+    "id": "ceiling::floor",
+    "agent": "floor",
     "imposter": "Ceiling",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "shoe::sock",
+    "id": "shoe::watch",
     "agent": "Shoe",
-    "imposter": "Sock",
+    "imposter": "watch",
     "category": "mainstream",
     "difficulty": "easy"
   },
@@ -3848,8 +3705,8 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "jacket::sweater",
-    "agent": "Sweater",
+    "id": "jacket::hat",
+    "agent": "hat",
     "imposter": "Jacket",
     "category": "mainstream",
     "difficulty": "easy"
@@ -3911,19 +3768,13 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "high court::supreme court",
+    "id": "high court::police station",
     "agent": "High Court",
     "imposter": "Supreme Court",
     "category": "mainstream",
     "difficulty": "medium"
   },
-  {
-    "id": "lok sabha::vidhan sabha",
-    "agent": "Vidhan Sabha",
-    "imposter": "Lok Sabha",
-    "category": "mainstream",
-    "difficulty": "medium"
-  },
+  
   {
     "id": "embassy::passport office",
     "agent": "Embassy",
@@ -3931,45 +3782,11 @@ const wordBank = [
     "category": "mainstream",
     "difficulty": "medium"
   },
+  
   {
-    "id": "guest house::hostel",
-    "agent": "Hostel",
-    "imposter": "Guest House",
-    "category": "mainstream",
-    "difficulty": "medium"
-  },
-  {
-    "id": "dharamsala::hotel",
-    "agent": "Dharamsala",
-    "imposter": "Hotel",
-    "category": "mainstream",
-    "difficulty": "medium"
-  },
-  {
-    "id": "ashram::monastery",
-    "agent": "Ashram",
-    "imposter": "Monastery",
-    "category": "mainstream",
-    "difficulty": "medium"
-  },
-  {
-    "id": "planetarium::science museum",
-    "agent": "Planetarium",
-    "imposter": "Science Museum",
-    "category": "mainstream",
-    "difficulty": "medium"
-  },
-  {
-    "id": "observatory::weather station",
-    "agent": "Observatory",
-    "imposter": "Weather Station",
-    "category": "mainstream",
-    "difficulty": "medium"
-  },
-  {
-    "id": "lighthouse::watchtower",
+    "id": "lighthouse:: submarine",
     "agent": "Lighthouse",
-    "imposter": "Watchtower",
+    "imposter": "submarine",
     "category": "mainstream",
     "difficulty": "medium"
   },
@@ -3980,23 +3797,11 @@ const wordBank = [
     "category": "mainstream",
     "difficulty": "medium"
   },
+  
+  
   {
-    "id": "cenotaph (chhatri)::monument",
-    "agent": "Cenotaph (Chhatri)",
-    "imposter": "Monument",
-    "category": "mainstream",
-    "difficulty": "medium"
-  },
-  {
-    "id": "stepwell (baoli)::well",
-    "agent": "Stepwell (Baoli)",
-    "imposter": "Well",
-    "category": "mainstream",
-    "difficulty": "medium"
-  },
-  {
-    "id": "canal::dam",
-    "agent": "Canal",
+    "id": "beach::dam",
+    "agent": "beach",
     "imposter": "Dam",
     "category": "mainstream",
     "difficulty": "medium"
@@ -4009,23 +3814,23 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "briefcase::suitcase",
-    "agent": "Suitcase",
+    "id": "briefcase::wallet",
+    "agent": "wallet",
     "imposter": "Briefcase",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "backpack::duffel bag",
-    "agent": "Duffel Bag",
+    "id": "backpack::wallet",
+    "agent": "wallet",
     "imposter": "Backpack",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "handbag::tote bag",
+    "id": "handbag::pocket",
     "agent": "Handbag",
-    "imposter": "Tote Bag",
+    "imposter": "pocket",
     "category": "mainstream",
     "difficulty": "medium"
   },
@@ -4036,41 +3841,8 @@ const wordBank = [
     "category": "mainstream",
     "difficulty": "medium"
   },
-  {
-    "id": "lantern::torchlight",
-    "agent": "Torchlight",
-    "imposter": "Lantern",
-    "category": "mainstream",
-    "difficulty": "medium"
-  },
-  {
-    "id": "candle::oil lamp (diya)",
-    "agent": "Candle",
-    "imposter": "Oil Lamp (Diya)",
-    "category": "mainstream",
-    "difficulty": "medium"
-  },
-  {
-    "id": "lighter::matchstick",
-    "agent": "Matchstick",
-    "imposter": "Lighter",
-    "category": "mainstream",
-    "difficulty": "medium"
-  },
-  {
-    "id": "digital lock::padlock",
-    "agent": "Padlock",
-    "imposter": "Digital Lock",
-    "category": "mainstream",
-    "difficulty": "medium"
-  },
-  {
-    "id": "door handle::doorknob",
-    "agent": "Doorknob",
-    "imposter": "Door Handle",
-    "category": "mainstream",
-    "difficulty": "medium"
-  },
+  
+  
   {
     "id": "carrom coin::carrom striker",
     "agent": "Carrom Striker",
@@ -4100,9 +3872,9 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "measuring tape::ruler (scale)",
+    "id": "measuring tape:: pechkas",
     "agent": "Measuring Tape",
-    "imposter": "Ruler (Scale)",
+    "imposter": "pechkas",
     "category": "mainstream",
     "difficulty": "medium"
   },
@@ -4114,23 +3886,23 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "paper clip::stapler",
+    "id": "sharpner::stapler",
     "agent": "Stapler",
-    "imposter": "Paper Clip",
+    "imposter": "sharpner",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "glue (fevicol)::sellotape",
-    "agent": "Glue (Fevicol)",
-    "imposter": "Sellotape",
+    "id": "glue ::remover",
+    "agent": "Glue ",
+    "imposter": "remover",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "envelope::postcard",
+    "id": "envelope::Debit card",
     "agent": "Envelope",
-    "imposter": "Postcard",
+    "imposter": "Debit card",
     "category": "mainstream",
     "difficulty": "medium"
   },
@@ -4142,26 +3914,20 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "cheque book::passbook",
+    "id": "cheque book::Passport",
     "agent": "Cheque Book",
-    "imposter": "Passbook",
+    "imposter": "Passport",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "ghat::riverbank",
+    "id": "ghat::beach",
     "agent": "Ghat",
-    "imposter": "Riverbank",
+    "imposter": "beach",
     "category": "mainstream",
     "difficulty": "medium"
   },
-  {
-    "id": "canyon::valley",
-    "agent": "Valley",
-    "imposter": "Canyon",
-    "category": "mainstream",
-    "difficulty": "medium"
-  },
+  
   {
     "id": "glacier::iceberg",
     "agent": "Glacier",
@@ -4169,17 +3935,11 @@ const wordBank = [
     "category": "mainstream",
     "difficulty": "medium"
   },
+  
   {
-    "id": "oasis::spring",
-    "agent": "Oasis",
-    "imposter": "Spring",
-    "category": "mainstream",
-    "difficulty": "medium"
-  },
-  {
-    "id": "cave::tunnel",
+    "id": "cave:: mountain",
     "agent": "Cave",
-    "imposter": "Tunnel",
+    "imposter": "mountain",
     "category": "mainstream",
     "difficulty": "medium"
   },
@@ -4261,19 +4021,13 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "town (kasba)::village (gaon)",
-    "agent": "Village (Gaon)",
-    "imposter": "Town (Kasba)",
+    "id": "town ::village ",
+    "agent": "Village ",
+    "imposter": "Town )",
     "category": "mainstream",
     "difficulty": "medium"
   },
-  {
-    "id": "city::metro city",
-    "agent": "City",
-    "imposter": "Metro City",
-    "category": "mainstream",
-    "difficulty": "medium"
-  },
+  
   {
     "id": "bungalow::society building",
     "agent": "Society Building",
@@ -4282,16 +4036,16 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "balcony::terrace",
-    "agent": "Terrace",
+    "id": "balcony::room",
+    "agent": "room",
     "imposter": "Balcony",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "courtyard (aangan)::veranda",
-    "agent": "Courtyard (Aangan)",
-    "imposter": "Veranda",
+    "id": "courtyard ::terrace",
+    "agent": "Courtyard ",
+    "imposter": "terrace",
     "category": "mainstream",
     "difficulty": "medium"
   },
@@ -4310,8 +4064,8 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "attic::basement",
-    "agent": "Attic",
+    "id": "Dining table::basement",
+    "agent": "Dining table",
     "imposter": "Basement",
     "category": "mainstream",
     "difficulty": "medium"
@@ -4324,65 +4078,65 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "gatekeeper (chowkidar)::security guard",
-    "agent": "Gatekeeper (Chowkidar)",
-    "imposter": "Security Guard",
+    "id": "gatekeeper :: electrician",
+    "agent": "Gatekeeper ",
+    "imposter": "electrician",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "garbage collector::sweeper",
-    "agent": "Sweeper",
+    "id": "garbage collector::washing machine",
+    "agent": "washing machine",
     "imposter": "Garbage Collector",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "milkman (doodhwala)::newspaper delivery boy",
-    "agent": "Milkman (Doodhwala)",
+    "id": "milkman ::newspaper delivery boy",
+    "agent": "Milkman",
     "imposter": "Newspaper Delivery Boy",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "fruit vendor::vegetable vendor (sabziwala)",
-    "agent": "Vegetable Vendor (Sabziwala)",
+    "id": "fruit vendor::vegetable vendor",
+    "agent": "Vegetable Vendor ",
     "imposter": "Fruit Vendor",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "dhobi (washerman)::dry cleaner",
-    "agent": "Dhobi (Washerman)",
+    "id": "water-purifier::dry cleaner",
+    "agent": "water-purifier",
     "imposter": "Dry Cleaner",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "farming::gardening",
-    "agent": "Gardening",
+    "id": "farming::camping",
+    "agent": "camping",
     "imposter": "Farming",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "baking::cooking",
-    "agent": "Cooking",
+    "id": "baking::refrigirating",
+    "agent": "refrigirating",
     "imposter": "Baking",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "dancing::singing",
-    "agent": "Singing",
+    "id": "dancing::running",
+    "agent": "running",
     "imposter": "Dancing",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "painting::sketching",
+    "id": "painting::breaking",
     "agent": "Painting",
-    "imposter": "Sketching",
+    "imposter": "breaking",
     "category": "mainstream",
     "difficulty": "medium"
   },
@@ -4394,9 +4148,9 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "diving::swimming",
+    "id": "sky-diving::swimming",
     "agent": "Swimming",
-    "imposter": "Diving",
+    "imposter": "Sky-Diving",
     "category": "mainstream",
     "difficulty": "medium"
   },
@@ -4408,30 +4162,30 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "camping::trekking",
-    "agent": "Trekking",
+    "id": "camping::movie",
+    "agent": "movie",
     "imposter": "Camping",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "boating::fishing",
-    "agent": "Fishing",
+    "id": "boating::bunjee-jumping",
+    "agent": "bunjee-jumping",
     "imposter": "Boating",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "bird watching::wildlife safari",
+    "id": "bird watching::fishing",
     "agent": "Bird Watching",
-    "imposter": "Wildlife Safari",
+    "imposter": "fishing",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "photography::videography",
+    "id": "photography::cooking",
     "agent": "Photography",
-    "imposter": "Videography",
+    "imposter": "cooking",
     "category": "mainstream",
     "difficulty": "medium"
   },
@@ -4450,23 +4204,17 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "street play (nukkad natak)::theatre play",
-    "agent": "Street Play (Nukkad Natak)",
+    "id": "street play::theatre play",
+    "agent": "Street Play ",
     "imposter": "Theatre Play",
     "category": "mainstream",
     "difficulty": "medium"
   },
+  
   {
-    "id": "exhibition::mela (fair)",
-    "agent": "Mela (Fair)",
-    "imposter": "Exhibition",
-    "category": "mainstream",
-    "difficulty": "medium"
-  },
-  {
-    "id": "passport::visa",
+    "id": "passport::liabrary-card",
     "agent": "Passport",
-    "imposter": "Visa",
+    "imposter": "liabrary-card",
     "category": "mainstream",
     "difficulty": "medium"
   },
@@ -4681,9 +4429,9 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "binoculars::telescope",
+    "id": "camera::telescope",
     "agent": "Telescope",
-    "imposter": "Binoculars",
+    "imposter": "camera",
     "category": "mainstream",
     "difficulty": "hard"
   },
@@ -4919,16 +4667,16 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "amul butter::mother dairy milk",
+    "id": "amul butter::coca-cola",
     "agent": "Amul Butter",
-    "imposter": "Mother Dairy Milk",
+    "imposter": "coca-cola",
     "category": "brands",
     "difficulty": "easy"
   },
   {
-    "id": "britannia good day::parle-g",
+    "id": "yippe noodles::parle-g",
     "agent": "Parle-G",
-    "imposter": "Britannia Good Day",
+    "imposter": "yippe noodles",
     "category": "brands",
     "difficulty": "easy"
   },
@@ -4947,16 +4695,16 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "maggi noodles::yippee noodles",
+    "id": "maggi noodles::Frankie",
     "agent": "Maggi Noodles",
-    "imposter": "Yippee Noodles",
+    "imposter": "Frankie",
     "category": "brands",
     "difficulty": "easy"
   },
   {
-    "id": "bikaji bhujia::haldiram's bhujia",
+    "id": "Belgian waffle::haldiram's bhujia",
     "agent": "Haldiram's Bhujia",
-    "imposter": "Bikaji Bhujia",
+    "imposter": "Belgian waffle",
     "category": "brands",
     "difficulty": "easy"
   },
@@ -4968,43 +4716,43 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "bingo mad angles::kurkure",
+    "id": "bingo mad angles:: jeera rice",
     "agent": "Bingo Mad Angles",
-    "imposter": "Kurkure",
+    "imposter": "jeera rice",
     "category": "brands",
     "difficulty": "easy"
   },
   {
-    "id": "frooti::maaza",
+    "id": "frooti::coffee",
     "agent": "Frooti",
-    "imposter": "Maaza",
+    "imposter": "coffee",
     "category": "brands",
     "difficulty": "easy"
   },
   {
-    "id": "maaza::slice",
+    "id": "maaza::jeera soda",
     "agent": "Maaza",
-    "imposter": "Slice",
+    "imposter": "jeera soda",
     "category": "brands",
     "difficulty": "easy"
   },
   {
-    "id": "coca-cola::thums up",
+    "id": "neem juice::thums up",
     "agent": "Thums Up",
-    "imposter": "Coca-Cola",
+    "imposter": "neem juice",
     "category": "brands",
     "difficulty": "easy"
   },
   {
-    "id": "limca::sprite",
+    "id": "limca::Feastables",
     "agent": "Limca",
-    "imposter": "Sprite",
+    "imposter": "Feastables",
     "category": "brands",
     "difficulty": "easy"
   },
   {
-    "id": "coca-cola::pepsi",
-    "agent": "Pepsi",
+    "id": "coca-cola::rose sharbat",
+    "agent": "rose sharbat",
     "imposter": "Coca-Cola",
     "category": "brands",
     "difficulty": "easy"
@@ -5017,64 +4765,58 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "kitkat::perk",
+    "id": "kitkat::crunchex",
     "agent": "KitKat",
-    "imposter": "Perk",
+    "imposter": "crunchex",
     "category": "brands",
     "difficulty": "easy"
   },
   {
-    "id": "mango bite::pulse candy",
+    "id": "Bounty bar::pulse candy",
     "agent": "Pulse Candy",
-    "imposter": "Mango Bite",
+    "imposter": "Bounty Bar",
     "category": "brands",
     "difficulty": "easy"
   },
   {
-    "id": "dettol::lifebuoy",
+    "id": "dettol::clinic plus",
     "agent": "Dettol",
-    "imposter": "Lifebuoy",
+    "imposter": "clinic plus",
     "category": "brands",
     "difficulty": "easy"
   },
   {
-    "id": "lux soap::santoor soap",
-    "agent": "Santoor Soap",
+    "id": "lux soap::vaseline",
+    "agent": "vaseline",
     "imposter": "Lux Soap",
     "category": "brands",
     "difficulty": "easy"
   },
   {
-    "id": "colgate::pepsodent",
+    "id": "colgate::patanjali",
     "agent": "Colgate",
-    "imposter": "Pepsodent",
+    "imposter": "patanjali",
     "category": "brands",
     "difficulty": "easy"
   },
   {
-    "id": "tiger balm::zandu balm",
+    "id": "Dolo 360::zandu balm",
     "agent": "Zandu Balm",
-    "imposter": "Tiger Balm",
+    "imposter": "Dolo 360",
     "category": "brands",
     "difficulty": "easy"
   },
   {
-    "id": "iodex::vicks vaporub",
-    "agent": "Vicks VapoRub",
+    "id": "iodex::nicotex",
+    "agent": "Nicotex",
     "imposter": "Iodex",
     "category": "brands",
     "difficulty": "easy"
   },
+  
   {
-    "id": "moov::volini",
-    "agent": "Moov",
-    "imposter": "Volini",
-    "category": "brands",
-    "difficulty": "easy"
-  },
-  {
-    "id": "airtel::jio",
-    "agent": "Jio",
+    "id": "airtel::Boat",
+    "agent": "Boat",
     "imposter": "Airtel",
     "category": "brands",
     "difficulty": "easy"
@@ -5101,8 +4843,8 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "red label tea::tata tea",
-    "agent": "Tata Tea",
+    "id": "red label tea::Davidoff coffee",
+    "agent": "Davidoff coffee",
     "imposter": "Red Label Tea",
     "category": "brands",
     "difficulty": "medium"
@@ -5115,8 +4857,8 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "bru coffee::nescafe",
-    "agent": "Nescafe",
+    "id": "bru coffee::chai",
+    "agent": "chai",
     "imposter": "Bru Coffee",
     "category": "brands",
     "difficulty": "medium"
@@ -5143,9 +4885,9 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "boroline::vaseline",
+    "id": "vicks::vaseline",
     "agent": "Vaseline",
-    "imposter": "Boroline",
+    "imposter": "vicks",
     "category": "brands",
     "difficulty": "medium"
   },
@@ -5275,20 +5017,8 @@ const wordBank = [
     "category": "festivals_culture",
     "difficulty": "easy"
   },
-  {
-    "id": "dhanteras::diwali",
-    "agent": "Diwali",
-    "imposter": "Dhanteras",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "bhai dooj::diwali",
-    "agent": "Diwali",
-    "imposter": "Bhai Dooj",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
+  
+  
   {
     "id": "ganesh chaturthi::navratri",
     "agent": "Ganesh Chaturthi",
@@ -5296,76 +5026,7 @@ const wordBank = [
     "category": "festivals_culture",
     "difficulty": "easy"
   },
-  {
-    "id": "durga puja::navratri",
-    "agent": "Navratri",
-    "imposter": "Durga Puja",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "durga puja::dussehra",
-    "agent": "Durga Puja",
-    "imposter": "Dussehra",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "diwali::dussehra",
-    "agent": "Dussehra",
-    "imposter": "Diwali",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "bhai dooj::raksha bandhan",
-    "agent": "Raksha Bandhan",
-    "imposter": "Bhai Dooj",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "lohri::makar sankranti",
-    "agent": "Makar Sankranti",
-    "imposter": "Lohri",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "lohri::pongal",
-    "agent": "Lohri",
-    "imposter": "Pongal",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "onam::pongal",
-    "agent": "Pongal",
-    "imposter": "Onam",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "baisakhi::makar sankranti",
-    "agent": "Makar Sankranti",
-    "imposter": "Baisakhi",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "chhath puja::diwali",
-    "agent": "Chhath Puja",
-    "imposter": "Diwali",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "eid al-adha::eid ul-fitr",
-    "agent": "Eid ul-Fitr",
-    "imposter": "Eid al-Adha",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
+  
   {
     "id": "diwali::eid ul-fitr",
     "agent": "Eid ul-Fitr",
@@ -5374,9 +5035,9 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "christmas::new year's eve",
+    "id": "christmas::eid",
     "agent": "Christmas",
-    "imposter": "New Year's Eve",
+    "imposter": "Eid",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
@@ -5394,41 +5055,8 @@ const wordBank = [
     "category": "festivals_culture",
     "difficulty": "easy"
   },
-  {
-    "id": "krishna janmashtami::ram navami",
-    "agent": "Krishna Janmashtami",
-    "imposter": "Ram Navami",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "hanuman jayanti::ram navami",
-    "agent": "Hanuman Jayanti",
-    "imposter": "Ram Navami",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "karwa chauth::teej",
-    "agent": "Karwa Chauth",
-    "imposter": "Teej",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "baisakhi::lohri",
-    "agent": "Baisakhi",
-    "imposter": "Lohri",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "baisakhi::gurpurab",
-    "agent": "Gurpurab",
-    "imposter": "Baisakhi",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
+ 
+  
   {
     "id": "jagannath rath yatra::kumbh mela",
     "agent": "Jagannath Rath Yatra",
@@ -5451,9 +5079,9 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "firecrackers::phuljhadi",
+    "id": "firecrackers:: rangoli",
     "agent": "Firecrackers",
-    "imposter": "Phuljhadi",
+    "imposter": "rangoli",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
@@ -5472,22 +5100,22 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "modak::prasad",
+    "id": "modak::puri",
     "agent": "Modak",
-    "imposter": "Prasad",
+    "imposter": "puri",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
   {
-    "id": "gujiya::thandai",
-    "agent": "Gujiya",
+    "id": "matcha::thandai",
+    "agent": "matcha",
     "imposter": "Thandai",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
   {
-    "id": "kheer::sewaiyan",
-    "agent": "Sewaiyan",
+    "id": "kheer::chaas",
+    "agent": "chaas",
     "imposter": "Kheer",
     "category": "festivals_culture",
     "difficulty": "easy"
@@ -5499,48 +5127,16 @@ const wordBank = [
     "category": "festivals_culture",
     "difficulty": "easy"
   },
+  
   {
-    "id": "aarti::puja thali",
-    "agent": "Puja Thali",
-    "imposter": "Aarti",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "ganga aarti::pandal",
+    "id": "ganga aarti::ganpati pandal",
     "agent": "Ganga Aarti",
-    "imposter": "Pandal",
+    "imposter": "ganpati Pandal",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
-  {
-    "id": "chandan::tilak",
-    "agent": "Tilak",
-    "imposter": "Chandan",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "havan::puja",
-    "agent": "Havan",
-    "imposter": "Puja",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "ganga snan::kumbh mela",
-    "agent": "Kumbh Mela",
-    "imposter": "Ganga Snan",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "dhol::nagada",
-    "agent": "Dhol",
-    "imposter": "Nagada",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
+  
+  
   {
     "id": "dhol tasha::garba",
     "agent": "Dhol Tasha",
@@ -5605,43 +5201,30 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "playing cards::uno",
+    "id": "antakshri::uno",
     "agent": "UNO",
-    "imposter": "Playing Cards",
+    "imposter": "antakshri",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
   {
-    "id": "business (board game)::monopoly",
-    "agent": "Monopoly",
+    "id": "business (board game)::UNO",
+    "agent": "UNO",
     "imposter": "Business (Board Game)",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
+  
   {
-    "id": "rummy::teen patti",
-    "agent": "Teen Patti",
-    "imposter": "Rummy",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "gilli danda::pitthu (satoliya)",
-    "agent": "Pitthu (Satoliya)",
+    "id": "gilli danda::ludo",
+    "agent": "ludo",
     "imposter": "Gilli Danda",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
   {
-    "id": "gilli danda::marbles (kanche)",
-    "agent": "Marbles (Kanche)",
-    "imposter": "Gilli Danda",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "hide and seek::hopscotch (stapu)",
-    "agent": "Hopscotch (Stapu)",
+    "id": "hide and seek:: chess",
+    "agent": "chess",
     "imposter": "Hide and Seek",
     "category": "festivals_culture",
     "difficulty": "easy"
@@ -5653,13 +5236,7 @@ const wordBank = [
     "category": "festivals_culture",
     "difficulty": "easy"
   },
-  {
-    "id": "namaste::pranam",
-    "agent": "Namaste",
-    "imposter": "Pranam",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
+  
   {
     "id": "kurta::sari",
     "agent": "Sari",
@@ -5668,23 +5245,17 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "dhoti::kurta",
+    "id": "dhoti:: bandage",
     "agent": "Dhoti",
-    "imposter": "Kurta",
+    "imposter": "bandage",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
+  
   {
-    "id": "kurta pyjama::sherwani",
-    "agent": "Sherwani",
-    "imposter": "Kurta Pyjama",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "dupatta::turban (pagri)",
+    "id": "hat::turban (pagri)",
     "agent": "Turban (Pagri)",
-    "imposter": "Dupatta",
+    "imposter": "hat",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
@@ -5695,52 +5266,18 @@ const wordBank = [
     "category": "festivals_culture",
     "difficulty": "easy"
   },
+  
   {
-    "id": "alta::mehndi",
-    "agent": "Mehndi",
-    "imposter": "Alta",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "bindi::sindoor",
-    "agent": "Bindi",
-    "imposter": "Sindoor",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "mangalsutra::nose ring (nath)",
-    "agent": "Mangalsutra",
-    "imposter": "Nose Ring (Nath)",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "kolam::rangoli",
-    "agent": "Kolam",
-    "imposter": "Rangoli",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "diya::toran",
-    "agent": "Toran",
-    "imposter": "Diya",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "agarbatti::dhoop",
+    "id": "agarbatti:: candle",
     "agent": "Agarbatti",
-    "imposter": "Dhoop",
+    "imposter": "candle",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
   {
-    "id": "rudraksha::tulsi mala",
+    "id": "rudraksha:: badam",
     "agent": "Rudraksha",
-    "imposter": "Tulsi Mala",
+    "imposter": "badam",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
@@ -5752,23 +5289,23 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "coconut (shreefal)::kalash",
-    "agent": "Kalash",
+    "id": "coconut (shreefal):: orange",
+    "agent": "orange",
     "imposter": "Coconut (Shreefal)",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
   {
-    "id": "laddoo::prasad",
-    "agent": "Prasad",
+    "id": "laddoo:: chewing-gum",
+    "agent": "chewing-gum",
     "imposter": "Laddoo",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
   {
-    "id": "haldi ceremony::mehndi ceremony",
+    "id": "haldi ceremony::divorce",
     "agent": "Haldi Ceremony",
-    "imposter": "Mehndi Ceremony",
+    "imposter": "divorce",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
@@ -5779,20 +5316,7 @@ const wordBank = [
     "category": "festivals_culture",
     "difficulty": "easy"
   },
-  {
-    "id": "pheras::varmala (jaimala)",
-    "agent": "Pheras",
-    "imposter": "Varmala (Jaimala)",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
-  {
-    "id": "doli::mandap",
-    "agent": "Doli",
-    "imposter": "Mandap",
-    "category": "festivals_culture",
-    "difficulty": "easy"
-  },
+  
   {
     "id": "karwa chauth::raksha bandhan",
     "agent": "Karwa Chauth",
@@ -5808,9 +5332,9 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "onam::vishu",
+    "id": "onam:: independence day",
     "agent": "Onam",
-    "imposter": "Vishu",
+    "imposter": "independence day",
     "category": "festivals_culture",
     "difficulty": "medium"
   },
@@ -5850,8 +5374,8 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "bhai dooj::chhoti diwali",
-    "agent": "Chhoti Diwali",
+    "id": "bhai dooj:: Diwali",
+    "agent": " Diwali",
     "imposter": "Bhai Dooj",
     "category": "festivals_culture",
     "difficulty": "medium"
@@ -5864,58 +5388,39 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "kite flying::makar sankranti",
+    "id": "kite flying::Holi",
     "agent": "Kite Flying",
-    "imposter": "Makar Sankranti",
+    "imposter": "Holi",
     "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "id": "holika dahan::lohri bonfire",
+    "id": "holika dahan:: makar-sankranti",
     "agent": "Holika Dahan",
-    "imposter": "Lohri Bonfire",
+    "imposter": "Makar sankranti",
     "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "id": "durga visarjan::ganesh visarjan",
+    "id": "kite-festival::ganesh visarjan",
     "agent": "Ganesh Visarjan",
-    "imposter": "Durga Visarjan",
+    "imposter": "kite-festival",
     "category": "festivals_culture",
     "difficulty": "medium"
   },
+  
   {
-    "id": "palanquin (palki)::rath yatra",
-    "agent": "Rath Yatra",
-    "imposter": "Palanquin (Palki)",
-    "category": "festivals_culture",
-    "difficulty": "medium"
-  },
-  {
-    "id": "kavad yatra::kumbh mela",
-    "agent": "Kavad Yatra",
-    "imposter": "Kumbh Mela",
-    "category": "festivals_culture",
-    "difficulty": "medium"
-  },
-  {
-    "id": "ganga ghat::yamuna ghat",
+    "id": "ganga ghat::kedarnath",
     "agent": "Ganga Ghat",
-    "imposter": "Yamuna Ghat",
+    "imposter": "kedarnath",
     "category": "festivals_culture",
     "difficulty": "medium"
   },
+  
   {
-    "id": "dhunuchi dance::garba",
-    "agent": "Dhunuchi Dance",
-    "imposter": "Garba",
-    "category": "festivals_culture",
-    "difficulty": "medium"
-  },
-  {
-    "id": "bhangra::giddha",
+    "id": "bhangra::hip-hop",
     "agent": "Bhangra",
-    "imposter": "Giddha",
+    "imposter": "hip-hop",
     "category": "festivals_culture",
     "difficulty": "medium"
   },
@@ -5926,27 +5431,8 @@ const wordBank = [
     "category": "festivals_culture",
     "difficulty": "medium"
   },
-  {
-    "id": "bharatnatyam::kathak",
-    "agent": "Kathak",
-    "imposter": "Bharatnatyam",
-    "category": "festivals_culture",
-    "difficulty": "medium"
-  },
-  {
-    "id": "dholak::tabla",
-    "agent": "Tabla",
-    "imposter": "Dholak",
-    "category": "festivals_culture",
-    "difficulty": "medium"
-  },
-  {
-    "id": "sitar::veena",
-    "agent": "Sitar",
-    "imposter": "Veena",
-    "category": "festivals_culture",
-    "difficulty": "medium"
-  },
+  
+  
   {
     "id": "flute (bansuri)::shehnai",
     "agent": "Flute (Bansuri)",
@@ -6003,48 +5489,9 @@ const wordBank = [
     "category": "festivals_culture",
     "difficulty": "medium"
   },
-  {
-    "id": "gym::pehlwani",
-    "agent": "Pehlwani",
-    "imposter": "Gym",
-    "category": "festivals_culture",
-    "difficulty": "medium"
-  },
-  {
-    "id": "dangal::kushti",
-    "agent": "Kushti",
-    "imposter": "Dangal",
-    "category": "festivals_culture",
-    "difficulty": "medium"
-  },
-  {
-    "id": "camel fair pushkar::jallikattu",
-    "agent": "Jallikattu",
-    "imposter": "Camel Fair Pushkar",
-    "category": "festivals_culture",
-    "difficulty": "medium"
-  },
-  {
-    "id": "hornbill festival::kite festival",
-    "agent": "Hornbill Festival",
-    "imposter": "Kite Festival",
-    "category": "festivals_culture",
-    "difficulty": "medium"
-  },
-  {
-    "id": "boat race (vallam kali)::snake boat",
-    "agent": "Boat Race (Vallam Kali)",
-    "imposter": "Snake Boat",
-    "category": "festivals_culture",
-    "difficulty": "medium"
-  },
-  {
-    "id": "chariot::rath",
-    "agent": "Chariot",
-    "imposter": "Rath",
-    "category": "festivals_culture",
-    "difficulty": "medium"
-  },
+ 
+   
+  
   {
     "id": "bhang::thandai",
     "agent": "Bhang",
@@ -6052,41 +5499,7 @@ const wordBank = [
     "category": "festivals_culture",
     "difficulty": "medium"
   },
-  {
-    "id": "bhandara::langar",
-    "agent": "Langar",
-    "imposter": "Bhandara",
-    "category": "festivals_culture",
-    "difficulty": "medium"
-  },
-  {
-    "id": "pandit::pujari",
-    "agent": "Pujari",
-    "imposter": "Pandit",
-    "category": "festivals_culture",
-    "difficulty": "medium"
-  },
-  {
-    "id": "astrologer (jyotishi)::kundali",
-    "agent": "Astrologer (Jyotishi)",
-    "imposter": "Kundali",
-    "category": "festivals_culture",
-    "difficulty": "medium"
-  },
-  {
-    "id": "horoscope::kundali match",
-    "agent": "Kundali Match",
-    "imposter": "Horoscope",
-    "category": "festivals_culture",
-    "difficulty": "medium"
-  },
-  {
-    "id": "feng shui::vaastu shastra",
-    "agent": "Vaastu Shastra",
-    "imposter": "Feng Shui",
-    "category": "festivals_culture",
-    "difficulty": "medium"
-  },
+    
   {
     "id": "ayurveda::yoga",
     "agent": "Ayurveda",
@@ -6269,27 +5682,7 @@ const wordBank = [
     "category": "festivals_culture",
     "difficulty": "hard"
   },
-  {
-    "id": "kimono::sari",
-    "agent": "Sari",
-    "imposter": "Kimono",
-    "category": "festivals_culture",
-    "difficulty": "hard"
-  },
-  {
-    "id": "dhoti::sarong",
-    "agent": "Dhoti",
-    "imposter": "Sarong",
-    "category": "festivals_culture",
-    "difficulty": "hard"
-  },
-  {
-    "id": "kurta::tunic",
-    "agent": "Kurta",
-    "imposter": "Tunic",
-    "category": "festivals_culture",
-    "difficulty": "hard"
-  },
+  
   {
     "id": "mehndi::tattoo",
     "agent": "Mehndi",
@@ -6816,9 +6209,9 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "malpua::puran poli",
+    "id": "malpua::rasgulla",
     "agent": "Puran Poli",
-    "imposter": "Malpua",
+    "imposter": "Rasgulla",
     "category": "foods",
     "difficulty": "medium"
   },
@@ -6913,17 +6306,11 @@ const wordBank = [
     "category": "foods",
     "difficulty": "hard"
   },
+  ,
   {
-    "id": "golgappa shot::pani puri",
-    "agent": "Pani Puri",
-    "imposter": "Golgappa Shot",
-    "category": "foods",
-    "difficulty": "hard"
-  },
-  {
-    "id": "hot dog::vada pav",
+    "id": "kebab::vada pav",
     "agent": "Vada Pav",
-    "imposter": "Hot Dog",
+    "imposter": "kebab",
     "category": "foods",
     "difficulty": "hard"
   },
