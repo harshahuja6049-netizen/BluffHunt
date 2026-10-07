@@ -1325,7 +1325,8 @@ const handleResetLeagueToLobby = async (socket) => {
       p.isWaitingForNextRound = false;
     });
     session.pendingJoins = [];
-    session.usedPairs = [];
+    // Maintain room-level usedPairs history across leagues in the same room
+    session.usedPairs = session.usedPairs || [];
     session.votes = [];
     session.readyToVote = [];
     session.speakerQueue = [];

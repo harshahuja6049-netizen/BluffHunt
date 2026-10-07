@@ -396,11 +396,22 @@ describe('10-game league difficulty schedule and word bank distribution', () => 
     }
   });
 
-  it('verifies wordBank contains exactly 2000 unique pairs with 5:3:2 ratio', () => {
-    assert.equal(wordBank.length, 2000, 'Word bank must contain exactly 2000 pairs');
+  it('verifies wordBank contains EXACTLY 1,000 unique pairs matching category and difficulty targets', () => {
+    assert.equal(wordBank.length, 1000, 'Word bank must contain exactly 1000 pairs');
 
-    const counts = { easy: 0, medium: 0, hard: 0 };
+    const difficultyCounts = { easy: 0, medium: 0, hard: 0 };
+    const categoryCounts = {
+      bollywood: 0,
+      sports: 0,
+      cartoons: 0,
+      superheroes_hollywood: 0,
+      mainstream: 0,
+      brands: 0,
+      festivals_culture: 0,
+      foods: 0
+    };
     const seenPairs = new Set();
+    const wordFrequency = new Map();
 
     wordBank.forEach((p, idx) => {
       assert.ok(p.agent && p.agent.trim().length > 0, `Agent word missing at index ${idx}`);
@@ -413,19 +424,74 @@ describe('10-game league difficulty schedule and word bank distribution', () => 
 
       const diff = (p.difficulty || '').toLowerCase();
       assert.ok(['easy', 'medium', 'hard'].includes(diff), `Invalid difficulty '${diff}' at index ${idx}`);
-      counts[diff] = (counts[diff] || 0) + 1;
+      difficultyCounts[diff] = (difficultyCounts[diff] || 0) + 1;
+
+      const cat = (p.category || '').toLowerCase();
+      assert.ok(categoryCounts.hasOwnProperty(cat), `Invalid category '${cat}' at index ${idx}`);
+      categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
 
       const a = p.agent.trim().toLowerCase();
       const b = p.imposter.trim().toLowerCase();
-      const key = a < b ? `${a}|||${b}` : `${b}|||${a}`;
+      const key = a < b ? `${a}::${b}` : `${b}::${a}`;
       assert.equal(seenPairs.has(key), false, `Duplicate pair found at index ${idx}: ${p.agent} <-> ${p.imposter}`);
       seenPairs.add(key);
+
+      wordFrequency.set(a, (wordFrequency.get(a) || 0) + 1);
+      wordFrequency.set(b, (wordFrequency.get(b) || 0) + 1);
     });
 
-    assert.equal(counts.easy, 1000, 'Must have exactly 1000 Easy pairs');
-    assert.equal(counts.medium, 600, 'Must have exactly 600 Medium pairs');
-    assert.equal(counts.hard, 400, 'Must have exactly 400 Hard pairs');
-    assert.equal(seenPairs.size, 2000, 'All 2000 pairs must be unique forward and backward');
+    // Verify exact Category Targets
+    assert.equal(categoryCounts.bollywood, 200, '20% Bollywood (200 pairs)');
+    assert.equal(categoryCounts.sports, 100, '10% Sports (100 pairs)');
+    assert.equal(categoryCounts.cartoons, 50, '5% Cartoons (50 pairs)');
+    assert.equal(categoryCounts.superheroes_hollywood, 50, '5% Superheroes + Hollywood (50 pairs)');
+    assert.equal(categoryCounts.mainstream, 300, '30% Mainstream (300 pairs)');
+    assert.equal(categoryCounts.brands, 50, '5% Brands (50 pairs)');
+    assert.equal(categoryCounts.festivals_culture, 150, '15% Festivals + Culture (150 pairs)');
+    assert.equal(categoryCounts.foods, 100, '10% Foods (100 pairs)');
+
+    // Verify exact Difficulty Targets
+    assert.equal(difficultyCounts.easy, 500, '50% Easy (500 pairs)');
+    assert.equal(difficultyCounts.medium, 300, '30% Medium (300 pairs)');
+    assert.equal(difficultyCounts.hard, 200, '20% Hard (200 pairs)');
+
+    assert.equal(seenPairs.size, 1000, 'All 1000 pairs must be unique canonical pairs');
+
+    // No one-word domination
+    for (const [word, count] of wordFrequency.entries()) {
+      assert.ok(count <= 8, `Word "${word}" appears too many times (${count} times)`);
+    }
+  });
+
+  it('guarantees 4+ complete leagues (40 games) in the same room with ZERO repeated pairs', () => {
+    // Room-level state that persists across leagues
+    const session = {
+      usedPairs: [],
+      players: [player('a'), player('b'), player('c'), player('d'), player('e')]
+    };
+
+    const TOTAL_LEAGUES = 4;
+    for (let league = 1; league <= TOTAL_LEAGUES; league++) {
+      for (let game = 1; game <= 10; game++) {
+        session.leagueGameNumber = game;
+        const { pair } = assignWordsAndImposter(session, wordBank);
+        assert.ok(pair, `League ${league} Game ${game} must deal a valid pair`);
+        assert.equal(pair.difficulty, LEAGUE_DIFFICULTY_SCHEDULE[game - 1]);
+      }
+      assert.equal(session.usedPairs.length, league * 10, `Room must have ${league * 10} used pairs recorded`);
+    }
+
+    // Verify all 40 pairs used across 4 leagues are completely unique
+    const uniqueRoomKeys = new Set();
+    session.usedPairs.forEach((p, idx) => {
+      const a = p.agent.toLowerCase().trim();
+      const b = p.imposter.toLowerCase().trim();
+      const key = a < b ? `${a}::${b}` : `${b}::${a}`;
+      assert.equal(uniqueRoomKeys.has(key), false, `Repeat pair across leagues at game index ${idx}`);
+      uniqueRoomKeys.add(key);
+    });
+
+    assert.equal(uniqueRoomKeys.size, 40, 'All 40 games across 4 leagues must have unique pairs');
   });
 });
 

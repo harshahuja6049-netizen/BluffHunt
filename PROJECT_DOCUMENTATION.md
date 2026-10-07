@@ -120,7 +120,14 @@ const gameSessionSchema = new mongoose.Schema({
     avatar: { type: String, default: '🕵️' },
     createdAt: { type: Date, default: Date.now }
   }],
-  usedPairs: [{ agent: String, imposter: String, difficulty: String }],
+  usedPairs: [{
+    id: { type: String },
+    agent: { type: String, required: true },
+    imposter: { type: String, required: true },
+    category: { type: String },
+    difficulty: { type: String, default: 'easy' },
+    leagueGameNumber: { type: Number }
+  }],
   leagueGameNumber: { type: Number, default: 1 },
   isLeagueComplete: { type: Boolean, default: false },
   votes: [{ voterId: String, accusedId: String }],
@@ -144,11 +151,23 @@ gameSessionSchema.index({ 'players.playerId': 1 });
 ## 4. Comprehensive Feature Breakdown & Implementation Details
 
 ### Feature 1: Word Bank & Dynamic Unordered Pair Selection
-* **Problem**: In a 10-game league, players should never receive duplicate word pairs, even if the words appear in reverse order (e.g. Samosa vs Sandwich vs Sandwich vs Samosa).
+* **Problem**: In a 10-game league and across consecutive leagues in the same room, players should never receive duplicate word pairs, even if the words appear in reverse order (e.g. Samosa vs Sandwich vs Sandwich vs Samosa).
 * **How it is made**:
+  - `getCanonicalPairId(w1, w2)` creates an alphabetical canonical key (`"a::b"`) where `A vs B === B vs A`.
   - `isSamePair(p1, p2)` in `backend/gameLogic.js` compares both forward `(a1===a2 && i1===i2)` and reverse `(a1===i2 && i1===a2)` pairs.
-  - Curated word bank in `backend/data/wordBank.js` contains **2,000 unique Indian cultural pairs** with a **5:3:2 difficulty ratio** (1,000 Easy, 600 Medium, 400 Hard) across Bollywood movies, actors, cricketers, footballers, cross-category match-ups, food, festivals, brands, and games.
-  - `assignWordsAndImposter(session, wordBank)` enforces the **10-game league difficulty schedule** (Games 1: Easy, 2: Medium, 3: Easy, 4: Medium, 5: Hard, 6: Easy, 7: Medium, 8: Easy, 9: Easy, 10: Hard), filters out all previously `usedPairs`, selects the Imposter based on player count (for 3–4 players, previous Imposter is allowed again; for 5+ players, previous Imposter is excluded next round), and distributes words.
+  - Curated word bank in `backend/data/wordBank.js` contains **EXACTLY 1,000 unique Indian cultural pairs** with an exact **5:3:2 difficulty ratio** (500 Easy, 300 Medium, 200 Hard) across:
+    - 20% Bollywood & Famous Actors (200 pairs)
+    - 10% Sports: Cricket, Football & Terms (100 pairs)
+    - 5% Cartoons Famous in India (50 pairs)
+    - 5% Superheroes & Hollywood (50 pairs)
+    - 30% Mainstream Indian References (300 pairs)
+    - 5% Famous Brands (50 pairs)
+    - 15% Indian Festivals & Cultural References (150 pairs)
+    - 10% Famous Foods (100 pairs)
+  - `assignWordsAndImposter(session, wordBank)` enforces the **10-game league difficulty schedule** (Games 1: Easy, 2: Medium, 3: Easy, 4: Medium, 5: Hard, 6: Easy, 7: Medium, 8: Easy, 9: Easy, 10: Hard).
+  - Room-level `usedPairs` persistence: when a new league is started in the same room via `start-new-league`, `session.usedPairs` is preserved rather than wiped, ensuring that at least 4 complete leagues (40 games) and up to 100 leagues (1,000 games) can be played in the same room with 0 repeated pairs.
+  - Pair selection dynamically filters out words already used in the current 10-game league to maximize vocabulary variety, and prioritizes category diversity across rounds.
+  - Imposter selection is player-count aware: for 3–4 players, the previous Imposter is eligible again; for 5+ players, the previous Imposter is excluded from the immediate next round.
 
 ### Feature 2: Secret Word Leak Detection with Word Boundaries
 * **Problem**: Naive substring matching (e.g., `text.includes(secretWord)`) rejects innocent clues (e.g., rejecting *"camera"* because the secret word is *"Ram"*).

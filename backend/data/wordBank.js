@@ -1,10007 +1,7021 @@
 // backend/data/wordBank.js
-// 2000 Curated Indian WordBank pairs for BluffHunt
-// Distribution: 1000 Easy (50%), 600 Medium (30%), 400 Hard (20%)
-// Ratio: 5 Easy : 3 Medium : 2 Hard
+// BluffHunt Curated Global Word-Pair Pool
+// EXACTLY 1,000 UNIQUE PAIRS
+//
+// Category Distribution:
+// - Bollywood + famous actors: 200 pairs (20%)
+// - Sports: 100 pairs (10%)
+// - Cartoons famous in India: 50 pairs (5%)
+// - Superheroes + famous Hollywood: 50 pairs (5%)
+// - Extremely recognizable mainstream references: 300 pairs (30%)
+// - Famous brands: 50 pairs (5%)
+// - Indian festivals + popular Indian cultural references: 150 pairs (15%)
+// - Famous foods: 100 pairs (10%)
+//
+// Difficulty Distribution:
+// - Easy: 500 pairs (50%)
+// - Medium: 300 pairs (30%)
+// - Hard: 200 pairs (20%)
 
 const wordBank = [
   {
+    "id": "deewar::sholay",
     "agent": "Sholay",
     "imposter": "Deewar",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "don::zanjeer",
     "agent": "Don",
     "imposter": "Zanjeer",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Amar Akbar Anthony",
-    "imposter": "Sholay",
+    "id": "dilwale dulhania le jayenge::kuch kuch hota hai",
+    "agent": "Dilwale Dulhania Le Jayenge",
+    "imposter": "Kuch Kuch Hota Hai",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "hum aapke hain koun::kabhi khushi kabhie gham",
+    "agent": "Hum Aapke Hain Koun",
+    "imposter": "Kabhi Khushi Kabhie Gham",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "3 idiots::taare zameen par",
+    "agent": "3 Idiots",
+    "imposter": "Taare Zameen Par",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "lagaan::swades",
+    "agent": "Lagaan",
+    "imposter": "Swades",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "hera pheri::welcome",
+    "agent": "Hera Pheri",
+    "imposter": "Welcome",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "lage raho munna bhai::munna bhai mbbs",
+    "agent": "Munna Bhai MBBS",
+    "imposter": "Lage Raho Munna Bhai",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "dhamaal::golmaal",
+    "agent": "Golmaal",
+    "imposter": "Dhamaal",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "dabangg::singham",
+    "agent": "Dabangg",
+    "imposter": "Singham",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "jab we met::yeh jawaani hai deewani",
+    "agent": "Jab We Met",
+    "imposter": "Yeh Jawaani Hai Deewani",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "dil chahta hai::zindagi na milegi dobara",
+    "agent": "Zindagi Na Milegi Dobara",
+    "imposter": "Dil Chahta Hai",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "chak de india::dangal",
+    "agent": "Dangal",
+    "imposter": "Chak De India",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "bajrangi bhaijaan::sultan",
+    "agent": "Bajrangi Bhaijaan",
+    "imposter": "Sultan",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "omg oh my god::pk",
+    "agent": "PK",
+    "imposter": "OMG Oh My God",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pathaan::war",
+    "agent": "War",
+    "imposter": "Pathaan",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "jawan::pathaan",
+    "agent": "Pathaan",
+    "imposter": "Jawan",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "animal::kabir singh",
+    "agent": "Animal",
+    "imposter": "Kabir Singh",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "border::gadar",
+    "agent": "Gadar",
+    "imposter": "Border",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "bhool bhulaiyaa::stree",
+    "agent": "Bhool Bhulaiyaa",
+    "imposter": "Stree",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "andhadhun::drishyam",
+    "agent": "Drishyam",
+    "imposter": "Andhadhun",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "shershaah::uri the surgical strike",
+    "agent": "Uri The Surgical Strike",
+    "imposter": "Shershaah",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "baahubali::kgf",
+    "agent": "Baahubali",
+    "imposter": "KGF",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "kgf::pushpa",
+    "agent": "KGF",
+    "imposter": "Pushpa",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "baahubali::rrr",
+    "agent": "RRR",
+    "imposter": "Baahubali",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "12th fail::3 idiots",
+    "agent": "12th Fail",
+    "imposter": "3 Idiots",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fighter::war",
+    "agent": "Fighter",
+    "imposter": "War",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "brahmastra::krrish",
+    "agent": "Brahmastra",
+    "imposter": "Krrish",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "koi mil gaya::krrish",
+    "agent": "Koi Mil Gaya",
+    "imposter": "Krrish",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "main hoon na::om shanti om",
+    "agent": "Main Hoon Na",
+    "imposter": "Om Shanti Om",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "kal ho naa ho::veer-zaara",
+    "agent": "Kal Ho Naa Ho",
+    "imposter": "Veer-Zaara",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "dil to pagal hai::mohabbatein",
+    "agent": "Mohabbatein",
+    "imposter": "Dil To Pagal Hai",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "devdas::hum dil de chuke sanam",
+    "agent": "Hum Dil De Chuke Sanam",
+    "imposter": "Devdas",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "kaho naa pyaar hai::karan arjun",
+    "agent": "Kaho Naa Pyaar Hai",
+    "imposter": "Karan Arjun",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "baazigar::darr",
+    "agent": "Baazigar",
+    "imposter": "Darr",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "chup chup ke::hulchul",
+    "agent": "Chup Chup Ke",
+    "imposter": "Hulchul",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "bhagam bhag::garam masala",
+    "agent": "Garam Masala",
+    "imposter": "Bhagam Bhag",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "singh is kinng::welcome",
+    "agent": "Welcome",
+    "imposter": "Singh Is Kinng",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "dabangg::rowdy rathore",
+    "agent": "Rowdy Rathore",
+    "imposter": "Dabangg",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "simmba::sooryavanshi",
+    "agent": "Simmba",
+    "imposter": "Sooryavanshi",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "chennai express::happy new year",
+    "agent": "Chennai Express",
+    "imposter": "Happy New Year",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "english vinglish::queen",
+    "agent": "Queen",
+    "imposter": "English Vinglish",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "3 idiots::chhichhore",
+    "agent": "Chhichhore",
+    "imposter": "3 Idiots",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "barfi::rockstar",
+    "agent": "Rockstar",
+    "imposter": "Barfi",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "bhaag milkha bhaag::dangal",
+    "agent": "Bhaag Milkha Bhaag",
+    "imposter": "Dangal",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "bajirao mastani::padmaavat",
+    "agent": "Padmaavat",
+    "imposter": "Bajirao Mastani",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mr. india::shaan",
     "agent": "Mr. India",
     "imposter": "Shaan",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "maine pyar kiya::qayamat se qayamat tak",
     "agent": "Qayamat Se Qayamat Tak",
     "imposter": "Maine Pyar Kiya",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Dilwale Dulhania Le Jayenge",
-    "imposter": "Kuch Kuch Hota Hai",
+    "id": "pardes::taal",
+    "agent": "Pardes",
+    "imposter": "Taal",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Hum Aapke Hain Koun",
-    "imposter": "Dilwale Dulhania Le Jayenge",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kabhi Khushi Kabhie Gham",
-    "imposter": "Kuch Kuch Hota Hai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mohabbatein",
-    "imposter": "Dil To Pagal Hai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hum Dil De Chuke Sanam",
-    "imposter": "Devdas",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kal Ho Naa Ho",
-    "imposter": "Kabhi Khushi Kabhie Gham",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Veer-Zaara",
-    "imposter": "Dilwale Dulhania Le Jayenge",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Border",
-    "imposter": "Gadar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dil To Pagal Hai",
-    "imposter": "Kuch Kuch Hota Hai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hum Saath-Saath Hain",
-    "imposter": "Hum Aapke Hain Koun",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Baazigar",
-    "imposter": "Darr",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Karan Arjun",
-    "imposter": "Kaho Naa Pyaar Hai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Lagaan",
-    "imposter": "Swades",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dil Chahta Hai",
-    "imposter": "Zindagi Na Milegi Dobara",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "3 Idiots",
-    "imposter": "Taare Zameen Par",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Munna Bhai MBBS",
-    "imposter": "Lage Raho Munna Bhai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hera Pheri",
-    "imposter": "Phir Hera Pheri",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Welcome",
-    "imposter": "Hera Pheri",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Golmaal",
-    "imposter": "Welcome",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dhoom",
-    "imposter": "Dhoom 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dhoom 2",
-    "imposter": "Dhoom 3",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Koi Mil Gaya",
-    "imposter": "Krrish",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Krrish",
-    "imposter": "Ra.One",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Jab We Met",
-    "imposter": "Yeh Jawaani Hai Deewani",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Om Shanti Om",
-    "imposter": "Main Hoon Na",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chak De India",
-    "imposter": "Lagaan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ghajini",
-    "imposter": "Dhoom 3",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhool Bhulaiyaa",
-    "imposter": "Stree",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dhamaal",
-    "imposter": "Golmaal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dabangg",
-    "imposter": "Singham",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Singham",
-    "imposter": "Simmba",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rowdy Rathore",
-    "imposter": "Dabangg",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chennai Express",
-    "imposter": "Happy New Year",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Yeh Jawaani Hai Deewani",
-    "imposter": "Zindagi Na Milegi Dobara",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhaag Milkha Bhaag",
-    "imposter": "Dangal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Queen",
-    "imposter": "English Vinglish",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "PK",
-    "imposter": "3 Idiots",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bajrangi Bhaijaan",
-    "imposter": "Sultan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dangal",
-    "imposter": "Sultan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "MS Dhoni The Untold Story",
-    "imposter": "83",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Padmaavat",
-    "imposter": "Bajirao Mastani",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Andhadhun",
-    "imposter": "Drishyam",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Stree",
-    "imposter": "Bhediya",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Uri The Surgical Strike",
-    "imposter": "Border",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kabir Singh",
-    "imposter": "Animal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chhichhore",
-    "imposter": "3 Idiots",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "War",
-    "imposter": "Pathaan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pathaan",
-    "imposter": "Jawan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Jawan",
-    "imposter": "Animal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gadar 2",
-    "imposter": "Gadar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "12th Fail",
-    "imposter": "3 Idiots",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Fighter",
-    "imposter": "War",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Brahmastra",
-    "imposter": "Krrish",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhool Bhulaiyaa 2",
-    "imposter": "Bhool Bhulaiyaa 3",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhool Bhulaiyaa 2",
-    "imposter": "Stree 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Stree 2",
-    "imposter": "Stree",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Drishyam 2",
-    "imposter": "Drishyam",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Tiger 3",
-    "imposter": "Pathaan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Singham Again",
-    "imposter": "Sooryavanshi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sooryavanshi",
-    "imposter": "Singham",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Baahubali",
-    "imposter": "Baahubali 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Baahubali",
-    "imposter": "KGF",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "KGF",
-    "imposter": "KGF Chapter 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "KGF",
-    "imposter": "Pushpa",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "RRR",
-    "imposter": "Baahubali",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pushpa",
-    "imposter": "Pushpa 2",
-    "difficulty": "easy"
-  },
-  {
+    "id": "brahmastra::kalki 2898 ad",
     "agent": "Kalki 2898 AD",
     "imposter": "Brahmastra",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "salman khan::shah rukh khan",
     "agent": "Shah Rukh Khan",
     "imposter": "Salman Khan",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "aamir khan::salman khan",
     "agent": "Salman Khan",
     "imposter": "Aamir Khan",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "aamir khan::shah rukh khan",
     "agent": "Shah Rukh Khan",
     "imposter": "Aamir Khan",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "amitabh bachchan::dharmendra",
     "agent": "Amitabh Bachchan",
     "imposter": "Dharmendra",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "amitabh bachchan::rishi kapoor",
     "agent": "Amitabh Bachchan",
     "imposter": "Rishi Kapoor",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "hrithik roshan::tiger shroff",
     "agent": "Hrithik Roshan",
     "imposter": "Tiger Shroff",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "ajay devgn::akshay kumar",
     "agent": "Akshay Kumar",
     "imposter": "Ajay Devgn",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "akshay kumar::suniel shetty",
     "agent": "Akshay Kumar",
     "imposter": "Suniel Shetty",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "bobby deol::sunny deol",
     "agent": "Sunny Deol",
     "imposter": "Bobby Deol",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "govinda::salman khan",
     "agent": "Govinda",
     "imposter": "Salman Khan",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Anil Kapoor",
-    "imposter": "Jackie Shroff",
-    "difficulty": "easy"
-  },
-  {
+    "id": "ranbir kapoor::ranveer singh",
     "agent": "Ranbir Kapoor",
     "imposter": "Ranveer Singh",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "hrithik roshan::ranbir kapoor",
     "agent": "Ranbir Kapoor",
     "imposter": "Hrithik Roshan",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "kartik aaryan::ranbir kapoor",
     "agent": "Kartik Aaryan",
     "imposter": "Ranbir Kapoor",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "ranbir kapoor::shahid kapoor",
     "agent": "Shahid Kapoor",
     "imposter": "Ranbir Kapoor",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Ayushmann Khurrana",
-    "imposter": "Rajkummar Rao",
-    "difficulty": "easy"
-  },
-  {
+    "id": "sidharth malhotra::varun dhawan",
     "agent": "Varun Dhawan",
     "imposter": "Sidharth Malhotra",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "ayushmann khurrana::rajkummar rao",
+    "agent": "Ayushmann Khurrana",
+    "imposter": "Rajkummar Rao",
+    "category": "bollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "johnny lever::paresh rawal",
     "agent": "Paresh Rawal",
     "imposter": "Johnny Lever",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "johnny lever::rajpal yadav",
     "agent": "Rajpal Yadav",
     "imposter": "Johnny Lever",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "paresh rawal::rajpal yadav",
     "agent": "Paresh Rawal",
     "imposter": "Rajpal Yadav",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "nawazuddin siddiqui::pankaj tripathi",
     "agent": "Pankaj Tripathi",
     "imposter": "Nawazuddin Siddiqui",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Nawazuddin Siddiqui",
-    "imposter": "Manoj Bajpayee",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pankaj Tripathi",
-    "imposter": "Manoj Bajpayee",
-    "difficulty": "easy"
-  },
-  {
+    "id": "arshad warsi::sanjay dutt",
     "agent": "Arshad Warsi",
     "imposter": "Sanjay Dutt",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Kader Khan",
-    "imposter": "Shakti Kapoor",
+    "id": "anil kapoor::jackie shroff",
+    "agent": "Anil Kapoor",
+    "imposter": "Jackie Shroff",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Kajol",
-    "imposter": "Madhuri Dixit",
+    "id": "ranveer singh::vicky kaushal",
+    "agent": "Vicky Kaushal",
+    "imposter": "Ranveer Singh",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Aishwarya Rai",
-    "imposter": "Sushmita Sen",
+    "id": "akshay kumar::saif ali khan",
+    "agent": "Saif Ali Khan",
+    "imposter": "Akshay Kumar",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Kareena Kapoor",
-    "imposter": "Karishma Kapoor",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rani Mukerji",
-    "imposter": "Preity Zinta",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Madhuri Dixit",
-    "imposter": "Juhi Chawla",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sridevi",
-    "imposter": "Madhuri Dixit",
-    "difficulty": "easy"
-  },
-  {
+    "id": "alia bhatt::deepika padukone",
     "agent": "Deepika Padukone",
     "imposter": "Alia Bhatt",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "deepika padukone::katrina kaif",
     "agent": "Deepika Padukone",
     "imposter": "Katrina Kaif",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "kareena kapoor::katrina kaif",
     "agent": "Katrina Kaif",
     "imposter": "Kareena Kapoor",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Alia Bhatt",
-    "imposter": "Shraddha Kapoor",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Priyanka Chopra",
-    "imposter": "Deepika Padukone",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Priyanka Chopra",
-    "imposter": "Katrina Kaif",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Anushka Sharma",
-    "imposter": "Deepika Padukone",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kiara Advani",
-    "imposter": "Kriti Sanon",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shraddha Kapoor",
-    "imposter": "Kiara Advani",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sara Ali Khan",
-    "imposter": "Janhvi Kapoor",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ananya Panday",
-    "imposter": "Sara Ali Khan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rashmika Mandanna",
-    "imposter": "Samantha",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Virat Kohli",
-    "imposter": "Rohit Sharma",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "MS Dhoni",
-    "imposter": "Virat Kohli",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "MS Dhoni",
-    "imposter": "Rohit Sharma",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sachin Tendulkar",
-    "imposter": "Virat Kohli",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sachin Tendulkar",
-    "imposter": "MS Dhoni",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Jasprit Bumrah",
-    "imposter": "Mohammed Shami",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hardik Pandya",
-    "imposter": "Ravindra Jadeja",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hardik Pandya",
-    "imposter": "Krunal Pandya",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "KL Rahul",
-    "imposter": "Shubman Gill",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rishabh Pant",
-    "imposter": "Ishan Kishan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Suryakumar Yadav",
-    "imposter": "Rinku Singh",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shubman Gill",
-    "imposter": "Yashasvi Jaiswal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ravindra Jadeja",
-    "imposter": "Ravichandran Ashwin",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kuldeep Yadav",
-    "imposter": "Yuzvendra Chahal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mohammed Shami",
-    "imposter": "Mohammed Siraj",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sanju Samson",
-    "imposter": "Rishabh Pant",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Yuvraj Singh",
-    "imposter": "Suresh Raina",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Virender Sehwag",
-    "imposter": "Gautam Gambhir",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sourav Ganguly",
-    "imposter": "Rahul Dravid",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Anil Kumble",
-    "imposter": "Harbhajan Singh",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kapil Dev",
-    "imposter": "Sunil Gavaskar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kapil Dev",
-    "imposter": "MS Dhoni",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "AB de Villiers",
-    "imposter": "Chris Gayle",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Virat Kohli",
-    "imposter": "AB de Villiers",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "David Warner",
-    "imposter": "Steve Smith",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Glenn Maxwell",
-    "imposter": "AB de Villiers",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ben Stokes",
-    "imposter": "Hardik Pandya",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Lasith Malinga",
-    "imposter": "Jasprit Bumrah",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pat Cummins",
-    "imposter": "Mitchell Starc",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rashid Khan",
-    "imposter": "Yuzvendra Chahal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shoaib Akhtar",
-    "imposter": "Brett Lee",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ricky Ponting",
-    "imposter": "Sourav Ganguly",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Brian Lara",
-    "imposter": "Sachin Tendulkar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shane Warne",
-    "imposter": "Muttiah Muralitharan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Andre Russell",
-    "imposter": "Kieron Pollard",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Lionel Messi",
-    "imposter": "Cristiano Ronaldo",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Neymar",
-    "imposter": "Lionel Messi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Cristiano Ronaldo",
-    "imposter": "Neymar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kylian Mbappé",
-    "imposter": "Erling Haaland",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Lionel Messi",
-    "imposter": "Kylian Mbappé",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Cristiano Ronaldo",
-    "imposter": "Erling Haaland",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "David Beckham",
-    "imposter": "Cristiano Ronaldo",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ronaldinho",
-    "imposter": "Neymar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Diego Maradona",
-    "imposter": "Pelé",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Lionel Messi",
-    "imposter": "Diego Maradona",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sunil Chhetri",
-    "imposter": "Lionel Messi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sunil Chhetri",
-    "imposter": "Cristiano Ronaldo",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chennai Super Kings",
-    "imposter": "Mumbai Indians",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Royal Challengers Bengaluru",
-    "imposter": "Chennai Super Kings",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mumbai Indians",
-    "imposter": "Royal Challengers Bengaluru",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kolkata Knight Riders",
-    "imposter": "Chennai Super Kings",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rajasthan Royals",
-    "imposter": "Chennai Super Kings",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kolkata Knight Riders",
-    "imposter": "Mumbai Indians",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "IPL",
-    "imposter": "ICC World Cup",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "T20 World Cup",
-    "imposter": "ICC World Cup",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Champions Trophy",
-    "imposter": "Asia Cup",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "IPL",
-    "imposter": "T20 World Cup",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "WPL",
-    "imposter": "IPL",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sixer",
-    "imposter": "Boundary (Four)",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Yorker",
-    "imposter": "Bouncer",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Googly",
-    "imposter": "Doosra",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Leg Spin",
-    "imposter": "Off Spin",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Stump Out",
-    "imposter": "Run Out",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "LBW",
-    "imposter": "Caught Behind",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Wide Ball",
-    "imposter": "No Ball",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Free Hit",
-    "imposter": "Super Over",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Powerplay",
-    "imposter": "Super Over",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hat-trick",
-    "imposter": "Century",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Half Century",
-    "imposter": "Century",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Duck",
-    "imposter": "Golden Duck",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Cover Drive",
-    "imposter": "Helicopter Shot",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "DRS",
-    "imposter": "Third Umpire",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Cricket Bat",
-    "imposter": "Cricket Ball",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Stumps",
-    "imposter": "Bails",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Batting Gloves",
-    "imposter": "Batting Pads",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Helmet",
-    "imposter": "Batting Pads",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Wankhede Stadium",
-    "imposter": "Eden Gardens",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Narendra Modi Stadium",
-    "imposter": "Wankhede Stadium",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chinnaswamy Stadium",
-    "imposter": "Wankhede Stadium",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Eden Gardens",
-    "imposter": "Chinnaswamy Stadium",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Virat Kohli",
-    "imposter": "Cristiano Ronaldo",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rohit Sharma",
-    "imposter": "Lionel Messi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "MS Dhoni",
-    "imposter": "Neymar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hardik Pandya",
-    "imposter": "Neymar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sachin Tendulkar",
-    "imposter": "Diego Maradona",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sachin Tendulkar",
-    "imposter": "Pelé",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Yuvraj Singh",
-    "imposter": "Ronaldinho",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shubman Gill",
-    "imposter": "Kylian Mbappé",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Suryakumar Yadav",
-    "imposter": "Neymar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sunil Chhetri",
-    "imposter": "Virat Kohli",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shah Rukh Khan",
-    "imposter": "MS Dhoni",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shah Rukh Khan",
-    "imposter": "Virat Kohli",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ranbir Kapoor",
-    "imposter": "Virat Kohli",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ranveer Singh",
-    "imposter": "Hardik Pandya",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Salman Khan",
-    "imposter": "Rohit Sharma",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Amitabh Bachchan",
-    "imposter": "Sachin Tendulkar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Akshay Kumar",
-    "imposter": "Kapil Dev",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Aamir Khan",
-    "imposter": "Rahul Dravid",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kartik Aaryan",
-    "imposter": "Shubman Gill",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Suniel Shetty",
-    "imposter": "KL Rahul",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Deepika Padukone",
-    "imposter": "Virat Kohli",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Anushka Sharma",
-    "imposter": "Virat Kohli",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Alia Bhatt",
-    "imposter": "Rohit Sharma",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kareena Kapoor",
-    "imposter": "MS Dhoni",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shraddha Kapoor",
-    "imposter": "Shubman Gill",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kiara Advani",
-    "imposter": "MS Dhoni",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shah Rukh Khan",
-    "imposter": "Cristiano Ronaldo",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Amitabh Bachchan",
-    "imposter": "Cristiano Ronaldo",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Amitabh Bachchan",
-    "imposter": "Lionel Messi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Salman Khan",
-    "imposter": "Neymar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ranbir Kapoor",
-    "imposter": "Lionel Messi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hrithik Roshan",
-    "imposter": "David Beckham",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Lagaan",
-    "imposter": "Virat Kohli",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "83",
-    "imposter": "Kapil Dev",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "MS Dhoni The Untold Story",
-    "imposter": "MS Dhoni",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chak De India",
-    "imposter": "MS Dhoni",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Sachin Tendulkar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chak De India",
-    "imposter": "Lionel Messi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Samosa",
-    "imposter": "Kachori",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Samosa",
-    "imposter": "Vada Pav",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Vada Pav",
-    "imposter": "Pav Bhaji",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pani Puri",
-    "imposter": "Bhel Puri",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pani Puri",
-    "imposter": "Sev Puri",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sev Puri",
-    "imposter": "Dahi Puri",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pani Puri",
-    "imposter": "Dahi Puri",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Aloo Tikki",
-    "imposter": "Papdi Chaat",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dahi Bhalla",
-    "imposter": "Papdi Chaat",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chole Kulche",
-    "imposter": "Chole Bhature",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dabeli",
-    "imposter": "Vada Pav",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Frankie",
-    "imposter": "Kathi Roll",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dosa",
-    "imposter": "Idli",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Masala Dosa",
-    "imposter": "Plain Dosa",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Masala Dosa",
-    "imposter": "Medu Vada",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Idli",
-    "imposter": "Medu Vada",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Uttapam",
-    "imposter": "Dosa",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rava Dosa",
-    "imposter": "Masala Dosa",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Upma",
-    "imposter": "Poha",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sambhar",
-    "imposter": "Rasam",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Curd Rice",
-    "imposter": "Lemon Rice",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chole Bhature",
-    "imposter": "Pav Bhaji",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dal Makhani",
-    "imposter": "Dal Tadka",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Paneer Butter Masala",
-    "imposter": "Shahi Paneer",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Palak Paneer",
-    "imposter": "Matar Paneer",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kadhai Paneer",
-    "imposter": "Paneer Butter Masala",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Malai Kofta",
-    "imposter": "Shahi Paneer",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dum Aloo",
-    "imposter": "Aloo Gobi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhindi Masala",
-    "imposter": "Baingan Bharta",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sarson Ka Saag",
-    "imposter": "Makki Ki Roti",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rajma",
-    "imposter": "Chole",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Butter Chicken",
-    "imposter": "Paneer Butter Masala",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Roti",
-    "imposter": "Naan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Butter Naan",
-    "imposter": "Garlic Naan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Tandoori Roti",
-    "imposter": "Butter Naan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Aloo Paratha",
-    "imposter": "Paneer Paratha",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gobi Paratha",
-    "imposter": "Aloo Paratha",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Lachha Paratha",
-    "imposter": "Butter Naan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Methi Thepla",
-    "imposter": "Aloo Paratha",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Poori",
-    "imposter": "Bhatura",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Veg Biryani",
-    "imposter": "Chicken Biryani",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hyderabadi Biryani",
-    "imposter": "Dum Biryani",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Veg Pulao",
-    "imposter": "Veg Biryani",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Jeera Rice",
-    "imposter": "Fried Rice",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Khichdi",
-    "imposter": "Dal Chawal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rajma Chawal",
-    "imposter": "Kadi Chawal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rajma Chawal",
-    "imposter": "Dal Chawal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kadi Chawal",
-    "imposter": "Dal Chawal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dhokla",
-    "imposter": "Khandvi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dhokla",
-    "imposter": "Fafda",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Fafda",
-    "imposter": "Jalebi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Khaman",
-    "imposter": "Dhokla",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Poha",
-    "imposter": "Jalebi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Misal Pav",
-    "imposter": "Pav Bhaji",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sabudana Khichdi",
-    "imposter": "Sabudana Vada",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Litti Chokha",
-    "imposter": "Dal Baati Churma",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Momos",
-    "imposter": "Spring Roll",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chowmein",
-    "imposter": "Hakka Noodles",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hakka Noodles",
-    "imposter": "Fried Rice",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Manchurian",
-    "imposter": "Chilli Paneer",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chilli Paneer",
-    "imposter": "Paneer Tikka",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gulab Jamun",
-    "imposter": "Rasgulla",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rasgulla",
-    "imposter": "Rasmalai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gulab Jamun",
-    "imposter": "Rasmalai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Jalebi",
-    "imposter": "Imarti",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Jalebi",
-    "imposter": "Rabri",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kaju Katli",
-    "imposter": "Gulab Jamun",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kaju Katli",
-    "imposter": "Besan Ladoo",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Besan Ladoo",
-    "imposter": "Motichoor Ladoo",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Motichoor Ladoo",
-    "imposter": "Boondi Ladoo",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kheer",
-    "imposter": "Gajar Ka Halwa",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gajar Ka Halwa",
-    "imposter": "Moong Dal Halwa",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Peda",
-    "imposter": "Sandesh",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mysore Pak",
-    "imposter": "Besan Ladoo",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kulfi",
-    "imposter": "Ice Cream",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Falooda",
-    "imposter": "Kulfi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rabri",
-    "imposter": "Kheer",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shrikhand",
-    "imposter": "Kheer",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Modak",
-    "imposter": "Ladoo",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Malpua",
-    "imposter": "Jalebi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Soan Papdi",
-    "imposter": "Kaju Katli",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chai",
-    "imposter": "Filter Coffee",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Masala Chai",
-    "imposter": "Ginger Chai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Cold Coffee",
-    "imposter": "Filter Coffee",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Lassi",
-    "imposter": "Chaas",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mango Lassi",
-    "imposter": "Sweet Lassi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Nimbu Pani",
-    "imposter": "Shikanji",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Jaljeera",
-    "imposter": "Nimbu Pani",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rooh Afza",
-    "imposter": "Badam Milk",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Badam Milk",
-    "imposter": "Kesar Milk",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Thandai",
-    "imposter": "Lassi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sugarcane Juice",
-    "imposter": "Coconut Water",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Aam Panna",
-    "imposter": "Nimbu Pani",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Diwali",
-    "imposter": "Holi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Diwali",
-    "imposter": "Dhanteras",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Diwali",
-    "imposter": "Bhai Dooj",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Holi",
-    "imposter": "Rangwali Holi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ganesh Chaturthi",
-    "imposter": "Navratri",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Navratri",
-    "imposter": "Durga Puja",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Durga Puja",
-    "imposter": "Dussehra",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dussehra",
-    "imposter": "Diwali",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Raksha Bandhan",
-    "imposter": "Bhai Dooj",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Makar Sankranti",
-    "imposter": "Lohri",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Lohri",
-    "imposter": "Pongal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pongal",
-    "imposter": "Onam",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Makar Sankranti",
-    "imposter": "Baisakhi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chhath Puja",
-    "imposter": "Diwali",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Eid ul-Fitr",
-    "imposter": "Eid al-Adha",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Eid ul-Fitr",
-    "imposter": "Diwali",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Christmas",
-    "imposter": "New Year's Eve",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Christmas",
-    "imposter": "Diwali",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mahashivratri",
-    "imposter": "Janmashtami",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Krishna Janmashtami",
-    "imposter": "Ram Navami",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Diya",
-    "imposter": "Rangoli",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Firecrackers",
-    "imposter": "Phuljhadi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pichkari",
-    "imposter": "Gulal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dandiya",
-    "imposter": "Garba",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Modak",
-    "imposter": "Prasad",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gujiya",
-    "imposter": "Thandai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sewaiyan",
-    "imposter": "Kheer",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rakhi",
-    "imposter": "Sweets",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Puja Thali",
-    "imposter": "Aarti",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Amul Butter",
-    "imposter": "Mother Dairy Milk",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Parle-G",
-    "imposter": "Britannia Good Day",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Britannia Bourbon",
-    "imposter": "Oreo",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Maggi Noodles",
-    "imposter": "Top Ramen",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Maggi Noodles",
-    "imposter": "Yippee Noodles",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Haldiram's Bhujia",
-    "imposter": "Bikaji Bhujia",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kurkure",
-    "imposter": "Lays Chips",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bingo Mad Angles",
-    "imposter": "Kurkure",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Tata Tea",
-    "imposter": "Red Label Tea",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bournvita",
-    "imposter": "Horlicks",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Complan",
-    "imposter": "Horlicks",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Frooti",
-    "imposter": "Maaza",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Maaza",
-    "imposter": "Slice",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Thums Up",
-    "imposter": "Coca-Cola",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Limca",
-    "imposter": "Sprite",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pepsi",
-    "imposter": "Coca-Cola",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dairy Milk",
-    "imposter": "5 Star",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "KitKat",
-    "imposter": "Perk",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pulse Candy",
-    "imposter": "Mango Bite",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dettol",
-    "imposter": "Lifebuoy",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Santoor Soap",
-    "imposter": "Lux Soap",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Vicco Turmeric",
-    "imposter": "Boroline",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Vaseline",
-    "imposter": "Boroline",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Zandu Balm",
-    "imposter": "Tiger Balm",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Vicks VapoRub",
-    "imposter": "Iodex",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Moov",
-    "imposter": "Volini",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Navratna Oil",
-    "imposter": "Parachute Coconut Oil",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bajaj Almond Drops",
-    "imposter": "Dabur Amla Oil",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Colgate",
-    "imposter": "Pepsodent",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Jio",
-    "imposter": "Airtel",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Airtel",
-    "imposter": "Vodafone Idea",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "WhatsApp",
-    "imposter": "Instagram",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Instagram",
-    "imposter": "Facebook",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "YouTube",
-    "imposter": "Netflix",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Google",
-    "imposter": "YouTube",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "PhonePe",
-    "imposter": "Google Pay",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Paytm",
-    "imposter": "PhonePe",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Amazon",
-    "imposter": "Flipkart",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Swiggy",
-    "imposter": "Zomato",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Blinkit",
-    "imposter": "Zepto",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Uber",
-    "imposter": "Ola",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Netflix",
-    "imposter": "Amazon Prime Video",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Disney+ Hotstar",
-    "imposter": "JioCinema",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ludo",
-    "imposter": "Carrom",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chess",
-    "imposter": "Carrom",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Snakes and Ladders",
-    "imposter": "Ludo",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Antakshari",
-    "imposter": "Dumb Charades",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Tambola (Housie)",
-    "imposter": "Ludo",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kho-Kho",
-    "imposter": "Kabaddi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gilli Danda",
-    "imposter": "Cricket",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hide and Seek",
-    "imposter": "Musical Chairs",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "UNO",
-    "imposter": "Playing Cards",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Monopoly",
-    "imposter": "Business (Board Game)",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Teen Patti",
-    "imposter": "Rummy",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chhota Bheem",
-    "imposter": "Motu Patlu",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shinchan",
-    "imposter": "Doraemon",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Tom & Jerry",
-    "imposter": "Oggy and the Cockroaches",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mickey Mouse",
-    "imposter": "Donald Duck",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mr. Bean",
-    "imposter": "Tom & Jerry",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ninja Hattori",
-    "imposter": "Perman",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chacha Chaudhary",
-    "imposter": "Sabu",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Akbar Birbal",
-    "imposter": "Tenali Rama",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shaktimaan",
-    "imposter": "Krrish",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Spider-Man",
-    "imposter": "Batman",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Batman",
-    "imposter": "Superman",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Iron Man",
-    "imposter": "Captain America",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Thor",
-    "imposter": "Hulk",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Taj Mahal",
-    "imposter": "Red Fort",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Qutub Minar",
-    "imposter": "Red Fort",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "India Gate",
-    "imposter": "Gateway of India",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Golden Temple",
-    "imposter": "Taj Mahal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Statue of Unity",
-    "imposter": "Taj Mahal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Goa Beach",
-    "imposter": "Marine Drive",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "ISRO",
-    "imposter": "NASA",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Parliament of India",
-    "imposter": "Rashtrapati Bhavan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mumbai Local Train",
-    "imposter": "Delhi Metro",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Vande Bharat Express",
-    "imposter": "Rajdhani Express",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Auto Rickshaw",
-    "imposter": "Cycle Rickshaw",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Indigo Flight",
-    "imposter": "Air India",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Don",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Zanjeer",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Don",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Zanjeer",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Amar Akbar Anthony",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Amar Akbar Anthony",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Anand",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Zanjeer",
-    "imposter": "Amar Akbar Anthony",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Zanjeer",
-    "imposter": "Anand",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Zanjeer",
-    "imposter": "Mr. India",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Amar Akbar Anthony",
-    "imposter": "Anand",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Amar Akbar Anthony",
-    "imposter": "Mr. India",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Amar Akbar Anthony",
-    "imposter": "Qayamat Se Qayamat Tak",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Anand",
-    "imposter": "Mr. India",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Anand",
-    "imposter": "Qayamat Se Qayamat Tak",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Anand",
-    "imposter": "Maine Pyar Kiya",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mr. India",
-    "imposter": "Qayamat Se Qayamat Tak",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mr. India",
-    "imposter": "Maine Pyar Kiya",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mr. India",
-    "imposter": "Dilwale Dulhania Le Jayenge",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Qayamat Se Qayamat Tak",
-    "imposter": "Dilwale Dulhania Le Jayenge",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Qayamat Se Qayamat Tak",
-    "imposter": "Kuch Kuch Hota Hai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Maine Pyar Kiya",
-    "imposter": "Dilwale Dulhania Le Jayenge",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Maine Pyar Kiya",
-    "imposter": "Kuch Kuch Hota Hai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Maine Pyar Kiya",
-    "imposter": "Hum Aapke Hain Koun",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dilwale Dulhania Le Jayenge",
-    "imposter": "Kabhi Khushi Kabhie Gham",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kuch Kuch Hota Hai",
-    "imposter": "Hum Aapke Hain Koun",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kuch Kuch Hota Hai",
-    "imposter": "Mohabbatein",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hum Aapke Hain Koun",
-    "imposter": "Kabhi Khushi Kabhie Gham",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hum Aapke Hain Koun",
-    "imposter": "Mohabbatein",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hum Aapke Hain Koun",
-    "imposter": "Hum Dil De Chuke Sanam",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kabhi Khushi Kabhie Gham",
-    "imposter": "Mohabbatein",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kabhi Khushi Kabhie Gham",
-    "imposter": "Hum Dil De Chuke Sanam",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kabhi Khushi Kabhie Gham",
-    "imposter": "Devdas",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mohabbatein",
-    "imposter": "Hum Dil De Chuke Sanam",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mohabbatein",
-    "imposter": "Devdas",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mohabbatein",
-    "imposter": "Kal Ho Naa Ho",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hum Dil De Chuke Sanam",
-    "imposter": "Kal Ho Naa Ho",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hum Dil De Chuke Sanam",
-    "imposter": "Veer-Zaara",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Devdas",
-    "imposter": "Kal Ho Naa Ho",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Devdas",
-    "imposter": "Veer-Zaara",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Devdas",
-    "imposter": "Border",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kal Ho Naa Ho",
-    "imposter": "Veer-Zaara",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kal Ho Naa Ho",
-    "imposter": "Border",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kal Ho Naa Ho",
-    "imposter": "Gadar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Veer-Zaara",
-    "imposter": "Border",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Veer-Zaara",
-    "imposter": "Gadar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Veer-Zaara",
-    "imposter": "Pardes",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Border",
-    "imposter": "Pardes",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Border",
-    "imposter": "Taal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gadar",
-    "imposter": "Pardes",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gadar",
-    "imposter": "Taal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gadar",
-    "imposter": "Dil To Pagal Hai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pardes",
-    "imposter": "Dil To Pagal Hai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pardes",
-    "imposter": "Hum Saath-Saath Hain",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Taal",
-    "imposter": "Dil To Pagal Hai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Taal",
-    "imposter": "Hum Saath-Saath Hain",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Taal",
-    "imposter": "Baazigar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dil To Pagal Hai",
-    "imposter": "Hum Saath-Saath Hain",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dil To Pagal Hai",
-    "imposter": "Baazigar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dil To Pagal Hai",
-    "imposter": "Darr",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hum Saath-Saath Hain",
-    "imposter": "Baazigar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hum Saath-Saath Hain",
-    "imposter": "Darr",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hum Saath-Saath Hain",
-    "imposter": "Karan Arjun",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Baazigar",
-    "imposter": "Karan Arjun",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Baazigar",
-    "imposter": "Kaho Naa Pyaar Hai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Darr",
-    "imposter": "Karan Arjun",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Darr",
-    "imposter": "Kaho Naa Pyaar Hai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Darr",
-    "imposter": "Lagaan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Karan Arjun",
-    "imposter": "Lagaan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Karan Arjun",
-    "imposter": "Swades",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kaho Naa Pyaar Hai",
-    "imposter": "Lagaan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kaho Naa Pyaar Hai",
-    "imposter": "Swades",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kaho Naa Pyaar Hai",
-    "imposter": "Dil Chahta Hai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Lagaan",
-    "imposter": "Dil Chahta Hai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Lagaan",
-    "imposter": "Zindagi Na Milegi Dobara",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Swades",
-    "imposter": "Dil Chahta Hai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Swades",
-    "imposter": "Zindagi Na Milegi Dobara",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Swades",
-    "imposter": "3 Idiots",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dil Chahta Hai",
-    "imposter": "3 Idiots",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dil Chahta Hai",
-    "imposter": "Taare Zameen Par",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Zindagi Na Milegi Dobara",
-    "imposter": "3 Idiots",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Zindagi Na Milegi Dobara",
-    "imposter": "Taare Zameen Par",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Zindagi Na Milegi Dobara",
-    "imposter": "Munna Bhai MBBS",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "3 Idiots",
-    "imposter": "Munna Bhai MBBS",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "3 Idiots",
-    "imposter": "Lage Raho Munna Bhai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Taare Zameen Par",
-    "imposter": "Munna Bhai MBBS",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Taare Zameen Par",
-    "imposter": "Lage Raho Munna Bhai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Taare Zameen Par",
-    "imposter": "Rang De Basanti",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Munna Bhai MBBS",
-    "imposter": "Rang De Basanti",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Munna Bhai MBBS",
-    "imposter": "Hera Pheri",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Lage Raho Munna Bhai",
-    "imposter": "Rang De Basanti",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Lage Raho Munna Bhai",
-    "imposter": "Hera Pheri",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Lage Raho Munna Bhai",
-    "imposter": "Phir Hera Pheri",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rang De Basanti",
-    "imposter": "Hera Pheri",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rang De Basanti",
-    "imposter": "Phir Hera Pheri",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rang De Basanti",
-    "imposter": "Welcome",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hera Pheri",
-    "imposter": "Golmaal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Phir Hera Pheri",
-    "imposter": "Welcome",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Phir Hera Pheri",
-    "imposter": "Golmaal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Phir Hera Pheri",
-    "imposter": "Dhoom",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Welcome",
-    "imposter": "Dhoom",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Welcome",
-    "imposter": "Dhoom 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Golmaal",
-    "imposter": "Dhoom",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Golmaal",
-    "imposter": "Dhoom 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Golmaal",
-    "imposter": "Dhoom 3",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dhoom",
-    "imposter": "Dhoom 3",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dhoom",
-    "imposter": "Koi Mil Gaya",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dhoom 2",
-    "imposter": "Koi Mil Gaya",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dhoom 2",
-    "imposter": "Krrish",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dhoom 3",
-    "imposter": "Koi Mil Gaya",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dhoom 3",
-    "imposter": "Krrish",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dhoom 3",
-    "imposter": "Ra.One",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Koi Mil Gaya",
-    "imposter": "Ra.One",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Koi Mil Gaya",
-    "imposter": "Jab We Met",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Krrish",
-    "imposter": "Jab We Met",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Krrish",
-    "imposter": "Yeh Jawaani Hai Deewani",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ra.One",
-    "imposter": "Jab We Met",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ra.One",
-    "imposter": "Yeh Jawaani Hai Deewani",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ra.One",
-    "imposter": "Om Shanti Om",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Jab We Met",
-    "imposter": "Om Shanti Om",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Jab We Met",
-    "imposter": "Main Hoon Na",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Yeh Jawaani Hai Deewani",
-    "imposter": "Om Shanti Om",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Yeh Jawaani Hai Deewani",
-    "imposter": "Main Hoon Na",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Yeh Jawaani Hai Deewani",
-    "imposter": "Chak De India",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Om Shanti Om",
-    "imposter": "Chak De India",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Om Shanti Om",
-    "imposter": "Ghajini",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Main Hoon Na",
-    "imposter": "Chak De India",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Main Hoon Na",
-    "imposter": "Ghajini",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Main Hoon Na",
-    "imposter": "Bhool Bhulaiyaa",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chak De India",
-    "imposter": "Ghajini",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chak De India",
-    "imposter": "Bhool Bhulaiyaa",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chak De India",
-    "imposter": "Bhool Bhulaiyaa 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ghajini",
-    "imposter": "Bhool Bhulaiyaa",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ghajini",
-    "imposter": "Bhool Bhulaiyaa 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ghajini",
-    "imposter": "Bhool Bhulaiyaa 3",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhool Bhulaiyaa",
-    "imposter": "Bhool Bhulaiyaa 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhool Bhulaiyaa",
-    "imposter": "Bhool Bhulaiyaa 3",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhool Bhulaiyaa",
-    "imposter": "Dostana",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhool Bhulaiyaa 2",
-    "imposter": "Dostana",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhool Bhulaiyaa 2",
-    "imposter": "Desi Boyz",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhool Bhulaiyaa 3",
-    "imposter": "Dostana",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhool Bhulaiyaa 3",
-    "imposter": "Desi Boyz",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhool Bhulaiyaa 3",
-    "imposter": "Namastey London",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dostana",
-    "imposter": "Namastey London",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dostana",
-    "imposter": "Singh Is Kinng",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Desi Boyz",
-    "imposter": "Namastey London",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Desi Boyz",
-    "imposter": "Singh Is Kinng",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Desi Boyz",
-    "imposter": "Garam Masala",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Namastey London",
-    "imposter": "Garam Masala",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Namastey London",
-    "imposter": "Bhagam Bhag",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Singh Is Kinng",
-    "imposter": "Garam Masala",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Singh Is Kinng",
-    "imposter": "Bhagam Bhag",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Singh Is Kinng",
-    "imposter": "Chup Chup Ke",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Garam Masala",
-    "imposter": "Chup Chup Ke",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Garam Masala",
-    "imposter": "Hulchul",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhagam Bhag",
-    "imposter": "Chup Chup Ke",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhagam Bhag",
-    "imposter": "Hulchul",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhagam Bhag",
-    "imposter": "Dhamaal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chup Chup Ke",
-    "imposter": "Dhamaal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chup Chup Ke",
-    "imposter": "Dabangg",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hulchul",
-    "imposter": "Dhamaal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hulchul",
-    "imposter": "Dabangg",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hulchul",
-    "imposter": "Singham",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dhamaal",
-    "imposter": "Dabangg",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dhamaal",
-    "imposter": "Singham",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dhamaal",
-    "imposter": "Simmba",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dabangg",
-    "imposter": "Simmba",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dabangg",
-    "imposter": "Sooryavanshi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Singham",
-    "imposter": "Singham Again",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Simmba",
-    "imposter": "Sooryavanshi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Simmba",
-    "imposter": "Singham Again",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Simmba",
-    "imposter": "Rowdy Rathore",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sooryavanshi",
-    "imposter": "Rowdy Rathore",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sooryavanshi",
-    "imposter": "Chennai Express",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Singham Again",
-    "imposter": "Rowdy Rathore",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Singham Again",
-    "imposter": "Chennai Express",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Singham Again",
-    "imposter": "Happy New Year",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rowdy Rathore",
-    "imposter": "Chennai Express",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rowdy Rathore",
-    "imposter": "Happy New Year",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rowdy Rathore",
-    "imposter": "Barfi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chennai Express",
-    "imposter": "Barfi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chennai Express",
-    "imposter": "Rockstar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Happy New Year",
-    "imposter": "Barfi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Happy New Year",
-    "imposter": "Rockstar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Happy New Year",
-    "imposter": "Bhaag Milkha Bhaag",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Barfi",
-    "imposter": "Bhaag Milkha Bhaag",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Barfi",
-    "imposter": "Queen",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rockstar",
-    "imposter": "Bhaag Milkha Bhaag",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rockstar",
-    "imposter": "Queen",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rockstar",
-    "imposter": "English Vinglish",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhaag Milkha Bhaag",
-    "imposter": "Queen",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhaag Milkha Bhaag",
-    "imposter": "English Vinglish",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhaag Milkha Bhaag",
-    "imposter": "PK",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Queen",
-    "imposter": "PK",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Queen",
-    "imposter": "Bajrangi Bhaijaan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "English Vinglish",
-    "imposter": "PK",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "English Vinglish",
-    "imposter": "Bajrangi Bhaijaan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "English Vinglish",
-    "imposter": "Sultan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "PK",
-    "imposter": "Bajrangi Bhaijaan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "PK",
-    "imposter": "Sultan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "PK",
-    "imposter": "Dangal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bajrangi Bhaijaan",
-    "imposter": "Dangal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bajrangi Bhaijaan",
-    "imposter": "MS Dhoni The Untold Story",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sultan",
-    "imposter": "MS Dhoni The Untold Story",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sultan",
-    "imposter": "83",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dangal",
-    "imposter": "MS Dhoni The Untold Story",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dangal",
-    "imposter": "83",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dangal",
-    "imposter": "Sanju",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "MS Dhoni The Untold Story",
-    "imposter": "Sanju",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "MS Dhoni The Untold Story",
-    "imposter": "Padmaavat",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "83",
-    "imposter": "Sanju",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "83",
-    "imposter": "Padmaavat",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "83",
-    "imposter": "Bajirao Mastani",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sanju",
-    "imposter": "Padmaavat",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sanju",
-    "imposter": "Bajirao Mastani",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sanju",
-    "imposter": "Andhadhun",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Padmaavat",
-    "imposter": "Andhadhun",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Padmaavat",
-    "imposter": "Drishyam",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bajirao Mastani",
-    "imposter": "Andhadhun",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bajirao Mastani",
-    "imposter": "Drishyam",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bajirao Mastani",
-    "imposter": "Drishyam 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Andhadhun",
-    "imposter": "Drishyam 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Andhadhun",
-    "imposter": "Stree",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Drishyam",
-    "imposter": "Stree",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Drishyam",
-    "imposter": "Stree 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Drishyam 2",
-    "imposter": "Stree",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Drishyam 2",
-    "imposter": "Stree 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Drishyam 2",
-    "imposter": "Bhediya",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Stree",
-    "imposter": "Badhaai Ho",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Stree 2",
-    "imposter": "Bhediya",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Stree 2",
-    "imposter": "Badhaai Ho",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Stree 2",
-    "imposter": "Shubh Mangal Saavdhan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhediya",
-    "imposter": "Badhaai Ho",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhediya",
-    "imposter": "Shubh Mangal Saavdhan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhediya",
-    "imposter": "Uri The Surgical Strike",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Badhaai Ho",
-    "imposter": "Uri The Surgical Strike",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Badhaai Ho",
-    "imposter": "Kabir Singh",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shubh Mangal Saavdhan",
-    "imposter": "Uri The Surgical Strike",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shubh Mangal Saavdhan",
-    "imposter": "Kabir Singh",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shubh Mangal Saavdhan",
-    "imposter": "Chhichhore",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Uri The Surgical Strike",
-    "imposter": "Kabir Singh",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Uri The Surgical Strike",
-    "imposter": "Chhichhore",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Uri The Surgical Strike",
-    "imposter": "War",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kabir Singh",
-    "imposter": "Chhichhore",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kabir Singh",
-    "imposter": "War",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kabir Singh",
-    "imposter": "Fighter",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chhichhore",
-    "imposter": "War",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chhichhore",
-    "imposter": "Fighter",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chhichhore",
-    "imposter": "Tanhaji",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "War",
-    "imposter": "Tanhaji",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "War",
-    "imposter": "Gully Boy",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Fighter",
-    "imposter": "Tanhaji",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Fighter",
-    "imposter": "Gully Boy",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Fighter",
-    "imposter": "Pathaan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Tanhaji",
-    "imposter": "Gully Boy",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Tanhaji",
-    "imposter": "Pathaan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Tanhaji",
-    "imposter": "Jawan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gully Boy",
-    "imposter": "Pathaan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gully Boy",
-    "imposter": "Jawan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gully Boy",
-    "imposter": "Gadar 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pathaan",
-    "imposter": "Gadar 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pathaan",
-    "imposter": "Animal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Jawan",
-    "imposter": "Gadar 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Jawan",
-    "imposter": "Dunki",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gadar 2",
-    "imposter": "Animal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gadar 2",
-    "imposter": "Dunki",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gadar 2",
-    "imposter": "12th Fail",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Animal",
-    "imposter": "Dunki",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Animal",
-    "imposter": "12th Fail",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Animal",
-    "imposter": "Brahmastra",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dunki",
-    "imposter": "12th Fail",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dunki",
-    "imposter": "Brahmastra",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dunki",
-    "imposter": "Tiger 3",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "12th Fail",
-    "imposter": "Brahmastra",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "12th Fail",
-    "imposter": "Tiger 3",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "12th Fail",
-    "imposter": "Ek Tha Tiger",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Brahmastra",
-    "imposter": "Tiger 3",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Brahmastra",
-    "imposter": "Ek Tha Tiger",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Brahmastra",
-    "imposter": "Tiger Zinda Hai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Tiger 3",
-    "imposter": "Ek Tha Tiger",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Tiger 3",
-    "imposter": "Tiger Zinda Hai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Tiger 3",
-    "imposter": "Baahubali",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ek Tha Tiger",
-    "imposter": "Tiger Zinda Hai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ek Tha Tiger",
-    "imposter": "Baahubali",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ek Tha Tiger",
-    "imposter": "Baahubali 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Tiger Zinda Hai",
-    "imposter": "Baahubali",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Tiger Zinda Hai",
-    "imposter": "Baahubali 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Tiger Zinda Hai",
-    "imposter": "KGF",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Baahubali",
-    "imposter": "KGF Chapter 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Baahubali 2",
-    "imposter": "KGF",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Baahubali 2",
-    "imposter": "KGF Chapter 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Baahubali 2",
-    "imposter": "RRR",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "KGF",
-    "imposter": "RRR",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "KGF Chapter 2",
-    "imposter": "RRR",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "KGF Chapter 2",
-    "imposter": "Pushpa",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "KGF Chapter 2",
-    "imposter": "Pushpa 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "RRR",
-    "imposter": "Pushpa",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "RRR",
-    "imposter": "Pushpa 2",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "RRR",
-    "imposter": "Kantara",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pushpa",
-    "imposter": "Kalki 2898 AD",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pushpa 2",
-    "imposter": "Kantara",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pushpa 2",
-    "imposter": "Kalki 2898 AD",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kantara",
-    "imposter": "Kalki 2898 AD",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Salman Khan",
-    "imposter": "Amitabh Bachchan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Aamir Khan",
-    "imposter": "Amitabh Bachchan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Aamir Khan",
-    "imposter": "Dharmendra",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dharmendra",
-    "imposter": "Rishi Kapoor",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dharmendra",
-    "imposter": "Hrithik Roshan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rishi Kapoor",
-    "imposter": "Hrithik Roshan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rishi Kapoor",
-    "imposter": "Akshay Kumar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hrithik Roshan",
-    "imposter": "Akshay Kumar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hrithik Roshan",
-    "imposter": "Ajay Devgn",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ajay Devgn",
-    "imposter": "Suniel Shetty",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ajay Devgn",
-    "imposter": "Sunny Deol",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Suniel Shetty",
-    "imposter": "Sunny Deol",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Suniel Shetty",
-    "imposter": "Bobby Deol",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sunny Deol",
-    "imposter": "Saif Ali Khan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bobby Deol",
-    "imposter": "Saif Ali Khan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bobby Deol",
-    "imposter": "Anil Kapoor",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Saif Ali Khan",
-    "imposter": "Anil Kapoor",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Saif Ali Khan",
-    "imposter": "Jackie Shroff",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Anil Kapoor",
-    "imposter": "Govinda",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Jackie Shroff",
-    "imposter": "Govinda",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Jackie Shroff",
-    "imposter": "Sanjay Dutt",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Govinda",
-    "imposter": "Sanjay Dutt",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Govinda",
-    "imposter": "Ranbir Kapoor",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sanjay Dutt",
-    "imposter": "Ranbir Kapoor",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sanjay Dutt",
-    "imposter": "Ranveer Singh",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ranveer Singh",
-    "imposter": "Shahid Kapoor",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ranveer Singh",
-    "imposter": "Kartik Aaryan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shahid Kapoor",
-    "imposter": "Kartik Aaryan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shahid Kapoor",
-    "imposter": "Vicky Kaushal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kartik Aaryan",
-    "imposter": "Vicky Kaushal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Vicky Kaushal",
-    "imposter": "Ayushmann Khurrana",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Vicky Kaushal",
-    "imposter": "Varun Dhawan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ayushmann Khurrana",
-    "imposter": "Varun Dhawan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ayushmann Khurrana",
-    "imposter": "Sidharth Malhotra",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Varun Dhawan",
-    "imposter": "Rajkummar Rao",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sidharth Malhotra",
-    "imposter": "Rajkummar Rao",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sidharth Malhotra",
-    "imposter": "Tiger Shroff",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rajkummar Rao",
-    "imposter": "Tiger Shroff",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rajkummar Rao",
-    "imposter": "Paresh Rawal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Tiger Shroff",
-    "imposter": "Paresh Rawal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Tiger Shroff",
-    "imposter": "Johnny Lever",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Johnny Lever",
-    "imposter": "Boman Irani",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rajpal Yadav",
-    "imposter": "Boman Irani",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rajpal Yadav",
-    "imposter": "Arshad Warsi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Boman Irani",
-    "imposter": "Arshad Warsi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Boman Irani",
-    "imposter": "Kader Khan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Arshad Warsi",
-    "imposter": "Kader Khan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Arshad Warsi",
-    "imposter": "Shakti Kapoor",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kader Khan",
-    "imposter": "Pankaj Tripathi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shakti Kapoor",
-    "imposter": "Pankaj Tripathi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shakti Kapoor",
-    "imposter": "Nawazuddin Siddiqui",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Nawazuddin Siddiqui",
-    "imposter": "Sanjay Mishra",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Manoj Bajpayee",
-    "imposter": "Sanjay Mishra",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Manoj Bajpayee",
-    "imposter": "Vidyut Jammwal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sanjay Mishra",
-    "imposter": "Vidyut Jammwal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sanjay Mishra",
-    "imposter": "Ishaan Khatter",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Vidyut Jammwal",
-    "imposter": "Ishaan Khatter",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Vidyut Jammwal",
-    "imposter": "Siddhant Chaturvedi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ishaan Khatter",
-    "imposter": "Siddhant Chaturvedi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ishaan Khatter",
-    "imposter": "Emraan Hashmi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Siddhant Chaturvedi",
-    "imposter": "Emraan Hashmi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Siddhant Chaturvedi",
-    "imposter": "Vivek Oberoi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Emraan Hashmi",
-    "imposter": "Vivek Oberoi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Emraan Hashmi",
-    "imposter": "Abhishek Bachchan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Vivek Oberoi",
-    "imposter": "Abhishek Bachchan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Alia Bhatt",
-    "imposter": "Katrina Kaif",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Alia Bhatt",
-    "imposter": "Kareena Kapoor",
-    "difficulty": "easy"
-  },
-  {
+    "id": "kareena kapoor::priyanka chopra",
     "agent": "Kareena Kapoor",
     "imposter": "Priyanka Chopra",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Kareena Kapoor",
-    "imposter": "Anushka Sharma",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Priyanka Chopra",
-    "imposter": "Anushka Sharma",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Priyanka Chopra",
+    "id": "alia bhatt::shraddha kapoor",
+    "agent": "Alia Bhatt",
     "imposter": "Shraddha Kapoor",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Anushka Sharma",
-    "imposter": "Shraddha Kapoor",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Anushka Sharma",
-    "imposter": "Kiara Advani",
-    "difficulty": "easy"
-  },
-  {
+    "id": "kiara advani::shraddha kapoor",
     "agent": "Shraddha Kapoor",
-    "imposter": "Kriti Sanon",
+    "imposter": "Kiara Advani",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
+    "id": "kiara advani::kriti sanon",
     "agent": "Kiara Advani",
-    "imposter": "Madhuri Dixit",
+    "imposter": "Kriti Sanon",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Kriti Sanon",
-    "imposter": "Madhuri Dixit",
+    "id": "anushka sharma::deepika padukone",
+    "agent": "Anushka Sharma",
+    "imposter": "Deepika Padukone",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Kriti Sanon",
-    "imposter": "Kajol",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Madhuri Dixit",
-    "imposter": "Rani Mukerji",
-    "difficulty": "easy"
-  },
-  {
+    "id": "kajol::madhuri dixit",
     "agent": "Kajol",
-    "imposter": "Rani Mukerji",
+    "imposter": "Madhuri Dixit",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Rani Mukerji",
-    "imposter": "Aishwarya Rai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Preity Zinta",
-    "imposter": "Aishwarya Rai",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Preity Zinta",
-    "imposter": "Sushmita Sen",
-    "difficulty": "easy"
-  },
-  {
+    "id": "aishwarya rai::sushmita sen",
     "agent": "Aishwarya Rai",
-    "imposter": "Karisma Kapoor",
+    "imposter": "Sushmita Sen",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Sushmita Sen",
-    "imposter": "Karisma Kapoor",
+    "id": "preity zinta::rani mukerji",
+    "agent": "Rani Mukerji",
+    "imposter": "Preity Zinta",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Sushmita Sen",
-    "imposter": "Raveena Tandon",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Karisma Kapoor",
-    "imposter": "Raveena Tandon",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Karisma Kapoor",
+    "id": "juhi chawla::madhuri dixit",
+    "agent": "Madhuri Dixit",
     "imposter": "Juhi Chawla",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Raveena Tandon",
-    "imposter": "Juhi Chawla",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Raveena Tandon",
-    "imposter": "Sridevi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Juhi Chawla",
-    "imposter": "Sridevi",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Juhi Chawla",
-    "imposter": "Vidya Balan",
-    "difficulty": "easy"
-  },
-  {
+    "id": "madhuri dixit::sridevi",
     "agent": "Sridevi",
-    "imposter": "Vidya Balan",
+    "imposter": "Madhuri Dixit",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Sridevi",
-    "imposter": "Kangana Ranaut",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Vidya Balan",
-    "imposter": "Taapsee Pannu",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kangana Ranaut",
-    "imposter": "Taapsee Pannu",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kangana Ranaut",
-    "imposter": "Bhumi Pednekar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Taapsee Pannu",
-    "imposter": "Sara Ali Khan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhumi Pednekar",
-    "imposter": "Sara Ali Khan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhumi Pednekar",
+    "id": "janhvi kapoor::sara ali khan",
+    "agent": "Sara Ali Khan",
     "imposter": "Janhvi Kapoor",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Janhvi Kapoor",
-    "imposter": "Ananya Panday",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Janhvi Kapoor",
-    "imposter": "Rashmika Mandanna",
-    "difficulty": "easy"
-  },
-  {
+    "id": "ananya panday::sara ali khan",
     "agent": "Ananya Panday",
-    "imposter": "Rashmika Mandanna",
+    "imposter": "Sara Ali Khan",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Ananya Panday",
-    "imposter": "Samantha",
-    "difficulty": "easy"
-  },
-  {
+    "id": "rashmika mandanna::samantha",
     "agent": "Rashmika Mandanna",
-    "imposter": "Nayanthara",
+    "imposter": "Samantha",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Samantha",
-    "imposter": "Yami Gautam",
+    "id": "kangana ranaut::vidya balan",
+    "agent": "Vidya Balan",
+    "imposter": "Kangana Ranaut",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Nayanthara",
-    "imposter": "Yami Gautam",
+    "id": "karisma kapoor::raveena tandon",
+    "agent": "Karisma Kapoor",
+    "imposter": "Raveena Tandon",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Nayanthara",
-    "imposter": "Tabu",
+    "id": "kajol::kareena kapoor",
+    "agent": "Kareena Kapoor",
+    "imposter": "Kajol",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Yami Gautam",
-    "imposter": "Tabu",
+    "id": "anushka sharma::priyanka chopra",
+    "agent": "Priyanka Chopra",
+    "imposter": "Anushka Sharma",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Yami Gautam",
-    "imposter": "Sonam Kapoor",
+    "id": "aishwarya rai::preity zinta",
+    "agent": "Preity Zinta",
+    "imposter": "Aishwarya Rai",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Tabu",
-    "imposter": "Sonam Kapoor",
+    "id": "hema malini::rekha",
+    "agent": "Hema Malini",
+    "imposter": "Rekha",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Rohit Sharma",
-    "imposter": "Sachin Tendulkar",
+    "id": "janhvi kapoor::khushi kapoor",
+    "agent": "Janhvi Kapoor",
+    "imposter": "Khushi Kapoor",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Rohit Sharma",
-    "imposter": "Jasprit Bumrah",
+    "id": "disha patani::kriti sanon",
+    "agent": "Kriti Sanon",
+    "imposter": "Disha Patani",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "MS Dhoni",
-    "imposter": "Jasprit Bumrah",
+    "id": "bhumi pednekar::taapsee pannu",
+    "agent": "Taapsee Pannu",
+    "imposter": "Bhumi Pednekar",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "MS Dhoni",
-    "imposter": "Hardik Pandya",
+    "id": "raveena tandon::shilpa shetty",
+    "agent": "Shilpa Shetty",
+    "imposter": "Raveena Tandon",
+    "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "agent": "Sachin Tendulkar",
-    "imposter": "Jasprit Bumrah",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sachin Tendulkar",
-    "imposter": "Hardik Pandya",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sachin Tendulkar",
-    "imposter": "Ravindra Jadeja",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Jasprit Bumrah",
-    "imposter": "Hardik Pandya",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Jasprit Bumrah",
-    "imposter": "Ravindra Jadeja",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Jasprit Bumrah",
-    "imposter": "Ravichandran Ashwin",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hardik Pandya",
-    "imposter": "Ravichandran Ashwin",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Hardik Pandya",
-    "imposter": "Mohammed Shami",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ravindra Jadeja",
-    "imposter": "Mohammed Shami",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ravindra Jadeja",
-    "imposter": "Mohammed Siraj",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ravichandran Ashwin",
-    "imposter": "Mohammed Shami",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ravichandran Ashwin",
-    "imposter": "Mohammed Siraj",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ravichandran Ashwin",
-    "imposter": "Bhuvneshwar Kumar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mohammed Shami",
-    "imposter": "Bhuvneshwar Kumar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mohammed Shami",
-    "imposter": "Shikhar Dhawan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mohammed Siraj",
-    "imposter": "Bhuvneshwar Kumar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mohammed Siraj",
-    "imposter": "Shikhar Dhawan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mohammed Siraj",
-    "imposter": "KL Rahul",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhuvneshwar Kumar",
-    "imposter": "Shikhar Dhawan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhuvneshwar Kumar",
-    "imposter": "KL Rahul",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Bhuvneshwar Kumar",
-    "imposter": "Rishabh Pant",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shikhar Dhawan",
-    "imposter": "KL Rahul",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shikhar Dhawan",
-    "imposter": "Rishabh Pant",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shikhar Dhawan",
-    "imposter": "Shreyas Iyer",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "KL Rahul",
-    "imposter": "Rishabh Pant",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "KL Rahul",
-    "imposter": "Suryakumar Yadav",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rishabh Pant",
-    "imposter": "Shreyas Iyer",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rishabh Pant",
-    "imposter": "Suryakumar Yadav",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rishabh Pant",
-    "imposter": "Shubman Gill",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shreyas Iyer",
-    "imposter": "Suryakumar Yadav",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shreyas Iyer",
-    "imposter": "Shubman Gill",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shreyas Iyer",
-    "imposter": "Yashasvi Jaiswal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Suryakumar Yadav",
-    "imposter": "Shubman Gill",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Suryakumar Yadav",
-    "imposter": "Yashasvi Jaiswal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shubman Gill",
-    "imposter": "Rinku Singh",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shubman Gill",
-    "imposter": "Ishan Kishan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Yashasvi Jaiswal",
-    "imposter": "Rinku Singh",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Yashasvi Jaiswal",
-    "imposter": "Ishan Kishan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Yashasvi Jaiswal",
-    "imposter": "Sanju Samson",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rinku Singh",
-    "imposter": "Ishan Kishan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rinku Singh",
-    "imposter": "Sanju Samson",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rinku Singh",
-    "imposter": "Kuldeep Yadav",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ishan Kishan",
-    "imposter": "Sanju Samson",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ishan Kishan",
-    "imposter": "Kuldeep Yadav",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ishan Kishan",
-    "imposter": "Yuzvendra Chahal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sanju Samson",
-    "imposter": "Kuldeep Yadav",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sanju Samson",
-    "imposter": "Yuzvendra Chahal",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sanju Samson",
-    "imposter": "Axar Patel",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kuldeep Yadav",
-    "imposter": "Axar Patel",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kuldeep Yadav",
-    "imposter": "Arshdeep Singh",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Yuzvendra Chahal",
-    "imposter": "Axar Patel",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Yuzvendra Chahal",
-    "imposter": "Arshdeep Singh",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Yuzvendra Chahal",
-    "imposter": "Washington Sundar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Axar Patel",
-    "imposter": "Arshdeep Singh",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Axar Patel",
-    "imposter": "Washington Sundar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Axar Patel",
-    "imposter": "Shivam Dube",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Arshdeep Singh",
-    "imposter": "Washington Sundar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Arshdeep Singh",
-    "imposter": "Shivam Dube",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Arshdeep Singh",
-    "imposter": "Yuvraj Singh",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Washington Sundar",
-    "imposter": "Shivam Dube",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Washington Sundar",
-    "imposter": "Yuvraj Singh",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Washington Sundar",
-    "imposter": "Suresh Raina",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shivam Dube",
-    "imposter": "Yuvraj Singh",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shivam Dube",
-    "imposter": "Suresh Raina",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shivam Dube",
-    "imposter": "Gautam Gambhir",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Yuvraj Singh",
-    "imposter": "Gautam Gambhir",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Yuvraj Singh",
-    "imposter": "Virender Sehwag",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Suresh Raina",
-    "imposter": "Gautam Gambhir",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Suresh Raina",
-    "imposter": "Virender Sehwag",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Suresh Raina",
-    "imposter": "Sourav Ganguly",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gautam Gambhir",
-    "imposter": "Sourav Ganguly",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Gautam Gambhir",
-    "imposter": "Rahul Dravid",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Virender Sehwag",
-    "imposter": "Sourav Ganguly",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Virender Sehwag",
-    "imposter": "Rahul Dravid",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Virender Sehwag",
-    "imposter": "Anil Kumble",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sourav Ganguly",
-    "imposter": "Anil Kumble",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sourav Ganguly",
-    "imposter": "Harbhajan Singh",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rahul Dravid",
-    "imposter": "Anil Kumble",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rahul Dravid",
-    "imposter": "Harbhajan Singh",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rahul Dravid",
-    "imposter": "Zaheer Khan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Anil Kumble",
-    "imposter": "Zaheer Khan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Anil Kumble",
-    "imposter": "Ashish Nehra",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Harbhajan Singh",
-    "imposter": "Zaheer Khan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Harbhajan Singh",
-    "imposter": "Ashish Nehra",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Harbhajan Singh",
-    "imposter": "Irfan Pathan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Zaheer Khan",
-    "imposter": "Irfan Pathan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Zaheer Khan",
-    "imposter": "Kapil Dev",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ashish Nehra",
-    "imposter": "Irfan Pathan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ashish Nehra",
-    "imposter": "Kapil Dev",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ashish Nehra",
-    "imposter": "Sunil Gavaskar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Irfan Pathan",
-    "imposter": "Kapil Dev",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Irfan Pathan",
-    "imposter": "Sunil Gavaskar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Irfan Pathan",
-    "imposter": "AB de Villiers",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kapil Dev",
-    "imposter": "AB de Villiers",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kapil Dev",
-    "imposter": "Chris Gayle",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sunil Gavaskar",
-    "imposter": "AB de Villiers",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sunil Gavaskar",
-    "imposter": "Chris Gayle",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Sunil Gavaskar",
-    "imposter": "David Warner",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "AB de Villiers",
-    "imposter": "David Warner",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "AB de Villiers",
-    "imposter": "Steve Smith",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chris Gayle",
-    "imposter": "David Warner",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chris Gayle",
-    "imposter": "Steve Smith",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Chris Gayle",
-    "imposter": "Kane Williamson",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "David Warner",
-    "imposter": "Kane Williamson",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "David Warner",
-    "imposter": "Ben Stokes",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Steve Smith",
-    "imposter": "Ben Stokes",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Steve Smith",
-    "imposter": "Glenn Maxwell",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kane Williamson",
-    "imposter": "Ben Stokes",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kane Williamson",
-    "imposter": "Glenn Maxwell",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Kane Williamson",
-    "imposter": "Lasith Malinga",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ben Stokes",
-    "imposter": "Glenn Maxwell",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ben Stokes",
-    "imposter": "Lasith Malinga",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ben Stokes",
-    "imposter": "Mitchell Starc",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Glenn Maxwell",
-    "imposter": "Lasith Malinga",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Glenn Maxwell",
-    "imposter": "Mitchell Starc",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Glenn Maxwell",
-    "imposter": "Pat Cummins",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Lasith Malinga",
-    "imposter": "Mitchell Starc",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Lasith Malinga",
-    "imposter": "Pat Cummins",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Lasith Malinga",
-    "imposter": "Travis Head",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mitchell Starc",
-    "imposter": "Travis Head",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Mitchell Starc",
-    "imposter": "Rashid Khan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pat Cummins",
-    "imposter": "Travis Head",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pat Cummins",
-    "imposter": "Rashid Khan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Pat Cummins",
-    "imposter": "Babar Azam",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Travis Head",
-    "imposter": "Rashid Khan",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Travis Head",
-    "imposter": "Babar Azam",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Travis Head",
-    "imposter": "Shoaib Akhtar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rashid Khan",
-    "imposter": "Babar Azam",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rashid Khan",
-    "imposter": "Shoaib Akhtar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Rashid Khan",
-    "imposter": "Ricky Ponting",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Babar Azam",
-    "imposter": "Shoaib Akhtar",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Babar Azam",
-    "imposter": "Ricky Ponting",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Babar Azam",
-    "imposter": "Brett Lee",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shoaib Akhtar",
-    "imposter": "Ricky Ponting",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shoaib Akhtar",
-    "imposter": "Dale Steyn",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ricky Ponting",
-    "imposter": "Brett Lee",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ricky Ponting",
-    "imposter": "Dale Steyn",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Ricky Ponting",
-    "imposter": "Brian Lara",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Brett Lee",
-    "imposter": "Dale Steyn",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Brett Lee",
-    "imposter": "Brian Lara",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Brett Lee",
-    "imposter": "Shane Warne",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dale Steyn",
-    "imposter": "Brian Lara",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dale Steyn",
-    "imposter": "Shane Warne",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Dale Steyn",
-    "imposter": "Jos Buttler",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Brian Lara",
-    "imposter": "Shane Warne",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Brian Lara",
-    "imposter": "Jos Buttler",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Brian Lara",
-    "imposter": "Trent Boult",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shane Warne",
-    "imposter": "Jos Buttler",
-    "difficulty": "easy"
-  },
-  {
-    "agent": "Shane Warne",
-    "imposter": "Trent Boult",
-    "difficulty": "easy"
-  },
-  {
+    "id": "anand::deewar",
     "agent": "Anand",
     "imposter": "Deewar",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
+    "id": "mughal-e-azam::sholay",
     "agent": "Mughal-E-Azam",
     "imposter": "Sholay",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "agent": "Pardes",
-    "imposter": "Taal",
+    "id": "amar akbar anthony::don",
+    "agent": "Amar Akbar Anthony",
+    "imposter": "Don",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
+    "id": "lagaan::rang de basanti",
     "agent": "Rang De Basanti",
     "imposter": "Lagaan",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
+    "id": "desi boyz::dostana",
     "agent": "Dostana",
     "imposter": "Desi Boyz",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
+    "id": "namastey london::singh is kinng",
     "agent": "Namastey London",
     "imposter": "Singh Is Kinng",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "agent": "Garam Masala",
-    "imposter": "Bhagam Bhag",
+    "id": "hum aapke hain koun::hum saath-saath hain",
+    "agent": "Hum Saath-Saath Hain",
+    "imposter": "Hum Aapke Hain Koun",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "agent": "Chup Chup Ke",
-    "imposter": "Hulchul",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Barfi",
-    "imposter": "Rockstar",
-    "difficulty": "medium"
-  },
-  {
+    "id": "rockstar::sanju",
     "agent": "Sanju",
     "imposter": "Rockstar",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
+    "id": "badhaai ho::shubh mangal saavdhan",
     "agent": "Badhaai Ho",
     "imposter": "Shubh Mangal Saavdhan",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
+    "id": "bajirao mastani::tanhaji",
     "agent": "Tanhaji",
     "imposter": "Bajirao Mastani",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
+    "id": "gully boy::rockstar",
     "agent": "Gully Boy",
     "imposter": "Rockstar",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
+    "id": "dunki::swades",
     "agent": "Dunki",
-    "imposter": "3 Idiots",
+    "imposter": "Swades",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
+    "id": "bhediya::stree",
+    "agent": "Bhediya",
+    "imposter": "Stree",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "kantara::pushpa",
     "agent": "Kantara",
     "imposter": "Pushpa",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "agent": "Saif Ali Khan",
-    "imposter": "Akshay Kumar",
+    "id": "chupke chupke::golmaal",
+    "agent": "Chupke Chupke",
+    "imposter": "Golmaal",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "agent": "Sanjay Dutt",
-    "imposter": "Suniel Shetty",
+    "id": "jaane tu ya jaane na::yeh jawaani hai deewani",
+    "agent": "Jaane Tu Ya Jaane Na",
+    "imposter": "Yeh Jawaani Hai Deewani",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
+    "id": "dil chahta hai::wake up sid",
+    "agent": "Wake Up Sid",
+    "imposter": "Dil Chahta Hai",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "delhi belly::fukrey",
+    "agent": "Delhi Belly",
+    "imposter": "Fukrey",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dhamaal::fukrey",
+    "agent": "Fukrey",
+    "imposter": "Dhamaal",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "khakee::singham",
+    "agent": "Khakee",
+    "imposter": "Singham",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "baby::special 26",
+    "agent": "Special 26",
+    "imposter": "Baby",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "a wednesday::drishyam",
+    "agent": "A Wednesday",
+    "imposter": "Drishyam",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "article 15::badhaai do",
+    "agent": "Article 15",
+    "imposter": "Badhaai Do",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "andhadhun::ludo (film)",
+    "agent": "Ludo (Film)",
+    "imposter": "Andhadhun",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "bhool bhulaiyaa 3::stree 2",
+    "agent": "Stree 2",
+    "imposter": "Bhool Bhulaiyaa 3",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "simmba::singham again",
+    "agent": "Singham Again",
+    "imposter": "Simmba",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "tiger 3::war",
+    "agent": "Tiger 3",
+    "imposter": "War",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ranveer singh::varun dhawan",
     "agent": "Ranveer Singh",
     "imposter": "Varun Dhawan",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
+    "id": "ayushmann khurrana::kartik aaryan",
     "agent": "Kartik Aaryan",
     "imposter": "Ayushmann Khurrana",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "agent": "Vicky Kaushal",
-    "imposter": "Ranveer Singh",
-    "difficulty": "medium"
-  },
-  {
+    "id": "sidharth malhotra::vicky kaushal",
     "agent": "Vicky Kaushal",
     "imposter": "Sidharth Malhotra",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
+    "id": "tiger shroff::vidyut jammwal",
     "agent": "Tiger Shroff",
     "imposter": "Vidyut Jammwal",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
+    "id": "boman irani::paresh rawal",
     "agent": "Boman Irani",
     "imposter": "Paresh Rawal",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
+    "id": "manoj bajpayee::pankaj tripathi",
+    "agent": "Manoj Bajpayee",
+    "imposter": "Pankaj Tripathi",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "manoj bajpayee::nawazuddin siddiqui",
+    "agent": "Nawazuddin Siddiqui",
+    "imposter": "Manoj Bajpayee",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "kader khan::shakti kapoor",
+    "agent": "Kader Khan",
+    "imposter": "Shakti Kapoor",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "johnny lever::kader khan",
     "agent": "Johnny Lever",
     "imposter": "Kader Khan",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
+    "id": "sanjay dutt::suniel shetty",
+    "agent": "Sanjay Dutt",
+    "imposter": "Suniel Shetty",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "anil kapoor::govinda",
+    "agent": "Govinda",
+    "imposter": "Anil Kapoor",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "anil kapoor::rishi kapoor",
+    "agent": "Rishi Kapoor",
+    "imposter": "Anil Kapoor",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "emraan hashmi::himesh reshammiya",
+    "agent": "Emraan Hashmi",
+    "imposter": "Himesh Reshammiya",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "abhishek bachchan::uday chopra",
+    "agent": "Abhishek Bachchan",
+    "imposter": "Uday Chopra",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "jimmy sheirgill::sharman joshi",
+    "agent": "Jimmy Sheirgill",
+    "imposter": "Sharman Joshi",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "r madhavan::sharman joshi",
+    "agent": "R Madhavan",
+    "imposter": "Sharman Joshi",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "chunky pandey::gulshan grover",
+    "agent": "Chunky Pandey",
+    "imposter": "Gulshan Grover",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "sanjay mishra::vijay raaz",
+    "agent": "Sanjay Mishra",
+    "imposter": "Vijay Raaz",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "kajol::preity zinta",
     "agent": "Preity Zinta",
     "imposter": "Kajol",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "agent": "Raveena Tandon",
-    "imposter": "Karishma Kapoor",
+    "id": "karisma kapoor::urmila matondkar",
+    "agent": "Urmila Matondkar",
+    "imposter": "Karisma Kapoor",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
+    "id": "alia bhatt::kriti sanon",
     "agent": "Kriti Sanon",
     "imposter": "Alia Bhatt",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "agent": "Vidya Balan",
-    "imposter": "Kangana Ranaut",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Taapsee Pannu",
-    "imposter": "Bhumi Pednekar",
-    "difficulty": "medium"
-  },
-  {
+    "id": "nayanthara::samantha",
     "agent": "Nayanthara",
     "imposter": "Samantha",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "agent": "Arshdeep Singh",
-    "imposter": "Jasprit Bumrah",
+    "id": "taapsee pannu::yami gautam",
+    "agent": "Yami Gautam",
+    "imposter": "Taapsee Pannu",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "agent": "Axar Patel",
-    "imposter": "Ravindra Jadeja",
+    "id": "tabu::vidya balan",
+    "agent": "Tabu",
+    "imposter": "Vidya Balan",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "agent": "Shreyas Iyer",
-    "imposter": "KL Rahul",
+    "id": "jacqueline fernandez::sonam kapoor",
+    "agent": "Sonam Kapoor",
+    "imposter": "Jacqueline Fernandez",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "agent": "Zaheer Khan",
-    "imposter": "Ashish Nehra",
+    "id": "kiara advani::nushrratt bharuccha",
+    "agent": "Nushrratt Bharuccha",
+    "imposter": "Kiara Advani",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "agent": "Kane Williamson",
-    "imposter": "Steve Smith",
+    "id": "fatima sana shaikh::sanya malhotra",
+    "agent": "Fatima Sana Shaikh",
+    "imposter": "Sanya Malhotra",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "agent": "Travis Head",
-    "imposter": "David Warner",
+    "id": "kalki koechlin::konkona sen sharma",
+    "agent": "Kalki Koechlin",
+    "imposter": "Konkona Sen Sharma",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "agent": "Jos Buttler",
-    "imposter": "Sanju Samson",
+    "id": "dimple kapadia::jaya bachchan",
+    "agent": "Dimple Kapadia",
+    "imposter": "Jaya Bachchan",
+    "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "agent": "Faf du Plessis",
+    "id": "asha parekh::waheeda rehman",
+    "agent": "Waheeda Rehman",
+    "imposter": "Asha Parekh",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "amrita rao::genelia d'souza",
+    "agent": "Amrita Rao",
+    "imposter": "Genelia D'Souza",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dia mirza::lara dutta",
+    "agent": "Dia Mirza",
+    "imposter": "Lara Dutta",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "disha patani::pooja hegde",
+    "agent": "Pooja Hegde",
+    "imposter": "Disha Patani",
+    "category": "bollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "lagaan::sholay",
+    "agent": "Sholay",
+    "imposter": "Lagaan",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "3 idiots::ddlj",
+    "agent": "DDLJ",
+    "imposter": "3 Idiots",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "hera pheri::munna bhai mbbs",
+    "agent": "Hera Pheri",
+    "imposter": "Munna Bhai MBBS",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "golmaal::welcome",
+    "agent": "Golmaal",
+    "imposter": "Welcome",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "chak de india::jo jeeta wohi sikandar",
+    "agent": "Jo Jeeta Wohi Sikandar",
+    "imposter": "Chak De India",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "baahubali::sholay",
+    "agent": "Baahubali",
+    "imposter": "Sholay",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "gadar::kgf",
+    "agent": "KGF",
+    "imposter": "Gadar",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "animal::jawan",
+    "agent": "Jawan",
+    "imposter": "Animal",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dil chahta hai::kabhi khushi kabhie gham",
+    "agent": "Kabhi Khushi Kabhie Gham",
+    "imposter": "Dil Chahta Hai",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "swades::taare zameen par",
+    "agent": "Taare Zameen Par",
+    "imposter": "Swades",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "border::lagaan",
+    "agent": "Border",
+    "imposter": "Lagaan",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "chupke chupke::padosan",
+    "agent": "Chupke Chupke",
+    "imposter": "Padosan",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "chalti ka naam gaadi::padosan",
+    "agent": "Chalti Ka Naam Gaadi",
+    "imposter": "Padosan",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "anand::guide",
+    "agent": "Guide",
+    "imposter": "Anand",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mother india::mughal-e-azam",
+    "agent": "Mother India",
+    "imposter": "Mughal-E-Azam",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "kaagaz ke phool::pyaasa",
+    "agent": "Kaagaz Ke Phool",
+    "imposter": "Pyaasa",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "deewar::trishul",
+    "agent": "Deewar",
+    "imposter": "Trishul",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "agneepath::deewar",
+    "agent": "Agneepath",
+    "imposter": "Deewar",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "satte pe satta::sholay",
+    "agent": "Satte Pe Satta",
+    "imposter": "Sholay",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "karan arjun::ram lakhan",
+    "agent": "Karan Arjun",
+    "imposter": "Ram Lakhan",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "baazigar::khalnayak",
+    "agent": "Khalnayak",
+    "imposter": "Baazigar",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "baby::sarfarosh",
+    "agent": "Sarfarosh",
+    "imposter": "Baby",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "gangs of wasseypur::satya",
+    "agent": "Gangs of Wasseypur",
+    "imposter": "Satya",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "company::satya",
+    "agent": "Company",
+    "imposter": "Satya",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "stree::tumbbad",
+    "agent": "Tumbbad",
+    "imposter": "Stree",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "gangs of wasseypur::masaan",
+    "agent": "Masaan",
+    "imposter": "Gangs of Wasseypur",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "drishyam::kahaani",
+    "agent": "Kahaani",
+    "imposter": "Drishyam",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "piku::the lunchbox",
+    "agent": "Piku",
+    "imposter": "The Lunchbox",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "english vinglish::nil battey sannata",
+    "agent": "English Vinglish",
+    "imposter": "Nil Battey Sannata",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "article 15::newton",
+    "agent": "Newton",
+    "imposter": "Article 15",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "amitabh bachchan::shah rukh khan",
+    "agent": "Shah Rukh Khan",
+    "imposter": "Amitabh Bachchan",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dharmendra::salman khan",
+    "agent": "Salman Khan",
+    "imposter": "Dharmendra",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "aamir khan::dilip kumar",
+    "agent": "Aamir Khan",
+    "imposter": "Dilip Kumar",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dev anand::ranbir kapoor",
+    "agent": "Ranbir Kapoor",
+    "imposter": "Dev Anand",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ranveer singh::shammi kapoor",
+    "agent": "Ranveer Singh",
+    "imposter": "Shammi Kapoor",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "amol palekar::ayushmann khurrana",
+    "agent": "Ayushmann Khurrana",
+    "imposter": "Amol Palekar",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pankaj tripathi::sanjeev kumar",
+    "agent": "Pankaj Tripathi",
+    "imposter": "Sanjeev Kumar",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "naseeruddin shah::nawazuddin siddiqui",
+    "agent": "Nawazuddin Siddiqui",
+    "imposter": "Naseeruddin Shah",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "manoj bajpayee::om puri",
+    "agent": "Manoj Bajpayee",
+    "imposter": "Om Puri",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "deepika padukone::hema malini",
+    "agent": "Deepika Padukone",
+    "imposter": "Hema Malini",
+    "category": "bollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "rohit sharma::virat kohli",
+    "agent": "Virat Kohli",
+    "imposter": "Rohit Sharma",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ms dhoni::virat kohli",
+    "agent": "MS Dhoni",
     "imposter": "Virat Kohli",
-    "difficulty": "medium"
+    "category": "sports",
+    "difficulty": "easy"
   },
   {
-    "agent": "Sunil Narine",
-    "imposter": "Rashid Khan",
-    "difficulty": "medium"
+    "id": "ms dhoni::rohit sharma",
+    "agent": "MS Dhoni",
+    "imposter": "Rohit Sharma",
+    "category": "sports",
+    "difficulty": "easy"
   },
   {
-    "agent": "Zinedine Zidane",
-    "imposter": "David Beckham",
-    "difficulty": "medium"
+    "id": "sachin tendulkar::virat kohli",
+    "agent": "Sachin Tendulkar",
+    "imposter": "Virat Kohli",
+    "category": "sports",
+    "difficulty": "easy"
   },
   {
-    "agent": "Luka Modric",
-    "imposter": "Karim Benzema",
-    "difficulty": "medium"
+    "id": "ms dhoni::sachin tendulkar",
+    "agent": "Sachin Tendulkar",
+    "imposter": "MS Dhoni",
+    "category": "sports",
+    "difficulty": "easy"
   },
   {
-    "agent": "Robert Lewandowski",
-    "imposter": "Erling Haaland",
-    "difficulty": "medium"
+    "id": "jasprit bumrah::mohammed shami",
+    "agent": "Jasprit Bumrah",
+    "imposter": "Mohammed Shami",
+    "category": "sports",
+    "difficulty": "easy"
   },
   {
-    "agent": "Mohamed Salah",
-    "imposter": "Kylian Mbappé",
-    "difficulty": "medium"
+    "id": "hardik pandya::ravindra jadeja",
+    "agent": "Hardik Pandya",
+    "imposter": "Ravindra Jadeja",
+    "category": "sports",
+    "difficulty": "easy"
   },
   {
-    "agent": "Harry Kane",
-    "imposter": "Erling Haaland",
-    "difficulty": "medium"
+    "id": "kl rahul::shubman gill",
+    "agent": "KL Rahul",
+    "imposter": "Shubman Gill",
+    "category": "sports",
+    "difficulty": "easy"
   },
   {
-    "agent": "Kevin De Bruyne",
-    "imposter": "Luka Modric",
-    "difficulty": "medium"
+    "id": "ishan kishan::rishabh pant",
+    "agent": "Rishabh Pant",
+    "imposter": "Ishan Kishan",
+    "category": "sports",
+    "difficulty": "easy"
   },
   {
-    "agent": "Luis Suárez",
-    "imposter": "Neymar",
-    "difficulty": "medium"
+    "id": "rinku singh::suryakumar yadav",
+    "agent": "Suryakumar Yadav",
+    "imposter": "Rinku Singh",
+    "category": "sports",
+    "difficulty": "easy"
   },
   {
-    "agent": "Sergio Ramos",
+    "id": "shubman gill::yashasvi jaiswal",
+    "agent": "Shubman Gill",
+    "imposter": "Yashasvi Jaiswal",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ravichandran ashwin::ravindra jadeja",
+    "agent": "Ravindra Jadeja",
+    "imposter": "Ravichandran Ashwin",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "kuldeep yadav::yuzvendra chahal",
+    "agent": "Kuldeep Yadav",
+    "imposter": "Yuzvendra Chahal",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mohammed shami::mohammed siraj",
+    "agent": "Mohammed Shami",
+    "imposter": "Mohammed Siraj",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "suresh raina::yuvraj singh",
+    "agent": "Yuvraj Singh",
+    "imposter": "Suresh Raina",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "gautam gambhir::virender sehwag",
+    "agent": "Virender Sehwag",
+    "imposter": "Gautam Gambhir",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "rahul dravid::sourav ganguly",
+    "agent": "Sourav Ganguly",
+    "imposter": "Rahul Dravid",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "anil kumble::harbhajan singh",
+    "agent": "Anil Kumble",
+    "imposter": "Harbhajan Singh",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "kapil dev::sunil gavaskar",
+    "agent": "Kapil Dev",
+    "imposter": "Sunil Gavaskar",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "kapil dev::ms dhoni",
+    "agent": "Kapil Dev",
+    "imposter": "MS Dhoni",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ab de villiers::chris gayle",
+    "agent": "AB de Villiers",
+    "imposter": "Chris Gayle",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "david warner::steve smith",
+    "agent": "David Warner",
+    "imposter": "Steve Smith",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ab de villiers::glenn maxwell",
+    "agent": "Glenn Maxwell",
+    "imposter": "AB de Villiers",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "jasprit bumrah::lasith malinga",
+    "agent": "Lasith Malinga",
+    "imposter": "Jasprit Bumrah",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ben stokes::hardik pandya",
+    "agent": "Ben Stokes",
+    "imposter": "Hardik Pandya",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mitchell starc::pat cummins",
+    "agent": "Pat Cummins",
+    "imposter": "Mitchell Starc",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "rashid khan::yuzvendra chahal",
+    "agent": "Rashid Khan",
+    "imposter": "Yuzvendra Chahal",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "brett lee::shoaib akhtar",
+    "agent": "Shoaib Akhtar",
+    "imposter": "Brett Lee",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ricky ponting::sourav ganguly",
+    "agent": "Ricky Ponting",
+    "imposter": "Sourav Ganguly",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "brian lara::sachin tendulkar",
+    "agent": "Brian Lara",
+    "imposter": "Sachin Tendulkar",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cristiano ronaldo::lionel messi",
+    "agent": "Lionel Messi",
     "imposter": "Cristiano Ronaldo",
-    "difficulty": "medium"
+    "category": "sports",
+    "difficulty": "easy"
   },
   {
-    "agent": "Delhi Capitals",
-    "imposter": "Punjab Kings",
-    "difficulty": "medium"
+    "id": "lionel messi::neymar",
+    "agent": "Neymar",
+    "imposter": "Lionel Messi",
+    "category": "sports",
+    "difficulty": "easy"
   },
   {
+    "id": "cristiano ronaldo::neymar",
+    "agent": "Cristiano Ronaldo",
+    "imposter": "Neymar",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "erling haaland::kylian mbappé",
+    "agent": "Kylian Mbappé",
+    "imposter": "Erling Haaland",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "kylian mbappé::lionel messi",
+    "agent": "Lionel Messi",
+    "imposter": "Kylian Mbappé",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cristiano ronaldo::erling haaland",
+    "agent": "Cristiano Ronaldo",
+    "imposter": "Erling Haaland",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cristiano ronaldo::david beckham",
+    "agent": "David Beckham",
+    "imposter": "Cristiano Ronaldo",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "neymar::ronaldinho",
+    "agent": "Ronaldinho",
+    "imposter": "Neymar",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "diego maradona::pelé",
+    "agent": "Diego Maradona",
+    "imposter": "Pelé",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "lionel messi::sunil chhetri",
+    "agent": "Sunil Chhetri",
+    "imposter": "Lionel Messi",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "chennai super kings::mumbai indians",
+    "agent": "Chennai Super Kings",
+    "imposter": "Mumbai Indians",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "chennai super kings::royal challengers bengaluru",
+    "agent": "Royal Challengers Bengaluru",
+    "imposter": "Chennai Super Kings",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mumbai indians::royal challengers bengaluru",
+    "agent": "Mumbai Indians",
+    "imposter": "Royal Challengers Bengaluru",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "chennai super kings::kolkata knight riders",
+    "agent": "Kolkata Knight Riders",
+    "imposter": "Chennai Super Kings",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "kolkata knight riders::rajasthan royals",
     "agent": "Rajasthan Royals",
     "imposter": "Kolkata Knight Riders",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "boundary (four)::sixer",
+    "agent": "Sixer",
+    "imposter": "Boundary (Four)",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "bouncer::yorker",
+    "agent": "Yorker",
+    "imposter": "Bouncer",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "doosra::googly",
+    "agent": "Googly",
+    "imposter": "Doosra",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "free hit::super over",
+    "agent": "Super Over",
+    "imposter": "Free Hit",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "bowler::wicketkeeper",
+    "agent": "Wicketkeeper",
+    "imposter": "Bowler",
+    "category": "sports",
+    "difficulty": "easy"
+  },
+  {
+    "id": "rishabh pant::sanju samson",
+    "agent": "Sanju Samson",
+    "imposter": "Rishabh Pant",
+    "category": "sports",
     "difficulty": "medium"
   },
   {
+    "id": "arshdeep singh::jasprit bumrah",
+    "agent": "Arshdeep Singh",
+    "imposter": "Jasprit Bumrah",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "axar patel::ravindra jadeja",
+    "agent": "Axar Patel",
+    "imposter": "Ravindra Jadeja",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "kl rahul::shreyas iyer",
+    "agent": "Shreyas Iyer",
+    "imposter": "KL Rahul",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ashish nehra::zaheer khan",
+    "agent": "Zaheer Khan",
+    "imposter": "Ashish Nehra",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "irfan pathan::yusuf pathan",
+    "agent": "Irfan Pathan",
+    "imposter": "Yusuf Pathan",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "kane williamson::steve smith",
+    "agent": "Kane Williamson",
+    "imposter": "Steve Smith",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "david warner::travis head",
+    "agent": "Travis Head",
+    "imposter": "David Warner",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "faf du plessis::virat kohli",
+    "agent": "Faf du Plessis",
+    "imposter": "Virat Kohli",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "jos buttler::sanju samson",
+    "agent": "Jos Buttler",
+    "imposter": "Sanju Samson",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mitchell starc::trent boult",
+    "agent": "Trent Boult",
+    "imposter": "Mitchell Starc",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "andre russell::kieron pollard",
+    "agent": "Andre Russell",
+    "imposter": "Kieron Pollard",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "rashid khan::sunil narine",
+    "agent": "Sunil Narine",
+    "imposter": "Rashid Khan",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dwayne bravo::hardik pandya",
+    "agent": "Dwayne Bravo",
+    "imposter": "Hardik Pandya",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dale steyn::shoaib akhtar",
+    "agent": "Dale Steyn",
+    "imposter": "Shoaib Akhtar",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ben stokes::jacques kallis",
+    "agent": "Jacques Kallis",
+    "imposter": "Ben Stokes",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "muttiah muralitharan::shane warne",
+    "agent": "Muttiah Muralitharan",
+    "imposter": "Shane Warne",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "karim benzema::luka modric",
+    "agent": "Luka Modric",
+    "imposter": "Karim Benzema",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "erling haaland::robert lewandowski",
+    "agent": "Robert Lewandowski",
+    "imposter": "Erling Haaland",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "kylian mbappé::mohamed salah",
+    "agent": "Mohamed Salah",
+    "imposter": "Kylian Mbappé",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "kevin de bruyne::luka modric",
+    "agent": "Kevin De Bruyne",
+    "imposter": "Luka Modric",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "luis suárez::neymar",
+    "agent": "Luis Suárez",
+    "imposter": "Neymar",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "david beckham::zinedine zidane",
+    "agent": "Zinedine Zidane",
+    "imposter": "David Beckham",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "delhi capitals::punjab kings",
+    "agent": "Delhi Capitals",
+    "imposter": "Punjab Kings",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "gujarat titans::sunrisers hyderabad",
     "agent": "Sunrisers Hyderabad",
     "imposter": "Gujarat Titans",
+    "category": "sports",
     "difficulty": "medium"
   },
   {
+    "id": "gujarat titans::lucknow super giants",
     "agent": "Lucknow Super Giants",
     "imposter": "Gujarat Titans",
+    "category": "sports",
     "difficulty": "medium"
   },
   {
-    "agent": "Ranji Trophy",
-    "imposter": "IPL",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Ashes",
-    "imposter": "ICC World Cup",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Pull Shot",
-    "imposter": "Straight Drive",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Reverse Sweep",
-    "imposter": "Switch Hit",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Slower Ball",
-    "imposter": "Knuckle Ball",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Reverse Swing",
-    "imposter": "Outswing",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Toss",
-    "imposter": "Super Over",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Maiden Over",
-    "imposter": "Hat-trick",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Feroz Shah Kotla",
-    "imposter": "Wankhede Stadium",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Lord's Cricket Ground",
+    "id": "eden gardens::wankhede stadium",
+    "agent": "Wankhede Stadium",
     "imposter": "Eden Gardens",
+    "category": "sports",
     "difficulty": "medium"
   },
   {
-    "agent": "MS Dhoni",
-    "imposter": "Lionel Messi",
+    "id": "chinnaswamy stadium::narendra modi stadium",
+    "agent": "Narendra Modi Stadium",
+    "imposter": "Chinnaswamy Stadium",
+    "category": "sports",
     "difficulty": "medium"
   },
   {
+    "id": "century::hat-trick",
+    "agent": "Hat-trick",
+    "imposter": "Century",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "free kick::penalty kick",
+    "agent": "Penalty Kick",
+    "imposter": "Free Kick",
+    "category": "sports",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cristiano ronaldo::virat kohli",
     "agent": "Virat Kohli",
-    "imposter": "Lionel Messi",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Rohit Sharma",
     "imposter": "Cristiano Ronaldo",
-    "difficulty": "medium"
+    "category": "sports",
+    "difficulty": "hard"
   },
   {
+    "id": "lionel messi::rohit sharma",
+    "agent": "Rohit Sharma",
+    "imposter": "Lionel Messi",
+    "category": "sports",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ms dhoni::neymar",
+    "agent": "MS Dhoni",
+    "imposter": "Neymar",
+    "category": "sports",
+    "difficulty": "hard"
+  },
+  {
+    "id": "hardik pandya::kylian mbappé",
     "agent": "Hardik Pandya",
     "imposter": "Kylian Mbappé",
-    "difficulty": "medium"
+    "category": "sports",
+    "difficulty": "hard"
   },
   {
+    "id": "erling haaland::jasprit bumrah",
     "agent": "Jasprit Bumrah",
     "imposter": "Erling Haaland",
-    "difficulty": "medium"
+    "category": "sports",
+    "difficulty": "hard"
   },
   {
-    "agent": "Kapil Dev",
+    "id": "diego maradona::sachin tendulkar",
+    "agent": "Sachin Tendulkar",
     "imposter": "Diego Maradona",
-    "difficulty": "medium"
+    "category": "sports",
+    "difficulty": "hard"
   },
   {
+    "id": "kapil dev::pelé",
+    "agent": "Kapil Dev",
+    "imposter": "Pelé",
+    "category": "sports",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ronaldinho::yuvraj singh",
+    "agent": "Yuvraj Singh",
+    "imposter": "Ronaldinho",
+    "category": "sports",
+    "difficulty": "hard"
+  },
+  {
+    "id": "david beckham::kl rahul",
     "agent": "KL Rahul",
     "imposter": "David Beckham",
-    "difficulty": "medium"
+    "category": "sports",
+    "difficulty": "hard"
   },
   {
-    "agent": "Ravindra Jadeja",
-    "imposter": "Mohamed Salah",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Rishabh Pant",
-    "imposter": "Luis Suárez",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Mohammed Shami",
-    "imposter": "Karim Benzema",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "AB de Villiers",
-    "imposter": "Lionel Messi",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Chris Gayle",
-    "imposter": "Zlatan Ibrahimović",
-    "difficulty": "medium"
-  },
-  {
+    "id": "sunil chhetri::virat kohli",
     "agent": "Sunil Chhetri",
-    "imposter": "Rohit Sharma",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Ranbir Kapoor",
-    "imposter": "Jasprit Bumrah",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Hrithik Roshan",
-    "imposter": "Jasprit Bumrah",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Vicky Kaushal",
-    "imposter": "Mohammed Shami",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Ayushmann Khurrana",
-    "imposter": "Rishabh Pant",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Varun Dhawan",
-    "imposter": "Suryakumar Yadav",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Ajay Devgn",
-    "imposter": "Sourav Ganguly",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Sunny Deol",
-    "imposter": "Virender Sehwag",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Govinda",
-    "imposter": "Yuvraj Singh",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Shahid Kapoor",
-    "imposter": "Hardik Pandya",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Anushka Sharma",
-    "imposter": "Rohit Sharma",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Katrina Kaif",
-    "imposter": "Hardik Pandya",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Priyanka Chopra",
-    "imposter": "Sachin Tendulkar",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Kriti Sanon",
-    "imposter": "KL Rahul",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Rashmika Mandanna",
-    "imposter": "Rishabh Pant",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Ranveer Singh",
-    "imposter": "Erling Haaland",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Akshay Kumar",
-    "imposter": "Zinedine Zidane",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Shahid Kapoor",
-    "imposter": "Kylian Mbappé",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "83",
-    "imposter": "Rohit Sharma",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "MS Dhoni The Untold Story",
     "imposter": "Virat Kohli",
-    "difficulty": "medium"
+    "category": "sports",
+    "difficulty": "hard"
   },
   {
-    "agent": "Chak De India",
-    "imposter": "Virat Kohli",
-    "difficulty": "medium"
+    "id": "cover drive::helicopter shot",
+    "agent": "Cover Drive",
+    "imposter": "Helicopter Shot",
+    "category": "sports",
+    "difficulty": "hard"
   },
   {
-    "agent": "Dangal",
-    "imposter": "Rohit Sharma",
-    "difficulty": "medium"
+    "id": "reverse sweep::switch hit",
+    "agent": "Reverse Sweep",
+    "imposter": "Switch Hit",
+    "category": "sports",
+    "difficulty": "hard"
   },
   {
-    "agent": "Animal",
-    "imposter": "Hardik Pandya",
-    "difficulty": "medium"
+    "id": "leg spin::off spin",
+    "agent": "Leg Spin",
+    "imposter": "Off Spin",
+    "category": "sports",
+    "difficulty": "hard"
   },
   {
-    "agent": "Jawan",
-    "imposter": "Suryakumar Yadav",
-    "difficulty": "medium"
+    "id": "run out::stump out",
+    "agent": "Stump Out",
+    "imposter": "Run Out",
+    "category": "sports",
+    "difficulty": "hard"
   },
   {
-    "agent": "Pathaan",
-    "imposter": "Rohit Sharma",
-    "difficulty": "medium"
+    "id": "caught behind::lbw",
+    "agent": "LBW",
+    "imposter": "Caught Behind",
+    "category": "sports",
+    "difficulty": "hard"
   },
   {
-    "agent": "Baahubali",
-    "imposter": "Chris Gayle",
-    "difficulty": "medium"
+    "id": "no ball::wide ball",
+    "agent": "Wide Ball",
+    "imposter": "No Ball",
+    "category": "sports",
+    "difficulty": "hard"
   },
   {
-    "agent": "KGF",
-    "imposter": "AB de Villiers",
-    "difficulty": "medium"
+    "id": "red card::yellow card",
+    "agent": "Yellow Card",
+    "imposter": "Red Card",
+    "category": "sports",
+    "difficulty": "hard"
   },
   {
-    "agent": "Bhaag Milkha Bhaag",
-    "imposter": "Virat Kohli",
-    "difficulty": "medium"
+    "id": "offside::penalty corner",
+    "agent": "Offside",
+    "imposter": "Penalty Corner",
+    "category": "sports",
+    "difficulty": "hard"
   },
   {
-    "agent": "Dangal",
-    "imposter": "Cristiano Ronaldo",
-    "difficulty": "medium"
+    "id": "goalkeeper::striker",
+    "agent": "Goalkeeper",
+    "imposter": "Striker",
+    "category": "sports",
+    "difficulty": "hard"
   },
   {
-    "agent": "WAR",
-    "imposter": "Kylian Mbappé",
-    "difficulty": "medium"
+    "id": "lord's cricket ground::melbourne cricket ground",
+    "agent": "Lord's Cricket Ground",
+    "imposter": "Melbourne Cricket Ground",
+    "category": "sports",
+    "difficulty": "hard"
   },
   {
-    "agent": "Ragda Pattice",
-    "imposter": "Aloo Tikki",
-    "difficulty": "medium"
+    "id": "chhota bheem::motu patlu",
+    "agent": "Chhota Bheem",
+    "imposter": "Motu Patlu",
+    "category": "cartoons",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bedmi Puri",
-    "imposter": "Chole Bhature",
-    "difficulty": "medium"
+    "id": "doraemon::shinchan",
+    "agent": "Shinchan",
+    "imposter": "Doraemon",
+    "category": "cartoons",
+    "difficulty": "easy"
   },
   {
-    "agent": "Appam",
-    "imposter": "Dosa",
-    "difficulty": "medium"
+    "id": "oggy and the cockroaches::tom & jerry",
+    "agent": "Tom & Jerry",
+    "imposter": "Oggy and the Cockroaches",
+    "category": "cartoons",
+    "difficulty": "easy"
   },
   {
-    "agent": "Puttu",
-    "imposter": "Idli",
-    "difficulty": "medium"
+    "id": "donald duck::mickey mouse",
+    "agent": "Mickey Mouse",
+    "imposter": "Donald Duck",
+    "category": "cartoons",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bisi Bele Bath",
-    "imposter": "Khichdi",
-    "difficulty": "medium"
+    "id": "chhota bheem::doraemon",
+    "agent": "Chhota Bheem",
+    "imposter": "Doraemon",
+    "category": "cartoons",
+    "difficulty": "easy"
   },
   {
-    "agent": "Rogan Josh",
-    "imposter": "Butter Chicken",
-    "difficulty": "medium"
+    "id": "motu patlu::tom & jerry",
+    "agent": "Motu Patlu",
+    "imposter": "Tom & Jerry",
+    "category": "cartoons",
+    "difficulty": "easy"
   },
   {
-    "agent": "Korma",
-    "imposter": "Dal Makhani",
-    "difficulty": "medium"
+    "id": "mr. bean::shinchan",
+    "agent": "Shinchan",
+    "imposter": "Mr. Bean",
+    "category": "cartoons",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhature",
-    "imposter": "Naan",
-    "difficulty": "medium"
+    "id": "ninja hattori::perman",
+    "agent": "Ninja Hattori",
+    "imposter": "Perman",
+    "category": "cartoons",
+    "difficulty": "easy"
   },
   {
-    "agent": "Dal Baati Churma",
-    "imposter": "Rajma Chawal",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Puran Poli",
-    "imposter": "Aloo Paratha",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Ghevar",
-    "imposter": "Jalebi",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Kalakand",
-    "imposter": "Rasmalai",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Karwa Chauth",
-    "imposter": "Teej",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Gurpurab",
-    "imposter": "Baisakhi",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Hanuman Jayanti",
-    "imposter": "Ram Navami",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Kumbh Mela",
-    "imposter": "Jagannath Rath Yatra",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Ganga Aarti",
-    "imposter": "Pandal",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Tata Salt",
-    "imposter": "Tata Tea",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Taj Mahal Tea",
-    "imposter": "Wagh Bakri Tea",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Pond's Powder",
-    "imposter": "Nivea Cream",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Dabur Chyawanprash",
-    "imposter": "Zandu Chyawanprash",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Close-Up",
-    "imposter": "Sensodyne",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Pitthu (Satoliya)",
-    "imposter": "Gilli Danda",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Marbles (Kanche)",
-    "imposter": "Gilli Danda",
-    "difficulty": "medium"
-  },
-  {
+    "id": "ben 10::chhota bheem",
     "agent": "Ben 10",
     "imposter": "Chhota Bheem",
-    "difficulty": "medium"
+    "category": "cartoons",
+    "difficulty": "easy"
   },
   {
+    "id": "chacha chaudhary::sabu",
+    "agent": "Chacha Chaudhary",
+    "imposter": "Sabu",
+    "category": "cartoons",
+    "difficulty": "easy"
+  },
+  {
+    "id": "akbar birbal::tenali rama",
+    "agent": "Akbar Birbal",
+    "imposter": "Tenali Rama",
+    "category": "cartoons",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mr. bean::tom & jerry",
+    "agent": "Mr. Bean",
+    "imposter": "Tom & Jerry",
+    "category": "cartoons",
+    "difficulty": "easy"
+  },
+  {
+    "id": "motu patlu::shinchan",
+    "agent": "Motu Patlu",
+    "imposter": "Shinchan",
+    "category": "cartoons",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mickey mouse::tom & jerry",
+    "agent": "Tom & Jerry",
+    "imposter": "Mickey Mouse",
+    "category": "cartoons",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ninja hattori::shinchan",
+    "agent": "Shinchan",
+    "imposter": "Ninja Hattori",
+    "category": "cartoons",
+    "difficulty": "easy"
+  },
+  {
+    "id": "chhota bheem::roll no 21",
+    "agent": "Roll No 21",
+    "imposter": "Chhota Bheem",
+    "category": "cartoons",
+    "difficulty": "easy"
+  },
+  {
+    "id": "donald duck::goofy",
+    "agent": "Donald Duck",
+    "imposter": "Goofy",
+    "category": "cartoons",
+    "difficulty": "easy"
+  },
+  {
+    "id": "bugs bunny::daffy duck",
+    "agent": "Bugs Bunny",
+    "imposter": "Daffy Duck",
+    "category": "cartoons",
+    "difficulty": "easy"
+  },
+  {
+    "id": "scooby-doo::tom & jerry",
+    "agent": "Scooby-Doo",
+    "imposter": "Tom & Jerry",
+    "category": "cartoons",
+    "difficulty": "easy"
+  },
+  {
+    "id": "johnny bravo::popeye",
+    "agent": "Popeye",
+    "imposter": "Johnny Bravo",
+    "category": "cartoons",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ben 10::dexter's laboratory",
+    "agent": "Dexter's Laboratory",
+    "imposter": "Ben 10",
+    "category": "cartoons",
+    "difficulty": "easy"
+  },
+  {
+    "id": "powerpuff girls::shinchan",
+    "agent": "Powerpuff Girls",
+    "imposter": "Shinchan",
+    "category": "cartoons",
+    "difficulty": "easy"
+  },
+  {
+    "id": "doraemon::kiteretsu",
+    "agent": "Kiteretsu",
+    "imposter": "Doraemon",
+    "category": "cartoons",
+    "difficulty": "easy"
+  },
+  {
+    "id": "chhota bheem::krishna (cartoon)",
+    "agent": "Chhota Bheem",
+    "imposter": "Krishna (Cartoon)",
+    "category": "cartoons",
+    "difficulty": "easy"
+  },
+  {
+    "id": "motu patlu::roll no 21",
+    "agent": "Roll No 21",
+    "imposter": "Motu Patlu",
+    "category": "cartoons",
+    "difficulty": "easy"
+  },
+  {
+    "id": "tenali rama::vikram betal",
     "agent": "Vikram Betal",
     "imposter": "Tenali Rama",
+    "category": "cartoons",
     "difficulty": "medium"
   },
   {
+    "id": "chacha chaudhary::tenali rama",
+    "agent": "Chacha Chaudhary",
+    "imposter": "Tenali Rama",
+    "category": "cartoons",
+    "difficulty": "medium"
+  },
+  {
+    "id": "doraemon::perman",
+    "agent": "Perman",
+    "imposter": "Doraemon",
+    "category": "cartoons",
+    "difficulty": "medium"
+  },
+  {
+    "id": "kiteretsu::ninja hattori",
+    "agent": "Ninja Hattori",
+    "imposter": "Kiteretsu",
+    "category": "cartoons",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mr. bean::oswald",
+    "agent": "Mr. Bean",
+    "imposter": "Oswald",
+    "category": "cartoons",
+    "difficulty": "medium"
+  },
+  {
+    "id": "bob the builder::thomas the tank engine",
+    "agent": "Bob the Builder",
+    "imposter": "Thomas the Tank Engine",
+    "category": "cartoons",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dennis the menace::richie rich",
+    "agent": "Richie Rich",
+    "imposter": "Dennis the Menace",
+    "category": "cartoons",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ben 10::phineas and ferb",
+    "agent": "Phineas and Ferb",
+    "imposter": "Ben 10",
+    "category": "cartoons",
+    "difficulty": "medium"
+  },
+  {
+    "id": "courage the cowardly dog::scooby-doo",
+    "agent": "Courage the Cowardly Dog",
+    "imposter": "Scooby-Doo",
+    "category": "cartoons",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ducktales::richie rich",
+    "agent": "Richie Rich",
+    "imposter": "DuckTales",
+    "category": "cartoons",
+    "difficulty": "medium"
+  },
+  {
+    "id": "the jungle book::the lion king",
+    "agent": "The Jungle Book",
+    "imposter": "The Lion King",
+    "category": "cartoons",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mowgli::tarzan",
+    "agent": "Mowgli",
+    "imposter": "Tarzan",
+    "category": "cartoons",
+    "difficulty": "medium"
+  },
+  {
+    "id": "noddy::oswald",
+    "agent": "Noddy",
+    "imposter": "Oswald",
+    "category": "cartoons",
+    "difficulty": "medium"
+  },
+  {
+    "id": "shikari shambhu::suppandi",
+    "agent": "Suppandi",
+    "imposter": "Shikari Shambhu",
+    "category": "cartoons",
+    "difficulty": "medium"
+  },
+  {
+    "id": "billoo::pinki",
+    "agent": "Billoo",
+    "imposter": "Pinki",
+    "category": "cartoons",
+    "difficulty": "medium"
+  },
+  {
+    "id": "chhota bheem::gopal bhar",
+    "agent": "Chhota Bheem",
+    "imposter": "Gopal Bhar",
+    "category": "cartoons",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dennis the menace::shinchan",
+    "agent": "Shinchan",
+    "imposter": "Dennis the Menace",
+    "category": "cartoons",
+    "difficulty": "hard"
+  },
+  {
+    "id": "aladdin::doraemon",
+    "agent": "Doraemon",
+    "imposter": "Aladdin",
+    "category": "cartoons",
+    "difficulty": "hard"
+  },
+  {
+    "id": "garfield::oggy",
+    "agent": "Oggy",
+    "imposter": "Garfield",
+    "category": "cartoons",
+    "difficulty": "hard"
+  },
+  {
+    "id": "jerry (mouse)::tweety bird",
+    "agent": "Jerry (Mouse)",
+    "imposter": "Tweety Bird",
+    "category": "cartoons",
+    "difficulty": "hard"
+  },
+  {
+    "id": "giant (doraemon)::sabu",
+    "agent": "Sabu",
+    "imposter": "Giant (Doraemon)",
+    "category": "cartoons",
+    "difficulty": "hard"
+  },
+  {
+    "id": "chacha chaudhary::feluda",
+    "agent": "Chacha Chaudhary",
+    "imposter": "Feluda",
+    "category": "cartoons",
+    "difficulty": "hard"
+  },
+  {
+    "id": "gopal bhar::tenali rama",
+    "agent": "Tenali Rama",
+    "imposter": "Gopal Bhar",
+    "category": "cartoons",
+    "difficulty": "hard"
+  },
+  {
+    "id": "dholakpur::furfuri nagar",
+    "agent": "Dholakpur",
+    "imposter": "Furfuri Nagar",
+    "category": "cartoons",
+    "difficulty": "hard"
+  },
+  {
+    "id": "nobita::shinchan",
+    "agent": "Nobita",
+    "imposter": "Shinchan",
+    "category": "cartoons",
+    "difficulty": "hard"
+  },
+  {
+    "id": "krrish::shaktimaan",
+    "agent": "Shaktimaan",
+    "imposter": "Krrish",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "batman::spider-man",
+    "agent": "Spider-Man",
+    "imposter": "Batman",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "batman::superman",
+    "agent": "Batman",
+    "imposter": "Superman",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "captain america::iron man",
+    "agent": "Iron Man",
+    "imposter": "Captain America",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "hulk::thor",
+    "agent": "Thor",
+    "imposter": "Hulk",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "krrish::ra.one",
+    "agent": "Ra.One",
+    "imposter": "Krrish",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "shaktimaan::spider-man",
     "agent": "Shaktimaan",
     "imposter": "Spider-Man",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "iron man::spider-man",
+    "agent": "Spider-Man",
+    "imposter": "Iron Man",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "batman::iron man",
+    "agent": "Batman",
+    "imposter": "Iron Man",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "superman::thor",
+    "agent": "Superman",
+    "imposter": "Thor",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "deadpool::wolverine",
+    "agent": "Deadpool",
+    "imposter": "Wolverine",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "batman::joker",
+    "agent": "Joker",
+    "imposter": "Batman",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "iron man::thanos",
+    "agent": "Thanos",
+    "imposter": "Iron Man",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "avengers::justice league",
+    "agent": "Avengers",
+    "imposter": "Justice League",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "avatar::titanic",
+    "agent": "Titanic",
+    "imposter": "Avatar",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "harry potter::lord of the rings",
+    "agent": "Harry Potter",
+    "imposter": "Lord of the Rings",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "avatar::jurassic park",
+    "agent": "Jurassic Park",
+    "imposter": "Avatar",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "inception::interstellar",
+    "agent": "Inception",
+    "imposter": "Interstellar",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fast and furious::mission impossible",
+    "agent": "Fast and Furious",
+    "imposter": "Mission Impossible",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "gladiator::titanic",
+    "agent": "Gladiator",
+    "imposter": "Titanic",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "harry potter::spider-man",
+    "agent": "Spider-Man",
+    "imposter": "Harry Potter",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "aladdin::the lion king",
+    "agent": "The Lion King",
+    "imposter": "Aladdin",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "iron man::transformers",
+    "agent": "Transformers",
+    "imposter": "Iron Man",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "james bond::mission impossible",
+    "agent": "James Bond",
+    "imposter": "Mission Impossible",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "black panther::captain america",
+    "agent": "Black Panther",
+    "imposter": "Captain America",
+    "category": "superheroes_hollywood",
+    "difficulty": "easy"
+  },
+  {
+    "id": "shaktimaan::superman",
+    "agent": "Shaktimaan",
+    "imposter": "Superman",
+    "category": "superheroes_hollywood",
     "difficulty": "medium"
   },
   {
-    "agent": "Howrah Bridge",
-    "imposter": "Victoria Memorial",
+    "id": "flying jatt::krrish",
+    "agent": "Krrish",
+    "imposter": "Flying Jatt",
+    "category": "superheroes_hollywood",
     "difficulty": "medium"
   },
   {
+    "id": "flying jatt::shaktimaan",
+    "agent": "Flying Jatt",
+    "imposter": "Shaktimaan",
+    "category": "superheroes_hollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "captain vyom::shaktimaan",
+    "agent": "Captain Vyom",
+    "imposter": "Shaktimaan",
+    "category": "superheroes_hollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "dr. strange::harry potter",
+    "agent": "Dr. Strange",
+    "imposter": "Harry Potter",
+    "category": "superheroes_hollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "doctor strange::iron man",
+    "agent": "Doctor Strange",
+    "imposter": "Iron Man",
+    "category": "superheroes_hollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ant-man::spider-man",
+    "agent": "Ant-Man",
+    "imposter": "Spider-Man",
+    "category": "superheroes_hollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "green arrow::hawkeye",
+    "agent": "Hawkeye",
+    "imposter": "Green Arrow",
+    "category": "superheroes_hollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "aquaman::thor",
+    "agent": "Aquaman",
+    "imposter": "Thor",
+    "category": "superheroes_hollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "black widow::wonder woman",
+    "agent": "Wonder Woman",
+    "imposter": "Black Widow",
+    "category": "superheroes_hollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "spider-man::venom",
+    "agent": "Venom",
+    "imposter": "Spider-Man",
+    "category": "superheroes_hollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "loki::thor",
+    "agent": "Loki",
+    "imposter": "Thor",
+    "category": "superheroes_hollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "inception::matrix",
+    "agent": "Matrix",
+    "imposter": "Inception",
+    "category": "superheroes_hollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "avengers::the dark knight",
+    "agent": "The Dark Knight",
+    "imposter": "Avengers",
+    "category": "superheroes_hollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pirates of the caribbean::titanic",
+    "agent": "Pirates of the Caribbean",
+    "imposter": "Titanic",
+    "category": "superheroes_hollywood",
+    "difficulty": "medium"
+  },
+  {
+    "id": "iron man::shaktimaan",
+    "agent": "Shaktimaan",
+    "imposter": "Iron Man",
+    "category": "superheroes_hollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "krrish::spider-man",
+    "agent": "Krrish",
+    "imposter": "Spider-Man",
+    "category": "superheroes_hollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "joker::thanos",
+    "agent": "Joker",
+    "imposter": "Thanos",
+    "category": "superheroes_hollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "bruce wayne::tony stark",
+    "agent": "Bruce Wayne",
+    "imposter": "Tony Stark",
+    "category": "superheroes_hollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "clark kent::peter parker",
+    "agent": "Clark Kent",
+    "imposter": "Peter Parker",
+    "category": "superheroes_hollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "g.one (ra.one)::terminator",
+    "agent": "G.One (Ra.One)",
+    "imposter": "Terminator",
+    "category": "superheroes_hollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "avatar::avengers",
+    "agent": "Avatar",
+    "imposter": "Avengers",
+    "category": "superheroes_hollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "inception::titanic",
+    "agent": "Titanic",
+    "imposter": "Inception",
+    "category": "superheroes_hollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "godzilla::jurassic park",
+    "agent": "Jurassic Park",
+    "imposter": "Godzilla",
+    "category": "superheroes_hollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "harry potter::percy jackson",
+    "agent": "Harry Potter",
+    "imposter": "Percy Jackson",
+    "category": "superheroes_hollywood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "aeroplane::train",
+    "agent": "Train",
+    "imposter": "Aeroplane",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "bicycle::motorcycle",
+    "agent": "Bicycle",
+    "imposter": "Motorcycle",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "aeroplane::helicopter",
+    "agent": "Helicopter",
+    "imposter": "Aeroplane",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "bus::train",
+    "agent": "Bus",
+    "imposter": "Train",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "auto rickshaw::taxi",
+    "agent": "Auto Rickshaw",
+    "imposter": "Taxi",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "boat::ship",
+    "agent": "Boat",
+    "imposter": "Ship",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ship::submarine",
+    "agent": "Submarine",
+    "imposter": "Ship",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "tractor::truck",
+    "agent": "Truck",
+    "imposter": "Tractor",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "bicycle::scooter",
+    "agent": "Scooter",
+    "imposter": "Bicycle",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "local train::metro",
+    "agent": "Metro",
+    "imposter": "Local Train",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ambulance::police car",
+    "agent": "Ambulance",
+    "imposter": "Police Car",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ambulance::fire engine",
+    "agent": "Fire Engine",
+    "imposter": "Ambulance",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "bullock cart::tractor",
+    "agent": "Bullock Cart",
+    "imposter": "Tractor",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "auto rickshaw::horse carriage",
+    "agent": "Horse Carriage",
+    "imposter": "Auto Rickshaw",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cable car::ferris wheel",
+    "agent": "Cable Car",
+    "imposter": "Ferris Wheel",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "hospital::school",
+    "agent": "Hospital",
+    "imposter": "School",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "airport::railway station",
+    "agent": "Airport",
+    "imposter": "Railway Station",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cinema hall::shopping mall",
+    "agent": "Cinema Hall",
+    "imposter": "Shopping Mall",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "bank::post office",
+    "agent": "Bank",
+    "imposter": "Post Office",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "hotel::restaurant",
+    "agent": "Hotel",
+    "imposter": "Restaurant",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "courtroom::police station",
+    "agent": "Police Station",
+    "imposter": "Courtroom",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "bookstore::library",
+    "agent": "Library",
+    "imposter": "Bookstore",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "gurdwara::temple",
+    "agent": "Temple",
+    "imposter": "Gurdwara",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "church::mosque",
+    "agent": "Mosque",
+    "imposter": "Church",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "circus::zoo",
+    "agent": "Zoo",
+    "imposter": "Circus",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "art gallery::museum",
+    "agent": "Museum",
+    "imposter": "Art Gallery",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "garden::park",
+    "agent": "Park",
+    "imposter": "Garden",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "playground::stadium",
+    "agent": "Playground",
+    "imposter": "Stadium",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "swimming pool::water park",
+    "agent": "Swimming Pool",
+    "imposter": "Water Park",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "gym::yoga centre",
+    "agent": "Gym",
+    "imposter": "Yoga Centre",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "petrol pump::service station",
+    "agent": "Petrol Pump",
+    "imposter": "Service Station",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "market::supermarket",
+    "agent": "Market",
+    "imposter": "Supermarket",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "hospital::pharmacy",
+    "agent": "Pharmacy",
+    "imposter": "Hospital",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "bakery::sweet shop",
+    "agent": "Bakery",
+    "imposter": "Sweet Shop",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "college::school",
+    "agent": "College",
+    "imposter": "School",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "red fort::taj mahal",
+    "agent": "Taj Mahal",
+    "imposter": "Red Fort",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "india gate::qutub minar",
+    "agent": "Qutub Minar",
+    "imposter": "India Gate",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "gateway of india::howrah bridge",
+    "agent": "Gateway of India",
+    "imposter": "Howrah Bridge",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "golden temple::statue of unity",
+    "agent": "Golden Temple",
+    "imposter": "Statue of Unity",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "charminar::hawa mahal",
     "agent": "Charminar",
-    "imposter": "Golconda Fort",
-    "difficulty": "medium"
+    "imposter": "Hawa Mahal",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hawa Mahal",
-    "imposter": "City Palace Jaipur",
-    "difficulty": "medium"
+    "id": "gateway of india::red fort",
+    "agent": "Red Fort",
+    "imposter": "Gateway of India",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Varanasi Ghats",
-    "imposter": "Marine Drive",
-    "difficulty": "medium"
+    "id": "qutub minar::taj mahal",
+    "agent": "Taj Mahal",
+    "imposter": "Qutub Minar",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
+    "id": "howrah bridge::victoria memorial",
+    "agent": "Victoria Memorial",
+    "imposter": "Howrah Bridge",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "goa beach::marine drive",
+    "agent": "Marine Drive",
+    "imposter": "Goa Beach",
+    "category": "mainstream",
+    "difficulty": "easy"
+  },
+  {
+    "id": "dal lake::pangong lake",
     "agent": "Dal Lake",
     "imposter": "Pangong Lake",
-    "difficulty": "medium"
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Sholay",
-    "imposter": "Anand",
-    "difficulty": "medium"
+    "id": "himalayas::mount everest",
+    "agent": "Mount Everest",
+    "imposter": "Himalayas",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Sholay",
-    "imposter": "Mr. India",
-    "difficulty": "medium"
+    "id": "ganga river::yamuna river",
+    "agent": "Ganga River",
+    "imposter": "Yamuna River",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Sholay",
-    "imposter": "Qayamat Se Qayamat Tak",
-    "difficulty": "medium"
+    "id": "rann of kutch::thar desert",
+    "agent": "Thar Desert",
+    "imposter": "Rann of Kutch",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Sholay",
-    "imposter": "Maine Pyar Kiya",
-    "difficulty": "medium"
+    "id": "rohtang pass::shimla",
+    "agent": "Rohtang Pass",
+    "imposter": "Shimla",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Sholay",
-    "imposter": "Dilwale Dulhania Le Jayenge",
-    "difficulty": "medium"
+    "id": "parliament house::rashtrapati bhavan",
+    "agent": "Rashtrapati Bhavan",
+    "imposter": "Parliament House",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Sholay",
-    "imposter": "Kuch Kuch Hota Hai",
-    "difficulty": "medium"
+    "id": "laptop::mobile phone",
+    "agent": "Mobile Phone",
+    "imposter": "Laptop",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Deewar",
-    "imposter": "Mr. India",
-    "difficulty": "medium"
+    "id": "cinema projector::television",
+    "agent": "Television",
+    "imposter": "Cinema Projector",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Deewar",
-    "imposter": "Qayamat Se Qayamat Tak",
-    "difficulty": "medium"
+    "id": "smartwatch::wall clock",
+    "agent": "Smartwatch",
+    "imposter": "Wall Clock",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Deewar",
-    "imposter": "Maine Pyar Kiya",
-    "difficulty": "medium"
+    "id": "microwave oven::refrigerator",
+    "agent": "Refrigerator",
+    "imposter": "Microwave Oven",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Deewar",
-    "imposter": "Dilwale Dulhania Le Jayenge",
-    "difficulty": "medium"
+    "id": "dishwasher::washing machine",
+    "agent": "Washing Machine",
+    "imposter": "Dishwasher",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Deewar",
-    "imposter": "Kuch Kuch Hota Hai",
-    "difficulty": "medium"
+    "id": "air conditioner::ceiling fan",
+    "agent": "Ceiling Fan",
+    "imposter": "Air Conditioner",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Deewar",
-    "imposter": "Hum Aapke Hain Koun",
-    "difficulty": "medium"
+    "id": "camera::mobile phone",
+    "agent": "Camera",
+    "imposter": "Mobile Phone",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Mr. India",
-    "difficulty": "medium"
+    "id": "earphones::headphones",
+    "agent": "Headphones",
+    "imposter": "Earphones",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Qayamat Se Qayamat Tak",
-    "difficulty": "medium"
+    "id": "computer mouse::keyboard",
+    "agent": "Computer Mouse",
+    "imposter": "Keyboard",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Maine Pyar Kiya",
-    "difficulty": "medium"
+    "id": "laptop::tablet (ipad)",
+    "agent": "Tablet (iPad)",
+    "imposter": "Laptop",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Dilwale Dulhania Le Jayenge",
-    "difficulty": "medium"
+    "id": "candle::torch (flashlight)",
+    "agent": "Torch (Flashlight)",
+    "imposter": "Candle",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Kuch Kuch Hota Hai",
-    "difficulty": "medium"
+    "id": "iron (press)::washing machine",
+    "agent": "Iron (Press)",
+    "imposter": "Washing Machine",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Hum Aapke Hain Koun",
-    "difficulty": "medium"
+    "id": "mixer grinder::toaster",
+    "agent": "Mixer Grinder",
+    "imposter": "Toaster",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Kabhi Khushi Kabhie Gham",
-    "difficulty": "medium"
+    "id": "refrigerator::water purifier",
+    "agent": "Water Purifier",
+    "imposter": "Refrigerator",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Qayamat Se Qayamat Tak",
-    "difficulty": "medium"
+    "id": "electric kettle::microwave oven",
+    "agent": "Electric Kettle",
+    "imposter": "Microwave Oven",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Maine Pyar Kiya",
-    "difficulty": "medium"
+    "id": "raincoat::umbrella",
+    "agent": "Umbrella",
+    "imposter": "Raincoat",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Dilwale Dulhania Le Jayenge",
-    "difficulty": "medium"
+    "id": "backpack::suitcase",
+    "agent": "Backpack",
+    "imposter": "Suitcase",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Kuch Kuch Hota Hai",
-    "difficulty": "medium"
+    "id": "eyeglasses::sunglasses",
+    "agent": "Sunglasses",
+    "imposter": "Eyeglasses",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Hum Aapke Hain Koun",
-    "difficulty": "medium"
+    "id": "cap::helmet",
+    "agent": "Helmet",
+    "imposter": "Cap",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Kabhi Khushi Kabhie Gham",
-    "difficulty": "medium"
+    "id": "shoes::slippers (chappal)",
+    "agent": "Shoes",
+    "imposter": "Slippers (Chappal)",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Mohabbatein",
-    "difficulty": "medium"
+    "id": "bracelet::watch",
+    "agent": "Watch",
+    "imposter": "Bracelet",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Amar Akbar Anthony",
-    "imposter": "Maine Pyar Kiya",
-    "difficulty": "medium"
+    "id": "purse::wallet",
+    "agent": "Wallet",
+    "imposter": "Purse",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Amar Akbar Anthony",
-    "imposter": "Dilwale Dulhania Le Jayenge",
-    "difficulty": "medium"
+    "id": "mirror::window",
+    "agent": "Mirror",
+    "imposter": "Window",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Amar Akbar Anthony",
-    "imposter": "Kuch Kuch Hota Hai",
-    "difficulty": "medium"
+    "id": "chair::sofa",
+    "agent": "Chair",
+    "imposter": "Sofa",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Amar Akbar Anthony",
-    "imposter": "Hum Aapke Hain Koun",
-    "difficulty": "medium"
+    "id": "dining table::study table",
+    "agent": "Dining Table",
+    "imposter": "Study Table",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Amar Akbar Anthony",
-    "imposter": "Kabhi Khushi Kabhie Gham",
-    "difficulty": "medium"
+    "id": "bed::mattress",
+    "agent": "Bed",
+    "imposter": "Mattress",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Amar Akbar Anthony",
-    "imposter": "Mohabbatein",
-    "difficulty": "medium"
+    "id": "blanket::pillow",
+    "agent": "Pillow",
+    "imposter": "Blanket",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Amar Akbar Anthony",
-    "imposter": "Hum Dil De Chuke Sanam",
-    "difficulty": "medium"
+    "id": "bedsheet::towel",
+    "agent": "Towel",
+    "imposter": "Bedsheet",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Anand",
-    "imposter": "Dilwale Dulhania Le Jayenge",
-    "difficulty": "medium"
+    "id": "bucket::mug",
+    "agent": "Bucket",
+    "imposter": "Mug",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Anand",
-    "imposter": "Kuch Kuch Hota Hai",
-    "difficulty": "medium"
+    "id": "soap::toothbrush",
+    "agent": "Toothbrush",
+    "imposter": "Soap",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Anand",
-    "imposter": "Hum Aapke Hain Koun",
-    "difficulty": "medium"
+    "id": "hair oil::shampoo",
+    "agent": "Shampoo",
+    "imposter": "Hair Oil",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Anand",
-    "imposter": "Kabhi Khushi Kabhie Gham",
-    "difficulty": "medium"
+    "id": "comb::hairbrush",
+    "agent": "Comb",
+    "imposter": "Hairbrush",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Anand",
-    "imposter": "Mohabbatein",
-    "difficulty": "medium"
+    "id": "knife::scissors",
+    "agent": "Scissors",
+    "imposter": "Knife",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Anand",
-    "imposter": "Hum Dil De Chuke Sanam",
-    "difficulty": "medium"
+    "id": "key::lock",
+    "agent": "Lock",
+    "imposter": "Key",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Anand",
-    "imposter": "Devdas",
-    "difficulty": "medium"
+    "id": "pen::pencil",
+    "agent": "Pen",
+    "imposter": "Pencil",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Mr. India",
-    "imposter": "Kuch Kuch Hota Hai",
-    "difficulty": "medium"
+    "id": "diary::notebook",
+    "agent": "Notebook",
+    "imposter": "Diary",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Mr. India",
-    "imposter": "Hum Aapke Hain Koun",
-    "difficulty": "medium"
+    "id": "eraser::sharpener",
+    "agent": "Eraser",
+    "imposter": "Sharpener",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Mr. India",
-    "imposter": "Kabhi Khushi Kabhie Gham",
-    "difficulty": "medium"
+    "id": "school bag::water bottle",
+    "agent": "School Bag",
+    "imposter": "Water Bottle",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Mr. India",
-    "imposter": "Mohabbatein",
-    "difficulty": "medium"
+    "id": "lunch box::water bottle",
+    "agent": "Lunch Box",
+    "imposter": "Water Bottle",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Mr. India",
-    "imposter": "Hum Dil De Chuke Sanam",
-    "difficulty": "medium"
+    "id": "bed cover::curtains",
+    "agent": "Curtains",
+    "imposter": "Bed Cover",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Mr. India",
-    "imposter": "Devdas",
-    "difficulty": "medium"
+    "id": "lion::tiger",
+    "agent": "Tiger",
+    "imposter": "Lion",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Mr. India",
-    "imposter": "Kal Ho Naa Ho",
-    "difficulty": "medium"
+    "id": "camel::elephant",
+    "agent": "Elephant",
+    "imposter": "Camel",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Qayamat Se Qayamat Tak",
-    "imposter": "Hum Aapke Hain Koun",
-    "difficulty": "medium"
+    "id": "cat::dog",
+    "agent": "Dog",
+    "imposter": "Cat",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Qayamat Se Qayamat Tak",
-    "imposter": "Kabhi Khushi Kabhie Gham",
-    "difficulty": "medium"
+    "id": "donkey::horse",
+    "agent": "Horse",
+    "imposter": "Donkey",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Qayamat Se Qayamat Tak",
-    "imposter": "Mohabbatein",
-    "difficulty": "medium"
+    "id": "buffalo::cow",
+    "agent": "Cow",
+    "imposter": "Buffalo",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Qayamat Se Qayamat Tak",
-    "imposter": "Hum Dil De Chuke Sanam",
-    "difficulty": "medium"
+    "id": "goat::sheep",
+    "agent": "Goat",
+    "imposter": "Sheep",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Qayamat Se Qayamat Tak",
-    "imposter": "Devdas",
-    "difficulty": "medium"
+    "id": "chimpanzee::monkey",
+    "agent": "Monkey",
+    "imposter": "Chimpanzee",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Qayamat Se Qayamat Tak",
-    "imposter": "Kal Ho Naa Ho",
-    "difficulty": "medium"
+    "id": "parrot::peacock",
+    "agent": "Peacock",
+    "imposter": "Parrot",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Qayamat Se Qayamat Tak",
-    "imposter": "Veer-Zaara",
-    "difficulty": "medium"
+    "id": "crow::pigeon",
+    "agent": "Crow",
+    "imposter": "Pigeon",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Maine Pyar Kiya",
-    "imposter": "Kabhi Khushi Kabhie Gham",
-    "difficulty": "medium"
+    "id": "eagle::sparrow",
+    "agent": "Eagle",
+    "imposter": "Sparrow",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Maine Pyar Kiya",
-    "imposter": "Mohabbatein",
-    "difficulty": "medium"
+    "id": "duck::swan",
+    "agent": "Duck",
+    "imposter": "Swan",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Maine Pyar Kiya",
-    "imposter": "Hum Dil De Chuke Sanam",
-    "difficulty": "medium"
+    "id": "lizard::snake",
+    "agent": "Snake",
+    "imposter": "Lizard",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Maine Pyar Kiya",
-    "imposter": "Devdas",
-    "difficulty": "medium"
+    "id": "alligator::crocodile",
+    "agent": "Crocodile",
+    "imposter": "Alligator",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Maine Pyar Kiya",
-    "imposter": "Kal Ho Naa Ho",
-    "difficulty": "medium"
+    "id": "frog::toad",
+    "agent": "Frog",
+    "imposter": "Toad",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Maine Pyar Kiya",
-    "imposter": "Veer-Zaara",
-    "difficulty": "medium"
+    "id": "rabbit::squirrel",
+    "agent": "Rabbit",
+    "imposter": "Squirrel",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Maine Pyar Kiya",
-    "imposter": "Border",
-    "difficulty": "medium"
+    "id": "deer::zebra",
+    "agent": "Deer",
+    "imposter": "Zebra",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Dilwale Dulhania Le Jayenge",
-    "imposter": "Mohabbatein",
-    "difficulty": "medium"
+    "id": "elephant::giraffe",
+    "agent": "Giraffe",
+    "imposter": "Elephant",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Dilwale Dulhania Le Jayenge",
-    "imposter": "Hum Dil De Chuke Sanam",
-    "difficulty": "medium"
+    "id": "bear::panda",
+    "agent": "Bear",
+    "imposter": "Panda",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Dilwale Dulhania Le Jayenge",
-    "imposter": "Devdas",
-    "difficulty": "medium"
+    "id": "fox::wolf",
+    "agent": "Wolf",
+    "imposter": "Fox",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Dilwale Dulhania Le Jayenge",
-    "imposter": "Kal Ho Naa Ho",
-    "difficulty": "medium"
+    "id": "dolphin::whale",
+    "agent": "Dolphin",
+    "imposter": "Whale",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Dilwale Dulhania Le Jayenge",
-    "imposter": "Border",
-    "difficulty": "medium"
+    "id": "doctor::nurse",
+    "agent": "Doctor",
+    "imposter": "Nurse",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Dilwale Dulhania Le Jayenge",
-    "imposter": "Gadar",
-    "difficulty": "medium"
+    "id": "professor::teacher",
+    "agent": "Teacher",
+    "imposter": "Professor",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Kuch Kuch Hota Hai",
-    "imposter": "Hum Dil De Chuke Sanam",
-    "difficulty": "medium"
+    "id": "air hostess::pilot",
+    "agent": "Pilot",
+    "imposter": "Air Hostess",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Kuch Kuch Hota Hai",
-    "imposter": "Devdas",
-    "difficulty": "medium"
+    "id": "police officer::soldier",
+    "agent": "Police Officer",
+    "imposter": "Soldier",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Kuch Kuch Hota Hai",
-    "imposter": "Kal Ho Naa Ho",
-    "difficulty": "medium"
+    "id": "judge::lawyer",
+    "agent": "Lawyer",
+    "imposter": "Judge",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Kuch Kuch Hota Hai",
-    "imposter": "Veer-Zaara",
-    "difficulty": "medium"
+    "id": "chef::waiter",
+    "agent": "Chef",
+    "imposter": "Waiter",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Kuch Kuch Hota Hai",
-    "imposter": "Border",
-    "difficulty": "medium"
+    "id": "farmer::gardener",
+    "agent": "Farmer",
+    "imposter": "Gardener",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Kuch Kuch Hota Hai",
-    "imposter": "Gadar",
-    "difficulty": "medium"
+    "id": "conductor::driver",
+    "agent": "Driver",
+    "imposter": "Conductor",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Kuch Kuch Hota Hai",
-    "imposter": "Pardes",
-    "difficulty": "medium"
+    "id": "courier delivery boy::postman",
+    "agent": "Postman",
+    "imposter": "Courier Delivery Boy",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hum Aapke Hain Koun",
-    "imposter": "Devdas",
-    "difficulty": "medium"
+    "id": "electrician::plumber",
+    "agent": "Electrician",
+    "imposter": "Plumber",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hum Aapke Hain Koun",
-    "imposter": "Kal Ho Naa Ho",
-    "difficulty": "medium"
+    "id": "carpenter::mason",
+    "agent": "Carpenter",
+    "imposter": "Mason",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hum Aapke Hain Koun",
-    "imposter": "Veer-Zaara",
-    "difficulty": "medium"
+    "id": "fashion designer::tailor",
+    "agent": "Tailor",
+    "imposter": "Fashion Designer",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hum Aapke Hain Koun",
-    "imposter": "Border",
-    "difficulty": "medium"
+    "id": "astronaut::scientist",
+    "agent": "Astronaut",
+    "imposter": "Scientist",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hum Aapke Hain Koun",
-    "imposter": "Gadar",
-    "difficulty": "medium"
+    "id": "firefighter::police officer",
+    "agent": "Firefighter",
+    "imposter": "Police Officer",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hum Aapke Hain Koun",
-    "imposter": "Pardes",
-    "difficulty": "medium"
+    "id": "cameraman::photographer",
+    "agent": "Photographer",
+    "imposter": "Cameraman",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hum Aapke Hain Koun",
-    "imposter": "Taal",
-    "difficulty": "medium"
+    "id": "moon::sun",
+    "agent": "Sun",
+    "imposter": "Moon",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Kabhi Khushi Kabhie Gham",
-    "imposter": "Veer-Zaara",
-    "difficulty": "medium"
+    "id": "planets::stars",
+    "agent": "Stars",
+    "imposter": "Planets",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Kabhi Khushi Kabhie Gham",
-    "imposter": "Border",
-    "difficulty": "medium"
+    "id": "cloud::rain",
+    "agent": "Cloud",
+    "imposter": "Rain",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Kabhi Khushi Kabhie Gham",
-    "imposter": "Gadar",
-    "difficulty": "medium"
+    "id": "lightning::thunder",
+    "agent": "Thunder",
+    "imposter": "Lightning",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Kabhi Khushi Kabhie Gham",
-    "imposter": "Pardes",
-    "difficulty": "medium"
+    "id": "rainbow::sunrise",
+    "agent": "Rainbow",
+    "imposter": "Sunrise",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Kabhi Khushi Kabhie Gham",
-    "imposter": "Taal",
-    "difficulty": "medium"
+    "id": "sunrise::sunset",
+    "agent": "Sunset",
+    "imposter": "Sunrise",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Kabhi Khushi Kabhie Gham",
-    "imposter": "Dil To Pagal Hai",
-    "difficulty": "medium"
+    "id": "hill::mountain",
+    "agent": "Mountain",
+    "imposter": "Hill",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Mohabbatein",
-    "imposter": "Veer-Zaara",
-    "difficulty": "medium"
+    "id": "ocean::river",
+    "agent": "River",
+    "imposter": "Ocean",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Mohabbatein",
-    "imposter": "Border",
-    "difficulty": "medium"
+    "id": "lake::sea",
+    "agent": "Sea",
+    "imposter": "Lake",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Mohabbatein",
-    "imposter": "Gadar",
-    "difficulty": "medium"
+    "id": "forest::jungle",
+    "agent": "Forest",
+    "imposter": "Jungle",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Mohabbatein",
-    "imposter": "Pardes",
-    "difficulty": "medium"
+    "id": "desert::island",
+    "agent": "Desert",
+    "imposter": "Island",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Mohabbatein",
-    "imposter": "Taal",
-    "difficulty": "medium"
+    "id": "hailstorm::snow",
+    "agent": "Snow",
+    "imposter": "Hailstorm",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Mohabbatein",
-    "imposter": "Hum Saath-Saath Hain",
-    "difficulty": "medium"
+    "id": "evening::morning",
+    "agent": "Morning",
+    "imposter": "Evening",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hum Dil De Chuke Sanam",
-    "imposter": "Border",
-    "difficulty": "medium"
+    "id": "summer::winter",
+    "agent": "Summer",
+    "imposter": "Winter",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hum Dil De Chuke Sanam",
-    "imposter": "Gadar",
-    "difficulty": "medium"
+    "id": "monsoon::spring",
+    "agent": "Monsoon",
+    "imposter": "Spring",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hum Dil De Chuke Sanam",
-    "imposter": "Pardes",
-    "difficulty": "medium"
+    "id": "bicycle::skateboard",
+    "agent": "Bicycle",
+    "imposter": "Skateboard",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hum Dil De Chuke Sanam",
-    "imposter": "Taal",
-    "difficulty": "medium"
+    "id": "coffee shop::tea stall (tapri)",
+    "agent": "Coffee Shop",
+    "imposter": "Tea Stall (Tapri)",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hum Dil De Chuke Sanam",
-    "imposter": "Dil To Pagal Hai",
-    "difficulty": "medium"
+    "id": "elevator (lift)::escalator",
+    "agent": "Elevator (Lift)",
+    "imposter": "Escalator",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hum Dil De Chuke Sanam",
-    "imposter": "Hum Saath-Saath Hain",
-    "difficulty": "medium"
+    "id": "ramp::stairs",
+    "agent": "Stairs",
+    "imposter": "Ramp",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hum Dil De Chuke Sanam",
-    "imposter": "Baazigar",
-    "difficulty": "medium"
+    "id": "ceiling::roof",
+    "agent": "Roof",
+    "imposter": "Ceiling",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Devdas",
-    "imposter": "Gadar",
-    "difficulty": "medium"
+    "id": "shoe::sock",
+    "agent": "Shoe",
+    "imposter": "Sock",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Devdas",
-    "imposter": "Pardes",
-    "difficulty": "medium"
+    "id": "jeans::t-shirt",
+    "agent": "Jeans",
+    "imposter": "T-Shirt",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Devdas",
-    "imposter": "Taal",
-    "difficulty": "medium"
+    "id": "jacket::sweater",
+    "agent": "Sweater",
+    "imposter": "Jacket",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Devdas",
-    "imposter": "Dil To Pagal Hai",
-    "difficulty": "medium"
+    "id": "belt::tie",
+    "agent": "Belt",
+    "imposter": "Tie",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Devdas",
-    "imposter": "Hum Saath-Saath Hain",
-    "difficulty": "medium"
+    "id": "necklace::ring",
+    "agent": "Ring",
+    "imposter": "Necklace",
+    "category": "mainstream",
+    "difficulty": "easy"
   },
   {
-    "agent": "Devdas",
-    "imposter": "Baazigar",
+    "id": "bus stand::railway station",
+    "agent": "Railway Station",
+    "imposter": "Bus Stand",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Devdas",
-    "imposter": "Darr",
+    "id": "airport::metro station",
+    "agent": "Metro Station",
+    "imposter": "Airport",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Kal Ho Naa Ho",
-    "imposter": "Pardes",
+    "id": "courier office::post office",
+    "agent": "Post Office",
+    "imposter": "Courier Office",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Kal Ho Naa Ho",
-    "imposter": "Taal",
+    "id": "toll plaza::traffic signal",
+    "agent": "Toll Plaza",
+    "imposter": "Traffic Signal",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Kal Ho Naa Ho",
-    "imposter": "Dil To Pagal Hai",
+    "id": "flyover::underpass",
+    "agent": "Flyover",
+    "imposter": "Underpass",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Kal Ho Naa Ho",
-    "imposter": "Hum Saath-Saath Hain",
+    "id": "bridge::tunnel",
+    "agent": "Bridge",
+    "imposter": "Tunnel",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Kal Ho Naa Ho",
-    "imposter": "Baazigar",
+    "id": "high court::supreme court",
+    "agent": "High Court",
+    "imposter": "Supreme Court",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Kal Ho Naa Ho",
-    "imposter": "Darr",
+    "id": "lok sabha::vidhan sabha",
+    "agent": "Vidhan Sabha",
+    "imposter": "Lok Sabha",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Kal Ho Naa Ho",
-    "imposter": "Karan Arjun",
+    "id": "embassy::passport office",
+    "agent": "Embassy",
+    "imposter": "Passport Office",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Veer-Zaara",
-    "imposter": "Taal",
+    "id": "guest house::hostel",
+    "agent": "Hostel",
+    "imposter": "Guest House",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Veer-Zaara",
-    "imposter": "Dil To Pagal Hai",
+    "id": "dharamsala::hotel",
+    "agent": "Dharamsala",
+    "imposter": "Hotel",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Veer-Zaara",
-    "imposter": "Hum Saath-Saath Hain",
+    "id": "ashram::monastery",
+    "agent": "Ashram",
+    "imposter": "Monastery",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Veer-Zaara",
-    "imposter": "Baazigar",
+    "id": "planetarium::science museum",
+    "agent": "Planetarium",
+    "imposter": "Science Museum",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Veer-Zaara",
-    "imposter": "Darr",
+    "id": "observatory::weather station",
+    "agent": "Observatory",
+    "imposter": "Weather Station",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Veer-Zaara",
-    "imposter": "Karan Arjun",
+    "id": "lighthouse::watchtower",
+    "agent": "Lighthouse",
+    "imposter": "Watchtower",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Veer-Zaara",
-    "imposter": "Kaho Naa Pyaar Hai",
+    "id": "fort::palace",
+    "agent": "Fort",
+    "imposter": "Palace",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Border",
-    "imposter": "Dil To Pagal Hai",
+    "id": "cenotaph (chhatri)::monument",
+    "agent": "Cenotaph (Chhatri)",
+    "imposter": "Monument",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Border",
-    "imposter": "Hum Saath-Saath Hain",
+    "id": "stepwell (baoli)::well",
+    "agent": "Stepwell (Baoli)",
+    "imposter": "Well",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Border",
-    "imposter": "Baazigar",
+    "id": "canal::dam",
+    "agent": "Canal",
+    "imposter": "Dam",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Border",
-    "imposter": "Darr",
+    "id": "lake::reservoir",
+    "agent": "Reservoir",
+    "imposter": "Lake",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Border",
-    "imposter": "Karan Arjun",
+    "id": "briefcase::suitcase",
+    "agent": "Suitcase",
+    "imposter": "Briefcase",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Border",
-    "imposter": "Kaho Naa Pyaar Hai",
+    "id": "backpack::duffel bag",
+    "agent": "Duffel Bag",
+    "imposter": "Backpack",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Border",
-    "imposter": "Lagaan",
+    "id": "handbag::tote bag",
+    "agent": "Handbag",
+    "imposter": "Tote Bag",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Gadar",
-    "imposter": "Hum Saath-Saath Hain",
+    "id": "bottle opener::pocket knife",
+    "agent": "Pocket Knife",
+    "imposter": "Bottle Opener",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Gadar",
-    "imposter": "Baazigar",
+    "id": "lantern::torchlight",
+    "agent": "Torchlight",
+    "imposter": "Lantern",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Gadar",
-    "imposter": "Darr",
+    "id": "candle::oil lamp (diya)",
+    "agent": "Candle",
+    "imposter": "Oil Lamp (Diya)",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Gadar",
-    "imposter": "Karan Arjun",
+    "id": "lighter::matchstick",
+    "agent": "Matchstick",
+    "imposter": "Lighter",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Gadar",
-    "imposter": "Kaho Naa Pyaar Hai",
+    "id": "digital lock::padlock",
+    "agent": "Padlock",
+    "imposter": "Digital Lock",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Gadar",
-    "imposter": "Lagaan",
+    "id": "door handle::doorknob",
+    "agent": "Doorknob",
+    "imposter": "Door Handle",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Gadar",
-    "imposter": "Swades",
+    "id": "carrom coin::carrom striker",
+    "agent": "Carrom Striker",
+    "imposter": "Carrom Coin",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Pardes",
-    "imposter": "Baazigar",
+    "id": "chess knight::chess pawn",
+    "agent": "Chess Pawn",
+    "imposter": "Chess Knight",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Pardes",
-    "imposter": "Darr",
+    "id": "board game::playing card",
+    "agent": "Playing Card",
+    "imposter": "Board Game",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Pardes",
-    "imposter": "Karan Arjun",
+    "id": "coin::dice",
+    "agent": "Dice",
+    "imposter": "Coin",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Pardes",
-    "imposter": "Kaho Naa Pyaar Hai",
+    "id": "measuring tape::ruler (scale)",
+    "agent": "Measuring Tape",
+    "imposter": "Ruler (Scale)",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Pardes",
-    "imposter": "Lagaan",
+    "id": "abacus::calculator",
+    "agent": "Calculator",
+    "imposter": "Abacus",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Pardes",
-    "imposter": "Swades",
+    "id": "paper clip::stapler",
+    "agent": "Stapler",
+    "imposter": "Paper Clip",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Pardes",
-    "imposter": "Dil Chahta Hai",
+    "id": "glue (fevicol)::sellotape",
+    "agent": "Glue (Fevicol)",
+    "imposter": "Sellotape",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Taal",
-    "imposter": "Darr",
+    "id": "envelope::postcard",
+    "agent": "Envelope",
+    "imposter": "Postcard",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Taal",
-    "imposter": "Karan Arjun",
+    "id": "signature::stamp",
+    "agent": "Stamp",
+    "imposter": "Signature",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Taal",
-    "imposter": "Kaho Naa Pyaar Hai",
+    "id": "cheque book::passbook",
+    "agent": "Cheque Book",
+    "imposter": "Passbook",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Taal",
-    "imposter": "Lagaan",
+    "id": "ghat::riverbank",
+    "agent": "Ghat",
+    "imposter": "Riverbank",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Taal",
-    "imposter": "Swades",
+    "id": "canyon::valley",
+    "agent": "Valley",
+    "imposter": "Canyon",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Taal",
-    "imposter": "Dil Chahta Hai",
+    "id": "glacier::iceberg",
+    "agent": "Glacier",
+    "imposter": "Iceberg",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Taal",
-    "imposter": "Zindagi Na Milegi Dobara",
+    "id": "oasis::spring",
+    "agent": "Oasis",
+    "imposter": "Spring",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Dil To Pagal Hai",
-    "imposter": "Karan Arjun",
+    "id": "cave::tunnel",
+    "agent": "Cave",
+    "imposter": "Tunnel",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Dil To Pagal Hai",
-    "imposter": "Kaho Naa Pyaar Hai",
+    "id": "geyser::volcano",
+    "agent": "Volcano",
+    "imposter": "Geyser",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Dil To Pagal Hai",
-    "imposter": "Lagaan",
+    "id": "island::peninsula",
+    "agent": "Peninsula",
+    "imposter": "Island",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Dil To Pagal Hai",
-    "imposter": "Swades",
+    "id": "bay::gulf",
+    "agent": "Bay",
+    "imposter": "Gulf",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Dil To Pagal Hai",
-    "imposter": "Dil Chahta Hai",
+    "id": "plain::plateau",
+    "agent": "Plateau",
+    "imposter": "Plain",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Dil To Pagal Hai",
-    "imposter": "Zindagi Na Milegi Dobara",
+    "id": "equator::tropic of cancer",
+    "agent": "Equator",
+    "imposter": "Tropic of Cancer",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Dil To Pagal Hai",
-    "imposter": "3 Idiots",
+    "id": "cyclone::tornado",
+    "agent": "Cyclone",
+    "imposter": "Tornado",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Hum Saath-Saath Hain",
-    "imposter": "Kaho Naa Pyaar Hai",
+    "id": "earthquake::tsunami",
+    "agent": "Earthquake",
+    "imposter": "Tsunami",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Hum Saath-Saath Hain",
-    "imposter": "Lagaan",
+    "id": "drought::flood",
+    "agent": "Drought",
+    "imposter": "Flood",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Hum Saath-Saath Hain",
-    "imposter": "Swades",
+    "id": "lunar eclipse::solar eclipse",
+    "agent": "Solar Eclipse",
+    "imposter": "Lunar Eclipse",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Hum Saath-Saath Hain",
-    "imposter": "Dil Chahta Hai",
+    "id": "comet::shooting star",
+    "agent": "Shooting Star",
+    "imposter": "Comet",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Hum Saath-Saath Hain",
-    "imposter": "Zindagi Na Milegi Dobara",
+    "id": "joint family::nuclear family",
+    "agent": "Joint Family",
+    "imposter": "Nuclear Family",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Hum Saath-Saath Hain",
-    "imposter": "3 Idiots",
+    "id": "town (kasba)::village (gaon)",
+    "agent": "Village (Gaon)",
+    "imposter": "Town (Kasba)",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Hum Saath-Saath Hain",
-    "imposter": "Taare Zameen Par",
+    "id": "city::metro city",
+    "agent": "City",
+    "imposter": "Metro City",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Baazigar",
-    "imposter": "Lagaan",
+    "id": "bungalow::society building",
+    "agent": "Society Building",
+    "imposter": "Bungalow",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Baazigar",
-    "imposter": "Swades",
+    "id": "balcony::terrace",
+    "agent": "Terrace",
+    "imposter": "Balcony",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Baazigar",
-    "imposter": "Dil Chahta Hai",
+    "id": "courtyard (aangan)::veranda",
+    "agent": "Courtyard (Aangan)",
+    "imposter": "Veranda",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Baazigar",
-    "imposter": "Zindagi Na Milegi Dobara",
+    "id": "dining room::kitchen",
+    "agent": "Kitchen",
+    "imposter": "Dining Room",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Baazigar",
-    "imposter": "3 Idiots",
+    "id": "bed room::living room",
+    "agent": "Living Room",
+    "imposter": "Bed Room",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Baazigar",
-    "imposter": "Taare Zameen Par",
+    "id": "attic::basement",
+    "agent": "Attic",
+    "imposter": "Basement",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Baazigar",
-    "imposter": "Munna Bhai MBBS",
+    "id": "garage::porch",
+    "agent": "Garage",
+    "imposter": "Porch",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Darr",
-    "imposter": "Swades",
+    "id": "gatekeeper (chowkidar)::security guard",
+    "agent": "Gatekeeper (Chowkidar)",
+    "imposter": "Security Guard",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Darr",
-    "imposter": "Dil Chahta Hai",
+    "id": "garbage collector::sweeper",
+    "agent": "Sweeper",
+    "imposter": "Garbage Collector",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Darr",
-    "imposter": "Zindagi Na Milegi Dobara",
+    "id": "milkman (doodhwala)::newspaper delivery boy",
+    "agent": "Milkman (Doodhwala)",
+    "imposter": "Newspaper Delivery Boy",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Darr",
-    "imposter": "3 Idiots",
+    "id": "fruit vendor::vegetable vendor (sabziwala)",
+    "agent": "Vegetable Vendor (Sabziwala)",
+    "imposter": "Fruit Vendor",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Darr",
-    "imposter": "Taare Zameen Par",
+    "id": "dhobi (washerman)::dry cleaner",
+    "agent": "Dhobi (Washerman)",
+    "imposter": "Dry Cleaner",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Darr",
-    "imposter": "Munna Bhai MBBS",
+    "id": "farming::gardening",
+    "agent": "Gardening",
+    "imposter": "Farming",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Darr",
-    "imposter": "Lage Raho Munna Bhai",
+    "id": "baking::cooking",
+    "agent": "Cooking",
+    "imposter": "Baking",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Karan Arjun",
-    "imposter": "Dil Chahta Hai",
+    "id": "dancing::singing",
+    "agent": "Singing",
+    "imposter": "Dancing",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Karan Arjun",
-    "imposter": "Zindagi Na Milegi Dobara",
+    "id": "painting::sketching",
+    "agent": "Painting",
+    "imposter": "Sketching",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Karan Arjun",
-    "imposter": "3 Idiots",
+    "id": "reading::writing",
+    "agent": "Reading",
+    "imposter": "Writing",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Karan Arjun",
-    "imposter": "Taare Zameen Par",
+    "id": "diving::swimming",
+    "agent": "Swimming",
+    "imposter": "Diving",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Karan Arjun",
-    "imposter": "Munna Bhai MBBS",
+    "id": "cycling::running",
+    "agent": "Cycling",
+    "imposter": "Running",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Karan Arjun",
-    "imposter": "Lage Raho Munna Bhai",
+    "id": "camping::trekking",
+    "agent": "Trekking",
+    "imposter": "Camping",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Karan Arjun",
-    "imposter": "Rang De Basanti",
+    "id": "boating::fishing",
+    "agent": "Fishing",
+    "imposter": "Boating",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Kaho Naa Pyaar Hai",
-    "imposter": "Zindagi Na Milegi Dobara",
+    "id": "bird watching::wildlife safari",
+    "agent": "Bird Watching",
+    "imposter": "Wildlife Safari",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Kaho Naa Pyaar Hai",
-    "imposter": "3 Idiots",
+    "id": "photography::videography",
+    "agent": "Photography",
+    "imposter": "Videography",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Kaho Naa Pyaar Hai",
-    "imposter": "Taare Zameen Par",
+    "id": "acting::directing",
+    "agent": "Acting",
+    "imposter": "Directing",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Kaho Naa Pyaar Hai",
-    "imposter": "Munna Bhai MBBS",
+    "id": "magic show::puppet show",
+    "agent": "Magic Show",
+    "imposter": "Puppet Show",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Kaho Naa Pyaar Hai",
-    "imposter": "Lage Raho Munna Bhai",
+    "id": "street play (nukkad natak)::theatre play",
+    "agent": "Street Play (Nukkad Natak)",
+    "imposter": "Theatre Play",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Kaho Naa Pyaar Hai",
-    "imposter": "Rang De Basanti",
+    "id": "exhibition::mela (fair)",
+    "agent": "Mela (Fair)",
+    "imposter": "Exhibition",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Kaho Naa Pyaar Hai",
-    "imposter": "Hera Pheri",
+    "id": "passport::visa",
+    "agent": "Passport",
+    "imposter": "Visa",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Lagaan",
-    "imposter": "3 Idiots",
+    "id": "aadhaar card::pan card",
+    "agent": "Aadhaar Card",
+    "imposter": "PAN Card",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Lagaan",
-    "imposter": "Taare Zameen Par",
+    "id": "driving licence::voter id",
+    "agent": "Voter ID",
+    "imposter": "Driving Licence",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Lagaan",
-    "imposter": "Munna Bhai MBBS",
+    "id": "atm machine::bank branch",
+    "agent": "ATM Machine",
+    "imposter": "Bank Branch",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Lagaan",
-    "imposter": "Lage Raho Munna Bhai",
+    "id": "electricity bill::water bill",
+    "agent": "Electricity Bill",
+    "imposter": "Water Bill",
+    "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "agent": "Lagaan",
-    "imposter": "Hera Pheri",
-    "difficulty": "medium"
+    "id": "submarine::train",
+    "agent": "Train",
+    "imposter": "Submarine",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Lagaan",
-    "imposter": "Phir Hera Pheri",
-    "difficulty": "medium"
+    "id": "aeroplane::satellite",
+    "agent": "Aeroplane",
+    "imposter": "Satellite",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Swades",
-    "imposter": "Taare Zameen Par",
-    "difficulty": "medium"
+    "id": "bicycle::bullock cart",
+    "agent": "Bicycle",
+    "imposter": "Bullock Cart",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Swades",
-    "imposter": "Munna Bhai MBBS",
-    "difficulty": "medium"
+    "id": "eiffel tower::taj mahal",
+    "agent": "Taj Mahal",
+    "imposter": "Eiffel Tower",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Swades",
-    "imposter": "Lage Raho Munna Bhai",
-    "difficulty": "medium"
+    "id": "great wall of china::red fort",
+    "agent": "Red Fort",
+    "imposter": "Great Wall of China",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Swades",
-    "imposter": "Rang De Basanti",
-    "difficulty": "medium"
+    "id": "moon::mount everest",
+    "agent": "Mount Everest",
+    "imposter": "Moon",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Swades",
-    "imposter": "Hera Pheri",
-    "difficulty": "medium"
+    "id": "amazon river::ganga river",
+    "agent": "Ganga River",
+    "imposter": "Amazon River",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Swades",
-    "imposter": "Phir Hera Pheri",
-    "difficulty": "medium"
+    "id": "doctor::judge",
+    "agent": "Doctor",
+    "imposter": "Judge",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Swades",
-    "imposter": "Welcome",
-    "difficulty": "medium"
+    "id": "astronaut::pilot",
+    "agent": "Pilot",
+    "imposter": "Astronaut",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Dil Chahta Hai",
-    "imposter": "Munna Bhai MBBS",
-    "difficulty": "medium"
+    "id": "detective::police officer",
+    "agent": "Police Officer",
+    "imposter": "Detective",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Dil Chahta Hai",
-    "imposter": "Lage Raho Munna Bhai",
-    "difficulty": "medium"
+    "id": "librarian::teacher",
+    "agent": "Teacher",
+    "imposter": "Librarian",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Dil Chahta Hai",
-    "imposter": "Rang De Basanti",
-    "difficulty": "medium"
+    "id": "chef::farmer",
+    "agent": "Chef",
+    "imposter": "Farmer",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Dil Chahta Hai",
-    "imposter": "Hera Pheri",
-    "difficulty": "medium"
+    "id": "hospital::hotel",
+    "agent": "Hospital",
+    "imposter": "Hotel",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Dil Chahta Hai",
-    "imposter": "Phir Hera Pheri",
-    "difficulty": "medium"
+    "id": "prison::school",
+    "agent": "School",
+    "imposter": "Prison",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Dil Chahta Hai",
-    "imposter": "Welcome",
-    "difficulty": "medium"
+    "id": "airport::space station",
+    "agent": "Airport",
+    "imposter": "Space Station",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Dil Chahta Hai",
-    "imposter": "Golmaal",
-    "difficulty": "medium"
+    "id": "internet::library",
+    "agent": "Library",
+    "imposter": "Internet",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Zindagi Na Milegi Dobara",
-    "imposter": "Lage Raho Munna Bhai",
-    "difficulty": "medium"
+    "id": "cinema hall::stadium",
+    "agent": "Cinema Hall",
+    "imposter": "Stadium",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Zindagi Na Milegi Dobara",
-    "imposter": "Rang De Basanti",
-    "difficulty": "medium"
+    "id": "bank::casino",
+    "agent": "Bank",
+    "imposter": "Casino",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Zindagi Na Milegi Dobara",
-    "imposter": "Hera Pheri",
-    "difficulty": "medium"
+    "id": "pyramid::temple",
+    "agent": "Temple",
+    "imposter": "Pyramid",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Zindagi Na Milegi Dobara",
-    "imposter": "Phir Hera Pheri",
-    "difficulty": "medium"
+    "id": "national park::zoo",
+    "agent": "Zoo",
+    "imposter": "National Park",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Zindagi Na Milegi Dobara",
-    "imposter": "Welcome",
-    "difficulty": "medium"
+    "id": "mobile phone::typewriter",
+    "agent": "Mobile Phone",
+    "imposter": "Typewriter",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Zindagi Na Milegi Dobara",
-    "imposter": "Golmaal",
-    "difficulty": "medium"
+    "id": "radio::television",
+    "agent": "Television",
+    "imposter": "Radio",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Zindagi Na Milegi Dobara",
-    "imposter": "Dhoom",
-    "difficulty": "medium"
+    "id": "smartwatch::sundial",
+    "agent": "Smartwatch",
+    "imposter": "Sundial",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "3 Idiots",
-    "imposter": "Rang De Basanti",
-    "difficulty": "medium"
+    "id": "earthen pot (matka)::refrigerator",
+    "agent": "Refrigerator",
+    "imposter": "Earthen Pot (Matka)",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "3 Idiots",
-    "imposter": "Hera Pheri",
-    "difficulty": "medium"
+    "id": "air conditioner::hand fan (pankha)",
+    "agent": "Air Conditioner",
+    "imposter": "Hand Fan (Pankha)",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "3 Idiots",
-    "imposter": "Phir Hera Pheri",
-    "difficulty": "medium"
+    "id": "camera::microscope",
+    "agent": "Camera",
+    "imposter": "Microscope",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "3 Idiots",
-    "imposter": "Welcome",
-    "difficulty": "medium"
+    "id": "binoculars::telescope",
+    "agent": "Telescope",
+    "imposter": "Binoculars",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "3 Idiots",
-    "imposter": "Golmaal",
-    "difficulty": "medium"
+    "id": "night vision goggles::sunglasses",
+    "agent": "Sunglasses",
+    "imposter": "Night Vision Goggles",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "3 Idiots",
-    "imposter": "Dhoom",
-    "difficulty": "medium"
+    "id": "parachute::umbrella",
+    "agent": "Umbrella",
+    "imposter": "Parachute",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "3 Idiots",
-    "imposter": "Dhoom 2",
-    "difficulty": "medium"
+    "id": "backpack::treasure chest",
+    "agent": "Backpack",
+    "imposter": "Treasure Chest",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Taare Zameen Par",
-    "imposter": "Hera Pheri",
-    "difficulty": "medium"
+    "id": "crown::helmet",
+    "agent": "Helmet",
+    "imposter": "Crown",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Taare Zameen Par",
-    "imposter": "Phir Hera Pheri",
-    "difficulty": "medium"
+    "id": "safe (locker)::wallet",
+    "agent": "Wallet",
+    "imposter": "Safe (Locker)",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Taare Zameen Par",
-    "imposter": "Welcome",
-    "difficulty": "medium"
+    "id": "mirror::periscope",
+    "agent": "Mirror",
+    "imposter": "Periscope",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Taare Zameen Par",
-    "imposter": "Golmaal",
-    "difficulty": "medium"
+    "id": "handcuffs::lock",
+    "agent": "Lock",
+    "imposter": "Handcuffs",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Taare Zameen Par",
-    "imposter": "Dhoom",
-    "difficulty": "medium"
+    "id": "clock::hourglass",
+    "agent": "Clock",
+    "imposter": "Hourglass",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Taare Zameen Par",
-    "imposter": "Dhoom 2",
-    "difficulty": "medium"
+    "id": "compass::gps",
+    "agent": "Compass",
+    "imposter": "GPS",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Taare Zameen Par",
-    "imposter": "Dhoom 3",
-    "difficulty": "medium"
+    "id": "newspaper::scroll",
+    "agent": "Newspaper",
+    "imposter": "Scroll",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Munna Bhai MBBS",
-    "imposter": "Phir Hera Pheri",
-    "difficulty": "medium"
+    "id": "book::tablet (device)",
+    "agent": "Book",
+    "imposter": "Tablet (Device)",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Munna Bhai MBBS",
-    "imposter": "Welcome",
-    "difficulty": "medium"
+    "id": "email::letter",
+    "agent": "Letter",
+    "imposter": "Email",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Munna Bhai MBBS",
-    "imposter": "Golmaal",
-    "difficulty": "medium"
+    "id": "coin::credit card",
+    "agent": "Coin",
+    "imposter": "Credit Card",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Munna Bhai MBBS",
-    "imposter": "Dhoom",
-    "difficulty": "medium"
+    "id": "dragon::tiger",
+    "agent": "Tiger",
+    "imposter": "Dragon",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Munna Bhai MBBS",
-    "imposter": "Dhoom 2",
-    "difficulty": "medium"
+    "id": "elephant::mammoth",
+    "agent": "Elephant",
+    "imposter": "Mammoth",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Munna Bhai MBBS",
-    "imposter": "Dhoom 3",
-    "difficulty": "medium"
+    "id": "peacock::phoenix",
+    "agent": "Peacock",
+    "imposter": "Phoenix",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Munna Bhai MBBS",
-    "imposter": "Koi Mil Gaya",
-    "difficulty": "medium"
+    "id": "cow::deer",
+    "agent": "Cow",
+    "imposter": "Deer",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Lage Raho Munna Bhai",
-    "imposter": "Welcome",
-    "difficulty": "medium"
+    "id": "dog::wolf",
+    "agent": "Dog",
+    "imposter": "Wolf",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Lage Raho Munna Bhai",
-    "imposter": "Golmaal",
-    "difficulty": "medium"
+    "id": "dolphin::mermaid",
+    "agent": "Dolphin",
+    "imposter": "Mermaid",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Lage Raho Munna Bhai",
-    "imposter": "Dhoom",
-    "difficulty": "medium"
+    "id": "bonfire::sun",
+    "agent": "Sun",
+    "imposter": "Bonfire",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Lage Raho Munna Bhai",
-    "imposter": "Dhoom 2",
-    "difficulty": "medium"
+    "id": "mirror::moon",
+    "agent": "Moon",
+    "imposter": "Mirror",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Lage Raho Munna Bhai",
-    "imposter": "Dhoom 3",
-    "difficulty": "medium"
+    "id": "prism::rainbow",
+    "agent": "Rainbow",
+    "imposter": "Prism",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Lage Raho Munna Bhai",
-    "imposter": "Koi Mil Gaya",
-    "difficulty": "medium"
+    "id": "electric shock::lightning",
+    "agent": "Lightning",
+    "imposter": "Electric Shock",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Lage Raho Munna Bhai",
-    "imposter": "Krrish",
-    "difficulty": "medium"
+    "id": "fountain::waterfall",
+    "agent": "Waterfall",
+    "imposter": "Fountain",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Rang De Basanti",
-    "imposter": "Golmaal",
-    "difficulty": "medium"
+    "id": "beach::desert",
+    "agent": "Desert",
+    "imposter": "Beach",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Rang De Basanti",
-    "imposter": "Dhoom",
-    "difficulty": "medium"
+    "id": "forest::garden",
+    "agent": "Forest",
+    "imposter": "Garden",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Rang De Basanti",
-    "imposter": "Dhoom 2",
-    "difficulty": "medium"
+    "id": "island::ship",
+    "agent": "Island",
+    "imposter": "Ship",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Rang De Basanti",
-    "imposter": "Dhoom 3",
-    "difficulty": "medium"
+    "id": "earthquake::roller coaster",
+    "agent": "Earthquake",
+    "imposter": "Roller Coaster",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Rang De Basanti",
-    "imposter": "Koi Mil Gaya",
-    "difficulty": "medium"
+    "id": "morning alarm::school bell",
+    "agent": "Morning Alarm",
+    "imposter": "School Bell",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Rang De Basanti",
-    "imposter": "Krrish",
-    "difficulty": "medium"
+    "id": "lighthouse::traffic light",
+    "agent": "Traffic Light",
+    "imposter": "Lighthouse",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Rang De Basanti",
-    "imposter": "Ra.One",
-    "difficulty": "medium"
+    "id": "banner::flag",
+    "agent": "Flag",
+    "imposter": "Banner",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Hera Pheri",
-    "imposter": "Dhoom",
-    "difficulty": "medium"
+    "id": "boarding pass::passport",
+    "agent": "Passport",
+    "imposter": "Boarding Pass",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Hera Pheri",
-    "imposter": "Dhoom 2",
-    "difficulty": "medium"
+    "id": "medal::trophy",
+    "agent": "Trophy",
+    "imposter": "Medal",
+    "category": "mainstream",
+    "difficulty": "hard"
   },
   {
-    "agent": "Hera Pheri",
-    "imposter": "Dhoom 3",
-    "difficulty": "medium"
+    "id": "amul butter::mother dairy milk",
+    "agent": "Amul Butter",
+    "imposter": "Mother Dairy Milk",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hera Pheri",
-    "imposter": "Koi Mil Gaya",
-    "difficulty": "medium"
+    "id": "britannia good day::parle-g",
+    "agent": "Parle-G",
+    "imposter": "Britannia Good Day",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hera Pheri",
-    "imposter": "Krrish",
-    "difficulty": "medium"
+    "id": "britannia bourbon::oreo",
+    "agent": "Britannia Bourbon",
+    "imposter": "Oreo",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hera Pheri",
-    "imposter": "Ra.One",
-    "difficulty": "medium"
+    "id": "maggi noodles::top ramen",
+    "agent": "Maggi Noodles",
+    "imposter": "Top Ramen",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hera Pheri",
-    "imposter": "Jab We Met",
-    "difficulty": "medium"
+    "id": "maggi noodles::yippee noodles",
+    "agent": "Maggi Noodles",
+    "imposter": "Yippee Noodles",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Phir Hera Pheri",
-    "imposter": "Dhoom 2",
-    "difficulty": "medium"
+    "id": "bikaji bhujia::haldiram's bhujia",
+    "agent": "Haldiram's Bhujia",
+    "imposter": "Bikaji Bhujia",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Phir Hera Pheri",
-    "imposter": "Dhoom 3",
-    "difficulty": "medium"
+    "id": "kurkure::lays chips",
+    "agent": "Kurkure",
+    "imposter": "Lays Chips",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Phir Hera Pheri",
-    "imposter": "Koi Mil Gaya",
-    "difficulty": "medium"
+    "id": "bingo mad angles::kurkure",
+    "agent": "Bingo Mad Angles",
+    "imposter": "Kurkure",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Phir Hera Pheri",
-    "imposter": "Krrish",
-    "difficulty": "medium"
+    "id": "frooti::maaza",
+    "agent": "Frooti",
+    "imposter": "Maaza",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Phir Hera Pheri",
-    "imposter": "Ra.One",
-    "difficulty": "medium"
+    "id": "maaza::slice",
+    "agent": "Maaza",
+    "imposter": "Slice",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Phir Hera Pheri",
-    "imposter": "Jab We Met",
-    "difficulty": "medium"
+    "id": "coca-cola::thums up",
+    "agent": "Thums Up",
+    "imposter": "Coca-Cola",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Phir Hera Pheri",
-    "imposter": "Yeh Jawaani Hai Deewani",
-    "difficulty": "medium"
+    "id": "limca::sprite",
+    "agent": "Limca",
+    "imposter": "Sprite",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Welcome",
-    "imposter": "Dhoom 3",
-    "difficulty": "medium"
+    "id": "coca-cola::pepsi",
+    "agent": "Pepsi",
+    "imposter": "Coca-Cola",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Welcome",
-    "imposter": "Koi Mil Gaya",
-    "difficulty": "medium"
+    "id": "5 star::dairy milk",
+    "agent": "Dairy Milk",
+    "imposter": "5 Star",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Welcome",
-    "imposter": "Krrish",
-    "difficulty": "medium"
+    "id": "kitkat::perk",
+    "agent": "KitKat",
+    "imposter": "Perk",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Welcome",
-    "imposter": "Ra.One",
-    "difficulty": "medium"
+    "id": "mango bite::pulse candy",
+    "agent": "Pulse Candy",
+    "imposter": "Mango Bite",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Welcome",
-    "imposter": "Jab We Met",
-    "difficulty": "medium"
+    "id": "dettol::lifebuoy",
+    "agent": "Dettol",
+    "imposter": "Lifebuoy",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Welcome",
-    "imposter": "Yeh Jawaani Hai Deewani",
-    "difficulty": "medium"
+    "id": "lux soap::santoor soap",
+    "agent": "Santoor Soap",
+    "imposter": "Lux Soap",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Welcome",
-    "imposter": "Om Shanti Om",
-    "difficulty": "medium"
+    "id": "colgate::pepsodent",
+    "agent": "Colgate",
+    "imposter": "Pepsodent",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Golmaal",
-    "imposter": "Koi Mil Gaya",
-    "difficulty": "medium"
+    "id": "tiger balm::zandu balm",
+    "agent": "Zandu Balm",
+    "imposter": "Tiger Balm",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Golmaal",
-    "imposter": "Krrish",
-    "difficulty": "medium"
+    "id": "iodex::vicks vaporub",
+    "agent": "Vicks VapoRub",
+    "imposter": "Iodex",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Golmaal",
-    "imposter": "Ra.One",
-    "difficulty": "medium"
+    "id": "moov::volini",
+    "agent": "Moov",
+    "imposter": "Volini",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Golmaal",
-    "imposter": "Jab We Met",
-    "difficulty": "medium"
+    "id": "airtel::jio",
+    "agent": "Jio",
+    "imposter": "Airtel",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Golmaal",
-    "imposter": "Yeh Jawaani Hai Deewani",
-    "difficulty": "medium"
+    "id": "instagram::whatsapp",
+    "agent": "WhatsApp",
+    "imposter": "Instagram",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Golmaal",
-    "imposter": "Om Shanti Om",
-    "difficulty": "medium"
+    "id": "swiggy::zomato",
+    "agent": "Swiggy",
+    "imposter": "Zomato",
+    "category": "brands",
+    "difficulty": "easy"
   },
   {
-    "agent": "Golmaal",
-    "imposter": "Main Hoon Na",
+    "id": "aashirvaad atta::tata salt",
+    "agent": "Tata Salt",
+    "imposter": "Aashirvaad Atta",
+    "category": "brands",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhoom",
-    "imposter": "Krrish",
+    "id": "red label tea::tata tea",
+    "agent": "Tata Tea",
+    "imposter": "Red Label Tea",
+    "category": "brands",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhoom",
-    "imposter": "Ra.One",
+    "id": "taj mahal tea::wagh bakri tea",
+    "agent": "Taj Mahal Tea",
+    "imposter": "Wagh Bakri Tea",
+    "category": "brands",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhoom",
-    "imposter": "Jab We Met",
+    "id": "bru coffee::nescafe",
+    "agent": "Nescafe",
+    "imposter": "Bru Coffee",
+    "category": "brands",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhoom",
-    "imposter": "Yeh Jawaani Hai Deewani",
+    "id": "bournvita::horlicks",
+    "agent": "Bournvita",
+    "imposter": "Horlicks",
+    "category": "brands",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhoom",
-    "imposter": "Om Shanti Om",
+    "id": "bournvita::complan",
+    "agent": "Complan",
+    "imposter": "Bournvita",
+    "category": "brands",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhoom",
-    "imposter": "Main Hoon Na",
+    "id": "boroline::vicco turmeric",
+    "agent": "Vicco Turmeric",
+    "imposter": "Boroline",
+    "category": "brands",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhoom",
-    "imposter": "Chak De India",
+    "id": "boroline::vaseline",
+    "agent": "Vaseline",
+    "imposter": "Boroline",
+    "category": "brands",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhoom 2",
-    "imposter": "Ra.One",
+    "id": "navratna oil::parachute coconut oil",
+    "agent": "Navratna Oil",
+    "imposter": "Parachute Coconut Oil",
+    "category": "brands",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhoom 2",
-    "imposter": "Jab We Met",
+    "id": "bajaj almond drops::dabur amla oil",
+    "agent": "Bajaj Almond Drops",
+    "imposter": "Dabur Amla Oil",
+    "category": "brands",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhoom 2",
-    "imposter": "Yeh Jawaani Hai Deewani",
+    "id": "google pay::phonepe",
+    "agent": "PhonePe",
+    "imposter": "Google Pay",
+    "category": "brands",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhoom 2",
-    "imposter": "Om Shanti Om",
+    "id": "paytm::phonepe",
+    "agent": "Paytm",
+    "imposter": "PhonePe",
+    "category": "brands",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhoom 2",
-    "imposter": "Main Hoon Na",
+    "id": "amazon::flipkart",
+    "agent": "Amazon",
+    "imposter": "Flipkart",
+    "category": "brands",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhoom 2",
-    "imposter": "Chak De India",
+    "id": "blinkit::zepto",
+    "agent": "Blinkit",
+    "imposter": "Zepto",
+    "category": "brands",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhoom 2",
-    "imposter": "Ghajini",
+    "id": "ola::uber",
+    "agent": "Uber",
+    "imposter": "Ola",
+    "category": "brands",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhoom 3",
-    "imposter": "Jab We Met",
-    "difficulty": "medium"
+    "id": "amul::tata",
+    "agent": "Amul",
+    "imposter": "Tata",
+    "category": "brands",
+    "difficulty": "hard"
   },
   {
-    "agent": "Dhoom 3",
-    "imposter": "Yeh Jawaani Hai Deewani",
-    "difficulty": "medium"
+    "id": "amul butter::parle-g",
+    "agent": "Parle-G",
+    "imposter": "Amul Butter",
+    "category": "brands",
+    "difficulty": "hard"
   },
   {
-    "agent": "Dhoom 3",
-    "imposter": "Om Shanti Om",
-    "difficulty": "medium"
+    "id": "kurkure::maggi noodles",
+    "agent": "Maggi Noodles",
+    "imposter": "Kurkure",
+    "category": "brands",
+    "difficulty": "hard"
   },
   {
-    "agent": "Dhoom 3",
-    "imposter": "Main Hoon Na",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Dhoom 3",
-    "imposter": "Chak De India",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Dhoom 3",
-    "imposter": "Bhool Bhulaiyaa",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Koi Mil Gaya",
-    "imposter": "Yeh Jawaani Hai Deewani",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Koi Mil Gaya",
-    "imposter": "Om Shanti Om",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Koi Mil Gaya",
-    "imposter": "Main Hoon Na",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Koi Mil Gaya",
-    "imposter": "Chak De India",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Koi Mil Gaya",
-    "imposter": "Ghajini",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Koi Mil Gaya",
-    "imposter": "Bhool Bhulaiyaa",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Koi Mil Gaya",
-    "imposter": "Bhool Bhulaiyaa 2",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Krrish",
-    "imposter": "Om Shanti Om",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Krrish",
-    "imposter": "Main Hoon Na",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Krrish",
-    "imposter": "Chak De India",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Krrish",
-    "imposter": "Ghajini",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Krrish",
-    "imposter": "Bhool Bhulaiyaa",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Krrish",
-    "imposter": "Bhool Bhulaiyaa 2",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Krrish",
-    "imposter": "Bhool Bhulaiyaa 3",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Ra.One",
-    "imposter": "Main Hoon Na",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Ra.One",
-    "imposter": "Chak De India",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Ra.One",
-    "imposter": "Ghajini",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Ra.One",
-    "imposter": "Bhool Bhulaiyaa",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Ra.One",
-    "imposter": "Bhool Bhulaiyaa 2",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Ra.One",
-    "imposter": "Bhool Bhulaiyaa 3",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Ra.One",
-    "imposter": "Dostana",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Jab We Met",
-    "imposter": "Chak De India",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Jab We Met",
-    "imposter": "Ghajini",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Jab We Met",
-    "imposter": "Bhool Bhulaiyaa",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Jab We Met",
-    "imposter": "Bhool Bhulaiyaa 2",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Jab We Met",
-    "imposter": "Bhool Bhulaiyaa 3",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Jab We Met",
-    "imposter": "Dostana",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Jab We Met",
-    "imposter": "Desi Boyz",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Yeh Jawaani Hai Deewani",
-    "imposter": "Ghajini",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Yeh Jawaani Hai Deewani",
-    "imposter": "Bhool Bhulaiyaa",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Yeh Jawaani Hai Deewani",
-    "imposter": "Bhool Bhulaiyaa 2",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Yeh Jawaani Hai Deewani",
-    "imposter": "Bhool Bhulaiyaa 3",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Yeh Jawaani Hai Deewani",
-    "imposter": "Dostana",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Yeh Jawaani Hai Deewani",
-    "imposter": "Desi Boyz",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Yeh Jawaani Hai Deewani",
-    "imposter": "Namastey London",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Om Shanti Om",
-    "imposter": "Bhool Bhulaiyaa",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Om Shanti Om",
-    "imposter": "Bhool Bhulaiyaa 2",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Om Shanti Om",
-    "imposter": "Bhool Bhulaiyaa 3",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Om Shanti Om",
-    "imposter": "Dostana",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Om Shanti Om",
-    "imposter": "Desi Boyz",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Om Shanti Om",
-    "imposter": "Namastey London",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Om Shanti Om",
-    "imposter": "Singh Is Kinng",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Main Hoon Na",
-    "imposter": "Bhool Bhulaiyaa 2",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Main Hoon Na",
-    "imposter": "Bhool Bhulaiyaa 3",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Main Hoon Na",
-    "imposter": "Dostana",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Main Hoon Na",
-    "imposter": "Desi Boyz",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Main Hoon Na",
-    "imposter": "Namastey London",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Main Hoon Na",
-    "imposter": "Singh Is Kinng",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Main Hoon Na",
-    "imposter": "Garam Masala",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Chak De India",
-    "imposter": "Bhool Bhulaiyaa 3",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Chak De India",
-    "imposter": "Dostana",
-    "difficulty": "medium"
-  },
-  {
-    "agent": "Chak De India",
-    "imposter": "Desi Boyz",
-    "difficulty": "medium"
+    "id": "frooti::thums up",
+    "agent": "Frooti",
+    "imposter": "Thums Up",
+    "category": "brands",
+    "difficulty": "hard"
   },
   {
-    "agent": "Chak De India",
-    "imposter": "Namastey London",
-    "difficulty": "medium"
+    "id": "colgate::dettol",
+    "agent": "Dettol",
+    "imposter": "Colgate",
+    "category": "brands",
+    "difficulty": "hard"
   },
   {
-    "agent": "Chak De India",
-    "imposter": "Singh Is Kinng",
-    "difficulty": "medium"
+    "id": "jio::whatsapp",
+    "agent": "Jio",
+    "imposter": "WhatsApp",
+    "category": "brands",
+    "difficulty": "hard"
   },
   {
-    "agent": "Chak De India",
-    "imposter": "Garam Masala",
-    "difficulty": "medium"
+    "id": "netflix::youtube",
+    "agent": "YouTube",
+    "imposter": "Netflix",
+    "category": "brands",
+    "difficulty": "hard"
   },
   {
-    "agent": "Chak De India",
-    "imposter": "Bhagam Bhag",
-    "difficulty": "medium"
+    "id": "amazon::swiggy",
+    "agent": "Swiggy",
+    "imposter": "Amazon",
+    "category": "brands",
+    "difficulty": "hard"
   },
   {
-    "agent": "Ghajini",
-    "imposter": "Dostana",
-    "difficulty": "medium"
+    "id": "bata::woodland",
+    "agent": "Bata",
+    "imposter": "Woodland",
+    "category": "brands",
+    "difficulty": "hard"
   },
   {
-    "agent": "Ghajini",
-    "imposter": "Desi Boyz",
-    "difficulty": "medium"
+    "id": "bajaj auto::hero motocorp",
+    "agent": "Hero MotoCorp",
+    "imposter": "Bajaj Auto",
+    "category": "brands",
+    "difficulty": "hard"
   },
   {
-    "agent": "Ghajini",
-    "imposter": "Namastey London",
-    "difficulty": "medium"
+    "id": "diwali::holi",
+    "agent": "Diwali",
+    "imposter": "Holi",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Ghajini",
-    "imposter": "Singh Is Kinng",
-    "difficulty": "medium"
+    "id": "dhanteras::diwali",
+    "agent": "Diwali",
+    "imposter": "Dhanteras",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Ghajini",
-    "imposter": "Garam Masala",
-    "difficulty": "medium"
+    "id": "bhai dooj::diwali",
+    "agent": "Diwali",
+    "imposter": "Bhai Dooj",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Ghajini",
-    "imposter": "Bhagam Bhag",
-    "difficulty": "medium"
+    "id": "ganesh chaturthi::navratri",
+    "agent": "Ganesh Chaturthi",
+    "imposter": "Navratri",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Ghajini",
-    "imposter": "Chup Chup Ke",
-    "difficulty": "medium"
+    "id": "durga puja::navratri",
+    "agent": "Navratri",
+    "imposter": "Durga Puja",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa",
-    "imposter": "Desi Boyz",
-    "difficulty": "medium"
+    "id": "durga puja::dussehra",
+    "agent": "Durga Puja",
+    "imposter": "Dussehra",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa",
-    "imposter": "Namastey London",
-    "difficulty": "medium"
+    "id": "diwali::dussehra",
+    "agent": "Dussehra",
+    "imposter": "Diwali",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa",
-    "imposter": "Singh Is Kinng",
-    "difficulty": "medium"
+    "id": "bhai dooj::raksha bandhan",
+    "agent": "Raksha Bandhan",
+    "imposter": "Bhai Dooj",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa",
-    "imposter": "Garam Masala",
-    "difficulty": "medium"
+    "id": "lohri::makar sankranti",
+    "agent": "Makar Sankranti",
+    "imposter": "Lohri",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa",
-    "imposter": "Bhagam Bhag",
-    "difficulty": "medium"
+    "id": "lohri::pongal",
+    "agent": "Lohri",
+    "imposter": "Pongal",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa",
-    "imposter": "Chup Chup Ke",
-    "difficulty": "medium"
+    "id": "onam::pongal",
+    "agent": "Pongal",
+    "imposter": "Onam",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa",
-    "imposter": "Hulchul",
-    "difficulty": "medium"
+    "id": "baisakhi::makar sankranti",
+    "agent": "Makar Sankranti",
+    "imposter": "Baisakhi",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa 2",
-    "imposter": "Namastey London",
-    "difficulty": "medium"
+    "id": "chhath puja::diwali",
+    "agent": "Chhath Puja",
+    "imposter": "Diwali",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa 2",
-    "imposter": "Singh Is Kinng",
-    "difficulty": "medium"
+    "id": "eid al-adha::eid ul-fitr",
+    "agent": "Eid ul-Fitr",
+    "imposter": "Eid al-Adha",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa 2",
-    "imposter": "Garam Masala",
-    "difficulty": "medium"
+    "id": "diwali::eid ul-fitr",
+    "agent": "Eid ul-Fitr",
+    "imposter": "Diwali",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa 2",
-    "imposter": "Bhagam Bhag",
-    "difficulty": "medium"
+    "id": "christmas::new year's eve",
+    "agent": "Christmas",
+    "imposter": "New Year's Eve",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa 2",
-    "imposter": "Chup Chup Ke",
-    "difficulty": "medium"
+    "id": "christmas::diwali",
+    "agent": "Christmas",
+    "imposter": "Diwali",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa 2",
-    "imposter": "Hulchul",
-    "difficulty": "medium"
+    "id": "janmashtami::mahashivratri",
+    "agent": "Mahashivratri",
+    "imposter": "Janmashtami",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa 2",
-    "imposter": "Dhamaal",
-    "difficulty": "medium"
+    "id": "krishna janmashtami::ram navami",
+    "agent": "Krishna Janmashtami",
+    "imposter": "Ram Navami",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa 3",
-    "imposter": "Singh Is Kinng",
-    "difficulty": "medium"
+    "id": "hanuman jayanti::ram navami",
+    "agent": "Hanuman Jayanti",
+    "imposter": "Ram Navami",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa 3",
-    "imposter": "Garam Masala",
-    "difficulty": "medium"
+    "id": "karwa chauth::teej",
+    "agent": "Karwa Chauth",
+    "imposter": "Teej",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa 3",
-    "imposter": "Bhagam Bhag",
-    "difficulty": "medium"
+    "id": "baisakhi::lohri",
+    "agent": "Baisakhi",
+    "imposter": "Lohri",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa 3",
-    "imposter": "Chup Chup Ke",
-    "difficulty": "medium"
+    "id": "baisakhi::gurpurab",
+    "agent": "Gurpurab",
+    "imposter": "Baisakhi",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa 3",
-    "imposter": "Hulchul",
-    "difficulty": "medium"
+    "id": "jagannath rath yatra::kumbh mela",
+    "agent": "Jagannath Rath Yatra",
+    "imposter": "Kumbh Mela",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa 3",
-    "imposter": "Dhamaal",
-    "difficulty": "medium"
+    "id": "basant panchami::holi",
+    "agent": "Holi",
+    "imposter": "Basant Panchami",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhool Bhulaiyaa 3",
-    "imposter": "Dabangg",
-    "difficulty": "medium"
+    "id": "diya::rangoli",
+    "agent": "Diya",
+    "imposter": "Rangoli",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Dostana",
-    "imposter": "Garam Masala",
-    "difficulty": "medium"
+    "id": "firecrackers::phuljhadi",
+    "agent": "Firecrackers",
+    "imposter": "Phuljhadi",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Dostana",
-    "imposter": "Bhagam Bhag",
-    "difficulty": "medium"
+    "id": "gulal::pichkari",
+    "agent": "Pichkari",
+    "imposter": "Gulal",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Dostana",
-    "imposter": "Chup Chup Ke",
-    "difficulty": "medium"
+    "id": "dandiya::garba",
+    "agent": "Dandiya",
+    "imposter": "Garba",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Dostana",
-    "imposter": "Hulchul",
-    "difficulty": "medium"
+    "id": "modak::prasad",
+    "agent": "Modak",
+    "imposter": "Prasad",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Dostana",
-    "imposter": "Dhamaal",
-    "difficulty": "medium"
+    "id": "gujiya::thandai",
+    "agent": "Gujiya",
+    "imposter": "Thandai",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Dostana",
-    "imposter": "Dabangg",
-    "difficulty": "medium"
+    "id": "kheer::sewaiyan",
+    "agent": "Sewaiyan",
+    "imposter": "Kheer",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Dostana",
-    "imposter": "Singham",
-    "difficulty": "medium"
+    "id": "rakhi::sweets",
+    "agent": "Rakhi",
+    "imposter": "Sweets",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Desi Boyz",
-    "imposter": "Bhagam Bhag",
-    "difficulty": "medium"
+    "id": "aarti::puja thali",
+    "agent": "Puja Thali",
+    "imposter": "Aarti",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Desi Boyz",
-    "imposter": "Chup Chup Ke",
-    "difficulty": "medium"
+    "id": "ganga aarti::pandal",
+    "agent": "Ganga Aarti",
+    "imposter": "Pandal",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Desi Boyz",
-    "imposter": "Hulchul",
-    "difficulty": "medium"
+    "id": "chandan::tilak",
+    "agent": "Tilak",
+    "imposter": "Chandan",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Desi Boyz",
-    "imposter": "Dhamaal",
-    "difficulty": "medium"
+    "id": "havan::puja",
+    "agent": "Havan",
+    "imposter": "Puja",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Desi Boyz",
-    "imposter": "Dabangg",
-    "difficulty": "medium"
+    "id": "ganga snan::kumbh mela",
+    "agent": "Kumbh Mela",
+    "imposter": "Ganga Snan",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Desi Boyz",
-    "imposter": "Singham",
-    "difficulty": "medium"
+    "id": "dhol::nagada",
+    "agent": "Dhol",
+    "imposter": "Nagada",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Desi Boyz",
-    "imposter": "Simmba",
-    "difficulty": "medium"
+    "id": "dhol tasha::garba",
+    "agent": "Dhol Tasha",
+    "imposter": "Garba",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Namastey London",
-    "imposter": "Chup Chup Ke",
-    "difficulty": "medium"
+    "id": "carrom::ludo",
+    "agent": "Ludo",
+    "imposter": "Carrom",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Namastey London",
-    "imposter": "Hulchul",
-    "difficulty": "medium"
+    "id": "carrom::chess",
+    "agent": "Chess",
+    "imposter": "Carrom",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Namastey London",
-    "imposter": "Dhamaal",
-    "difficulty": "medium"
+    "id": "ludo::snakes and ladders",
+    "agent": "Snakes and Ladders",
+    "imposter": "Ludo",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Namastey London",
-    "imposter": "Dabangg",
-    "difficulty": "medium"
+    "id": "antakshari::dumb charades",
+    "agent": "Antakshari",
+    "imposter": "Dumb Charades",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Namastey London",
-    "imposter": "Singham",
-    "difficulty": "medium"
+    "id": "ludo::tambola (housie)",
+    "agent": "Tambola (Housie)",
+    "imposter": "Ludo",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Namastey London",
-    "imposter": "Simmba",
-    "difficulty": "medium"
+    "id": "kabaddi::kho-kho",
+    "agent": "Kho-Kho",
+    "imposter": "Kabaddi",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Namastey London",
-    "imposter": "Sooryavanshi",
-    "difficulty": "medium"
+    "id": "cricket::gilli danda",
+    "agent": "Gilli Danda",
+    "imposter": "Cricket",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Singh Is Kinng",
-    "imposter": "Hulchul",
-    "difficulty": "medium"
+    "id": "hide and seek::musical chairs",
+    "agent": "Hide and Seek",
+    "imposter": "Musical Chairs",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Singh Is Kinng",
-    "imposter": "Dhamaal",
-    "difficulty": "medium"
+    "id": "playing cards::uno",
+    "agent": "UNO",
+    "imposter": "Playing Cards",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Singh Is Kinng",
-    "imposter": "Dabangg",
-    "difficulty": "medium"
+    "id": "business (board game)::monopoly",
+    "agent": "Monopoly",
+    "imposter": "Business (Board Game)",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Singh Is Kinng",
-    "imposter": "Singham",
-    "difficulty": "medium"
+    "id": "rummy::teen patti",
+    "agent": "Teen Patti",
+    "imposter": "Rummy",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Singh Is Kinng",
-    "imposter": "Simmba",
-    "difficulty": "medium"
+    "id": "gilli danda::pitthu (satoliya)",
+    "agent": "Pitthu (Satoliya)",
+    "imposter": "Gilli Danda",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Singh Is Kinng",
-    "imposter": "Sooryavanshi",
-    "difficulty": "medium"
+    "id": "gilli danda::marbles (kanche)",
+    "agent": "Marbles (Kanche)",
+    "imposter": "Gilli Danda",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Singh Is Kinng",
-    "imposter": "Singham Again",
-    "difficulty": "medium"
+    "id": "hide and seek::hopscotch (stapu)",
+    "agent": "Hopscotch (Stapu)",
+    "imposter": "Hide and Seek",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Garam Masala",
-    "imposter": "Dhamaal",
-    "difficulty": "medium"
+    "id": "kabaddi::tug of war",
+    "agent": "Tug of War",
+    "imposter": "Kabaddi",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Garam Masala",
-    "imposter": "Dabangg",
-    "difficulty": "medium"
+    "id": "namaste::pranam",
+    "agent": "Namaste",
+    "imposter": "Pranam",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Garam Masala",
-    "imposter": "Singham",
-    "difficulty": "medium"
+    "id": "kurta::sari",
+    "agent": "Sari",
+    "imposter": "Kurta",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Garam Masala",
-    "imposter": "Simmba",
-    "difficulty": "medium"
+    "id": "dhoti::kurta",
+    "agent": "Dhoti",
+    "imposter": "Kurta",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Garam Masala",
-    "imposter": "Sooryavanshi",
-    "difficulty": "medium"
+    "id": "kurta pyjama::sherwani",
+    "agent": "Sherwani",
+    "imposter": "Kurta Pyjama",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Garam Masala",
-    "imposter": "Singham Again",
-    "difficulty": "medium"
+    "id": "dupatta::turban (pagri)",
+    "agent": "Turban (Pagri)",
+    "imposter": "Dupatta",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Garam Masala",
-    "imposter": "Rowdy Rathore",
-    "difficulty": "medium"
+    "id": "bangles (choodi)::jhumka",
+    "agent": "Jhumka",
+    "imposter": "Bangles (Choodi)",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhagam Bhag",
-    "imposter": "Dabangg",
-    "difficulty": "medium"
+    "id": "alta::mehndi",
+    "agent": "Mehndi",
+    "imposter": "Alta",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhagam Bhag",
-    "imposter": "Singham",
-    "difficulty": "medium"
+    "id": "bindi::sindoor",
+    "agent": "Bindi",
+    "imposter": "Sindoor",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhagam Bhag",
-    "imposter": "Simmba",
-    "difficulty": "medium"
+    "id": "mangalsutra::nose ring (nath)",
+    "agent": "Mangalsutra",
+    "imposter": "Nose Ring (Nath)",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhagam Bhag",
-    "imposter": "Sooryavanshi",
-    "difficulty": "medium"
+    "id": "kolam::rangoli",
+    "agent": "Kolam",
+    "imposter": "Rangoli",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhagam Bhag",
-    "imposter": "Singham Again",
-    "difficulty": "medium"
+    "id": "diya::toran",
+    "agent": "Toran",
+    "imposter": "Diya",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhagam Bhag",
-    "imposter": "Rowdy Rathore",
-    "difficulty": "medium"
+    "id": "agarbatti::dhoop",
+    "agent": "Agarbatti",
+    "imposter": "Dhoop",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Bhagam Bhag",
-    "imposter": "Chennai Express",
-    "difficulty": "medium"
+    "id": "rudraksha::tulsi mala",
+    "agent": "Rudraksha",
+    "imposter": "Tulsi Mala",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Chup Chup Ke",
-    "imposter": "Singham",
-    "difficulty": "medium"
+    "id": "shankh (conch)::temple bell (ghanti)",
+    "agent": "Shankh (Conch)",
+    "imposter": "Temple Bell (Ghanti)",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Chup Chup Ke",
-    "imposter": "Simmba",
-    "difficulty": "medium"
+    "id": "coconut (shreefal)::kalash",
+    "agent": "Kalash",
+    "imposter": "Coconut (Shreefal)",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Chup Chup Ke",
-    "imposter": "Sooryavanshi",
-    "difficulty": "medium"
+    "id": "laddoo::prasad",
+    "agent": "Prasad",
+    "imposter": "Laddoo",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Chup Chup Ke",
-    "imposter": "Singham Again",
-    "difficulty": "medium"
+    "id": "haldi ceremony::mehndi ceremony",
+    "agent": "Haldi Ceremony",
+    "imposter": "Mehndi Ceremony",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Chup Chup Ke",
-    "imposter": "Rowdy Rathore",
-    "difficulty": "medium"
+    "id": "baraat::sangeet",
+    "agent": "Baraat",
+    "imposter": "Sangeet",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Chup Chup Ke",
-    "imposter": "Chennai Express",
-    "difficulty": "medium"
+    "id": "pheras::varmala (jaimala)",
+    "agent": "Pheras",
+    "imposter": "Varmala (Jaimala)",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Chup Chup Ke",
-    "imposter": "Happy New Year",
-    "difficulty": "medium"
+    "id": "doli::mandap",
+    "agent": "Doli",
+    "imposter": "Mandap",
+    "category": "festivals_culture",
+    "difficulty": "easy"
   },
   {
-    "agent": "Hulchul",
-    "imposter": "Simmba",
+    "id": "karwa chauth::raksha bandhan",
+    "agent": "Karwa Chauth",
+    "imposter": "Raksha Bandhan",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Hulchul",
-    "imposter": "Sooryavanshi",
+    "id": "chhath puja::makar sankranti",
+    "agent": "Makar Sankranti",
+    "imposter": "Chhath Puja",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Hulchul",
-    "imposter": "Singham Again",
+    "id": "onam::vishu",
+    "agent": "Onam",
+    "imposter": "Vishu",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Hulchul",
-    "imposter": "Rowdy Rathore",
+    "id": "dussehra::ram navami",
+    "agent": "Dussehra",
+    "imposter": "Ram Navami",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Hulchul",
-    "imposter": "Chennai Express",
+    "id": "ganesh chaturthi::janmashtami",
+    "agent": "Janmashtami",
+    "imposter": "Ganesh Chaturthi",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Hulchul",
-    "imposter": "Happy New Year",
+    "id": "mahashivratri::navratri",
+    "agent": "Mahashivratri",
+    "imposter": "Navratri",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Hulchul",
-    "imposter": "Barfi",
+    "id": "buddha purnima::mahavir jayanti",
+    "agent": "Buddha Purnima",
+    "imposter": "Mahavir Jayanti",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhamaal",
-    "imposter": "Sooryavanshi",
+    "id": "easter::good friday",
+    "agent": "Good Friday",
+    "imposter": "Easter",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhamaal",
-    "imposter": "Singham Again",
+    "id": "bhai dooj::chhoti diwali",
+    "agent": "Chhoti Diwali",
+    "imposter": "Bhai Dooj",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhamaal",
-    "imposter": "Rowdy Rathore",
+    "id": "bhai dooj::govardhan puja",
+    "agent": "Govardhan Puja",
+    "imposter": "Bhai Dooj",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhamaal",
-    "imposter": "Chennai Express",
+    "id": "kite flying::makar sankranti",
+    "agent": "Kite Flying",
+    "imposter": "Makar Sankranti",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhamaal",
-    "imposter": "Happy New Year",
+    "id": "holika dahan::lohri bonfire",
+    "agent": "Holika Dahan",
+    "imposter": "Lohri Bonfire",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhamaal",
-    "imposter": "Barfi",
+    "id": "durga visarjan::ganesh visarjan",
+    "agent": "Ganesh Visarjan",
+    "imposter": "Durga Visarjan",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Dhamaal",
-    "imposter": "Rockstar",
+    "id": "palanquin (palki)::rath yatra",
+    "agent": "Rath Yatra",
+    "imposter": "Palanquin (Palki)",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Dabangg",
-    "imposter": "Singham Again",
+    "id": "kavad yatra::kumbh mela",
+    "agent": "Kavad Yatra",
+    "imposter": "Kumbh Mela",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Dabangg",
-    "imposter": "Chennai Express",
+    "id": "ganga ghat::yamuna ghat",
+    "agent": "Ganga Ghat",
+    "imposter": "Yamuna Ghat",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Dabangg",
-    "imposter": "Happy New Year",
+    "id": "dhunuchi dance::garba",
+    "agent": "Dhunuchi Dance",
+    "imposter": "Garba",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Dabangg",
-    "imposter": "Barfi",
+    "id": "bhangra::giddha",
+    "agent": "Bhangra",
+    "imposter": "Giddha",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Dabangg",
-    "imposter": "Rockstar",
+    "id": "garba::lavani",
+    "agent": "Lavani",
+    "imposter": "Garba",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Dabangg",
-    "imposter": "Bhaag Milkha Bhaag",
+    "id": "bharatnatyam::kathak",
+    "agent": "Kathak",
+    "imposter": "Bharatnatyam",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Singham",
-    "imposter": "Rowdy Rathore",
+    "id": "dholak::tabla",
+    "agent": "Tabla",
+    "imposter": "Dholak",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Singham",
-    "imposter": "Chennai Express",
+    "id": "sitar::veena",
+    "agent": "Sitar",
+    "imposter": "Veena",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Singham",
-    "imposter": "Happy New Year",
+    "id": "flute (bansuri)::shehnai",
+    "agent": "Flute (Bansuri)",
+    "imposter": "Shehnai",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Singham",
-    "imposter": "Barfi",
+    "id": "harmonium::tabla",
+    "agent": "Harmonium",
+    "imposter": "Tabla",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Singham",
-    "imposter": "Rockstar",
+    "id": "carrom board::chess board",
+    "agent": "Carrom Board",
+    "imposter": "Chess Board",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Singham",
-    "imposter": "Bhaag Milkha Bhaag",
+    "id": "ludo dice::snakes and ladders board",
+    "agent": "Ludo Dice",
+    "imposter": "Snakes and Ladders Board",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Singham",
-    "imposter": "Queen",
+    "id": "poker::teen patti",
+    "agent": "Teen Patti",
+    "imposter": "Poker",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Simmba",
-    "imposter": "Chennai Express",
+    "id": "bridge::rummy",
+    "agent": "Rummy",
+    "imposter": "Bridge",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Simmba",
-    "imposter": "Happy New Year",
+    "id": "kabaddi::wrestling (kushti)",
+    "agent": "Kabaddi",
+    "imposter": "Wrestling (Kushti)",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Simmba",
-    "imposter": "Barfi",
+    "id": "akhada::stadium",
+    "agent": "Akhada",
+    "imposter": "Stadium",
+    "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "agent": "Simmba",
-    "imposter": "Rockstar",
+    "id": "gym::pehlwani",
+    "agent": "Pehlwani",
+    "imposter": "Gym",
+    "category": "festivals_culture",
     "difficulty": "medium"
-  },
-  {
-    "agent": "Pankaj Tripathi",
-    "imposter": "Ravichandran Ashwin",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sanjay Dutt",
-    "imposter": "Harbhajan Singh",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Tiger Shroff",
-    "imposter": "Ishan Kishan",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Paresh Rawal",
-    "imposter": "Anil Kumble",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Johnny Lever",
-    "imposter": "Suresh Raina",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Nawazuddin Siddiqui",
-    "imposter": "Kuldeep Yadav",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Samantha",
-    "imposter": "Jasprit Bumrah",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Aamir Khan",
-    "imposter": "Luka Modric",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Gadar",
-    "imposter": "Jasprit Bumrah",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "3 Idiots",
-    "imposter": "Sachin Tendulkar",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sultan",
-    "imposter": "Hardik Pandya",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sultan",
-    "imposter": "Neymar",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Fighter",
-    "imposter": "Erling Haaland",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Krrish",
-    "imposter": "Cristiano Ronaldo",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Hum Aapke Hain Koun",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Kabhi Khushi Kabhie Gham",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Mohabbatein",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Hum Dil De Chuke Sanam",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Devdas",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Kal Ho Naa Ho",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Veer-Zaara",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Border",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Gadar",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Pardes",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Taal",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Dil To Pagal Hai",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Hum Saath-Saath Hain",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Baazigar",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Darr",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Karan Arjun",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Kaho Naa Pyaar Hai",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Lagaan",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Swades",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Dil Chahta Hai",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Zindagi Na Milegi Dobara",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "3 Idiots",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Taare Zameen Par",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Munna Bhai MBBS",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Lage Raho Munna Bhai",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Rang De Basanti",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Hera Pheri",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Phir Hera Pheri",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Welcome",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Golmaal",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Dhoom",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Dhoom 2",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Dhoom 3",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Koi Mil Gaya",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Krrish",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Ra.One",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Jab We Met",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Yeh Jawaani Hai Deewani",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Om Shanti Om",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Main Hoon Na",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Chak De India",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Ghajini",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Bhool Bhulaiyaa",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Bhool Bhulaiyaa 2",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Bhool Bhulaiyaa 3",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Dostana",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Desi Boyz",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Namastey London",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Singh Is Kinng",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Garam Masala",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Bhagam Bhag",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Chup Chup Ke",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Hulchul",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Dhamaal",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Dabangg",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Singham",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Simmba",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Sooryavanshi",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Singham Again",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Rowdy Rathore",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Chennai Express",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Happy New Year",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Barfi",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Rockstar",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Bhaag Milkha Bhaag",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Queen",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "English Vinglish",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "PK",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Bajrangi Bhaijaan",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Sultan",
-    "difficulty": "hard"
   },
   {
-    "agent": "Sholay",
+    "id": "dangal::kushti",
+    "agent": "Kushti",
     "imposter": "Dangal",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "MS Dhoni The Untold Story",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "83",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Sanju",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Padmaavat",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Bajirao Mastani",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Andhadhun",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Drishyam",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Drishyam 2",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Stree",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Stree 2",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Bhediya",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Badhaai Ho",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Shubh Mangal Saavdhan",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Uri The Surgical Strike",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Kabir Singh",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Chhichhore",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "War",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Fighter",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Tanhaji",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Gully Boy",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Pathaan",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Jawan",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Gadar 2",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Animal",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Dunki",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "12th Fail",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Brahmastra",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Tiger 3",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Ek Tha Tiger",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Tiger Zinda Hai",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Baahubali",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Baahubali 2",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "KGF",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "KGF Chapter 2",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "RRR",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Pushpa",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Pushpa 2",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Kantara",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Sholay",
-    "imposter": "Kalki 2898 AD",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Kabhi Khushi Kabhie Gham",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Mohabbatein",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Hum Dil De Chuke Sanam",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Devdas",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Kal Ho Naa Ho",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Veer-Zaara",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Border",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Gadar",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Pardes",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Taal",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Dil To Pagal Hai",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Hum Saath-Saath Hain",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Baazigar",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Darr",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Karan Arjun",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Kaho Naa Pyaar Hai",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Lagaan",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Swades",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Dil Chahta Hai",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Zindagi Na Milegi Dobara",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "3 Idiots",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Taare Zameen Par",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Munna Bhai MBBS",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Lage Raho Munna Bhai",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Rang De Basanti",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Hera Pheri",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Phir Hera Pheri",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Welcome",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Golmaal",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Dhoom",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Dhoom 2",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Dhoom 3",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Koi Mil Gaya",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Krrish",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Ra.One",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Jab We Met",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Yeh Jawaani Hai Deewani",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Om Shanti Om",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Main Hoon Na",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Chak De India",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Ghajini",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Bhool Bhulaiyaa",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Bhool Bhulaiyaa 2",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Bhool Bhulaiyaa 3",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Dostana",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Desi Boyz",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Namastey London",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Singh Is Kinng",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Garam Masala",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Bhagam Bhag",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Chup Chup Ke",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Hulchul",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Dhamaal",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Dabangg",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Singham",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Simmba",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Sooryavanshi",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Singham Again",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Rowdy Rathore",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Chennai Express",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Happy New Year",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Barfi",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Rockstar",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Bhaag Milkha Bhaag",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Queen",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "English Vinglish",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "PK",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Bajrangi Bhaijaan",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Sultan",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Dangal",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "MS Dhoni The Untold Story",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "83",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Sanju",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Padmaavat",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Bajirao Mastani",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Andhadhun",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Drishyam",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Drishyam 2",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Stree",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Stree 2",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Bhediya",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Badhaai Ho",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Shubh Mangal Saavdhan",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Uri The Surgical Strike",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Kabir Singh",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Chhichhore",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "War",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Fighter",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Tanhaji",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Gully Boy",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Pathaan",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Jawan",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Gadar 2",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Animal",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Dunki",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "12th Fail",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Brahmastra",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Tiger 3",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Ek Tha Tiger",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Tiger Zinda Hai",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Baahubali",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Baahubali 2",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "KGF",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "KGF Chapter 2",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "RRR",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Pushpa",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Pushpa 2",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Kantara",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Deewar",
-    "imposter": "Kalki 2898 AD",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Mohabbatein",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Hum Dil De Chuke Sanam",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Devdas",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Kal Ho Naa Ho",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Veer-Zaara",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Border",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Gadar",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Pardes",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Taal",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Dil To Pagal Hai",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Hum Saath-Saath Hain",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Baazigar",
-    "difficulty": "hard"
+    "category": "festivals_culture",
+    "difficulty": "medium"
   },
   {
-    "agent": "Don",
-    "imposter": "Darr",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Karan Arjun",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Kaho Naa Pyaar Hai",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Lagaan",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Swades",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Dil Chahta Hai",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Zindagi Na Milegi Dobara",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "3 Idiots",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Taare Zameen Par",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Munna Bhai MBBS",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Lage Raho Munna Bhai",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Rang De Basanti",
-    "difficulty": "hard"
-  },
-  {
-    "agent": "Don",
-    "imposter": "Hera Pheri",
-    "difficulty": "hard"
+    "id": "camel fair pushkar::jallikattu",
+    "agent": "Jallikattu",
+    "imposter": "Camel Fair Pushkar",
+    "category": "festivals_culture",
+    "difficulty": "medium"
   },
   {
-    "agent": "Don",
-    "imposter": "Phir Hera Pheri",
-    "difficulty": "hard"
+    "id": "hornbill festival::kite festival",
+    "agent": "Hornbill Festival",
+    "imposter": "Kite Festival",
+    "category": "festivals_culture",
+    "difficulty": "medium"
   },
   {
-    "agent": "Don",
-    "imposter": "Welcome",
-    "difficulty": "hard"
+    "id": "boat race (vallam kali)::snake boat",
+    "agent": "Boat Race (Vallam Kali)",
+    "imposter": "Snake Boat",
+    "category": "festivals_culture",
+    "difficulty": "medium"
   },
   {
-    "agent": "Don",
-    "imposter": "Golmaal",
-    "difficulty": "hard"
+    "id": "chariot::rath",
+    "agent": "Chariot",
+    "imposter": "Rath",
+    "category": "festivals_culture",
+    "difficulty": "medium"
   },
   {
-    "agent": "Don",
-    "imposter": "Dhoom",
-    "difficulty": "hard"
+    "id": "bhang::thandai",
+    "agent": "Bhang",
+    "imposter": "Thandai",
+    "category": "festivals_culture",
+    "difficulty": "medium"
   },
   {
-    "agent": "Don",
-    "imposter": "Dhoom 2",
-    "difficulty": "hard"
+    "id": "bhandara::langar",
+    "agent": "Langar",
+    "imposter": "Bhandara",
+    "category": "festivals_culture",
+    "difficulty": "medium"
   },
   {
-    "agent": "Don",
-    "imposter": "Dhoom 3",
-    "difficulty": "hard"
+    "id": "pandit::pujari",
+    "agent": "Pujari",
+    "imposter": "Pandit",
+    "category": "festivals_culture",
+    "difficulty": "medium"
   },
   {
-    "agent": "Don",
-    "imposter": "Koi Mil Gaya",
-    "difficulty": "hard"
+    "id": "astrologer (jyotishi)::kundali",
+    "agent": "Astrologer (Jyotishi)",
+    "imposter": "Kundali",
+    "category": "festivals_culture",
+    "difficulty": "medium"
   },
   {
-    "agent": "Don",
-    "imposter": "Krrish",
-    "difficulty": "hard"
+    "id": "horoscope::kundali match",
+    "agent": "Kundali Match",
+    "imposter": "Horoscope",
+    "category": "festivals_culture",
+    "difficulty": "medium"
   },
   {
-    "agent": "Don",
-    "imposter": "Ra.One",
-    "difficulty": "hard"
+    "id": "feng shui::vaastu shastra",
+    "agent": "Vaastu Shastra",
+    "imposter": "Feng Shui",
+    "category": "festivals_culture",
+    "difficulty": "medium"
   },
   {
-    "agent": "Don",
-    "imposter": "Jab We Met",
-    "difficulty": "hard"
+    "id": "ayurveda::yoga",
+    "agent": "Ayurveda",
+    "imposter": "Yoga",
+    "category": "festivals_culture",
+    "difficulty": "medium"
   },
   {
-    "agent": "Don",
-    "imposter": "Yeh Jawaani Hai Deewani",
-    "difficulty": "hard"
+    "id": "meditation::pranayama",
+    "agent": "Pranayama",
+    "imposter": "Meditation",
+    "category": "festivals_culture",
+    "difficulty": "medium"
   },
   {
-    "agent": "Don",
-    "imposter": "Om Shanti Om",
-    "difficulty": "hard"
+    "id": "bow::namaskar",
+    "agent": "Namaskar",
+    "imposter": "Bow",
+    "category": "festivals_culture",
+    "difficulty": "medium"
   },
   {
-    "agent": "Don",
-    "imposter": "Main Hoon Na",
+    "id": "diwali::lantern festival",
+    "agent": "Diwali",
+    "imposter": "Lantern Festival",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Chak De India",
+    "id": "holi::la tomatina",
+    "agent": "Holi",
+    "imposter": "La Tomatina",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Ghajini",
+    "id": "dussehra::halloween",
+    "agent": "Dussehra",
+    "imposter": "Halloween",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Bhool Bhulaiyaa",
+    "id": "friendship day::raksha bandhan",
+    "agent": "Raksha Bandhan",
+    "imposter": "Friendship Day",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Bhool Bhulaiyaa 2",
+    "id": "ganesh chaturthi::thanksgiving",
+    "agent": "Ganesh Chaturthi",
+    "imposter": "Thanksgiving",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Bhool Bhulaiyaa 3",
+    "id": "kumbh mela::mecca pilgrimage (hajj)",
+    "agent": "Kumbh Mela",
+    "imposter": "Mecca Pilgrimage (Hajj)",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Dostana",
+    "id": "carnival of rio::durga puja",
+    "agent": "Durga Puja",
+    "imposter": "Carnival of Rio",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Desi Boyz",
+    "id": "lohri::winter solstice",
+    "agent": "Lohri",
+    "imposter": "Winter Solstice",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Namastey London",
+    "id": "karwa chauth::valentine's day",
+    "agent": "Karwa Chauth",
+    "imposter": "Valentine's Day",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Singh Is Kinng",
+    "id": "easter::janmashtami",
+    "agent": "Janmashtami",
+    "imposter": "Easter",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Garam Masala",
+    "id": "candle::diya",
+    "agent": "Diya",
+    "imposter": "Candle",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Bhagam Bhag",
+    "id": "mosaic art::rangoli",
+    "agent": "Rangoli",
+    "imposter": "Mosaic Art",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Chup Chup Ke",
+    "id": "dandiya stick::drumstick",
+    "agent": "Dandiya Stick",
+    "imposter": "Drumstick",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Hulchul",
+    "id": "communion bread::prasad",
+    "agent": "Prasad",
+    "imposter": "Communion Bread",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Dhamaal",
+    "id": "bonfire::havan kund",
+    "agent": "Havan Kund",
+    "imposter": "Bonfire",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Dabangg",
+    "id": "ludo::monopoly",
+    "agent": "Ludo",
+    "imposter": "Monopoly",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Singham",
+    "id": "billiards (pool)::carrom",
+    "agent": "Carrom",
+    "imposter": "Billiards (Pool)",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Simmba",
+    "id": "kabaddi::rugby",
+    "agent": "Kabaddi",
+    "imposter": "Rugby",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Sooryavanshi",
+    "id": "baseball::gilli danda",
+    "agent": "Gilli Danda",
+    "imposter": "Baseball",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Singham Again",
+    "id": "kho-kho::tag (catch-catch)",
+    "agent": "Kho-Kho",
+    "imposter": "Tag (Catch-Catch)",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Rowdy Rathore",
+    "id": "antakshari::karaoke",
+    "agent": "Antakshari",
+    "imposter": "Karaoke",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Chennai Express",
+    "id": "dumb charades::pictionary",
+    "agent": "Dumb Charades",
+    "imposter": "Pictionary",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Happy New Year",
+    "id": "bingo::tambola",
+    "agent": "Tambola",
+    "imposter": "Bingo",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Barfi",
+    "id": "kimono::sari",
+    "agent": "Sari",
+    "imposter": "Kimono",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Rockstar",
+    "id": "dhoti::sarong",
+    "agent": "Dhoti",
+    "imposter": "Sarong",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Bhaag Milkha Bhaag",
+    "id": "kurta::tunic",
+    "agent": "Kurta",
+    "imposter": "Tunic",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Queen",
+    "id": "mehndi::tattoo",
+    "agent": "Mehndi",
+    "imposter": "Tattoo",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "English Vinglish",
+    "id": "handshake::namaste",
+    "agent": "Namaste",
+    "imposter": "Handshake",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "PK",
+    "id": "baraat::carnival parade",
+    "agent": "Baraat",
+    "imposter": "Carnival Parade",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Bajrangi Bhaijaan",
+    "id": "langar::soup kitchen",
+    "agent": "Langar",
+    "imposter": "Soup Kitchen",
+    "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "agent": "Don",
-    "imposter": "Sultan",
-    "difficulty": "hard"
+    "id": "samosa::sandwich",
+    "agent": "Samosa",
+    "imposter": "Sandwich",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Dangal",
-    "difficulty": "hard"
+    "id": "dosa::pav bhaji",
+    "agent": "Dosa",
+    "imposter": "Pav Bhaji",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "MS Dhoni The Untold Story",
-    "difficulty": "hard"
+    "id": "kachori::samosa",
+    "agent": "Samosa",
+    "imposter": "Kachori",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "83",
-    "difficulty": "hard"
+    "id": "bhel puri::pani puri",
+    "agent": "Pani Puri",
+    "imposter": "Bhel Puri",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Sanju",
-    "difficulty": "hard"
+    "id": "burger::vada pav",
+    "agent": "Vada Pav",
+    "imposter": "Burger",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Padmaavat",
-    "difficulty": "hard"
+    "id": "dosa::idli",
+    "agent": "Dosa",
+    "imposter": "Idli",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Bajirao Mastani",
-    "difficulty": "hard"
+    "id": "chole bhature::pizza",
+    "agent": "Chole Bhature",
+    "imposter": "Pizza",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Andhadhun",
-    "difficulty": "hard"
+    "id": "fried rice::veg biryani",
+    "agent": "Veg Biryani",
+    "imposter": "Fried Rice",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Drishyam",
-    "difficulty": "hard"
+    "id": "aloo paratha::paneer paratha",
+    "agent": "Aloo Paratha",
+    "imposter": "Paneer Paratha",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Drishyam 2",
-    "difficulty": "hard"
+    "id": "gulab jamun::rasgulla",
+    "agent": "Gulab Jamun",
+    "imposter": "Rasgulla",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Stree",
-    "difficulty": "hard"
+    "id": "jalebi::rabri",
+    "agent": "Jalebi",
+    "imposter": "Rabri",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Stree 2",
-    "difficulty": "hard"
+    "id": "besan ladoo::kaju katli",
+    "agent": "Kaju Katli",
+    "imposter": "Besan Ladoo",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Bhediya",
-    "difficulty": "hard"
+    "id": "burger::pizza",
+    "agent": "Burger",
+    "imposter": "Pizza",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Badhaai Ho",
-    "difficulty": "hard"
+    "id": "noodles::pasta",
+    "agent": "Pasta",
+    "imposter": "Noodles",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Shubh Mangal Saavdhan",
-    "difficulty": "hard"
+    "id": "aloo tikki::french fries",
+    "agent": "French Fries",
+    "imposter": "Aloo Tikki",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Uri The Surgical Strike",
-    "difficulty": "hard"
+    "id": "momos::spring roll",
+    "agent": "Momos",
+    "imposter": "Spring Roll",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Kabir Singh",
-    "difficulty": "hard"
+    "id": "dahi puri::pani puri",
+    "agent": "Pani Puri",
+    "imposter": "Dahi Puri",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Chhichhore",
-    "difficulty": "hard"
+    "id": "bhel puri::sev puri",
+    "agent": "Sev Puri",
+    "imposter": "Bhel Puri",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "War",
-    "difficulty": "hard"
+    "id": "idli::medu vada",
+    "agent": "Idli",
+    "imposter": "Medu Vada",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Fighter",
-    "difficulty": "hard"
+    "id": "dosa::uttapam",
+    "agent": "Uttapam",
+    "imposter": "Dosa",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Tanhaji",
-    "difficulty": "hard"
+    "id": "dhokla::khandvi",
+    "agent": "Dhokla",
+    "imposter": "Khandvi",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Gully Boy",
-    "difficulty": "hard"
+    "id": "fafda::jalebi",
+    "agent": "Fafda",
+    "imposter": "Jalebi",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Pathaan",
-    "difficulty": "hard"
+    "id": "poha::upma",
+    "agent": "Poha",
+    "imposter": "Upma",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Jawan",
-    "difficulty": "hard"
+    "id": "misal pav::pav bhaji",
+    "agent": "Misal Pav",
+    "imposter": "Pav Bhaji",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Gadar 2",
-    "difficulty": "hard"
+    "id": "poha::sabudana khichdi",
+    "agent": "Sabudana Khichdi",
+    "imposter": "Poha",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Animal",
-    "difficulty": "hard"
+    "id": "kadi chawal::rajma chawal",
+    "agent": "Rajma Chawal",
+    "imposter": "Kadi Chawal",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Dunki",
-    "difficulty": "hard"
+    "id": "dal makhani::shahi paneer",
+    "agent": "Dal Makhani",
+    "imposter": "Shahi Paneer",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "12th Fail",
-    "difficulty": "hard"
+    "id": "butter naan::tandoori roti",
+    "agent": "Butter Naan",
+    "imposter": "Tandoori Roti",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Brahmastra",
-    "difficulty": "hard"
+    "id": "ice cream::kulfi",
+    "agent": "Ice Cream",
+    "imposter": "Kulfi",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Tiger 3",
-    "difficulty": "hard"
+    "id": "gajar ka halwa::moong dal halwa",
+    "agent": "Gajar Ka Halwa",
+    "imposter": "Moong Dal Halwa",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Ek Tha Tiger",
-    "difficulty": "hard"
+    "id": "gulab jamun::rasmalai",
+    "agent": "Rasmalai",
+    "imposter": "Gulab Jamun",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Tiger Zinda Hai",
-    "difficulty": "hard"
+    "id": "rasgulla::sandesh",
+    "agent": "Sandesh",
+    "imposter": "Rasgulla",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Baahubali",
-    "difficulty": "hard"
+    "id": "gajar ka halwa::kheer",
+    "agent": "Kheer",
+    "imposter": "Gajar Ka Halwa",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Baahubali 2",
-    "difficulty": "hard"
+    "id": "mango::watermelon",
+    "agent": "Mango",
+    "imposter": "Watermelon",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "KGF",
-    "difficulty": "hard"
+    "id": "apple::banana",
+    "agent": "Apple",
+    "imposter": "Banana",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "KGF Chapter 2",
-    "difficulty": "hard"
+    "id": "coconut::pineapple",
+    "agent": "Coconut",
+    "imposter": "Pineapple",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "RRR",
-    "difficulty": "hard"
+    "id": "grapes::orange",
+    "agent": "Grapes",
+    "imposter": "Orange",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Pushpa",
-    "difficulty": "hard"
+    "id": "potato::tomato",
+    "agent": "Potato",
+    "imposter": "Tomato",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Pushpa 2",
-    "difficulty": "hard"
+    "id": "garlic::onion",
+    "agent": "Onion",
+    "imposter": "Garlic",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Kantara",
-    "difficulty": "hard"
+    "id": "mushroom::paneer",
+    "agent": "Paneer",
+    "imposter": "Mushroom",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Don",
-    "imposter": "Kalki 2898 AD",
-    "difficulty": "hard"
+    "id": "nachos::popcorn",
+    "agent": "Popcorn",
+    "imposter": "Nachos",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Hum Dil De Chuke Sanam",
-    "difficulty": "hard"
+    "id": "chowmein::manchurian",
+    "agent": "Chowmein",
+    "imposter": "Manchurian",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Devdas",
-    "difficulty": "hard"
+    "id": "chilli paneer::paneer tikka",
+    "agent": "Chilli Paneer",
+    "imposter": "Paneer Tikka",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Kal Ho Naa Ho",
-    "difficulty": "hard"
+    "id": "chaas::lassi",
+    "agent": "Lassi",
+    "imposter": "Chaas",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Veer-Zaara",
-    "difficulty": "hard"
+    "id": "nimbu pani::sugarcane juice",
+    "agent": "Nimbu Pani",
+    "imposter": "Sugarcane Juice",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Border",
-    "difficulty": "hard"
+    "id": "badam milk::thandai",
+    "agent": "Badam Milk",
+    "imposter": "Thandai",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Gadar",
-    "difficulty": "hard"
+    "id": "aam panna::jaljeera",
+    "agent": "Aam Panna",
+    "imposter": "Jaljeera",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Pardes",
-    "difficulty": "hard"
+    "id": "croissant::donut",
+    "agent": "Donut",
+    "imposter": "Croissant",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Taal",
-    "difficulty": "hard"
+    "id": "pancake::waffle",
+    "agent": "Pancake",
+    "imposter": "Waffle",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Dil To Pagal Hai",
-    "difficulty": "hard"
+    "id": "burger::hot dog",
+    "agent": "Hot Dog",
+    "imposter": "Burger",
+    "category": "foods",
+    "difficulty": "easy"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Hum Saath-Saath Hain",
-    "difficulty": "hard"
+    "id": "samosa::spring roll",
+    "agent": "Samosa",
+    "imposter": "Spring Roll",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Baazigar",
-    "difficulty": "hard"
+    "id": "dabeli::vada pav",
+    "agent": "Vada Pav",
+    "imposter": "Dabeli",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Darr",
-    "difficulty": "hard"
+    "id": "aloo tikki::pani puri",
+    "agent": "Pani Puri",
+    "imposter": "Aloo Tikki",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Karan Arjun",
-    "difficulty": "hard"
+    "id": "chole bhature::poori bhaji",
+    "agent": "Chole Bhature",
+    "imposter": "Poori Bhaji",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Kaho Naa Pyaar Hai",
-    "difficulty": "hard"
+    "id": "masala dosa::rava dosa",
+    "agent": "Masala Dosa",
+    "imposter": "Rava Dosa",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Lagaan",
-    "difficulty": "hard"
+    "id": "hyderabadi biryani::pulao",
+    "agent": "Hyderabadi Biryani",
+    "imposter": "Pulao",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Swades",
-    "difficulty": "hard"
+    "id": "dal makhani::dal tadka",
+    "agent": "Dal Makhani",
+    "imposter": "Dal Tadka",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Dil Chahta Hai",
-    "difficulty": "hard"
+    "id": "palak paneer::paneer butter masala",
+    "agent": "Paneer Butter Masala",
+    "imposter": "Palak Paneer",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Zindagi Na Milegi Dobara",
-    "difficulty": "hard"
+    "id": "dum aloo::malai kofta",
+    "agent": "Malai Kofta",
+    "imposter": "Dum Aloo",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "3 Idiots",
-    "difficulty": "hard"
+    "id": "makki ki roti::sarson ka saag",
+    "agent": "Sarson Ka Saag",
+    "imposter": "Makki Ki Roti",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Taare Zameen Par",
-    "difficulty": "hard"
+    "id": "dal baati churma::litti chokha",
+    "agent": "Litti Chokha",
+    "imposter": "Dal Baati Churma",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Munna Bhai MBBS",
-    "difficulty": "hard"
+    "id": "aloo paratha::methi thepla",
+    "agent": "Methi Thepla",
+    "imposter": "Aloo Paratha",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Lage Raho Munna Bhai",
-    "difficulty": "hard"
+    "id": "bedmi puri::kachori",
+    "agent": "Kachori",
+    "imposter": "Bedmi Puri",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Rang De Basanti",
-    "difficulty": "hard"
+    "id": "dahi bhalla::papdi chaat",
+    "agent": "Dahi Bhalla",
+    "imposter": "Papdi Chaat",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Hera Pheri",
-    "difficulty": "hard"
+    "id": "frankie::kathi roll",
+    "agent": "Frankie",
+    "imposter": "Kathi Roll",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Phir Hera Pheri",
-    "difficulty": "hard"
+    "id": "garlic bread::pizza",
+    "agent": "Garlic Bread",
+    "imposter": "Pizza",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Welcome",
-    "difficulty": "hard"
+    "id": "red sauce pasta::white sauce pasta",
+    "agent": "White Sauce Pasta",
+    "imposter": "Red Sauce Pasta",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Golmaal",
-    "difficulty": "hard"
+    "id": "chowmein::hakka noodles",
+    "agent": "Hakka Noodles",
+    "imposter": "Chowmein",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Dhoom",
-    "difficulty": "hard"
+    "id": "falooda::kulfi",
+    "agent": "Falooda",
+    "imposter": "Kulfi",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Dhoom 2",
-    "difficulty": "hard"
+    "id": "rabri::shrikhand",
+    "agent": "Shrikhand",
+    "imposter": "Rabri",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Dhoom 3",
-    "difficulty": "hard"
+    "id": "ladoo::modak",
+    "agent": "Modak",
+    "imposter": "Ladoo",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Koi Mil Gaya",
-    "difficulty": "hard"
+    "id": "malpua::puran poli",
+    "agent": "Puran Poli",
+    "imposter": "Malpua",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Krrish",
-    "difficulty": "hard"
+    "id": "besan ladoo::mysore pak",
+    "agent": "Mysore Pak",
+    "imposter": "Besan Ladoo",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Ra.One",
-    "difficulty": "hard"
+    "id": "guava::strawberry",
+    "agent": "Strawberry",
+    "imposter": "Guava",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Jab We Met",
-    "difficulty": "hard"
+    "id": "papaya::pomegranate",
+    "agent": "Papaya",
+    "imposter": "Pomegranate",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Yeh Jawaani Hai Deewani",
-    "difficulty": "hard"
+    "id": "carrot::cucumber",
+    "agent": "Cucumber",
+    "imposter": "Carrot",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Om Shanti Om",
-    "difficulty": "hard"
+    "id": "cabbage::capsicum",
+    "agent": "Capsicum",
+    "imposter": "Cabbage",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Main Hoon Na",
-    "difficulty": "hard"
+    "id": "baingan (eggplant)::bhindi (okra)",
+    "agent": "Bhindi (Okra)",
+    "imposter": "Baingan (Eggplant)",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Chak De India",
-    "difficulty": "hard"
+    "id": "peanuts::sweet corn",
+    "agent": "Sweet Corn",
+    "imposter": "Peanuts",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Ghajini",
-    "difficulty": "hard"
+    "id": "makhana::popcorn",
+    "agent": "Makhana",
+    "imposter": "Popcorn",
+    "category": "foods",
+    "difficulty": "medium"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Bhool Bhulaiyaa",
+    "id": "pizza::samosa",
+    "agent": "Samosa",
+    "imposter": "Pizza",
+    "category": "foods",
     "difficulty": "hard"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Bhool Bhulaiyaa 2",
+    "id": "dosa::waffle",
+    "agent": "Dosa",
+    "imposter": "Waffle",
+    "category": "foods",
     "difficulty": "hard"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Bhool Bhulaiyaa 3",
+    "id": "biryani::risotto",
+    "agent": "Biryani",
+    "imposter": "Risotto",
+    "category": "foods",
     "difficulty": "hard"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Dostana",
+    "id": "chocolate brownie::gulab jamun",
+    "agent": "Gulab Jamun",
+    "imposter": "Chocolate Brownie",
+    "category": "foods",
     "difficulty": "hard"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Desi Boyz",
+    "id": "jalebi::pretzel",
+    "agent": "Jalebi",
+    "imposter": "Pretzel",
+    "category": "foods",
     "difficulty": "hard"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Namastey London",
+    "id": "golgappa shot::pani puri",
+    "agent": "Pani Puri",
+    "imposter": "Golgappa Shot",
+    "category": "foods",
     "difficulty": "hard"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Singh Is Kinng",
+    "id": "hot dog::vada pav",
+    "agent": "Vada Pav",
+    "imposter": "Hot Dog",
+    "category": "foods",
     "difficulty": "hard"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Garam Masala",
+    "id": "roti::tortilla",
+    "agent": "Roti",
+    "imposter": "Tortilla",
+    "category": "foods",
     "difficulty": "hard"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Bhagam Bhag",
+    "id": "khichdi::porridge",
+    "agent": "Khichdi",
+    "imposter": "Porridge",
+    "category": "foods",
     "difficulty": "hard"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Chup Chup Ke",
+    "id": "oatmeal::poha",
+    "agent": "Poha",
+    "imposter": "Oatmeal",
+    "category": "foods",
     "difficulty": "hard"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Hulchul",
+    "id": "lassi::milkshake",
+    "agent": "Lassi",
+    "imposter": "Milkshake",
+    "category": "foods",
     "difficulty": "hard"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Dhamaal",
+    "id": "chai::green tea",
+    "agent": "Chai",
+    "imposter": "Green Tea",
+    "category": "foods",
     "difficulty": "hard"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Dabangg",
+    "id": "nachos::papad",
+    "agent": "Papad",
+    "imposter": "Nachos",
+    "category": "foods",
     "difficulty": "hard"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Singham",
+    "id": "achar (pickle)::chutney",
+    "agent": "Achar (Pickle)",
+    "imposter": "Chutney",
+    "category": "foods",
     "difficulty": "hard"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Simmba",
+    "id": "butter::ghee",
+    "agent": "Ghee",
+    "imposter": "Butter",
+    "category": "foods",
     "difficulty": "hard"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Sooryavanshi",
+    "id": "paneer::tofu",
+    "agent": "Paneer",
+    "imposter": "Tofu",
+    "category": "foods",
     "difficulty": "hard"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Singham Again",
+    "id": "broccoli::cauliflower",
+    "agent": "Cauliflower",
+    "imposter": "Broccoli",
+    "category": "foods",
     "difficulty": "hard"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Rowdy Rathore",
+    "id": "lettuce::spinach",
+    "agent": "Spinach",
+    "imposter": "Lettuce",
+    "category": "foods",
     "difficulty": "hard"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Chennai Express",
+    "id": "almond::walnut",
+    "agent": "Walnut",
+    "imposter": "Almond",
+    "category": "foods",
     "difficulty": "hard"
   },
   {
-    "agent": "Zanjeer",
-    "imposter": "Happy New Year",
+    "id": "cashew::pistachio",
+    "agent": "Cashew",
+    "imposter": "Pistachio",
+    "category": "foods",
     "difficulty": "hard"
   }
 ];

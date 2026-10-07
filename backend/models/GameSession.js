@@ -46,9 +46,12 @@ const gameSessionSchema = new mongoose.Schema({
         createdAt: { type: Date, default: Date.now }
     }],
     usedPairs: [{
+        id: String,
         agent: String,
         imposter: String,
-        difficulty: { type: String, default: 'easy' }
+        category: String,
+        difficulty: { type: String, default: 'easy' },
+        leagueGameNumber: Number
     }],
     leagueGameNumber: {
         type: Number,

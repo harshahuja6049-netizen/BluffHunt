@@ -189,7 +189,14 @@ function shuffle(items) {
   return copy;
 }
 
+function getCanonicalPairId(w1, w2) {
+  const a = (w1 || '').toLowerCase().trim();
+  const b = (w2 || '').toLowerCase().trim();
+  return a < b ? `${a}::${b}` : `${b}::${a}`;
+}
+
 function isSamePair(p1, p2) {
+  if (p1.id && p2.id && p1.id === p2.id) return true;
   const a1 = (p1.agent || '').toLowerCase().trim();
   const i1 = (p1.imposter || '').toLowerCase().trim();
   const a2 = (p2.agent || '').toLowerCase().trim();
@@ -227,18 +234,62 @@ function assignWordsAndImposter(session, wordBank) {
   }
 
   const targetDifficulty = getTargetDifficulty(session.leagueGameNumber || 1);
-  let candidatePairs = availablePairs.filter(
+  let difficultyCandidates = availablePairs.filter(
     (pair) => (pair.difficulty || '').toLowerCase() === targetDifficulty
   );
-  if (candidatePairs.length === 0) {
-    candidatePairs = availablePairs;
+  if (difficultyCandidates.length === 0) {
+    difficultyCandidates = availablePairs;
   }
 
-  const selectedPair = candidatePairs[Math.floor(Math.random() * candidatePairs.length)];
+  // Prevent repeating words within the same 10-game league
+  const leagueGameNum = typeof session.leagueGameNumber === 'number' && session.leagueGameNumber > 0
+    ? session.leagueGameNumber
+    : 1;
+  const gamesCompletedInCurrentLeague = (leagueGameNum - 1) % LEAGUE_GAMES;
+  const currentLeaguePairs = session.usedPairs.slice(
+    Math.max(0, session.usedPairs.length - gamesCompletedInCurrentLeague)
+  );
+  const currentLeagueWords = new Set();
+  currentLeaguePairs.forEach((p) => {
+    if (p.agent) currentLeagueWords.add(p.agent.toLowerCase().trim());
+    if (p.imposter) currentLeagueWords.add(p.imposter.toLowerCase().trim());
+  });
+
+  const lastUsedPair = session.usedPairs[session.usedPairs.length - 1];
+  const lastCategory = lastUsedPair?.category ? lastUsedPair.category.toLowerCase().trim() : null;
+
+  // Prefer pairs with no word repetition in current league, and avoiding consecutive duplicate categories
+  let pool = difficultyCandidates.filter((pair) => {
+    const a = (pair.agent || '').toLowerCase().trim();
+    const i = (pair.imposter || '').toLowerCase().trim();
+    const cat = (pair.category || '').toLowerCase().trim();
+    const noWordOverlap = !currentLeagueWords.has(a) && !currentLeagueWords.has(i);
+    const diffCategory = !lastCategory || cat !== lastCategory;
+    return noWordOverlap && diffCategory;
+  });
+
+  if (pool.length === 0) {
+    pool = difficultyCandidates.filter((pair) => {
+      const a = (pair.agent || '').toLowerCase().trim();
+      const i = (pair.imposter || '').toLowerCase().trim();
+      return !currentLeagueWords.has(a) && !currentLeagueWords.has(i);
+    });
+  }
+
+  if (pool.length === 0) {
+    pool = difficultyCandidates;
+  }
+
+  const selectedPair = pool[Math.floor(Math.random() * pool.length)];
+  const pairCanonicalId = selectedPair.id || getCanonicalPairId(selectedPair.agent, selectedPair.imposter);
+
   session.usedPairs.push({
+    id: pairCanonicalId,
     agent: selectedPair.agent,
     imposter: selectedPair.imposter,
-    difficulty: selectedPair.difficulty || targetDifficulty
+    category: selectedPair.category || 'mainstream',
+    difficulty: selectedPair.difficulty || targetDifficulty,
+    leagueGameNumber: session.leagueGameNumber
   });
 
   promoteWaitingPlayers(session);
@@ -389,6 +440,7 @@ module.exports = {
   validateClue,
   validateChat,
   shuffle,
+  getCanonicalPairId,
   isSamePair,
   assignWordsAndImposter,
   checkVotingTies,
