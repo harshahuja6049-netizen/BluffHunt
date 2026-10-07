@@ -47,7 +47,8 @@ const gameSessionSchema = new mongoose.Schema({
     }],
     usedPairs: [{
         agent: String,
-        imposter: String
+        imposter: String,
+        difficulty: { type: String, default: 'easy' }
     }],
     leagueGameNumber: {
         type: Number,

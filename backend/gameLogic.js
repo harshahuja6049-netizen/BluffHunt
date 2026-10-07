@@ -197,6 +197,25 @@ function isSamePair(p1, p2) {
   return (a1 === a2 && i1 === i2) || (a1 === i2 && i1 === a2);
 }
 
+const LEAGUE_DIFFICULTY_SCHEDULE = [
+  'easy',    // Game 1
+  'medium',  // Game 2
+  'easy',    // Game 3
+  'medium',  // Game 4
+  'hard',    // Game 5
+  'easy',    // Game 6
+  'medium',  // Game 7
+  'easy',    // Game 8
+  'easy',    // Game 9
+  'hard'     // Game 10
+];
+
+function getTargetDifficulty(leagueGameNumber = 1) {
+  const num = typeof leagueGameNumber === 'number' && leagueGameNumber > 0 ? leagueGameNumber : 1;
+  const index = (num - 1) % LEAGUE_DIFFICULTY_SCHEDULE.length;
+  return LEAGUE_DIFFICULTY_SCHEDULE[index];
+}
+
 function assignWordsAndImposter(session, wordBank) {
   session.usedPairs = session.usedPairs || [];
   let availablePairs = wordBank.filter(
@@ -207,8 +226,20 @@ function assignWordsAndImposter(session, wordBank) {
     availablePairs = wordBank;
   }
 
-  const selectedPair = availablePairs[Math.floor(Math.random() * availablePairs.length)];
-  session.usedPairs.push({ agent: selectedPair.agent, imposter: selectedPair.imposter });
+  const targetDifficulty = getTargetDifficulty(session.leagueGameNumber || 1);
+  let candidatePairs = availablePairs.filter(
+    (pair) => (pair.difficulty || '').toLowerCase() === targetDifficulty
+  );
+  if (candidatePairs.length === 0) {
+    candidatePairs = availablePairs;
+  }
+
+  const selectedPair = candidatePairs[Math.floor(Math.random() * candidatePairs.length)];
+  session.usedPairs.push({
+    agent: selectedPair.agent,
+    imposter: selectedPair.imposter,
+    difficulty: selectedPair.difficulty || targetDifficulty
+  });
 
   promoteWaitingPlayers(session);
   const active = roundPlayers(session);
@@ -342,6 +373,8 @@ module.exports = {
   AGENT_BONUS,
   IMPOSTER_SURVIVAL_BONUS,
   ZERO_VOTES_BONUS,
+  LEAGUE_DIFFICULTY_SCHEDULE,
+  getTargetDifficulty,
   connectedPlayers,
   roundPlayers,
   publicPlayers,

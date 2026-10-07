@@ -17,10 +17,13 @@ const {
   AGENT_BONUS,
   IMPOSTER_SURVIVAL_BONUS,
   ZERO_VOTES_BONUS,
+  LEAGUE_DIFFICULTY_SCHEDULE,
+  getTargetDifficulty,
   LEAGUE_GAMES,
   MAX_PLAYERS,
   MIN_PLAYERS
 } = require('../gameLogic');
+const wordBank = require('../data/wordBank');
 
 function player(id, extra = {}) {
   return {
@@ -333,4 +336,97 @@ describe('host transfer and public players', () => {
     assert.equal(publicPlayers(session).length, 2);
   });
 });
+
+describe('10-game league difficulty schedule and word bank distribution', () => {
+  it('enforces the 5 easy : 3 medium : 2 hard progression across 10 games', () => {
+    const expectedSchedule = [
+      'easy',    // Game 1
+      'medium',  // Game 2
+      'easy',    // Game 3
+      'medium',  // Game 4
+      'hard',    // Game 5
+      'easy',    // Game 6
+      'medium',  // Game 7
+      'easy',    // Game 8
+      'easy',    // Game 9
+      'hard'     // Game 10
+    ];
+
+    assert.deepEqual(LEAGUE_DIFFICULTY_SCHEDULE, expectedSchedule);
+
+    const easyCount = expectedSchedule.filter((d) => d === 'easy').length;
+    const mediumCount = expectedSchedule.filter((d) => d === 'medium').length;
+    const hardCount = expectedSchedule.filter((d) => d === 'hard').length;
+
+    assert.equal(easyCount, 5, 'Should have exactly 5 Easy games');
+    assert.equal(mediumCount, 3, 'Should have exactly 3 Medium games');
+    assert.equal(hardCount, 2, 'Should have exactly 2 Hard games');
+
+    for (let game = 1; game <= 10; game++) {
+      assert.equal(getTargetDifficulty(game), expectedSchedule[game - 1]);
+    }
+  });
+
+  it('selects word pairs matching the scheduled difficulty in a 10-game league', () => {
+    const session = {
+      usedPairs: [],
+      players: [player('a'), player('b'), player('c'), player('d'), player('e')]
+    };
+
+    const scheduledDifficulties = [];
+    for (let game = 1; game <= 10; game++) {
+      session.leagueGameNumber = game;
+      const { pair } = assignWordsAndImposter(session, wordBank);
+      assert.ok(pair, `Game ${game} must return a valid pair`);
+      scheduledDifficulties.push(pair.difficulty);
+    }
+
+    assert.deepEqual(scheduledDifficulties, LEAGUE_DIFFICULTY_SCHEDULE);
+    assert.equal(session.usedPairs.length, 10, 'All 10 rounds must record used pairs');
+
+    // Ensure all 10 pairs were unique
+    for (let i = 0; i < session.usedPairs.length; i++) {
+      for (let j = i + 1; j < session.usedPairs.length; j++) {
+        assert.equal(
+          isSamePair(session.usedPairs[i], session.usedPairs[j]),
+          false,
+          `Pair at game ${i + 1} and ${j + 1} must not be duplicates`
+        );
+      }
+    }
+  });
+
+  it('verifies wordBank contains exactly 2000 unique pairs with 5:3:2 ratio', () => {
+    assert.equal(wordBank.length, 2000, 'Word bank must contain exactly 2000 pairs');
+
+    const counts = { easy: 0, medium: 0, hard: 0 };
+    const seenPairs = new Set();
+
+    wordBank.forEach((p, idx) => {
+      assert.ok(p.agent && p.agent.trim().length > 0, `Agent word missing at index ${idx}`);
+      assert.ok(p.imposter && p.imposter.trim().length > 0, `Imposter word missing at index ${idx}`);
+      assert.notEqual(
+        p.agent.trim().toLowerCase(),
+        p.imposter.trim().toLowerCase(),
+        `Agent and Imposter cannot be identical at index ${idx}`
+      );
+
+      const diff = (p.difficulty || '').toLowerCase();
+      assert.ok(['easy', 'medium', 'hard'].includes(diff), `Invalid difficulty '${diff}' at index ${idx}`);
+      counts[diff] = (counts[diff] || 0) + 1;
+
+      const a = p.agent.trim().toLowerCase();
+      const b = p.imposter.trim().toLowerCase();
+      const key = a < b ? `${a}|||${b}` : `${b}|||${a}`;
+      assert.equal(seenPairs.has(key), false, `Duplicate pair found at index ${idx}: ${p.agent} <-> ${p.imposter}`);
+      seenPairs.add(key);
+    });
+
+    assert.equal(counts.easy, 1000, 'Must have exactly 1000 Easy pairs');
+    assert.equal(counts.medium, 600, 'Must have exactly 600 Medium pairs');
+    assert.equal(counts.hard, 400, 'Must have exactly 400 Hard pairs');
+    assert.equal(seenPairs.size, 2000, 'All 2000 pairs must be unique forward and backward');
+  });
+});
+
 
