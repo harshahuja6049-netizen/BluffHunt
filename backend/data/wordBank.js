@@ -1,25 +1,9 @@
 // backend/data/wordBank.js
 // BluffHunt Curated Global Word-Pair Pool
-// EXACTLY 1,000 UNIQUE PAIRS
-//
-// Category Distribution:
-// - Bollywood + famous actors: 200 pairs (20%)
-// - Sports: 100 pairs (10%)
-// - Cartoons famous in India: 50 pairs (5%)
-// - Superheroes + famous Hollywood: 50 pairs (5%)
-// - Extremely recognizable mainstream references: 300 pairs (30%)
-// - Famous brands: 50 pairs (5%)
-// - Indian festivals + popular Indian cultural references: 150 pairs (15%)
-// - Famous foods: 100 pairs (10%)
-//
-// Difficulty Distribution:
-// - Easy: 500 pairs (50%)
-// - Medium: 300 pairs (30%)
-// - Hard: 200 pairs (20%)
 
 const wordBank = [
   {
-    "id": "deewar::sholay",
+    "id": "sholay::deewar",
     "agent": "Sholay",
     "imposter": "Deewar",
     "category": "bollywood",
@@ -68,14 +52,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "lage raho munna bhai::munna bhai mbbs",
+    "id": "munna bhai mbbs::lage raho munna bhai",
     "agent": "Munna Bhai MBBS",
     "imposter": "Lage Raho Munna Bhai",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "dhamaal::golmaal",
+    "id": "golmaal::dhamaal",
     "agent": "Golmaal",
     "imposter": "Dhamaal",
     "category": "bollywood",
@@ -96,14 +80,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "dil chahta hai::zindagi na milegi dobara",
+    "id": "zindagi na milegi dobara::dil chahta hai",
     "agent": "Zindagi Na Milegi Dobara",
     "imposter": "Dil Chahta Hai",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "chak de india::dangal",
+    "id": "dangal::chak de india",
     "agent": "Dangal",
     "imposter": "Chak De India",
     "category": "bollywood",
@@ -117,21 +101,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "omg oh my god::pk",
+    "id": "pk::omg oh my god",
     "agent": "PK",
     "imposter": "OMG Oh My God",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "pathaan::war",
+    "id": "war::pathaan",
     "agent": "War",
     "imposter": "Pathaan",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "jawan::pathaan",
+    "id": "pathaan::jawan",
     "agent": "Pathaan",
     "imposter": "Jawan",
     "category": "bollywood",
@@ -145,7 +129,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "border::gadar",
+    "id": "gadar::border",
     "agent": "Gadar",
     "imposter": "Border",
     "category": "bollywood",
@@ -159,14 +143,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "andhadhun::drishyam",
+    "id": "drishyam::andhadhun",
     "agent": "Drishyam",
     "imposter": "Andhadhun",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "shershaah::uri the surgical strike",
+    "id": "uri the surgical strike::shershaah",
     "agent": "Uri The Surgical Strike",
     "imposter": "Shershaah",
     "category": "bollywood",
@@ -187,7 +171,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "baahubali::rrr",
+    "id": "rrr::baahubali",
     "agent": "RRR",
     "imposter": "Baahubali",
     "category": "bollywood",
@@ -236,14 +220,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "dil to pagal hai::mohabbatein",
+    "id": "mohabbatein::dil to pagal hai",
     "agent": "Mohabbatein",
     "imposter": "Dil To Pagal Hai",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "devdas::hum dil de chuke sanam",
+    "id": "hum dil de chuke sanam::devdas",
     "agent": "Hum Dil De Chuke Sanam",
     "imposter": "Devdas",
     "category": "bollywood",
@@ -271,21 +255,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "bhagam bhag::garam masala",
+    "id": "garam masala::bhagam bhag",
     "agent": "Garam Masala",
     "imposter": "Bhagam Bhag",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "singh is kinng::welcome",
+    "id": "welcome::singh is kinng",
     "agent": "Welcome",
     "imposter": "Singh Is Kinng",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "dabangg::rowdy rathore",
+    "id": "rowdy rathore::dabangg",
     "agent": "Rowdy Rathore",
     "imposter": "Dabangg",
     "category": "bollywood",
@@ -306,21 +290,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "english vinglish::queen",
+    "id": "queen::english vinglish",
     "agent": "Queen",
     "imposter": "English Vinglish",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "3 idiots::chhichhore",
+    "id": "chhichhore::3 idiots",
     "agent": "Chhichhore",
     "imposter": "3 Idiots",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "barfi::rockstar",
+    "id": "rockstar::barfi",
     "agent": "Rockstar",
     "imposter": "Barfi",
     "category": "bollywood",
@@ -334,7 +318,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "bajirao mastani::padmaavat",
+    "id": "padmaavat::bajirao mastani",
     "agent": "Padmaavat",
     "imposter": "Bajirao Mastani",
     "category": "bollywood",
@@ -348,7 +332,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "maine pyar kiya::qayamat se qayamat tak",
+    "id": "qayamat se qayamat tak::maine pyar kiya",
     "agent": "Qayamat Se Qayamat Tak",
     "imposter": "Maine Pyar Kiya",
     "category": "bollywood",
@@ -362,28 +346,28 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "brahmastra::kalki 2898 ad",
+    "id": "kalki 2898 ad::brahmastra",
     "agent": "Kalki 2898 AD",
     "imposter": "Brahmastra",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "salman khan::shah rukh khan",
+    "id": "shah rukh khan::salman khan",
     "agent": "Shah Rukh Khan",
     "imposter": "Salman Khan",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "aamir khan::salman khan",
+    "id": "salman khan::aamir khan",
     "agent": "Salman Khan",
     "imposter": "Aamir Khan",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "aamir khan::shah rukh khan",
+    "id": "shah rukh khan::aamir khan",
     "agent": "Shah Rukh Khan",
     "imposter": "Aamir Khan",
     "category": "bollywood",
@@ -411,7 +395,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "ajay devgn::akshay kumar",
+    "id": "akshay kumar::ajay devgn",
     "agent": "Akshay Kumar",
     "imposter": "Ajay Devgn",
     "category": "bollywood",
@@ -425,7 +409,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "bobby deol::sunny deol",
+    "id": "sunny deol::bobby deol",
     "agent": "Sunny Deol",
     "imposter": "Bobby Deol",
     "category": "bollywood",
@@ -446,7 +430,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "hrithik roshan::ranbir kapoor",
+    "id": "ranbir kapoor::hrithik roshan",
     "agent": "Ranbir Kapoor",
     "imposter": "Hrithik Roshan",
     "category": "bollywood",
@@ -460,14 +444,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "ranbir kapoor::shahid kapoor",
+    "id": "shahid kapoor::ranbir kapoor",
     "agent": "Shahid Kapoor",
     "imposter": "Ranbir Kapoor",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "sidharth malhotra::varun dhawan",
+    "id": "varun dhawan::sidharth malhotra",
     "agent": "Varun Dhawan",
     "imposter": "Sidharth Malhotra",
     "category": "bollywood",
@@ -481,14 +465,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "johnny lever::paresh rawal",
+    "id": "paresh rawal::johnny lever",
     "agent": "Paresh Rawal",
     "imposter": "Johnny Lever",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "johnny lever::rajpal yadav",
+    "id": "rajpal yadav::johnny lever",
     "agent": "Rajpal Yadav",
     "imposter": "Johnny Lever",
     "category": "bollywood",
@@ -502,7 +486,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "nawazuddin siddiqui::pankaj tripathi",
+    "id": "pankaj tripathi::nawazuddin siddiqui",
     "agent": "Pankaj Tripathi",
     "imposter": "Nawazuddin Siddiqui",
     "category": "bollywood",
@@ -523,21 +507,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "ranveer singh::vicky kaushal",
+    "id": "vicky kaushal::ranveer singh",
     "agent": "Vicky Kaushal",
     "imposter": "Ranveer Singh",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "akshay kumar::saif ali khan",
+    "id": "saif ali khan::akshay kumar",
     "agent": "Saif Ali Khan",
     "imposter": "Akshay Kumar",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "alia bhatt::deepika padukone",
+    "id": "deepika padukone::alia bhatt",
     "agent": "Deepika Padukone",
     "imposter": "Alia Bhatt",
     "category": "bollywood",
@@ -551,7 +535,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "kareena kapoor::katrina kaif",
+    "id": "katrina kaif::kareena kapoor",
     "agent": "Katrina Kaif",
     "imposter": "Kareena Kapoor",
     "category": "bollywood",
@@ -572,7 +556,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "kiara advani::shraddha kapoor",
+    "id": "shraddha kapoor::kiara advani",
     "agent": "Shraddha Kapoor",
     "imposter": "Kiara Advani",
     "category": "bollywood",
@@ -607,28 +591,28 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "preity zinta::rani mukerji",
+    "id": "rani mukerji::preity zinta",
     "agent": "Rani Mukerji",
     "imposter": "Preity Zinta",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "juhi chawla::madhuri dixit",
+    "id": "madhuri dixit::juhi chawla",
     "agent": "Madhuri Dixit",
     "imposter": "Juhi Chawla",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "madhuri dixit::sridevi",
+    "id": "sridevi::madhuri dixit",
     "agent": "Sridevi",
     "imposter": "Madhuri Dixit",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "janhvi kapoor::sara ali khan",
+    "id": "sara ali khan::janhvi kapoor",
     "agent": "Sara Ali Khan",
     "imposter": "Janhvi Kapoor",
     "category": "bollywood",
@@ -649,7 +633,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "kangana ranaut::vidya balan",
+    "id": "vidya balan::kangana ranaut",
     "agent": "Vidya Balan",
     "imposter": "Kangana Ranaut",
     "category": "bollywood",
@@ -663,21 +647,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "kajol::kareena kapoor",
+    "id": "kareena kapoor::kajol",
     "agent": "Kareena Kapoor",
     "imposter": "Kajol",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "anushka sharma::priyanka chopra",
+    "id": "priyanka chopra::anushka sharma",
     "agent": "Priyanka Chopra",
     "imposter": "Anushka Sharma",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "aishwarya rai::preity zinta",
+    "id": "preity zinta::aishwarya rai",
     "agent": "Preity Zinta",
     "imposter": "Aishwarya Rai",
     "category": "bollywood",
@@ -698,21 +682,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "disha patani::kriti sanon",
+    "id": "kriti sanon::disha patani",
     "agent": "Kriti Sanon",
     "imposter": "Disha Patani",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "bhumi pednekar::taapsee pannu",
+    "id": "taapsee pannu::bhumi pednekar",
     "agent": "Taapsee Pannu",
     "imposter": "Bhumi Pednekar",
     "category": "bollywood",
     "difficulty": "easy"
   },
   {
-    "id": "raveena tandon::shilpa shetty",
+    "id": "shilpa shetty::raveena tandon",
     "agent": "Shilpa Shetty",
     "imposter": "Raveena Tandon",
     "category": "bollywood",
@@ -740,14 +724,14 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "lagaan::rang de basanti",
+    "id": "rang de basanti::lagaan",
     "agent": "Rang De Basanti",
     "imposter": "Lagaan",
     "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "id": "desi boyz::dostana",
+    "id": "dostana::desi boyz",
     "agent": "Dostana",
     "imposter": "Desi Boyz",
     "category": "bollywood",
@@ -761,14 +745,14 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "hum aapke hain koun::hum saath-saath hain",
+    "id": "hum saath-saath hain::hum aapke hain koun",
     "agent": "Hum Saath-Saath Hain",
     "imposter": "Hum Aapke Hain Koun",
     "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "id": "rockstar::sanju",
+    "id": "sanju::rockstar",
     "agent": "Sanju",
     "imposter": "Rockstar",
     "category": "bollywood",
@@ -782,7 +766,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "bajirao mastani::tanhaji",
+    "id": "tanhaji::bajirao mastani",
     "agent": "Tanhaji",
     "imposter": "Bajirao Mastani",
     "category": "bollywood",
@@ -831,7 +815,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "dil chahta hai::wake up sid",
+    "id": "wake up sid::dil chahta hai",
     "agent": "Wake Up Sid",
     "imposter": "Dil Chahta Hai",
     "category": "bollywood",
@@ -845,7 +829,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "dhamaal::fukrey",
+    "id": "fukrey::dhamaal",
     "agent": "Fukrey",
     "imposter": "Dhamaal",
     "category": "bollywood",
@@ -859,7 +843,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "baby::special 26",
+    "id": "special 26::baby",
     "agent": "Special 26",
     "imposter": "Baby",
     "category": "bollywood",
@@ -880,21 +864,21 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "andhadhun::ludo (film)",
+    "id": "ludo (film)::andhadhun",
     "agent": "Ludo (Film)",
     "imposter": "Andhadhun",
     "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "id": "bhool bhulaiyaa 3::stree 2",
+    "id": "stree 2::bhool bhulaiyaa 3",
     "agent": "Stree 2",
     "imposter": "Bhool Bhulaiyaa 3",
     "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "id": "simmba::singham again",
+    "id": "singham again::simmba",
     "agent": "Singham Again",
     "imposter": "Simmba",
     "category": "bollywood",
@@ -915,14 +899,14 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "ayushmann khurrana::kartik aaryan",
+    "id": "kartik aaryan::ayushmann khurrana",
     "agent": "Kartik Aaryan",
     "imposter": "Ayushmann Khurrana",
     "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "id": "sidharth malhotra::vicky kaushal",
+    "id": "vicky kaushal::sidharth malhotra",
     "agent": "Vicky Kaushal",
     "imposter": "Sidharth Malhotra",
     "category": "bollywood",
@@ -950,7 +934,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "manoj bajpayee::nawazuddin siddiqui",
+    "id": "nawazuddin siddiqui::manoj bajpayee",
     "agent": "Nawazuddin Siddiqui",
     "imposter": "Manoj Bajpayee",
     "category": "bollywood",
@@ -978,14 +962,14 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "anil kapoor::govinda",
+    "id": "govinda::anil kapoor",
     "agent": "Govinda",
     "imposter": "Anil Kapoor",
     "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "id": "anil kapoor::rishi kapoor",
+    "id": "rishi kapoor::anil kapoor",
     "agent": "Rishi Kapoor",
     "imposter": "Anil Kapoor",
     "category": "bollywood",
@@ -1034,21 +1018,21 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "kajol::preity zinta",
+    "id": "preity zinta::kajol",
     "agent": "Preity Zinta",
     "imposter": "Kajol",
     "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "id": "karisma kapoor::urmila matondkar",
+    "id": "urmila matondkar::karisma kapoor",
     "agent": "Urmila Matondkar",
     "imposter": "Karisma Kapoor",
     "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "id": "alia bhatt::kriti sanon",
+    "id": "kriti sanon::alia bhatt",
     "agent": "Kriti Sanon",
     "imposter": "Alia Bhatt",
     "category": "bollywood",
@@ -1062,7 +1046,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "taapsee pannu::yami gautam",
+    "id": "yami gautam::taapsee pannu",
     "agent": "Yami Gautam",
     "imposter": "Taapsee Pannu",
     "category": "bollywood",
@@ -1076,14 +1060,14 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "jacqueline fernandez::sonam kapoor",
+    "id": "sonam kapoor::jacqueline fernandez",
     "agent": "Sonam Kapoor",
     "imposter": "Jacqueline Fernandez",
     "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "id": "kiara advani::nushrratt bharuccha",
+    "id": "nushrratt bharuccha::kiara advani",
     "agent": "Nushrratt Bharuccha",
     "imposter": "Kiara Advani",
     "category": "bollywood",
@@ -1111,7 +1095,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "asha parekh::waheeda rehman",
+    "id": "waheeda rehman::asha parekh",
     "agent": "Waheeda Rehman",
     "imposter": "Asha Parekh",
     "category": "bollywood",
@@ -1132,21 +1116,21 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "disha patani::pooja hegde",
+    "id": "pooja hegde::disha patani",
     "agent": "Pooja Hegde",
     "imposter": "Disha Patani",
     "category": "bollywood",
     "difficulty": "medium"
   },
   {
-    "id": "lagaan::sholay",
+    "id": "sholay::lagaan",
     "agent": "Sholay",
     "imposter": "Lagaan",
     "category": "bollywood",
     "difficulty": "hard"
   },
   {
-    "id": "3 idiots::ddlj",
+    "id": "ddlj::3 idiots",
     "agent": "DDLJ",
     "imposter": "3 Idiots",
     "category": "bollywood",
@@ -1167,7 +1151,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "chak de india::jo jeeta wohi sikandar",
+    "id": "jo jeeta wohi sikandar::chak de india",
     "agent": "Jo Jeeta Wohi Sikandar",
     "imposter": "Chak De India",
     "category": "bollywood",
@@ -1181,28 +1165,28 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "gadar::kgf",
+    "id": "kgf::gadar",
     "agent": "KGF",
     "imposter": "Gadar",
     "category": "bollywood",
     "difficulty": "hard"
   },
   {
-    "id": "animal::jawan",
+    "id": "jawan::animal",
     "agent": "Jawan",
     "imposter": "Animal",
     "category": "bollywood",
     "difficulty": "hard"
   },
   {
-    "id": "dil chahta hai::kabhi khushi kabhie gham",
+    "id": "kabhi khushi kabhie gham::dil chahta hai",
     "agent": "Kabhi Khushi Kabhie Gham",
     "imposter": "Dil Chahta Hai",
     "category": "bollywood",
     "difficulty": "hard"
   },
   {
-    "id": "swades::taare zameen par",
+    "id": "taare zameen par::swades",
     "agent": "Taare Zameen Par",
     "imposter": "Swades",
     "category": "bollywood",
@@ -1230,7 +1214,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "anand::guide",
+    "id": "guide::anand",
     "agent": "Guide",
     "imposter": "Anand",
     "category": "bollywood",
@@ -1279,14 +1263,14 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "baazigar::khalnayak",
+    "id": "khalnayak::baazigar",
     "agent": "Khalnayak",
     "imposter": "Baazigar",
     "category": "bollywood",
     "difficulty": "hard"
   },
   {
-    "id": "baby::sarfarosh",
+    "id": "sarfarosh::baby",
     "agent": "Sarfarosh",
     "imposter": "Baby",
     "category": "bollywood",
@@ -1307,21 +1291,21 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "stree::tumbbad",
+    "id": "tumbbad::stree",
     "agent": "Tumbbad",
     "imposter": "Stree",
     "category": "bollywood",
     "difficulty": "hard"
   },
   {
-    "id": "gangs of wasseypur::masaan",
+    "id": "masaan::gangs of wasseypur",
     "agent": "Masaan",
     "imposter": "Gangs of Wasseypur",
     "category": "bollywood",
     "difficulty": "hard"
   },
   {
-    "id": "drishyam::kahaani",
+    "id": "kahaani::drishyam",
     "agent": "Kahaani",
     "imposter": "Drishyam",
     "category": "bollywood",
@@ -1342,21 +1326,21 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "article 15::newton",
+    "id": "newton::article 15",
     "agent": "Newton",
     "imposter": "Article 15",
     "category": "bollywood",
     "difficulty": "hard"
   },
   {
-    "id": "amitabh bachchan::shah rukh khan",
+    "id": "shah rukh khan::amitabh bachchan",
     "agent": "Shah Rukh Khan",
     "imposter": "Amitabh Bachchan",
     "category": "bollywood",
     "difficulty": "hard"
   },
   {
-    "id": "dharmendra::salman khan",
+    "id": "salman khan::dharmendra",
     "agent": "Salman Khan",
     "imposter": "Dharmendra",
     "category": "bollywood",
@@ -1370,7 +1354,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "dev anand::ranbir kapoor",
+    "id": "ranbir kapoor::dev anand",
     "agent": "Ranbir Kapoor",
     "imposter": "Dev Anand",
     "category": "bollywood",
@@ -1384,7 +1368,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "amol palekar::ayushmann khurrana",
+    "id": "ayushmann khurrana::amol palekar",
     "agent": "Ayushmann Khurrana",
     "imposter": "Amol Palekar",
     "category": "bollywood",
@@ -1398,7 +1382,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "naseeruddin shah::nawazuddin siddiqui",
+    "id": "nawazuddin siddiqui::naseeruddin shah",
     "agent": "Nawazuddin Siddiqui",
     "imposter": "Naseeruddin Shah",
     "category": "bollywood",
@@ -1419,7 +1403,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "rohit sharma::virat kohli",
+    "id": "virat kohli::rohit sharma",
     "agent": "Virat Kohli",
     "imposter": "Rohit Sharma",
     "category": "sports",
@@ -1447,7 +1431,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "ms dhoni::sachin tendulkar",
+    "id": "sachin tendulkar::ms dhoni",
     "agent": "Sachin Tendulkar",
     "imposter": "MS Dhoni",
     "category": "sports",
@@ -1475,14 +1459,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "ishan kishan::rishabh pant",
+    "id": "rishabh pant::ishan kishan",
     "agent": "Rishabh Pant",
     "imposter": "Ishan Kishan",
     "category": "sports",
     "difficulty": "easy"
   },
   {
-    "id": "rinku singh::suryakumar yadav",
+    "id": "suryakumar yadav::rinku singh",
     "agent": "Suryakumar Yadav",
     "imposter": "Rinku Singh",
     "category": "sports",
@@ -1496,7 +1480,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "ravichandran ashwin::ravindra jadeja",
+    "id": "ravindra jadeja::ravichandran ashwin",
     "agent": "Ravindra Jadeja",
     "imposter": "Ravichandran Ashwin",
     "category": "sports",
@@ -1517,21 +1501,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "suresh raina::yuvraj singh",
+    "id": "yuvraj singh::suresh raina",
     "agent": "Yuvraj Singh",
     "imposter": "Suresh Raina",
     "category": "sports",
     "difficulty": "easy"
   },
   {
-    "id": "gautam gambhir::virender sehwag",
+    "id": "virender sehwag::gautam gambhir",
     "agent": "Virender Sehwag",
     "imposter": "Gautam Gambhir",
     "category": "sports",
     "difficulty": "easy"
   },
   {
-    "id": "rahul dravid::sourav ganguly",
+    "id": "sourav ganguly::rahul dravid",
     "agent": "Sourav Ganguly",
     "imposter": "Rahul Dravid",
     "category": "sports",
@@ -1573,14 +1557,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "ab de villiers::glenn maxwell",
+    "id": "glenn maxwell::ab de villiers",
     "agent": "Glenn Maxwell",
     "imposter": "AB de Villiers",
     "category": "sports",
     "difficulty": "easy"
   },
   {
-    "id": "jasprit bumrah::lasith malinga",
+    "id": "lasith malinga::jasprit bumrah",
     "agent": "Lasith Malinga",
     "imposter": "Jasprit Bumrah",
     "category": "sports",
@@ -1594,7 +1578,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "mitchell starc::pat cummins",
+    "id": "pat cummins::mitchell starc",
     "agent": "Pat Cummins",
     "imposter": "Mitchell Starc",
     "category": "sports",
@@ -1608,7 +1592,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "brett lee::shoaib akhtar",
+    "id": "shoaib akhtar::brett lee",
     "agent": "Shoaib Akhtar",
     "imposter": "Brett Lee",
     "category": "sports",
@@ -1629,14 +1613,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "cristiano ronaldo::lionel messi",
+    "id": "lionel messi::cristiano ronaldo",
     "agent": "Lionel Messi",
     "imposter": "Cristiano Ronaldo",
     "category": "sports",
     "difficulty": "easy"
   },
   {
-    "id": "lionel messi::neymar",
+    "id": "neymar::lionel messi",
     "agent": "Neymar",
     "imposter": "Lionel Messi",
     "category": "sports",
@@ -1650,14 +1634,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "erling haaland::kylian mbappé",
+    "id": "kylian mbappé::erling haaland",
     "agent": "Kylian Mbappé",
     "imposter": "Erling Haaland",
     "category": "sports",
     "difficulty": "easy"
   },
   {
-    "id": "kylian mbappé::lionel messi",
+    "id": "lionel messi::kylian mbappé",
     "agent": "Lionel Messi",
     "imposter": "Kylian Mbappé",
     "category": "sports",
@@ -1671,14 +1655,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "cristiano ronaldo::david beckham",
+    "id": "david beckham::cristiano ronaldo",
     "agent": "David Beckham",
     "imposter": "Cristiano Ronaldo",
     "category": "sports",
     "difficulty": "easy"
   },
   {
-    "id": "neymar::ronaldinho",
+    "id": "ronaldinho::neymar",
     "agent": "Ronaldinho",
     "imposter": "Neymar",
     "category": "sports",
@@ -1692,7 +1676,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "lionel messi::sunil chhetri",
+    "id": "sunil chhetri::lionel messi",
     "agent": "Sunil Chhetri",
     "imposter": "Lionel Messi",
     "category": "sports",
@@ -1706,7 +1690,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "chennai super kings::royal challengers bengaluru",
+    "id": "royal challengers bengaluru::chennai super kings",
     "agent": "Royal Challengers Bengaluru",
     "imposter": "Chennai Super Kings",
     "category": "sports",
@@ -1720,56 +1704,56 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "chennai super kings::kolkata knight riders",
+    "id": "kolkata knight riders::chennai super kings",
     "agent": "Kolkata Knight Riders",
     "imposter": "Chennai Super Kings",
     "category": "sports",
     "difficulty": "easy"
   },
   {
-    "id": "kolkata knight riders::rajasthan royals",
+    "id": "rajasthan royals::kolkata knight riders",
     "agent": "Rajasthan Royals",
     "imposter": "Kolkata Knight Riders",
     "category": "sports",
     "difficulty": "easy"
   },
   {
-    "id": "boundary (four)::sixer",
+    "id": "sixer::boundary (four)",
     "agent": "Sixer",
     "imposter": "Boundary (Four)",
     "category": "sports",
     "difficulty": "easy"
   },
   {
-    "id": "bouncer::yorker",
+    "id": "yorker::bouncer",
     "agent": "Yorker",
     "imposter": "Bouncer",
     "category": "sports",
     "difficulty": "easy"
   },
   {
-    "id": "doosra::googly",
+    "id": "googly::doosra",
     "agent": "Googly",
     "imposter": "Doosra",
     "category": "sports",
     "difficulty": "easy"
   },
   {
-    "id": "free hit::super over",
+    "id": "super over::free hit",
     "agent": "Super Over",
     "imposter": "Free Hit",
     "category": "sports",
     "difficulty": "easy"
   },
   {
-    "id": "bowler::wicketkeeper",
+    "id": "wicketkeeper::bowler",
     "agent": "Wicketkeeper",
     "imposter": "Bowler",
     "category": "sports",
     "difficulty": "easy"
   },
   {
-    "id": "rishabh pant::sanju samson",
+    "id": "sanju samson::rishabh pant",
     "agent": "Sanju Samson",
     "imposter": "Rishabh Pant",
     "category": "sports",
@@ -1790,14 +1774,14 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "kl rahul::shreyas iyer",
+    "id": "shreyas iyer::kl rahul",
     "agent": "Shreyas Iyer",
     "imposter": "KL Rahul",
     "category": "sports",
     "difficulty": "medium"
   },
   {
-    "id": "ashish nehra::zaheer khan",
+    "id": "zaheer khan::ashish nehra",
     "agent": "Zaheer Khan",
     "imposter": "Ashish Nehra",
     "category": "sports",
@@ -1818,7 +1802,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "david warner::travis head",
+    "id": "travis head::david warner",
     "agent": "Travis Head",
     "imposter": "David Warner",
     "category": "sports",
@@ -1839,7 +1823,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "mitchell starc::trent boult",
+    "id": "trent boult::mitchell starc",
     "agent": "Trent Boult",
     "imposter": "Mitchell Starc",
     "category": "sports",
@@ -1853,7 +1837,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "rashid khan::sunil narine",
+    "id": "sunil narine::rashid khan",
     "agent": "Sunil Narine",
     "imposter": "Rashid Khan",
     "category": "sports",
@@ -1874,7 +1858,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "ben stokes::jacques kallis",
+    "id": "jacques kallis::ben stokes",
     "agent": "Jacques Kallis",
     "imposter": "Ben Stokes",
     "category": "sports",
@@ -1887,16 +1871,15 @@ const wordBank = [
     "category": "sports",
     "difficulty": "medium"
   },
-  
   {
-    "id": "erling haaland::robert lewandowski",
+    "id": "robert lewandowski::erling haaland",
     "agent": "Robert Lewandowski",
     "imposter": "Erling Haaland",
     "category": "sports",
     "difficulty": "medium"
   },
   {
-    "id": "kylian mbappé::mohamed salah",
+    "id": "mohamed salah::kylian mbappé",
     "agent": "Mohamed Salah",
     "imposter": "Kylian Mbappé",
     "category": "sports",
@@ -1917,7 +1900,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "david beckham::zinedine zidane",
+    "id": "zinedine zidane::david beckham",
     "agent": "Zinedine Zidane",
     "imposter": "David Beckham",
     "category": "sports",
@@ -1931,56 +1914,56 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "gujarat titans::sunrisers hyderabad",
+    "id": "sunrisers hyderabad::gujarat titans",
     "agent": "Sunrisers Hyderabad",
     "imposter": "Gujarat Titans",
     "category": "sports",
     "difficulty": "medium"
   },
   {
-    "id": "gujarat titans::lucknow super giants",
+    "id": "lucknow super giants::gujarat titans",
     "agent": "Lucknow Super Giants",
     "imposter": "Gujarat Titans",
     "category": "sports",
     "difficulty": "medium"
   },
   {
-    "id": "eden gardens::wankhede stadium",
+    "id": "wankhede stadium::eden gardens",
     "agent": "Wankhede Stadium",
     "imposter": "Eden Gardens",
     "category": "sports",
     "difficulty": "medium"
   },
   {
-    "id": "chinnaswamy stadium::narendra modi stadium",
+    "id": "narendra modi stadium::chinnaswamy stadium",
     "agent": "Narendra Modi Stadium",
     "imposter": "Chinnaswamy Stadium",
     "category": "sports",
     "difficulty": "medium"
   },
   {
-    "id": "century::hat-trick",
+    "id": "hat-trick::century",
     "agent": "Hat-trick",
     "imposter": "Century",
     "category": "sports",
     "difficulty": "medium"
   },
   {
-    "id": "free kick::penalty kick",
+    "id": "penalty kick::free kick",
     "agent": "Penalty Kick",
     "imposter": "Free Kick",
     "category": "sports",
     "difficulty": "medium"
   },
   {
-    "id": "cristiano ronaldo::virat kohli",
+    "id": "virat kohli::cristiano ronaldo",
     "agent": "Virat Kohli",
     "imposter": "Cristiano Ronaldo",
     "category": "sports",
     "difficulty": "hard"
   },
   {
-    "id": "lionel messi::rohit sharma",
+    "id": "rohit sharma::lionel messi",
     "agent": "Rohit Sharma",
     "imposter": "Lionel Messi",
     "category": "sports",
@@ -2001,14 +1984,14 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "erling haaland::jasprit bumrah",
+    "id": "jasprit bumrah::erling haaland",
     "agent": "Jasprit Bumrah",
     "imposter": "Erling Haaland",
     "category": "sports",
     "difficulty": "hard"
   },
   {
-    "id": "diego maradona::sachin tendulkar",
+    "id": "sachin tendulkar::diego maradona",
     "agent": "Sachin Tendulkar",
     "imposter": "Diego Maradona",
     "category": "sports",
@@ -2022,14 +2005,14 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "ronaldinho::yuvraj singh",
+    "id": "yuvraj singh::ronaldinho",
     "agent": "Yuvraj Singh",
     "imposter": "Ronaldinho",
     "category": "sports",
     "difficulty": "hard"
   },
   {
-    "id": "david beckham::kl rahul",
+    "id": "kl rahul::david beckham",
     "agent": "KL Rahul",
     "imposter": "David Beckham",
     "category": "sports",
@@ -2064,28 +2047,28 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "run out::stump out",
+    "id": "stump out::run out",
     "agent": "Stump Out",
     "imposter": "Run Out",
     "category": "sports",
     "difficulty": "hard"
   },
   {
-    "id": "caught behind::lbw",
+    "id": "lbw::caught behind",
     "agent": "LBW",
     "imposter": "Caught Behind",
     "category": "sports",
     "difficulty": "hard"
   },
   {
-    "id": "no ball::wide ball",
+    "id": "wide ball::no ball",
     "agent": "Wide Ball",
     "imposter": "No Ball",
     "category": "sports",
     "difficulty": "hard"
   },
   {
-    "id": "red card::yellow card",
+    "id": "yellow card::red card",
     "agent": "Yellow Card",
     "imposter": "Red Card",
     "category": "sports",
@@ -2120,21 +2103,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "doraemon::shinchan",
+    "id": "shinchan::doraemon",
     "agent": "Shinchan",
     "imposter": "Doraemon",
     "category": "cartoons",
     "difficulty": "easy"
   },
   {
-    "id": "oggy and the cockroaches::tom & jerry",
+    "id": "tom & jerry::oggy and the cockroaches",
     "agent": "Tom & Jerry",
     "imposter": "Oggy and the Cockroaches",
     "category": "cartoons",
     "difficulty": "easy"
   },
   {
-    "id": "donald duck::mickey mouse",
+    "id": "mickey mouse::donald duck",
     "agent": "Mickey Mouse",
     "imposter": "Donald Duck",
     "category": "cartoons",
@@ -2155,7 +2138,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "mr. bean::shinchan",
+    "id": "shinchan::mr. bean",
     "agent": "Shinchan",
     "imposter": "Mr. Bean",
     "category": "cartoons",
@@ -2204,21 +2187,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "mickey mouse::tom & jerry",
+    "id": "tom & jerry::mickey mouse",
     "agent": "Tom & Jerry",
     "imposter": "Mickey Mouse",
     "category": "cartoons",
     "difficulty": "easy"
   },
   {
-    "id": "ninja hattori::shinchan",
+    "id": "shinchan::ninja hattori",
     "agent": "Shinchan",
     "imposter": "Ninja Hattori",
     "category": "cartoons",
     "difficulty": "easy"
   },
   {
-    "id": "chhota bheem::roll no 21",
+    "id": "roll no 21::chhota bheem",
     "agent": "Roll No 21",
     "imposter": "Chhota Bheem",
     "category": "cartoons",
@@ -2246,14 +2229,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "johnny bravo::popeye",
+    "id": "popeye::johnny bravo",
     "agent": "Popeye",
     "imposter": "Johnny Bravo",
     "category": "cartoons",
     "difficulty": "easy"
   },
   {
-    "id": "ben 10::dexter's laboratory",
+    "id": "dexter's laboratory::ben 10",
     "agent": "Dexter's Laboratory",
     "imposter": "Ben 10",
     "category": "cartoons",
@@ -2267,28 +2250,28 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "doraemon::kiteretsu",
+    "id": "kiteretsu::doraemon",
     "agent": "Kiteretsu",
     "imposter": "Doraemon",
     "category": "cartoons",
     "difficulty": "easy"
   },
   {
-    "id": "chhota bheem::krishna(cartoon)",
+    "id": "chhota bheem::krishna (cartoon)",
     "agent": "Chhota Bheem",
     "imposter": "Krishna (Cartoon)",
     "category": "cartoons",
     "difficulty": "easy"
   },
   {
-    "id": "motu patlu::roll no 21",
+    "id": "roll no 21::motu patlu",
     "agent": "Roll No 21",
     "imposter": "Motu Patlu",
     "category": "cartoons",
     "difficulty": "easy"
   },
   {
-    "id": "tenali rama::vikram betal",
+    "id": "vikram betal::tenali rama",
     "agent": "Vikram Betal",
     "imposter": "Tenali Rama",
     "category": "cartoons",
@@ -2302,13 +2285,12 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "doraemon::perman",
+    "id": "perman::doraemon",
     "agent": "Perman",
     "imposter": "Doraemon",
     "category": "cartoons",
     "difficulty": "medium"
   },
-  
   {
     "id": "mr. bean::horrid henry",
     "agent": "Mr. Bean",
@@ -2324,14 +2306,14 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "dennis the menace::richie rich",
+    "id": "richie rich::dennis the menace",
     "agent": "Richie Rich",
     "imposter": "Dennis the Menace",
     "category": "cartoons",
     "difficulty": "medium"
   },
   {
-    "id": "ben 10::phineas and ferb",
+    "id": "phineas and ferb::ben 10",
     "agent": "Phineas and Ferb",
     "imposter": "Ben 10",
     "category": "cartoons",
@@ -2345,7 +2327,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "ducktales::richie rich",
+    "id": "richie rich::ducktales",
     "agent": "Richie Rich",
     "imposter": "DuckTales",
     "category": "cartoons",
@@ -2372,24 +2354,22 @@ const wordBank = [
     "category": "cartoons",
     "difficulty": "medium"
   },
-  
-  
   {
-    "id": "dennis the menace::shinchan",
+    "id": "shinchan::dennis the menace",
     "agent": "Shinchan",
     "imposter": "Dennis the Menace",
     "category": "cartoons",
     "difficulty": "hard"
   },
   {
-    "id": "aladdin::doraemon",
+    "id": "doraemon::aladdin",
     "agent": "Doraemon",
     "imposter": "Aladdin",
     "category": "cartoons",
     "difficulty": "hard"
   },
   {
-    "id": "garfield::oggy",
+    "id": "oggy::garfield",
     "agent": "Oggy",
     "imposter": "Garfield",
     "category": "cartoons",
@@ -2410,14 +2390,14 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "krrish::shaktimaan",
+    "id": "shaktimaan::krrish",
     "agent": "Shaktimaan",
     "imposter": "Krrish",
     "category": "superheroes_hollywood",
     "difficulty": "easy"
   },
   {
-    "id": "batman::spider-man",
+    "id": "spider-man::batman",
     "agent": "Spider-Man",
     "imposter": "Batman",
     "category": "superheroes_hollywood",
@@ -2431,21 +2411,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "captain america::iron man",
+    "id": "iron man::captain america",
     "agent": "Iron Man",
     "imposter": "Captain America",
     "category": "superheroes_hollywood",
     "difficulty": "easy"
   },
   {
-    "id": "hulk::thor",
+    "id": "thor::hulk",
     "agent": "Thor",
     "imposter": "Hulk",
     "category": "superheroes_hollywood",
     "difficulty": "easy"
   },
   {
-    "id": "krrish::ra.one",
+    "id": "ra.one::krrish",
     "agent": "Ra.One",
     "imposter": "Krrish",
     "category": "superheroes_hollywood",
@@ -2459,7 +2439,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "iron man::spider-man",
+    "id": "spider-man::iron man",
     "agent": "Spider-Man",
     "imposter": "Iron Man",
     "category": "superheroes_hollywood",
@@ -2487,14 +2467,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "batman::joker",
+    "id": "joker::batman",
     "agent": "Joker",
     "imposter": "Batman",
     "category": "superheroes_hollywood",
     "difficulty": "easy"
   },
   {
-    "id": "iron man::thanos",
+    "id": "thanos::iron man",
     "agent": "Thanos",
     "imposter": "Iron Man",
     "category": "superheroes_hollywood",
@@ -2508,7 +2488,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "avatar::titanic",
+    "id": "titanic::avatar",
     "agent": "Titanic",
     "imposter": "Avatar",
     "category": "superheroes_hollywood",
@@ -2522,7 +2502,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "avatar::jurassic park",
+    "id": "jurassic park::avatar",
     "agent": "Jurassic Park",
     "imposter": "Avatar",
     "category": "superheroes_hollywood",
@@ -2550,21 +2530,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "harry potter::spider-man",
+    "id": "spider-man::harry potter",
     "agent": "Spider-Man",
     "imposter": "Harry Potter",
     "category": "superheroes_hollywood",
     "difficulty": "easy"
   },
   {
-    "id": "aladdin::the lion king",
+    "id": "the lion king::aladdin",
     "agent": "The Lion King",
     "imposter": "Aladdin",
     "category": "superheroes_hollywood",
     "difficulty": "easy"
   },
   {
-    "id": "iron man::transformers",
+    "id": "transformers::iron man",
     "agent": "Transformers",
     "imposter": "Iron Man",
     "category": "superheroes_hollywood",
@@ -2592,7 +2572,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "flying jatt::krrish",
+    "id": "krrish::flying jatt",
     "agent": "Krrish",
     "imposter": "Flying Jatt",
     "category": "superheroes_hollywood",
@@ -2634,7 +2614,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "green arrow::hawkeye",
+    "id": "hawkeye::green arrow",
     "agent": "Hawkeye",
     "imposter": "Green Arrow",
     "category": "superheroes_hollywood",
@@ -2648,14 +2628,14 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "black widow::wonder woman",
+    "id": "wonder woman::black widow",
     "agent": "Wonder Woman",
     "imposter": "Black Widow",
     "category": "superheroes_hollywood",
     "difficulty": "medium"
   },
   {
-    "id": "spider-man::venom",
+    "id": "venom::spider-man",
     "agent": "Venom",
     "imposter": "Spider-Man",
     "category": "superheroes_hollywood",
@@ -2669,14 +2649,14 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "inception::matrix",
+    "id": "matrix::inception",
     "agent": "Matrix",
     "imposter": "Inception",
     "category": "superheroes_hollywood",
     "difficulty": "medium"
   },
   {
-    "id": "avengers::the dark knight",
+    "id": "the dark knight::avengers",
     "agent": "The Dark Knight",
     "imposter": "Avengers",
     "category": "superheroes_hollywood",
@@ -2690,7 +2670,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "iron man::shaktimaan",
+    "id": "shaktimaan::iron man",
     "agent": "Shaktimaan",
     "imposter": "Iron Man",
     "category": "superheroes_hollywood",
@@ -2739,14 +2719,14 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "inception::titanic",
+    "id": "titanic::inception",
     "agent": "Titanic",
     "imposter": "Inception",
     "category": "superheroes_hollywood",
     "difficulty": "hard"
   },
   {
-    "id": "godzilla::jurassic park",
+    "id": "jurassic park::godzilla",
     "agent": "Jurassic Park",
     "imposter": "Godzilla",
     "category": "superheroes_hollywood",
@@ -2760,7 +2740,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "aeroplane::train",
+    "id": "train::aeroplane",
     "agent": "Train",
     "imposter": "Aeroplane",
     "category": "mainstream",
@@ -2774,7 +2754,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "aeroplane::helicopter",
+    "id": "helicopter::aeroplane",
     "agent": "Helicopter",
     "imposter": "Aeroplane",
     "category": "mainstream",
@@ -2797,33 +2777,33 @@ const wordBank = [
   {
     "id": "boat::truck",
     "agent": "Boat",
-    "imposter": "trcuk",
+    "imposter": "truck",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "yatch::submarine",
+    "id": "submarine::yacht",
     "agent": "Submarine",
-    "imposter": "yatch",
+    "imposter": "yacht",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "tractor::truck",
+    "id": "truck::tractor",
     "agent": "Truck",
     "imposter": "Tractor",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "bicycle::scooter",
+    "id": "scooter::bicycle",
     "agent": "Scooter",
     "imposter": "Bicycle",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "local train::metro",
+    "id": "metro::local train",
     "agent": "Metro",
     "imposter": "Local Train",
     "category": "mainstream",
@@ -2837,7 +2817,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "ambulance::fire engine",
+    "id": "fire engine::ambulance",
     "agent": "Fire Engine",
     "imposter": "Ambulance",
     "category": "mainstream",
@@ -2851,7 +2831,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "auto rickshaw::horse carriage",
+    "id": "horse carriage::auto rickshaw",
     "agent": "Horse Carriage",
     "imposter": "Auto Rickshaw",
     "category": "mainstream",
@@ -2900,7 +2880,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "courtroom::police station",
+    "id": "police station::courtroom",
     "agent": "Police Station",
     "imposter": "Courtroom",
     "category": "mainstream",
@@ -2914,42 +2894,42 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "church::temple",
+    "id": "temple::church",
     "agent": "Temple",
     "imposter": "church",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "church::mosque",
+    "id": "mosque::church",
     "agent": "Mosque",
     "imposter": "Church",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "circus::zoo",
+    "id": "zoo::circus",
     "agent": "Zoo",
     "imposter": "Circus",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "Food court::museum",
+    "id": "museum::food court",
     "agent": "Museum",
     "imposter": "Food court",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "garden::farm",
+    "id": "farm::garden",
     "agent": "farm",
     "imposter": "Garden",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "Water-park::stadium",
+    "id": "water-park::stadium",
     "agent": "Water-park",
     "imposter": "Stadium",
     "category": "mainstream",
@@ -2970,21 +2950,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "petrol pump::Garage",
+    "id": "petrol pump::garage",
     "agent": "Petrol Pump",
     "imposter": "garage",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "market::Hospital",
+    "id": "market::hospital",
     "agent": "Market",
     "imposter": "Hospital",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "hospital::supermarket",
+    "id": "supermarket::hospital",
     "agent": "Supermarket",
     "imposter": "Hospital",
     "category": "mainstream",
@@ -3005,14 +2985,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "red fort::taj mahal",
+    "id": "taj mahal::red fort",
     "agent": "Taj Mahal",
     "imposter": "Red Fort",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "india gate::qutub minar",
+    "id": "qutub minar::india gate",
     "agent": "Qutub Minar",
     "imposter": "India Gate",
     "category": "mainstream",
@@ -3040,28 +3020,28 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "gateway of india::red fort",
+    "id": "red fort::gateway of india",
     "agent": "Red Fort",
     "imposter": "Gateway of India",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "qutub minar::taj mahal",
+    "id": "taj mahal::qutub minar",
     "agent": "Taj Mahal",
     "imposter": "Qutub Minar",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "howrah bridge::victoria memorial",
+    "id": "victoria memorial::howrah bridge",
     "agent": "Victoria Memorial",
     "imposter": "Howrah Bridge",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "goa beach::marine drive",
+    "id": "marine drive::goa beach",
     "agent": "Marine Drive",
     "imposter": "Goa Beach",
     "category": "mainstream",
@@ -3075,22 +3055,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "himalayas::mount everest",
+    "id": "mount everest::himalayas",
     "agent": "Mount Everest",
     "imposter": "Himalayas",
     "category": "mainstream",
     "difficulty": "easy"
   },
-  
   {
-    "id": "laptop::mobile phone",
+    "id": "mobile phone::laptop",
     "agent": "Mobile Phone",
     "imposter": "Laptop",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "cinema projector::television",
+    "id": "television::cinema projector",
     "agent": "Television",
     "imposter": "Cinema Projector",
     "category": "mainstream",
@@ -3104,21 +3083,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "microwave oven::refrigerator",
+    "id": "refrigerator::microwave oven",
     "agent": "Refrigerator",
     "imposter": "Microwave Oven",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "dishwasher::oven",
+    "id": "oven::dishwasher",
     "agent": "oven",
     "imposter": "Dishwasher",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "air conditioner::tubelight",
+    "id": "tubelight::air conditioner",
     "agent": "tubelight",
     "imposter": "Air Conditioner",
     "category": "mainstream",
@@ -3132,7 +3111,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "earphones::headphones",
+    "id": "headphones::earphones",
     "agent": "Headphones",
     "imposter": "Earphones",
     "category": "mainstream",
@@ -3146,14 +3125,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "laptop::tablet (ipad)",
+    "id": "tablet (ipad)::laptop",
     "agent": "Tablet (iPad)",
     "imposter": "Laptop",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "candle::torch (flashlight)",
+    "id": "torch (flashlight)::candle",
     "agent": "Torch (Flashlight)",
     "imposter": "Candle",
     "category": "mainstream",
@@ -3174,30 +3153,26 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "refrigerator::water purifier",
+    "id": "water purifier::refrigerator",
     "agent": "Water Purifier",
     "imposter": "Refrigerator",
     "category": "mainstream",
     "difficulty": "easy"
   },
- 
-  
   {
-    "id": "earphones::sunglasses",
+    "id": "sunglasses::eyeglasses",
     "agent": "Sunglasses",
     "imposter": "Eyeglasses",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "cap::helmet",
+    "id": "helmet::cap",
     "agent": "Helmet",
     "imposter": "Cap",
     "category": "mainstream",
     "difficulty": "easy"
   },
-  
-  
   {
     "id": "chair::sofa",
     "agent": "Chair",
@@ -3220,14 +3195,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "blanket::pillow",
+    "id": "pillow::blanket",
     "agent": "Pillow",
     "imposter": "Blanket",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "bedsheet::towel",
+    "id": "towel::bedsheet",
     "agent": "Towel",
     "imposter": "Bedsheet",
     "category": "mainstream",
@@ -3241,16 +3216,16 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "soap::toothbrush",
+    "id": "toothbrush::soap",
     "agent": "Toothbrush",
     "imposter": "Soap",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": " oil::shampoo",
+    "id": "shampoo::oil",
     "agent": "Shampoo",
-    "imposter": " Oil",
+    "imposter": "Oil",
     "category": "mainstream",
     "difficulty": "easy"
   },
@@ -3262,14 +3237,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "spoon::scissors",
+    "id": "scissors::spoon",
     "agent": "Scissors",
     "imposter": "spoon",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "key::lock",
+    "id": "lock::key",
     "agent": "Lock",
     "imposter": "Key",
     "category": "mainstream",
@@ -3283,7 +3258,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "diary::notebook",
+    "id": "notebook::diary",
     "agent": "Notebook",
     "imposter": "Diary",
     "category": "mainstream",
@@ -3311,42 +3286,42 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "bed cover::curtains",
+    "id": "curtains::bed cover",
     "agent": "Curtains",
     "imposter": "Bed Cover",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "lion::squirrel",
+    "id": "squirrel::lion",
     "agent": "squirrel",
     "imposter": "Lion",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "camel::elephant",
+    "id": "elephant::camel",
     "agent": "Elephant",
     "imposter": "Camel",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "cat::mouse",
+    "id": "mouse::cat",
     "agent": "mouse",
     "imposter": "Cat",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "donkey::horse",
+    "id": "horse::donkey",
     "agent": "Horse",
     "imposter": "Donkey",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "sheep::cow",
+    "id": "cow::sheep",
     "agent": "Cow",
     "imposter": "sheep",
     "category": "mainstream",
@@ -3360,14 +3335,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "chimpanzee::Lion",
+    "id": "lion::chimpanzee",
     "agent": "Lion",
     "imposter": "Chimpanzee",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "parrot::peacock",
+    "id": "peacock::parrot",
     "agent": "Peacock",
     "imposter": "Parrot",
     "category": "mainstream",
@@ -3395,36 +3370,35 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "lizard::snake",
+    "id": "snake::lizard",
     "agent": "Snake",
     "imposter": "Lizard",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "Turtle::crocodile",
+    "id": "crocodile::turtle",
     "agent": "Crocodile",
     "imposter": "Turtle",
     "category": "mainstream",
     "difficulty": "easy"
   },
-  
   {
-    "id": "rabbit::Turtle",
+    "id": "rabbit::turtle",
     "agent": "Rabbit",
     "imposter": "Turtle",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "Cat::zebra",
+    "id": "cat::zebra",
     "agent": "Cat",
     "imposter": "Zebra",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "elephant::giraffe",
+    "id": "giraffe::elephant",
     "agent": "Giraffe",
     "imposter": "Elephant",
     "category": "mainstream",
@@ -3438,14 +3412,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "dog::wolf",
+    "id": "wolf::dog",
     "agent": "Wolf",
     "imposter": "dog",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "dolphin::Shark",
+    "id": "dolphin::shark",
     "agent": "Dolphin",
     "imposter": "Shark",
     "category": "mainstream",
@@ -3459,14 +3433,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "professor::teacher",
+    "id": "teacher::professor",
     "agent": "Teacher",
     "imposter": "Professor",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "air hostess::pilot",
+    "id": "pilot::air hostess",
     "agent": "Pilot",
     "imposter": "Air Hostess",
     "category": "mainstream",
@@ -3480,7 +3454,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "judge::lawyer",
+    "id": "lawyer::judge",
     "agent": "Lawyer",
     "imposter": "Judge",
     "category": "mainstream",
@@ -3501,14 +3475,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "conductor::driver",
+    "id": "driver::conductor",
     "agent": "Driver",
     "imposter": "Conductor",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "writer::postman",
+    "id": "postman::writer",
     "agent": "Postman",
     "imposter": "Writer",
     "category": "mainstream",
@@ -3529,7 +3503,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "fashion designer:: barber",
+    "id": "barber::fashion designer",
     "agent": "Barber",
     "imposter": "Fashion Designer",
     "category": "mainstream",
@@ -3550,21 +3524,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "cameraman::director",
+    "id": "director::cameraman",
     "agent": "director",
     "imposter": "Cameraman",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "moon::sun",
+    "id": "sun::moon",
     "agent": "Sun",
     "imposter": "Moon",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "planets::cloud",
+    "id": "cloud::planets",
     "agent": "cloud",
     "imposter": "Planets",
     "category": "mainstream",
@@ -3578,7 +3552,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "snow::thunder",
+    "id": "thunder::snow",
     "agent": "Thunder",
     "imposter": "snow",
     "category": "mainstream",
@@ -3592,28 +3566,28 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "sunrise::sunset",
+    "id": "sunset::sunrise",
     "agent": "Sunset",
     "imposter": "Sunrise",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "hill::building",
+    "id": "building::hill",
     "agent": "building",
     "imposter": "Hill",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "ocean::iceberg",
+    "id": "iceberg::ocean",
     "agent": "iceberg",
     "imposter": "Ocean",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "lake::hill",
+    "id": "hill::lake",
     "agent": "hill",
     "imposter": "Lake",
     "category": "mainstream",
@@ -3634,14 +3608,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "hailstorm::heatwave",
+    "id": "heatwave::hailstorm",
     "agent": "Heatwave",
     "imposter": "Hailstorm",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "evening::morning",
+    "id": "morning::evening",
     "agent": "Morning",
     "imposter": "Evening",
     "category": "mainstream",
@@ -3682,9 +3656,8 @@ const wordBank = [
     "category": "mainstream",
     "difficulty": "easy"
   },
-  
   {
-    "id": "ceiling::floor",
+    "id": "floor::ceiling",
     "agent": "floor",
     "imposter": "Ceiling",
     "category": "mainstream",
@@ -3705,7 +3678,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "jacket::hat",
+    "id": "hat::jacket",
     "agent": "hat",
     "imposter": "Jacket",
     "category": "mainstream",
@@ -3719,28 +3692,28 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "necklace::ring",
+    "id": "ring::necklace",
     "agent": "Ring",
     "imposter": "Necklace",
     "category": "mainstream",
     "difficulty": "easy"
   },
   {
-    "id": "bus stand::railway station",
+    "id": "railway station::bus stand",
     "agent": "Railway Station",
     "imposter": "Bus Stand",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "airport::metro station",
+    "id": "metro station::airport",
     "agent": "Metro Station",
     "imposter": "Airport",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "courier office::post office",
+    "id": "post office::courier office",
     "agent": "Post Office",
     "imposter": "Courier Office",
     "category": "mainstream",
@@ -3768,13 +3741,12 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "high court::police station",
+    "id": "high court::supreme court",
     "agent": "High Court",
     "imposter": "Supreme Court",
     "category": "mainstream",
     "difficulty": "medium"
   },
-  
   {
     "id": "embassy::passport office",
     "agent": "Embassy",
@@ -3782,9 +3754,8 @@ const wordBank = [
     "category": "mainstream",
     "difficulty": "medium"
   },
-  
   {
-    "id": "lighthouse:: submarine",
+    "id": "lighthouse::submarine",
     "agent": "Lighthouse",
     "imposter": "submarine",
     "category": "mainstream",
@@ -3797,8 +3768,6 @@ const wordBank = [
     "category": "mainstream",
     "difficulty": "medium"
   },
-  
-  
   {
     "id": "beach::dam",
     "agent": "beach",
@@ -3807,21 +3776,21 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "lake::reservoir",
+    "id": "reservoir::lake",
     "agent": "Reservoir",
     "imposter": "Lake",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "briefcase::wallet",
+    "id": "wallet::briefcase",
     "agent": "wallet",
     "imposter": "Briefcase",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "backpack::wallet",
+    "id": "wallet::backpack",
     "agent": "wallet",
     "imposter": "Backpack",
     "category": "mainstream",
@@ -3835,86 +3804,84 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "bottle opener::pocket knife",
+    "id": "pocket knife::bottle opener",
     "agent": "Pocket Knife",
     "imposter": "Bottle Opener",
     "category": "mainstream",
     "difficulty": "medium"
   },
-  
-  
   {
-    "id": "carrom coin::carrom striker",
+    "id": "carrom striker::carrom coin",
     "agent": "Carrom Striker",
     "imposter": "Carrom Coin",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "chess knight::chess pawn",
+    "id": "chess pawn::chess knight",
     "agent": "Chess Pawn",
     "imposter": "Chess Knight",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "board game::playing card",
+    "id": "playing card::board game",
     "agent": "Playing Card",
     "imposter": "Board Game",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "coin::dice",
+    "id": "dice::coin",
     "agent": "Dice",
     "imposter": "Coin",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "measuring tape:: pechkas",
+    "id": "measuring tape::pechkas",
     "agent": "Measuring Tape",
     "imposter": "pechkas",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "abacus::calculator",
+    "id": "calculator::abacus",
     "agent": "Calculator",
     "imposter": "Abacus",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "sharpner::stapler",
+    "id": "stapler::sharpner",
     "agent": "Stapler",
     "imposter": "sharpner",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "glue ::remover",
-    "agent": "Glue ",
+    "id": "glue::remover",
+    "agent": "Glue",
     "imposter": "remover",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "envelope::Debit card",
+    "id": "envelope::debit card",
     "agent": "Envelope",
     "imposter": "Debit card",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "signature::stamp",
+    "id": "stamp::signature",
     "agent": "Stamp",
     "imposter": "Signature",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "cheque book::Passport",
+    "id": "cheque book::passport",
     "agent": "Cheque Book",
     "imposter": "Passport",
     "category": "mainstream",
@@ -3927,7 +3894,6 @@ const wordBank = [
     "category": "mainstream",
     "difficulty": "medium"
   },
-  
   {
     "id": "glacier::iceberg",
     "agent": "Glacier",
@@ -3935,23 +3901,22 @@ const wordBank = [
     "category": "mainstream",
     "difficulty": "medium"
   },
-  
   {
-    "id": "cave:: mountain",
+    "id": "cave::mountain",
     "agent": "Cave",
     "imposter": "mountain",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "geyser::volcano",
+    "id": "volcano::geyser",
     "agent": "Volcano",
     "imposter": "Geyser",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "island::peninsula",
+    "id": "peninsula::island",
     "agent": "Peninsula",
     "imposter": "Island",
     "category": "mainstream",
@@ -3965,7 +3930,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "plain::plateau",
+    "id": "plateau::plain",
     "agent": "Plateau",
     "imposter": "Plain",
     "category": "mainstream",
@@ -4000,14 +3965,14 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "lunar eclipse::solar eclipse",
+    "id": "solar eclipse::lunar eclipse",
     "agent": "Solar Eclipse",
     "imposter": "Lunar Eclipse",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "comet::shooting star",
+    "id": "shooting star::comet",
     "agent": "Shooting Star",
     "imposter": "Comet",
     "category": "mainstream",
@@ -4021,50 +3986,49 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "town ::village ",
-    "agent": "Village ",
-    "imposter": "Town )",
+    "id": "village::town",
+    "agent": "Village",
+    "imposter": "Town",
     "category": "mainstream",
     "difficulty": "medium"
   },
-  
   {
-    "id": "bungalow::society building",
+    "id": "society building::bungalow",
     "agent": "Society Building",
     "imposter": "Bungalow",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "balcony::room",
+    "id": "room::balcony",
     "agent": "room",
     "imposter": "Balcony",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "courtyard ::terrace",
-    "agent": "Courtyard ",
+    "id": "courtyard::terrace",
+    "agent": "Courtyard",
     "imposter": "terrace",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "dining room::kitchen",
+    "id": "kitchen::dining room",
     "agent": "Kitchen",
     "imposter": "Dining Room",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "bed room::living room",
+    "id": "living room::bed room",
     "agent": "Living Room",
     "imposter": "Bed Room",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "Dining table::basement",
+    "id": "dining table::basement",
     "agent": "Dining table",
     "imposter": "Basement",
     "category": "mainstream",
@@ -4078,29 +4042,29 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "gatekeeper :: electrician",
-    "agent": "Gatekeeper ",
+    "id": "gatekeeper::electrician",
+    "agent": "Gatekeeper",
     "imposter": "electrician",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "garbage collector::washing machine",
+    "id": "washing machine::garbage collector",
     "agent": "washing machine",
     "imposter": "Garbage Collector",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "milkman ::newspaper delivery boy",
+    "id": "milkman::newspaper delivery boy",
     "agent": "Milkman",
     "imposter": "Newspaper Delivery Boy",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "fruit vendor::vegetable vendor",
-    "agent": "Vegetable Vendor ",
+    "id": "vegetable vendor::fruit vendor",
+    "agent": "Vegetable Vendor",
     "imposter": "Fruit Vendor",
     "category": "mainstream",
     "difficulty": "medium"
@@ -4113,21 +4077,21 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "farming::camping",
+    "id": "camping::farming",
     "agent": "camping",
     "imposter": "Farming",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "baking::refrigirating",
-    "agent": "refrigirating",
+    "id": "refrigerating::baking",
+    "agent": "Refrigerating",
     "imposter": "Baking",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "dancing::running",
+    "id": "running::dancing",
     "agent": "running",
     "imposter": "Dancing",
     "category": "mainstream",
@@ -4148,7 +4112,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "sky-diving::swimming",
+    "id": "swimming::sky-diving",
     "agent": "Swimming",
     "imposter": "Sky-Diving",
     "category": "mainstream",
@@ -4162,14 +4126,14 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "camping::movie",
+    "id": "movie::camping",
     "agent": "movie",
     "imposter": "Camping",
     "category": "mainstream",
     "difficulty": "medium"
   },
   {
-    "id": "boating::bunjee-jumping",
+    "id": "bunjee-jumping::boating",
     "agent": "bunjee-jumping",
     "imposter": "Boating",
     "category": "mainstream",
@@ -4205,16 +4169,15 @@ const wordBank = [
   },
   {
     "id": "street play::theatre play",
-    "agent": "Street Play ",
+    "agent": "Street Play",
     "imposter": "Theatre Play",
     "category": "mainstream",
     "difficulty": "medium"
   },
-  
   {
-    "id": "passport::liabrary-card",
+    "id": "passport::library-card",
     "agent": "Passport",
-    "imposter": "liabrary-card",
+    "imposter": "library-card",
     "category": "mainstream",
     "difficulty": "medium"
   },
@@ -4226,7 +4189,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "driving licence::voter id",
+    "id": "voter id::driving licence",
     "agent": "Voter ID",
     "imposter": "Driving Licence",
     "category": "mainstream",
@@ -4247,7 +4210,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "submarine::train",
+    "id": "train::submarine",
     "agent": "Train",
     "imposter": "Submarine",
     "category": "mainstream",
@@ -4268,28 +4231,28 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "eiffel tower::taj mahal",
+    "id": "taj mahal::eiffel tower",
     "agent": "Taj Mahal",
     "imposter": "Eiffel Tower",
     "category": "mainstream",
     "difficulty": "hard"
   },
   {
-    "id": "great wall of china::red fort",
+    "id": "red fort::great wall of china",
     "agent": "Red Fort",
     "imposter": "Great Wall of China",
     "category": "mainstream",
     "difficulty": "hard"
   },
   {
-    "id": "moon::mount everest",
+    "id": "mount everest::moon",
     "agent": "Mount Everest",
     "imposter": "Moon",
     "category": "mainstream",
     "difficulty": "hard"
   },
   {
-    "id": "amazon river::ganga river",
+    "id": "ganga river::amazon river",
     "agent": "Ganga River",
     "imposter": "Amazon River",
     "category": "mainstream",
@@ -4303,21 +4266,21 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "astronaut::pilot",
+    "id": "pilot::astronaut",
     "agent": "Pilot",
     "imposter": "Astronaut",
     "category": "mainstream",
     "difficulty": "hard"
   },
   {
-    "id": "detective::police officer",
+    "id": "police officer::detective",
     "agent": "Police Officer",
     "imposter": "Detective",
     "category": "mainstream",
     "difficulty": "hard"
   },
   {
-    "id": "librarian::teacher",
+    "id": "teacher::librarian",
     "agent": "Teacher",
     "imposter": "Librarian",
     "category": "mainstream",
@@ -4338,7 +4301,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "prison::school",
+    "id": "school::prison",
     "agent": "School",
     "imposter": "Prison",
     "category": "mainstream",
@@ -4352,7 +4315,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "internet::library",
+    "id": "library::internet",
     "agent": "Library",
     "imposter": "Internet",
     "category": "mainstream",
@@ -4373,14 +4336,14 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "pyramid::temple",
+    "id": "temple::pyramid",
     "agent": "Temple",
     "imposter": "Pyramid",
     "category": "mainstream",
     "difficulty": "hard"
   },
   {
-    "id": "national park::zoo",
+    "id": "zoo::national park",
     "agent": "Zoo",
     "imposter": "National Park",
     "category": "mainstream",
@@ -4394,7 +4357,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "radio::television",
+    "id": "television::radio",
     "agent": "Television",
     "imposter": "Radio",
     "category": "mainstream",
@@ -4408,7 +4371,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "earthen pot (matka)::refrigerator",
+    "id": "refrigerator::earthen pot (matka)",
     "agent": "Refrigerator",
     "imposter": "Earthen Pot (Matka)",
     "category": "mainstream",
@@ -4429,21 +4392,21 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "camera::telescope",
+    "id": "telescope::camera",
     "agent": "Telescope",
     "imposter": "camera",
     "category": "mainstream",
     "difficulty": "hard"
   },
   {
-    "id": "night vision goggles::sunglasses",
+    "id": "sunglasses::night vision goggles",
     "agent": "Sunglasses",
     "imposter": "Night Vision Goggles",
     "category": "mainstream",
     "difficulty": "hard"
   },
   {
-    "id": "parachute::umbrella",
+    "id": "umbrella::parachute",
     "agent": "Umbrella",
     "imposter": "Parachute",
     "category": "mainstream",
@@ -4457,14 +4420,14 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "crown::helmet",
+    "id": "helmet::crown",
     "agent": "Helmet",
     "imposter": "Crown",
     "category": "mainstream",
     "difficulty": "hard"
   },
   {
-    "id": "safe (locker)::wallet",
+    "id": "wallet::safe (locker)",
     "agent": "Wallet",
     "imposter": "Safe (Locker)",
     "category": "mainstream",
@@ -4478,7 +4441,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "handcuffs::lock",
+    "id": "lock::handcuffs",
     "agent": "Lock",
     "imposter": "Handcuffs",
     "category": "mainstream",
@@ -4513,7 +4476,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "email::letter",
+    "id": "letter::email",
     "agent": "Letter",
     "imposter": "Email",
     "category": "mainstream",
@@ -4527,7 +4490,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "dragon::tiger",
+    "id": "tiger::dragon",
     "agent": "Tiger",
     "imposter": "Dragon",
     "category": "mainstream",
@@ -4569,42 +4532,42 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "bonfire::sun",
+    "id": "sun::bonfire",
     "agent": "Sun",
     "imposter": "Bonfire",
     "category": "mainstream",
     "difficulty": "hard"
   },
   {
-    "id": "mirror::moon",
+    "id": "moon::mirror",
     "agent": "Moon",
     "imposter": "Mirror",
     "category": "mainstream",
     "difficulty": "hard"
   },
   {
-    "id": "prism::rainbow",
+    "id": "rainbow::prism",
     "agent": "Rainbow",
     "imposter": "Prism",
     "category": "mainstream",
     "difficulty": "hard"
   },
   {
-    "id": "electric shock::lightning",
+    "id": "lightning::electric shock",
     "agent": "Lightning",
     "imposter": "Electric Shock",
     "category": "mainstream",
     "difficulty": "hard"
   },
   {
-    "id": "fountain::waterfall",
+    "id": "waterfall::fountain",
     "agent": "Waterfall",
     "imposter": "Fountain",
     "category": "mainstream",
     "difficulty": "hard"
   },
   {
-    "id": "beach::desert",
+    "id": "desert::beach",
     "agent": "Desert",
     "imposter": "Beach",
     "category": "mainstream",
@@ -4639,28 +4602,28 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "lighthouse::traffic light",
+    "id": "traffic light::lighthouse",
     "agent": "Traffic Light",
     "imposter": "Lighthouse",
     "category": "mainstream",
     "difficulty": "hard"
   },
   {
-    "id": "banner::flag",
+    "id": "flag::banner",
     "agent": "Flag",
     "imposter": "Banner",
     "category": "mainstream",
     "difficulty": "hard"
   },
   {
-    "id": "boarding pass::passport",
+    "id": "passport::boarding pass",
     "agent": "Passport",
     "imposter": "Boarding Pass",
     "category": "mainstream",
     "difficulty": "hard"
   },
   {
-    "id": "medal::trophy",
+    "id": "trophy::medal",
     "agent": "Trophy",
     "imposter": "Medal",
     "category": "mainstream",
@@ -4674,7 +4637,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "yippe noodles::parle-g",
+    "id": "parle-g::yippe noodles",
     "agent": "Parle-G",
     "imposter": "yippe noodles",
     "category": "brands",
@@ -4695,14 +4658,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "maggi noodles::Frankie",
+    "id": "maggi noodles::frankie",
     "agent": "Maggi Noodles",
     "imposter": "Frankie",
     "category": "brands",
     "difficulty": "easy"
   },
   {
-    "id": "Belgian waffle::haldiram's bhujia",
+    "id": "haldiram's bhujia::belgian waffle",
     "agent": "Haldiram's Bhujia",
     "imposter": "Belgian waffle",
     "category": "brands",
@@ -4716,7 +4679,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "bingo mad angles:: jeera rice",
+    "id": "bingo mad angles::jeera rice",
     "agent": "Bingo Mad Angles",
     "imposter": "jeera rice",
     "category": "brands",
@@ -4737,28 +4700,28 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "neem juice::thums up",
+    "id": "thums up::neem juice",
     "agent": "Thums Up",
     "imposter": "neem juice",
     "category": "brands",
     "difficulty": "easy"
   },
   {
-    "id": "limca::Feastables",
+    "id": "limca::feastables",
     "agent": "Limca",
     "imposter": "Feastables",
     "category": "brands",
     "difficulty": "easy"
   },
   {
-    "id": "coca-cola::rose sharbat",
+    "id": "rose sharbat::coca-cola",
     "agent": "rose sharbat",
     "imposter": "Coca-Cola",
     "category": "brands",
     "difficulty": "easy"
   },
   {
-    "id": "5 star::dairy milk",
+    "id": "dairy milk::5 star",
     "agent": "Dairy Milk",
     "imposter": "5 Star",
     "category": "brands",
@@ -4772,7 +4735,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "Bounty bar::pulse candy",
+    "id": "pulse candy::bounty bar",
     "agent": "Pulse Candy",
     "imposter": "Bounty Bar",
     "category": "brands",
@@ -4786,7 +4749,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "lux soap::vaseline",
+    "id": "vaseline::lux soap",
     "agent": "vaseline",
     "imposter": "Lux Soap",
     "category": "brands",
@@ -4800,29 +4763,28 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "Dolo 360::zandu balm",
+    "id": "zandu balm::dolo 360",
     "agent": "Zandu Balm",
     "imposter": "Dolo 360",
     "category": "brands",
     "difficulty": "easy"
   },
   {
-    "id": "iodex::nicotex",
+    "id": "nicotex::iodex",
     "agent": "Nicotex",
     "imposter": "Iodex",
     "category": "brands",
     "difficulty": "easy"
   },
-  
   {
-    "id": "airtel::Boat",
+    "id": "boat::airtel",
     "agent": "Boat",
     "imposter": "Airtel",
     "category": "brands",
     "difficulty": "easy"
   },
   {
-    "id": "instagram::whatsapp",
+    "id": "whatsapp::instagram",
     "agent": "WhatsApp",
     "imposter": "Instagram",
     "category": "brands",
@@ -4836,14 +4798,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "aashirvaad atta::tata salt",
+    "id": "tata salt::aashirvaad atta",
     "agent": "Tata Salt",
     "imposter": "Aashirvaad Atta",
     "category": "brands",
     "difficulty": "medium"
   },
   {
-    "id": "red label tea::Davidoff coffee",
+    "id": "davidoff coffee::red label tea",
     "agent": "Davidoff coffee",
     "imposter": "Red Label Tea",
     "category": "brands",
@@ -4857,7 +4819,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "bru coffee::chai",
+    "id": "chai::bru coffee",
     "agent": "chai",
     "imposter": "Bru Coffee",
     "category": "brands",
@@ -4871,21 +4833,21 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "bournvita::complan",
+    "id": "complan::bournvita",
     "agent": "Complan",
     "imposter": "Bournvita",
     "category": "brands",
     "difficulty": "medium"
   },
   {
-    "id": "boroline::vicco turmeric",
+    "id": "vicco turmeric::boroline",
     "agent": "Vicco Turmeric",
     "imposter": "Boroline",
     "category": "brands",
     "difficulty": "medium"
   },
   {
-    "id": "vicks::vaseline",
+    "id": "vaseline::vicks",
     "agent": "Vaseline",
     "imposter": "vicks",
     "category": "brands",
@@ -4906,7 +4868,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "google pay::phonepe",
+    "id": "phonepe::google pay",
     "agent": "PhonePe",
     "imposter": "Google Pay",
     "category": "brands",
@@ -4934,7 +4896,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "ola::uber",
+    "id": "uber::ola",
     "agent": "Uber",
     "imposter": "Ola",
     "category": "brands",
@@ -4948,14 +4910,14 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "amul butter::parle-g",
+    "id": "parle-g::amul butter",
     "agent": "Parle-G",
     "imposter": "Amul Butter",
     "category": "brands",
     "difficulty": "hard"
   },
   {
-    "id": "kurkure::maggi noodles",
+    "id": "maggi noodles::kurkure",
     "agent": "Maggi Noodles",
     "imposter": "Kurkure",
     "category": "brands",
@@ -4969,7 +4931,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "colgate::dettol",
+    "id": "dettol::colgate",
     "agent": "Dettol",
     "imposter": "Colgate",
     "category": "brands",
@@ -4983,14 +4945,14 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "netflix::youtube",
+    "id": "youtube::netflix",
     "agent": "YouTube",
     "imposter": "Netflix",
     "category": "brands",
     "difficulty": "hard"
   },
   {
-    "id": "amazon::swiggy",
+    "id": "swiggy::amazon",
     "agent": "Swiggy",
     "imposter": "Amazon",
     "category": "brands",
@@ -5004,7 +4966,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "bajaj auto::hero motocorp",
+    "id": "hero motocorp::bajaj auto",
     "agent": "Hero MotoCorp",
     "imposter": "Bajaj Auto",
     "category": "brands",
@@ -5017,8 +4979,6 @@ const wordBank = [
     "category": "festivals_culture",
     "difficulty": "easy"
   },
-  
-  
   {
     "id": "ganesh chaturthi::navratri",
     "agent": "Ganesh Chaturthi",
@@ -5026,9 +4986,8 @@ const wordBank = [
     "category": "festivals_culture",
     "difficulty": "easy"
   },
-  
   {
-    "id": "diwali::eid ul-fitr",
+    "id": "eid ul-fitr::diwali",
     "agent": "Eid ul-Fitr",
     "imposter": "Diwali",
     "category": "festivals_culture",
@@ -5049,14 +5008,12 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "janmashtami::mahashivratri",
+    "id": "mahashivratri::janmashtami",
     "agent": "Mahashivratri",
     "imposter": "Janmashtami",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
- 
-  
   {
     "id": "jagannath rath yatra::kumbh mela",
     "agent": "Jagannath Rath Yatra",
@@ -5065,7 +5022,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "basant panchami::holi",
+    "id": "holi::basant panchami",
     "agent": "Holi",
     "imposter": "Basant Panchami",
     "category": "festivals_culture",
@@ -5079,14 +5036,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "firecrackers:: rangoli",
+    "id": "firecrackers::rangoli",
     "agent": "Firecrackers",
     "imposter": "rangoli",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
   {
-    "id": "gulal::pichkari",
+    "id": "pichkari::gulal",
     "agent": "Pichkari",
     "imposter": "Gulal",
     "category": "festivals_culture",
@@ -5114,7 +5071,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "kheer::chaas",
+    "id": "chaas::kheer",
     "agent": "chaas",
     "imposter": "Kheer",
     "category": "festivals_culture",
@@ -5127,7 +5084,6 @@ const wordBank = [
     "category": "festivals_culture",
     "difficulty": "easy"
   },
-  
   {
     "id": "ganga aarti::ganpati pandal",
     "agent": "Ganga Aarti",
@@ -5135,8 +5091,6 @@ const wordBank = [
     "category": "festivals_culture",
     "difficulty": "easy"
   },
-  
-  
   {
     "id": "dhol tasha::garba",
     "agent": "Dhol Tasha",
@@ -5145,21 +5099,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "carrom::ludo",
+    "id": "ludo::carrom",
     "agent": "Ludo",
     "imposter": "Carrom",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
   {
-    "id": "carrom::chess",
+    "id": "chess::carrom",
     "agent": "Chess",
     "imposter": "Carrom",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
   {
-    "id": "ludo::snakes and ladders",
+    "id": "snakes and ladders::ludo",
     "agent": "Snakes and Ladders",
     "imposter": "Ludo",
     "category": "festivals_culture",
@@ -5173,21 +5127,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "ludo::tambola (housie)",
+    "id": "tambola (housie)::ludo",
     "agent": "Tambola (Housie)",
     "imposter": "Ludo",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
   {
-    "id": "kabaddi::kho-kho",
+    "id": "kho-kho::kabaddi",
     "agent": "Kho-Kho",
     "imposter": "Kabaddi",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
   {
-    "id": "cricket::gilli danda",
+    "id": "gilli danda::cricket",
     "agent": "Gilli Danda",
     "imposter": "Cricket",
     "category": "festivals_culture",
@@ -5201,81 +5155,77 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "antakshri::uno",
+    "id": "uno::antakshri",
     "agent": "UNO",
     "imposter": "antakshri",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
   {
-    "id": "business (board game)::UNO",
+    "id": "uno::business (board game)",
     "agent": "UNO",
     "imposter": "Business (Board Game)",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
-  
   {
-    "id": "gilli danda::ludo",
+    "id": "ludo::gilli danda",
     "agent": "ludo",
     "imposter": "Gilli Danda",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
   {
-    "id": "hide and seek:: chess",
+    "id": "chess::hide and seek",
     "agent": "chess",
     "imposter": "Hide and Seek",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
   {
-    "id": "kabaddi::tug of war",
+    "id": "tug of war::kabaddi",
     "agent": "Tug of War",
     "imposter": "Kabaddi",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
-  
   {
-    "id": "kurta::sari",
+    "id": "sari::kurta",
     "agent": "Sari",
     "imposter": "Kurta",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
   {
-    "id": "dhoti:: bandage",
+    "id": "dhoti::bandage",
     "agent": "Dhoti",
     "imposter": "bandage",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
-  
   {
-    "id": "hat::turban (pagri)",
+    "id": "turban (pagri)::hat",
     "agent": "Turban (Pagri)",
     "imposter": "hat",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
   {
-    "id": "bangles (choodi)::jhumka",
+    "id": "jhumka::bangles (choodi)",
     "agent": "Jhumka",
     "imposter": "Bangles (Choodi)",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
-  
   {
-    "id": "agarbatti:: candle",
+    "id": "agarbatti::candle",
     "agent": "Agarbatti",
     "imposter": "candle",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
   {
-    "id": "rudraksha:: badam",
+    "id": "rudraksha::badam",
     "agent": "Rudraksha",
     "imposter": "badam",
     "category": "festivals_culture",
@@ -5289,14 +5239,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "coconut (shreefal):: orange",
+    "id": "orange::coconut (shreefal)",
     "agent": "orange",
     "imposter": "Coconut (Shreefal)",
     "category": "festivals_culture",
     "difficulty": "easy"
   },
   {
-    "id": "laddoo:: chewing-gum",
+    "id": "chewing-gum::laddoo",
     "agent": "chewing-gum",
     "imposter": "Laddoo",
     "category": "festivals_culture",
@@ -5316,7 +5266,6 @@ const wordBank = [
     "category": "festivals_culture",
     "difficulty": "easy"
   },
-  
   {
     "id": "karwa chauth::raksha bandhan",
     "agent": "Karwa Chauth",
@@ -5325,14 +5274,14 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "chhath puja::makar sankranti",
+    "id": "makar sankranti::chhath puja",
     "agent": "Makar Sankranti",
     "imposter": "Chhath Puja",
     "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "id": "onam:: independence day",
+    "id": "onam::independence day",
     "agent": "Onam",
     "imposter": "independence day",
     "category": "festivals_culture",
@@ -5346,7 +5295,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "ganesh chaturthi::janmashtami",
+    "id": "janmashtami::ganesh chaturthi",
     "agent": "Janmashtami",
     "imposter": "Ganesh Chaturthi",
     "category": "festivals_culture",
@@ -5367,48 +5316,47 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "easter::good friday",
+    "id": "good friday::easter",
     "agent": "Good Friday",
     "imposter": "Easter",
     "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "id": "bhai dooj:: Diwali",
-    "agent": " Diwali",
+    "id": "diwali::bhai dooj",
+    "agent": "Diwali",
     "imposter": "Bhai Dooj",
     "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "id": "bhai dooj::govardhan puja",
+    "id": "govardhan puja::bhai dooj",
     "agent": "Govardhan Puja",
     "imposter": "Bhai Dooj",
     "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "id": "kite flying::Holi",
+    "id": "kite flying::holi",
     "agent": "Kite Flying",
     "imposter": "Holi",
     "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "id": "holika dahan:: makar-sankranti",
+    "id": "holika dahan::makar sankranti",
     "agent": "Holika Dahan",
     "imposter": "Makar sankranti",
     "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "id": "kite-festival::ganesh visarjan",
+    "id": "ganesh visarjan::kite-festival",
     "agent": "Ganesh Visarjan",
     "imposter": "kite-festival",
     "category": "festivals_culture",
     "difficulty": "medium"
   },
-  
   {
     "id": "ganga ghat::kedarnath",
     "agent": "Ganga Ghat",
@@ -5416,7 +5364,6 @@ const wordBank = [
     "category": "festivals_culture",
     "difficulty": "medium"
   },
-  
   {
     "id": "bhangra::hip-hop",
     "agent": "Bhangra",
@@ -5425,14 +5372,12 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "garba::lavani",
+    "id": "lavani::garba",
     "agent": "Lavani",
     "imposter": "Garba",
     "category": "festivals_culture",
     "difficulty": "medium"
   },
-  
-  
   {
     "id": "flute (bansuri)::shehnai",
     "agent": "Flute (Bansuri)",
@@ -5462,14 +5407,14 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "poker::teen patti",
+    "id": "teen patti::poker",
     "agent": "Teen Patti",
     "imposter": "Poker",
     "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "id": "bridge::rummy",
+    "id": "rummy::bridge",
     "agent": "Rummy",
     "imposter": "Bridge",
     "category": "festivals_culture",
@@ -5489,9 +5434,6 @@ const wordBank = [
     "category": "festivals_culture",
     "difficulty": "medium"
   },
- 
-   
-  
   {
     "id": "bhang::thandai",
     "agent": "Bhang",
@@ -5499,7 +5441,6 @@ const wordBank = [
     "category": "festivals_culture",
     "difficulty": "medium"
   },
-    
   {
     "id": "ayurveda::yoga",
     "agent": "Ayurveda",
@@ -5508,14 +5449,14 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "meditation::pranayama",
+    "id": "pranayama::meditation",
     "agent": "Pranayama",
     "imposter": "Meditation",
     "category": "festivals_culture",
     "difficulty": "medium"
   },
   {
-    "id": "bow::namaskar",
+    "id": "namaskar::bow",
     "agent": "Namaskar",
     "imposter": "Bow",
     "category": "festivals_culture",
@@ -5543,7 +5484,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "friendship day::raksha bandhan",
+    "id": "raksha bandhan::friendship day",
     "agent": "Raksha Bandhan",
     "imposter": "Friendship Day",
     "category": "festivals_culture",
@@ -5564,7 +5505,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "carnival of rio::durga puja",
+    "id": "durga puja::carnival of rio",
     "agent": "Durga Puja",
     "imposter": "Carnival of Rio",
     "category": "festivals_culture",
@@ -5585,21 +5526,21 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "easter::janmashtami",
+    "id": "janmashtami::easter",
     "agent": "Janmashtami",
     "imposter": "Easter",
     "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "id": "candle::diya",
+    "id": "diya::candle",
     "agent": "Diya",
     "imposter": "Candle",
     "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "id": "mosaic art::rangoli",
+    "id": "rangoli::mosaic art",
     "agent": "Rangoli",
     "imposter": "Mosaic Art",
     "category": "festivals_culture",
@@ -5613,14 +5554,14 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "communion bread::prasad",
+    "id": "prasad::communion bread",
     "agent": "Prasad",
     "imposter": "Communion Bread",
     "category": "festivals_culture",
     "difficulty": "hard"
   },
   {
-    "id": "bonfire::havan kund",
+    "id": "havan kund::bonfire",
     "agent": "Havan Kund",
     "imposter": "Bonfire",
     "category": "festivals_culture",
@@ -5634,7 +5575,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "billiards (pool)::carrom",
+    "id": "carrom::billiards (pool)",
     "agent": "Carrom",
     "imposter": "Billiards (Pool)",
     "category": "festivals_culture",
@@ -5648,7 +5589,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "baseball::gilli danda",
+    "id": "gilli danda::baseball",
     "agent": "Gilli Danda",
     "imposter": "Baseball",
     "category": "festivals_culture",
@@ -5676,13 +5617,12 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "bingo::tambola",
+    "id": "tambola::bingo",
     "agent": "Tambola",
     "imposter": "Bingo",
     "category": "festivals_culture",
     "difficulty": "hard"
   },
-  
   {
     "id": "mehndi::tattoo",
     "agent": "Mehndi",
@@ -5691,7 +5631,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "handshake::namaste",
+    "id": "namaste::handshake",
     "agent": "Namaste",
     "imposter": "Handshake",
     "category": "festivals_culture",
@@ -5726,21 +5666,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "kachori::samosa",
+    "id": "samosa::kachori",
     "agent": "Samosa",
     "imposter": "Kachori",
     "category": "foods",
     "difficulty": "easy"
   },
   {
-    "id": "bhel puri::pani puri",
+    "id": "pani puri::bhel puri",
     "agent": "Pani Puri",
     "imposter": "Bhel Puri",
     "category": "foods",
     "difficulty": "easy"
   },
   {
-    "id": "burger::vada pav",
+    "id": "vada pav::burger",
     "agent": "Vada Pav",
     "imposter": "Burger",
     "category": "foods",
@@ -5761,7 +5701,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "fried rice::veg biryani",
+    "id": "veg biryani::fried rice",
     "agent": "Veg Biryani",
     "imposter": "Fried Rice",
     "category": "foods",
@@ -5789,7 +5729,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "besan ladoo::kaju katli",
+    "id": "kaju katli::besan ladoo",
     "agent": "Kaju Katli",
     "imposter": "Besan Ladoo",
     "category": "foods",
@@ -5803,14 +5743,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "noodles::pasta",
+    "id": "pasta::noodles",
     "agent": "Pasta",
     "imposter": "Noodles",
     "category": "foods",
     "difficulty": "easy"
   },
   {
-    "id": "aloo tikki::french fries",
+    "id": "french fries::aloo tikki",
     "agent": "French Fries",
     "imposter": "Aloo Tikki",
     "category": "foods",
@@ -5824,14 +5764,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "dahi puri::pani puri",
+    "id": "pani puri::dahi puri",
     "agent": "Pani Puri",
     "imposter": "Dahi Puri",
     "category": "foods",
     "difficulty": "easy"
   },
   {
-    "id": "bhel puri::sev puri",
+    "id": "sev puri::bhel puri",
     "agent": "Sev Puri",
     "imposter": "Bhel Puri",
     "category": "foods",
@@ -5845,7 +5785,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "dosa::uttapam",
+    "id": "uttapam::dosa",
     "agent": "Uttapam",
     "imposter": "Dosa",
     "category": "foods",
@@ -5880,14 +5820,14 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "poha::sabudana khichdi",
+    "id": "sabudana khichdi::poha",
     "agent": "Sabudana Khichdi",
     "imposter": "Poha",
     "category": "foods",
     "difficulty": "easy"
   },
   {
-    "id": "kadi chawal::rajma chawal",
+    "id": "rajma chawal::kadi chawal",
     "agent": "Rajma Chawal",
     "imposter": "Kadi Chawal",
     "category": "foods",
@@ -5922,21 +5862,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "gulab jamun::rasmalai",
+    "id": "rasmalai::gulab jamun",
     "agent": "Rasmalai",
     "imposter": "Gulab Jamun",
     "category": "foods",
     "difficulty": "easy"
   },
   {
-    "id": "rasgulla::sandesh",
+    "id": "sandesh::rasgulla",
     "agent": "Sandesh",
     "imposter": "Rasgulla",
     "category": "foods",
     "difficulty": "easy"
   },
   {
-    "id": "gajar ka halwa::kheer",
+    "id": "kheer::gajar ka halwa",
     "agent": "Kheer",
     "imposter": "Gajar Ka Halwa",
     "category": "foods",
@@ -5978,21 +5918,21 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "garlic::onion",
+    "id": "onion::garlic",
     "agent": "Onion",
     "imposter": "Garlic",
     "category": "foods",
     "difficulty": "easy"
   },
   {
-    "id": "mushroom::paneer",
+    "id": "paneer::mushroom",
     "agent": "Paneer",
     "imposter": "Mushroom",
     "category": "foods",
     "difficulty": "easy"
   },
   {
-    "id": "nachos::popcorn",
+    "id": "popcorn::nachos",
     "agent": "Popcorn",
     "imposter": "Nachos",
     "category": "foods",
@@ -6013,7 +5953,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "chaas::lassi",
+    "id": "lassi::chaas",
     "agent": "Lassi",
     "imposter": "Chaas",
     "category": "foods",
@@ -6041,7 +5981,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "croissant::donut",
+    "id": "donut::croissant",
     "agent": "Donut",
     "imposter": "Croissant",
     "category": "foods",
@@ -6055,7 +5995,7 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "burger::hot dog",
+    "id": "hot dog::burger",
     "agent": "Hot Dog",
     "imposter": "Burger",
     "category": "foods",
@@ -6069,14 +6009,14 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "dabeli::vada pav",
+    "id": "vada pav::dabeli",
     "agent": "Vada Pav",
     "imposter": "Dabeli",
     "category": "foods",
     "difficulty": "medium"
   },
   {
-    "id": "aloo tikki::pani puri",
+    "id": "pani puri::aloo tikki",
     "agent": "Pani Puri",
     "imposter": "Aloo Tikki",
     "category": "foods",
@@ -6111,42 +6051,42 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "palak paneer::paneer butter masala",
+    "id": "paneer butter masala::palak paneer",
     "agent": "Paneer Butter Masala",
     "imposter": "Palak Paneer",
     "category": "foods",
     "difficulty": "medium"
   },
   {
-    "id": "dum aloo::malai kofta",
+    "id": "malai kofta::dum aloo",
     "agent": "Malai Kofta",
     "imposter": "Dum Aloo",
     "category": "foods",
     "difficulty": "medium"
   },
   {
-    "id": "makki ki roti::sarson ka saag",
+    "id": "sarson ka saag::makki ki roti",
     "agent": "Sarson Ka Saag",
     "imposter": "Makki Ki Roti",
     "category": "foods",
     "difficulty": "medium"
   },
   {
-    "id": "dal baati churma::litti chokha",
+    "id": "litti chokha::dal baati churma",
     "agent": "Litti Chokha",
     "imposter": "Dal Baati Churma",
     "category": "foods",
     "difficulty": "medium"
   },
   {
-    "id": "aloo paratha::methi thepla",
+    "id": "methi thepla::aloo paratha",
     "agent": "Methi Thepla",
     "imposter": "Aloo Paratha",
     "category": "foods",
     "difficulty": "medium"
   },
   {
-    "id": "bedmi puri::kachori",
+    "id": "kachori::bedmi puri",
     "agent": "Kachori",
     "imposter": "Bedmi Puri",
     "category": "foods",
@@ -6174,14 +6114,14 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "red sauce pasta::white sauce pasta",
+    "id": "white sauce pasta::red sauce pasta",
     "agent": "White Sauce Pasta",
     "imposter": "Red Sauce Pasta",
     "category": "foods",
     "difficulty": "medium"
   },
   {
-    "id": "chowmein::hakka noodles",
+    "id": "hakka noodles::chowmein",
     "agent": "Hakka Noodles",
     "imposter": "Chowmein",
     "category": "foods",
@@ -6195,35 +6135,35 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "rabri::shrikhand",
+    "id": "shrikhand::rabri",
     "agent": "Shrikhand",
     "imposter": "Rabri",
     "category": "foods",
     "difficulty": "medium"
   },
   {
-    "id": "ladoo::modak",
+    "id": "modak::ladoo",
     "agent": "Modak",
     "imposter": "Ladoo",
     "category": "foods",
     "difficulty": "medium"
   },
   {
-    "id": "malpua::rasgulla",
+    "id": "puran poli::rasgulla",
     "agent": "Puran Poli",
     "imposter": "Rasgulla",
     "category": "foods",
     "difficulty": "medium"
   },
   {
-    "id": "besan ladoo::mysore pak",
+    "id": "mysore pak::besan ladoo",
     "agent": "Mysore Pak",
     "imposter": "Besan Ladoo",
     "category": "foods",
     "difficulty": "medium"
   },
   {
-    "id": "guava::strawberry",
+    "id": "strawberry::guava",
     "agent": "Strawberry",
     "imposter": "Guava",
     "category": "foods",
@@ -6237,28 +6177,28 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "carrot::cucumber",
+    "id": "cucumber::carrot",
     "agent": "Cucumber",
     "imposter": "Carrot",
     "category": "foods",
     "difficulty": "medium"
   },
   {
-    "id": "cabbage::capsicum",
+    "id": "capsicum::cabbage",
     "agent": "Capsicum",
     "imposter": "Cabbage",
     "category": "foods",
     "difficulty": "medium"
   },
   {
-    "id": "baingan (eggplant)::bhindi (okra)",
+    "id": "bhindi (okra)::baingan (eggplant)",
     "agent": "Bhindi (Okra)",
     "imposter": "Baingan (Eggplant)",
     "category": "foods",
     "difficulty": "medium"
   },
   {
-    "id": "peanuts::sweet corn",
+    "id": "sweet corn::peanuts",
     "agent": "Sweet Corn",
     "imposter": "Peanuts",
     "category": "foods",
@@ -6272,7 +6212,7 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "pizza::samosa",
+    "id": "samosa::pizza",
     "agent": "Samosa",
     "imposter": "Pizza",
     "category": "foods",
@@ -6293,7 +6233,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "chocolate brownie::gulab jamun",
+    "id": "gulab jamun::chocolate brownie",
     "agent": "Gulab Jamun",
     "imposter": "Chocolate Brownie",
     "category": "foods",
@@ -6306,9 +6246,8 @@ const wordBank = [
     "category": "foods",
     "difficulty": "hard"
   },
-  ,
   {
-    "id": "kebab::vada pav",
+    "id": "vada pav::kebab",
     "agent": "Vada Pav",
     "imposter": "kebab",
     "category": "foods",
@@ -6329,7 +6268,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "oatmeal::poha",
+    "id": "poha::oatmeal",
     "agent": "Poha",
     "imposter": "Oatmeal",
     "category": "foods",
@@ -6350,7 +6289,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "nachos::papad",
+    "id": "papad::nachos",
     "agent": "Papad",
     "imposter": "Nachos",
     "category": "foods",
@@ -6364,7 +6303,7 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "butter::ghee",
+    "id": "ghee::butter",
     "agent": "Ghee",
     "imposter": "Butter",
     "category": "foods",
@@ -6378,21 +6317,21 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "broccoli::cauliflower",
+    "id": "cauliflower::broccoli",
     "agent": "Cauliflower",
     "imposter": "Broccoli",
     "category": "foods",
     "difficulty": "hard"
   },
   {
-    "id": "lettuce::spinach",
+    "id": "spinach::lettuce",
     "agent": "Spinach",
     "imposter": "Lettuce",
     "category": "foods",
     "difficulty": "hard"
   },
   {
-    "id": "almond::walnut",
+    "id": "walnut::almond",
     "agent": "Walnut",
     "imposter": "Almond",
     "category": "foods",
