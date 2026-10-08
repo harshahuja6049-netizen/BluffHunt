@@ -3454,9 +3454,9 @@ const wordBank = [
     "difficulty": "easy"
   },
   {
-    "id": "lawyer::judge",
+    "id": "lawyer::Engineer",
     "agent": "Lawyer",
-    "imposter": "Judge",
+    "imposter": "Engineer",
     "category": "mainstream",
     "difficulty": "easy"
   },
@@ -4812,9 +4812,9 @@ const wordBank = [
     "difficulty": "medium"
   },
   {
-    "id": "taj mahal tea::wagh bakri tea",
+    "id": "taj mahal tea:: Baskin robbins",
     "agent": "Taj Mahal Tea",
-    "imposter": "Wagh Bakri Tea",
+    "imposter": "Baskin robbins",
     "category": "brands",
     "difficulty": "medium"
   },
@@ -6282,9 +6282,9 @@ const wordBank = [
     "difficulty": "hard"
   },
   {
-    "id": "chai::green tea",
+    "id": "chai::mojito",
     "agent": "Chai",
-    "imposter": "Green Tea",
+    "imposter": "mojito",
     "category": "foods",
     "difficulty": "hard"
   },
